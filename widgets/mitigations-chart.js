@@ -1,5 +1,5 @@
 /**
- * AIRI Mitigations drill-down donut chart (v1.0.0)
+ * AIRI Mitigations drill-down donut chart (v1.0.1)
  *
  * Mounts into an element with id="airi-chart-mitigations".
  * Fetches from /data/mitigations.json in the same repo.
@@ -7,24 +7,13 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/mitigations-chart.js
  *
- * Visual: 2-level drill-down donut.
- *   Layer 1: top-level mitigation taxonomy categories, sized by count.
- *   Layer 2: children of the clicked category, same donut re-rendered.
- *   Click a leaf: modal listing top mitigations with source docs.
- *
- * Features:
- *   - Leader-line labels outside each slice with collision avoidance
- *   - Breadcrumb back navigation
- *   - Hover highlight with opacity dim
- *   - Modal overlay with per-subcategory top mitigations
+ * v1.0.1 — bigger donut, tighter labels, more square viewBox
+ *          (was 1000x520 r150/88, now 820x540 r180/105)
  */
 (function () {
   var DATA_URL = 'https://jessgrahamuq.github.io/airi-landing-data/data/mitigations.json';
 
-  // Per-top-category base colors. Mitigations slide accent is #8DA0CB (blue).
-  // Organisation gets the accent color; others get distinct palette neighbours.
   var BASE_COLORS = {
-    // Keyed by top category Code field. Fallback picks from palette in order.
     default: ['#8DA0CB', '#66C2A5', '#E5C494', '#C9CED6', '#FC8D62', '#A6D854', '#E78AC3']
   };
 
@@ -86,7 +75,6 @@
       'A', rInner, rInner, 0, la, 1, eI.x, eI.y, 'Z'].join(' ');
   }
 
-  // Separate overlapping labels on the same side of the chart vertically.
   function deoverlap(labels, minGap) {
     var leftSide = labels.filter(function (l) { return !l.isRight; })
                          .sort(function (a, b) { return a.preferredY - b.preferredY; });
@@ -105,20 +93,19 @@
   }
 
   function render(mount, data) {
-    // Normalize taxonomy: top_categories is array, children_by_parent is object keyed by category id
     var topCats = (data.taxonomy && data.taxonomy.top_categories) || [];
     var childrenMap = (data.taxonomy && data.taxonomy.children_by_parent) || {};
     var mitsMap = data.mitigations_by_category || {};
 
-    // Pre-compute top-level colors by index
     var topColorMap = {};
     topCats.forEach(function (c, i) { topColorMap[c.id] = colorForTop(i); });
 
     var state = { level: 0, parentId: null };
 
-    var W = 1000, H = 520;
+    // Tuned for better fit in Webflow slide container
+    var W = 820, H = 540;
     var cx = W / 2, cy = H / 2 + 10;
-    var outer = 150, inner = 88;
+    var outer = 180, inner = 105;
 
     var style = '<style>' +
       '#airi-chart-mitigations { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; }' +
@@ -165,7 +152,6 @@
 
       var sliceTotal = slices.reduce(function (a, s) { return a + (s.count || 0); }, 0);
 
-      // Guard: if drilled category has no children with counts, just show nothing gracefully
       if (!slices.length) {
         slices = [{ id: 'empty', name: 'No subcategories', count: 1 }];
         sliceTotal = 1;
@@ -174,11 +160,10 @@
       var parentObj = topCats.find(function (c) { return c.id === state.parentId; });
       var breadcrumb = !isDrilled
         ? '<div class="mit-breadcrumb" style="color:' + TEXT_MUTED + ';">All categories</div>'
-        : '<div class="mit-breadcrumb"><button class="mit-back">← All categories</button><span style="color:' + TEXT_MUTED + ';">/</span><span style="color:' + TEXT_PRIMARY + ';font-weight:500;">' + esc(parentObj ? parentObj.name : '') + '</span></div>';
+        : '<div class="mit-breadcrumb"><button class="mit-back">\u2190 All categories</button><span style="color:' + TEXT_MUTED + ';">/</span><span style="color:' + TEXT_PRIMARY + ';font-weight:500;">' + esc(parentObj ? parentObj.name : '') + '</span></div>';
 
       var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Mitigation categories donut chart" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
 
-      // Pass 1: compute geometry + preferred label positions
       var startAngle = -Math.PI / 2;
       var sliceData = [];
       slices.forEach(function (slice, idx) {
@@ -186,7 +171,7 @@
         var endAngle = startAngle + angleSpan;
         var midAngle = (startAngle + endAngle) / 2;
         var pAnchor = polar(cx, cy, outer + 2, midAngle);
-        var pMid = polar(cx, cy, outer + 28, midAngle);
+        var pMid = polar(cx, cy, outer + 20, midAngle);
         var isRight = Math.cos(midAngle) >= 0;
         sliceData.push({
           slice: slice, idx: idx,
@@ -199,10 +184,8 @@
         startAngle = endAngle;
       });
 
-      // Collision avoidance: minimum 34px vertical gap between labels on same side
       deoverlap(sliceData, 34);
 
-      // Render slices
       var paths = '';
       var labels = '';
       sliceData.forEach(function (d) {
@@ -223,12 +206,12 @@
         if (d.slice.id === 'empty') return;
 
         var elbowY = d.preferredY;
-        var tailX = d.midX + (d.isRight ? 14 : -14);
+        var tailX = d.midX + (d.isRight ? 10 : -10);
         labels += '<polyline points="' + d.anchorX.toFixed(1) + ',' + d.anchorY.toFixed(1) + ' ' + d.midX.toFixed(1) + ',' + elbowY.toFixed(1) + ' ' + tailX.toFixed(1) + ',' + elbowY.toFixed(1) + '" fill="none" stroke="' + TEXT_MUTED + '" stroke-width="0.5" />';
 
         var labelX = tailX + (d.isRight ? 6 : -6);
         var anchor = d.isRight ? 'start' : 'end';
-        labels += '<text x="' + labelX + '" y="' + (elbowY - 3).toFixed(1) + '" text-anchor="' + anchor + '" font-size="13" font-weight="500" fill="' + TEXT_PRIMARY + '" style="pointer-events:none;">' + esc(d.slice.name) + '</text>';
+        labels += '<text x="' + labelX + '" y="' + (elbowY - 3).toFixed(1) + '" text-anchor="' + anchor + '" font-size="14" font-weight="500" fill="' + TEXT_PRIMARY + '" style="pointer-events:none;">' + esc(d.slice.name) + '</text>';
         labels += '<text x="' + labelX + '" y="' + (elbowY + 13).toFixed(1) + '" text-anchor="' + anchor + '" font-size="11" fill="' + TEXT_MUTED + '" style="pointer-events:none;">' + (d.slice.count || 0).toLocaleString() + ' actions</text>';
       });
 
@@ -247,8 +230,8 @@
       var lu = formatDate(data.meta && data.meta.last_updated);
       var footer = '<div class="mit-footer">' +
         (lu ? 'Last updated ' + esc(lu) : '') +
-        (data.meta && data.meta.record_count ? ' · ' + data.meta.record_count.toLocaleString() + ' mitigation actions' : '') +
-        (data.meta && data.meta.document_count ? ' · ' + data.meta.document_count + ' sources' : '') +
+        (data.meta && data.meta.record_count ? ' \u00b7 ' + data.meta.record_count.toLocaleString() + ' mitigation actions' : '') +
+        (data.meta && data.meta.document_count ? ' \u00b7 ' + data.meta.document_count + ' sources' : '') +
         '</div>';
 
       var modal = '<div class="mit-modal" role="dialog" aria-modal="true" aria-hidden="true"></div>';
@@ -298,7 +281,7 @@
       function openModal(sub) {
         var items = mitsMap[sub.id] || [];
         var cta = (data.meta && data.meta.cta_url) || 'https://airisk.mit.edu/ai-risk-mitigations';
-        var ctaLabel = (data.meta && data.meta.cta_label) || 'Explore the database →';
+        var ctaLabel = (data.meta && data.meta.cta_label) || 'Explore the database \u2192';
 
         var list;
         if (!items.length) {
@@ -308,7 +291,7 @@
             var metaBits = [];
             if (it.source_ref) metaBits.push('<span>' + esc(it.source_ref) + '</span>');
             if (it.source_title) metaBits.push('<span style="color:' + TEXT_MUTED + ';">' + esc(it.source_title) + '</span>');
-            return '<li class="mit-modal-item"><a class="mit-modal-link" href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer"><div class="mit-modal-item-title">' + esc(it.name) + '</div><div class="mit-modal-item-meta">' + metaBits.join(' · ') + '</div></a></li>';
+            return '<li class="mit-modal-item"><a class="mit-modal-link" href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer"><div class="mit-modal-item-title">' + esc(it.name) + '</div><div class="mit-modal-item-meta">' + metaBits.join(' \u00b7 ') + '</div></a></li>';
           }).join('') + '</ul>';
         }
 
@@ -318,7 +301,7 @@
               '<h3 class="mit-modal-title">' + esc(sub.name) + '</h3>' +
               '<div class="mit-modal-sub">' + (sub.count || 0) + ' mitigation actions catalogued</div>' +
             '</div>' +
-            '<button class="mit-modal-close" aria-label="Close">✕</button>' +
+            '<button class="mit-modal-close" aria-label="Close">\u2715</button>' +
           '</div>' +
           list +
           '<div class="mit-modal-footer"><a href="' + esc(cta) + '" target="_blank" rel="noopener noreferrer">' + esc(ctaLabel) + '</a></div>';
