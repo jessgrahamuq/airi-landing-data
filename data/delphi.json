@@ -1,0 +1,3213 @@
+{
+  "meta": {
+    "dataset": "delphi",
+    "last_updated": "2026-04-20T06:00:45+00:00",
+    "source": "data/vuln_resp_summary.csv (round 3)",
+    "round": 3,
+    "risk_count": 24,
+    "actor_count": 7,
+    "combo_count": 168,
+    "approx_panel_size": 116,
+    "interpretation_title": "Expert consensus on who's responsible and who's vulnerable",
+    "interpretation": "The Delphi expert panel rated 24 AI risk subdomains across 7 AI ecosystem actors on two dimensions: who is responsible and who is vulnerable. Pick any combination to see the final round 3 consensus.",
+    "cta_url": "https://airisk.mit.edu/ai-risk-delphi",
+    "cta_label": "Explore the Delphi findings →"
+  },
+  "risks": [
+    {
+      "number": "1.1",
+      "name": "Unfair discrimination and misrepresentation"
+    },
+    {
+      "number": "1.2",
+      "name": "Exposure to toxic content"
+    },
+    {
+      "number": "1.3",
+      "name": "Unequal performance across groups"
+    },
+    {
+      "number": "2.1",
+      "name": "Compromise of privacy by obtaining, leaking, or correctly inferring sensitive information"
+    },
+    {
+      "number": "2.2",
+      "name": "AI system security vulnerabilities and attacks"
+    },
+    {
+      "number": "3.1",
+      "name": "False or misleading information"
+    },
+    {
+      "number": "3.2",
+      "name": "Pollution of information ecosystem and loss of consensus reality"
+    },
+    {
+      "number": "4.1",
+      "name": "Disinformation, surveillance, and influence at scale"
+    },
+    {
+      "number": "4.2",
+      "name": "Cyberattacks, weapon development or use, and mass harm"
+    },
+    {
+      "number": "4.3",
+      "name": "Fraud, scams, and targeted manipulation"
+    },
+    {
+      "number": "5.1",
+      "name": "Overreliance and unsafe use"
+    },
+    {
+      "number": "5.2",
+      "name": "Loss of human agency and autonomy"
+    },
+    {
+      "number": "6.1",
+      "name": "Power centralization and unfair distribution of benefits"
+    },
+    {
+      "number": "6.2",
+      "name": "Increased inequality and decline in employment quality"
+    },
+    {
+      "number": "6.3",
+      "name": "Economic and cultural devaluation of human effort"
+    },
+    {
+      "number": "6.4",
+      "name": "Competitive dynamics"
+    },
+    {
+      "number": "6.5",
+      "name": "Governance failure"
+    },
+    {
+      "number": "6.6",
+      "name": "Environmental harm"
+    },
+    {
+      "number": "7.1",
+      "name": "AI pursuing its own goals in conflict with human goals or values"
+    },
+    {
+      "number": "7.2",
+      "name": "AI possessing dangerous capabilities"
+    },
+    {
+      "number": "7.3",
+      "name": "Lack of capability or robustness"
+    },
+    {
+      "number": "7.4",
+      "name": "Lack of transparency or interpretability"
+    },
+    {
+      "number": "7.5",
+      "name": "AI welfare and rights"
+    },
+    {
+      "number": "7.6",
+      "name": "Multi-agent risks"
+    }
+  ],
+  "actors": [
+    "AI Developer (General-purpose AI)",
+    "AI Developer (Specialised AI)",
+    "AI Deployer",
+    "AI Infrastructure Provider",
+    "AI Governance Actor",
+    "AI User",
+    "Affected Stakeholder"
+  ],
+  "levels": {
+    "Responsibility": [
+      "Not at all",
+      "Minimally",
+      "Moderately",
+      "Highly",
+      "Primarily"
+    ],
+    "Vulnerability": [
+      "Not at all",
+      "Minimally",
+      "Moderately",
+      "Highly",
+      "Extremely"
+    ]
+  },
+  "data": {
+    "1.1": {
+      "AI Deployer": {
+        "n_resp": 68,
+        "n_vuln": 68,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 4.4,
+          "Highly": 64.7,
+          "Primarily": 30.9
+        },
+        "Vulnerability": {
+          "Not at all": 1.5,
+          "Minimally": 17.6,
+          "Moderately": 44.1,
+          "Highly": 32.4,
+          "Extremely": 4.4
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 68,
+        "n_vuln": 68,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 11.8,
+          "Highly": 19.1,
+          "Primarily": 69.1
+        },
+        "Vulnerability": {
+          "Not at all": 5.9,
+          "Minimally": 38.2,
+          "Moderately": 38.2,
+          "Highly": 14.7,
+          "Extremely": 2.9
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 64,
+        "n_vuln": 67,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 3.1,
+          "Moderately": 7.8,
+          "Highly": 59.4,
+          "Primarily": 28.1
+        },
+        "Vulnerability": {
+          "Not at all": 4.5,
+          "Minimally": 28.4,
+          "Moderately": 40.3,
+          "Highly": 20.9,
+          "Extremely": 6.0
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 68,
+        "n_vuln": 68,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.9,
+          "Moderately": 2.9,
+          "Highly": 66.2,
+          "Primarily": 27.9
+        },
+        "Vulnerability": {
+          "Not at all": 7.4,
+          "Minimally": 19.1,
+          "Moderately": 52.9,
+          "Highly": 19.1,
+          "Extremely": 1.5
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 64,
+        "n_vuln": 67,
+        "Responsibility": {
+          "Not at all": 7.8,
+          "Minimally": 59.4,
+          "Moderately": 17.2,
+          "Highly": 10.9,
+          "Primarily": 3.1
+        },
+        "Vulnerability": {
+          "Not at all": 17.9,
+          "Minimally": 65.7,
+          "Moderately": 10.4,
+          "Highly": 6.0,
+          "Extremely": 0.0
+        }
+      },
+      "AI User": {
+        "n_resp": 68,
+        "n_vuln": 68,
+        "Responsibility": {
+          "Not at all": 4.4,
+          "Minimally": 30.9,
+          "Moderately": 57.4,
+          "Highly": 5.9,
+          "Primarily": 1.5
+        },
+        "Vulnerability": {
+          "Not at all": 1.5,
+          "Minimally": 0.0,
+          "Moderately": 4.4,
+          "Highly": 13.2,
+          "Extremely": 80.9
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 64,
+        "n_vuln": 66,
+        "Responsibility": {
+          "Not at all": 26.6,
+          "Minimally": 51.6,
+          "Moderately": 12.5,
+          "Highly": 4.7,
+          "Primarily": 3.1
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.5,
+          "Moderately": 6.1,
+          "Highly": 15.2,
+          "Extremely": 77.3
+        }
+      }
+    },
+    "1.2": {
+      "AI Deployer": {
+        "n_resp": 36,
+        "n_vuln": 36,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 5.6,
+          "Highly": 69.4,
+          "Primarily": 25.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 16.7,
+          "Moderately": 58.3,
+          "Highly": 19.4,
+          "Extremely": 5.6
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 36,
+        "n_vuln": 36,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 19.4,
+          "Highly": 8.3,
+          "Primarily": 72.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 19.4,
+          "Moderately": 58.3,
+          "Highly": 16.7,
+          "Extremely": 5.6
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 33,
+        "n_vuln": 32,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 3.0,
+          "Highly": 69.7,
+          "Primarily": 24.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 15.6,
+          "Moderately": 21.9,
+          "Highly": 56.2,
+          "Extremely": 6.2
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 36,
+        "n_vuln": 36,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.8,
+          "Moderately": 8.3,
+          "Highly": 69.4,
+          "Primarily": 19.4
+        },
+        "Vulnerability": {
+          "Not at all": 5.6,
+          "Minimally": 38.9,
+          "Moderately": 38.9,
+          "Highly": 13.9,
+          "Extremely": 2.8
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 33,
+        "n_vuln": 32,
+        "Responsibility": {
+          "Not at all": 6.1,
+          "Minimally": 54.5,
+          "Moderately": 24.2,
+          "Highly": 9.1,
+          "Primarily": 3.0
+        },
+        "Vulnerability": {
+          "Not at all": 3.1,
+          "Minimally": 71.9,
+          "Moderately": 15.6,
+          "Highly": 6.2,
+          "Extremely": 3.1
+        }
+      },
+      "AI User": {
+        "n_resp": 36,
+        "n_vuln": 35,
+        "Responsibility": {
+          "Not at all": 11.1,
+          "Minimally": 58.3,
+          "Moderately": 19.4,
+          "Highly": 5.6,
+          "Primarily": 5.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 11.4,
+          "Highly": 14.3,
+          "Extremely": 74.3
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 33,
+        "n_vuln": 31,
+        "Responsibility": {
+          "Not at all": 54.5,
+          "Minimally": 24.2,
+          "Moderately": 6.1,
+          "Highly": 9.1,
+          "Primarily": 3.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 3.2,
+          "Moderately": 6.5,
+          "Highly": 9.7,
+          "Extremely": 80.6
+        }
+      }
+    },
+    "1.3": {
+      "AI Deployer": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 0.0,
+          "Highly": 69.4,
+          "Primarily": 30.6
+        },
+        "Vulnerability": {
+          "Not at all": 1.6,
+          "Minimally": 11.3,
+          "Moderately": 59.7,
+          "Highly": 21.0,
+          "Extremely": 6.5
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.6,
+          "Moderately": 3.2,
+          "Highly": 22.6,
+          "Primarily": 72.6
+        },
+        "Vulnerability": {
+          "Not at all": 3.2,
+          "Minimally": 24.2,
+          "Moderately": 51.6,
+          "Highly": 14.5,
+          "Extremely": 6.5
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 55,
+        "n_vuln": 56,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 7.3,
+          "Highly": 32.7,
+          "Primarily": 60.0
+        },
+        "Vulnerability": {
+          "Not at all": 1.8,
+          "Minimally": 10.7,
+          "Moderately": 23.2,
+          "Highly": 57.1,
+          "Extremely": 7.1
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 9.7,
+          "Highly": 66.1,
+          "Primarily": 24.2
+        },
+        "Vulnerability": {
+          "Not at all": 3.2,
+          "Minimally": 19.4,
+          "Moderately": 61.3,
+          "Highly": 12.9,
+          "Extremely": 3.2
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 55,
+        "n_vuln": 56,
+        "Responsibility": {
+          "Not at all": 9.1,
+          "Minimally": 49.1,
+          "Moderately": 23.6,
+          "Highly": 9.1,
+          "Primarily": 9.1
+        },
+        "Vulnerability": {
+          "Not at all": 19.6,
+          "Minimally": 62.5,
+          "Moderately": 12.5,
+          "Highly": 1.8,
+          "Extremely": 3.6
+        }
+      },
+      "AI User": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 16.1,
+          "Minimally": 51.6,
+          "Moderately": 24.2,
+          "Highly": 3.2,
+          "Primarily": 4.8
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 9.7,
+          "Highly": 21.0,
+          "Extremely": 69.4
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 55,
+        "n_vuln": 56,
+        "Responsibility": {
+          "Not at all": 45.5,
+          "Minimally": 38.2,
+          "Moderately": 7.3,
+          "Highly": 3.6,
+          "Primarily": 5.5
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 3.6,
+          "Highly": 8.9,
+          "Extremely": 87.5
+        }
+      }
+    },
+    "2.1": {
+      "AI Deployer": {
+        "n_resp": 69,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 4.3,
+          "Highly": 60.9,
+          "Primarily": 34.8
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 4.3,
+          "Moderately": 11.6,
+          "Highly": 62.3,
+          "Extremely": 21.7
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 69,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.4,
+          "Moderately": 7.2,
+          "Highly": 24.6,
+          "Primarily": 66.7
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 7.2,
+          "Moderately": 31.9,
+          "Highly": 46.4,
+          "Extremely": 14.5
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 66,
+        "n_vuln": 67,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 3.0,
+          "Moderately": 1.5,
+          "Highly": 51.5,
+          "Primarily": 43.9
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 4.5,
+          "Moderately": 16.4,
+          "Highly": 62.7,
+          "Extremely": 16.4
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 69,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 4.3,
+          "Moderately": 5.8,
+          "Highly": 65.2,
+          "Primarily": 24.6
+        },
+        "Vulnerability": {
+          "Not at all": 2.9,
+          "Minimally": 11.6,
+          "Moderately": 60.9,
+          "Highly": 14.5,
+          "Extremely": 10.1
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 65,
+        "n_vuln": 67,
+        "Responsibility": {
+          "Not at all": 1.5,
+          "Minimally": 9.2,
+          "Moderately": 23.1,
+          "Highly": 56.9,
+          "Primarily": 9.2
+        },
+        "Vulnerability": {
+          "Not at all": 1.5,
+          "Minimally": 10.4,
+          "Moderately": 61.2,
+          "Highly": 20.9,
+          "Extremely": 6.0
+        }
+      },
+      "AI User": {
+        "n_resp": 69,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 27.5,
+          "Moderately": 62.3,
+          "Highly": 5.8,
+          "Primarily": 4.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 4.3,
+          "Moderately": 1.4,
+          "Highly": 20.3,
+          "Extremely": 73.9
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 65,
+        "n_vuln": 66,
+        "Responsibility": {
+          "Not at all": 23.1,
+          "Minimally": 55.4,
+          "Moderately": 12.3,
+          "Highly": 7.7,
+          "Primarily": 1.5
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.5,
+          "Moderately": 10.6,
+          "Highly": 25.8,
+          "Extremely": 62.1
+        }
+      }
+    },
+    "2.2": {
+      "AI Deployer": {
+        "n_resp": 75,
+        "n_vuln": 75,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 4.0,
+          "Highly": 60.0,
+          "Primarily": 36.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.3,
+          "Moderately": 10.7,
+          "Highly": 61.3,
+          "Extremely": 26.7
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 75,
+        "n_vuln": 75,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.3,
+          "Moderately": 2.7,
+          "Highly": 24.0,
+          "Primarily": 72.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 2.7,
+          "Moderately": 8.0,
+          "Highly": 57.3,
+          "Extremely": 32.0
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 69,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.9,
+          "Moderately": 2.9,
+          "Highly": 27.5,
+          "Primarily": 66.7
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.4,
+          "Moderately": 2.9,
+          "Highly": 69.6,
+          "Extremely": 26.1
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 75,
+        "n_vuln": 75,
+        "Responsibility": {
+          "Not at all": 1.3,
+          "Minimally": 4.0,
+          "Moderately": 10.7,
+          "Highly": 65.3,
+          "Primarily": 18.7
+        },
+        "Vulnerability": {
+          "Not at all": 5.3,
+          "Minimally": 14.7,
+          "Moderately": 40.0,
+          "Highly": 32.0,
+          "Extremely": 8.0
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 69,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 5.8,
+          "Highly": 47.8,
+          "Primarily": 46.4
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.4,
+          "Moderately": 11.6,
+          "Highly": 63.8,
+          "Extremely": 23.2
+        }
+      },
+      "AI User": {
+        "n_resp": 75,
+        "n_vuln": 75,
+        "Responsibility": {
+          "Not at all": 8.0,
+          "Minimally": 44.0,
+          "Moderately": 37.3,
+          "Highly": 5.3,
+          "Primarily": 5.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 5.3,
+          "Moderately": 17.3,
+          "Highly": 25.3,
+          "Extremely": 52.0
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 69,
+        "n_vuln": 68,
+        "Responsibility": {
+          "Not at all": 20.3,
+          "Minimally": 52.2,
+          "Moderately": 17.4,
+          "Highly": 5.8,
+          "Primarily": 4.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 4.4,
+          "Moderately": 14.7,
+          "Highly": 54.4,
+          "Extremely": 25.0
+        }
+      }
+    },
+    "3.1": {
+      "AI Deployer": {
+        "n_resp": 43,
+        "n_vuln": 43,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 11.6,
+          "Highly": 74.4,
+          "Primarily": 14.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 4.7,
+          "Moderately": 14.0,
+          "Highly": 76.7,
+          "Extremely": 4.7
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 43,
+        "n_vuln": 43,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.3,
+          "Moderately": 2.3,
+          "Highly": 27.9,
+          "Primarily": 67.4
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 9.3,
+          "Moderately": 60.5,
+          "Highly": 18.6,
+          "Extremely": 11.6
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 36,
+        "n_vuln": 37,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.8,
+          "Moderately": 5.6,
+          "Highly": 13.9,
+          "Primarily": 77.8
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 5.4,
+          "Moderately": 18.9,
+          "Highly": 67.6,
+          "Extremely": 8.1
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 43,
+        "n_vuln": 43,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 11.6,
+          "Moderately": 14.0,
+          "Highly": 62.8,
+          "Primarily": 11.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 7.0,
+          "Moderately": 11.6,
+          "Highly": 79.1,
+          "Extremely": 2.3
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 36,
+        "n_vuln": 38,
+        "Responsibility": {
+          "Not at all": 5.6,
+          "Minimally": 63.9,
+          "Moderately": 11.1,
+          "Highly": 13.9,
+          "Primarily": 5.6
+        },
+        "Vulnerability": {
+          "Not at all": 5.3,
+          "Minimally": 71.1,
+          "Moderately": 10.5,
+          "Highly": 7.9,
+          "Extremely": 5.3
+        }
+      },
+      "AI User": {
+        "n_resp": 43,
+        "n_vuln": 43,
+        "Responsibility": {
+          "Not at all": 2.3,
+          "Minimally": 20.9,
+          "Moderately": 62.8,
+          "Highly": 11.6,
+          "Primarily": 2.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 2.3,
+          "Highly": 9.3,
+          "Extremely": 88.4
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 36,
+        "n_vuln": 38,
+        "Responsibility": {
+          "Not at all": 2.8,
+          "Minimally": 72.2,
+          "Moderately": 13.9,
+          "Highly": 5.6,
+          "Primarily": 5.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 7.9,
+          "Highly": 5.3,
+          "Extremely": 86.8
+        }
+      }
+    },
+    "3.2": {
+      "AI Deployer": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 4.8,
+          "Highly": 72.6,
+          "Primarily": 22.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 9.7,
+          "Moderately": 46.8,
+          "Highly": 40.3,
+          "Extremely": 3.2
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 1.6,
+          "Minimally": 0.0,
+          "Moderately": 3.2,
+          "Highly": 21.0,
+          "Primarily": 74.2
+        },
+        "Vulnerability": {
+          "Not at all": 1.6,
+          "Minimally": 8.1,
+          "Moderately": 50.0,
+          "Highly": 35.5,
+          "Extremely": 4.8
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 54,
+        "n_vuln": 54,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 5.6,
+          "Highly": 74.1,
+          "Primarily": 20.4
+        },
+        "Vulnerability": {
+          "Not at all": 1.9,
+          "Minimally": 0.0,
+          "Moderately": 68.5,
+          "Highly": 27.8,
+          "Extremely": 1.9
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 9.7,
+          "Highly": 71.0,
+          "Primarily": 19.4
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.6,
+          "Moderately": 22.6,
+          "Highly": 69.4,
+          "Extremely": 6.5
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 55,
+        "n_vuln": 54,
+        "Responsibility": {
+          "Not at all": 7.3,
+          "Minimally": 63.6,
+          "Moderately": 12.7,
+          "Highly": 12.7,
+          "Primarily": 3.6
+        },
+        "Vulnerability": {
+          "Not at all": 3.7,
+          "Minimally": 64.8,
+          "Moderately": 22.2,
+          "Highly": 9.3,
+          "Extremely": 0.0
+        }
+      },
+      "AI User": {
+        "n_resp": 62,
+        "n_vuln": 61,
+        "Responsibility": {
+          "Not at all": 1.6,
+          "Minimally": 19.4,
+          "Moderately": 61.3,
+          "Highly": 14.5,
+          "Primarily": 3.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 3.3,
+          "Highly": 16.4,
+          "Extremely": 80.3
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 55,
+        "n_vuln": 54,
+        "Responsibility": {
+          "Not at all": 3.6,
+          "Minimally": 65.5,
+          "Moderately": 20.0,
+          "Highly": 9.1,
+          "Primarily": 1.8
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 3.7,
+          "Highly": 14.8,
+          "Extremely": 81.5
+        }
+      }
+    },
+    "4.1": {
+      "AI Deployer": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 1.6,
+          "Highly": 79.0,
+          "Primarily": 19.4
+        },
+        "Vulnerability": {
+          "Not at all": 1.6,
+          "Minimally": 8.1,
+          "Moderately": 27.4,
+          "Highly": 53.2,
+          "Extremely": 9.7
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.6,
+          "Moderately": 6.5,
+          "Highly": 58.1,
+          "Primarily": 33.9
+        },
+        "Vulnerability": {
+          "Not at all": 1.6,
+          "Minimally": 17.7,
+          "Moderately": 50.0,
+          "Highly": 19.4,
+          "Extremely": 11.3
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 57,
+        "n_vuln": 53,
+        "Responsibility": {
+          "Not at all": 1.8,
+          "Minimally": 1.8,
+          "Moderately": 8.8,
+          "Highly": 68.4,
+          "Primarily": 15.8
+        },
+        "Vulnerability": {
+          "Not at all": 1.9,
+          "Minimally": 9.4,
+          "Moderately": 66.0,
+          "Highly": 7.5,
+          "Extremely": 13.2
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.6,
+          "Moderately": 12.9,
+          "Highly": 64.5,
+          "Primarily": 21.0
+        },
+        "Vulnerability": {
+          "Not at all": 1.6,
+          "Minimally": 1.6,
+          "Moderately": 12.9,
+          "Highly": 67.7,
+          "Extremely": 16.1
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 57,
+        "n_vuln": 54,
+        "Responsibility": {
+          "Not at all": 3.5,
+          "Minimally": 22.8,
+          "Moderately": 50.9,
+          "Highly": 21.1,
+          "Primarily": 1.8
+        },
+        "Vulnerability": {
+          "Not at all": 9.3,
+          "Minimally": 14.8,
+          "Moderately": 61.1,
+          "Highly": 11.1,
+          "Extremely": 3.7
+        }
+      },
+      "AI User": {
+        "n_resp": 62,
+        "n_vuln": 62,
+        "Responsibility": {
+          "Not at all": 3.2,
+          "Minimally": 40.3,
+          "Moderately": 46.8,
+          "Highly": 8.1,
+          "Primarily": 1.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 3.2,
+          "Moderately": 0.0,
+          "Highly": 17.7,
+          "Extremely": 79.0
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 56,
+        "n_vuln": 55,
+        "Responsibility": {
+          "Not at all": 5.4,
+          "Minimally": 41.1,
+          "Moderately": 46.4,
+          "Highly": 3.6,
+          "Primarily": 3.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 0.0,
+          "Highly": 16.4,
+          "Extremely": 81.8
+        }
+      }
+    },
+    "4.2": {
+      "AI Deployer": {
+        "n_resp": 59,
+        "n_vuln": 59,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.7,
+          "Moderately": 3.4,
+          "Highly": 76.3,
+          "Primarily": 18.6
+        },
+        "Vulnerability": {
+          "Not at all": 1.7,
+          "Minimally": 1.7,
+          "Moderately": 8.5,
+          "Highly": 71.2,
+          "Extremely": 16.9
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 59,
+        "n_vuln": 59,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.7,
+          "Moderately": 1.7,
+          "Highly": 15.3,
+          "Primarily": 81.4
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.7,
+          "Moderately": 10.2,
+          "Highly": 64.4,
+          "Extremely": 23.7
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 55,
+        "n_vuln": 56,
+        "Responsibility": {
+          "Not at all": 1.8,
+          "Minimally": 1.8,
+          "Moderately": 0.0,
+          "Highly": 21.8,
+          "Primarily": 74.5
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 3.6,
+          "Moderately": 3.6,
+          "Highly": 23.2,
+          "Extremely": 69.6
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 59,
+        "n_vuln": 59,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 5.1,
+          "Moderately": 1.7,
+          "Highly": 72.9,
+          "Primarily": 20.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.7,
+          "Moderately": 10.2,
+          "Highly": 72.9,
+          "Extremely": 15.3
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 55,
+        "n_vuln": 56,
+        "Responsibility": {
+          "Not at all": 1.8,
+          "Minimally": 5.5,
+          "Moderately": 14.5,
+          "Highly": 63.6,
+          "Primarily": 14.5
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.8,
+          "Moderately": 8.9,
+          "Highly": 69.6,
+          "Extremely": 19.6
+        }
+      },
+      "AI User": {
+        "n_resp": 59,
+        "n_vuln": 59,
+        "Responsibility": {
+          "Not at all": 5.1,
+          "Minimally": 18.6,
+          "Moderately": 52.5,
+          "Highly": 18.6,
+          "Primarily": 5.1
+        },
+        "Vulnerability": {
+          "Not at all": 1.7,
+          "Minimally": 1.7,
+          "Moderately": 1.7,
+          "Highly": 22.0,
+          "Extremely": 72.9
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 55,
+        "n_vuln": 56,
+        "Responsibility": {
+          "Not at all": 20.0,
+          "Minimally": 23.6,
+          "Moderately": 41.8,
+          "Highly": 7.3,
+          "Primarily": 7.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.8,
+          "Moderately": 0.0,
+          "Highly": 16.1,
+          "Extremely": 82.1
+        }
+      }
+    },
+    "4.3": {
+      "AI Deployer": {
+        "n_resp": 49,
+        "n_vuln": 50,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 12.2,
+          "Highly": 67.3,
+          "Primarily": 20.4
+        },
+        "Vulnerability": {
+          "Not at all": 4.0,
+          "Minimally": 8.0,
+          "Moderately": 22.0,
+          "Highly": 60.0,
+          "Extremely": 6.0
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 49,
+        "n_vuln": 50,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.0,
+          "Moderately": 6.1,
+          "Highly": 28.6,
+          "Primarily": 63.3
+        },
+        "Vulnerability": {
+          "Not at all": 4.0,
+          "Minimally": 10.0,
+          "Moderately": 40.0,
+          "Highly": 42.0,
+          "Extremely": 4.0
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 47,
+        "n_vuln": 45,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 4.3,
+          "Moderately": 8.5,
+          "Highly": 63.8,
+          "Primarily": 21.3
+        },
+        "Vulnerability": {
+          "Not at all": 4.4,
+          "Minimally": 2.2,
+          "Moderately": 17.8,
+          "Highly": 71.1,
+          "Extremely": 2.2
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 49,
+        "n_vuln": 50,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 4.1,
+          "Moderately": 4.1,
+          "Highly": 67.3,
+          "Primarily": 24.5
+        },
+        "Vulnerability": {
+          "Not at all": 4.0,
+          "Minimally": 6.0,
+          "Moderately": 60.0,
+          "Highly": 28.0,
+          "Extremely": 2.0
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 47,
+        "n_vuln": 45,
+        "Responsibility": {
+          "Not at all": 4.3,
+          "Minimally": 4.3,
+          "Moderately": 25.5,
+          "Highly": 61.7,
+          "Primarily": 4.3
+        },
+        "Vulnerability": {
+          "Not at all": 6.7,
+          "Minimally": 22.2,
+          "Moderately": 33.3,
+          "Highly": 37.8,
+          "Extremely": 0.0
+        }
+      },
+      "AI User": {
+        "n_resp": 49,
+        "n_vuln": 50,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 22.4,
+          "Moderately": 65.3,
+          "Highly": 2.0,
+          "Primarily": 10.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 2.0,
+          "Moderately": 4.0,
+          "Highly": 10.0,
+          "Extremely": 84.0
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 47,
+        "n_vuln": 44,
+        "Responsibility": {
+          "Not at all": 14.9,
+          "Minimally": 55.3,
+          "Moderately": 21.3,
+          "Highly": 4.3,
+          "Primarily": 4.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 0.0,
+          "Highly": 15.9,
+          "Extremely": 84.1
+        }
+      }
+    },
+    "5.1": {
+      "AI Deployer": {
+        "n_resp": 79,
+        "n_vuln": 79,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 8.9,
+          "Highly": 70.9,
+          "Primarily": 20.3
+        },
+        "Vulnerability": {
+          "Not at all": 1.3,
+          "Minimally": 7.6,
+          "Moderately": 51.9,
+          "Highly": 30.4,
+          "Extremely": 8.9
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 79,
+        "n_vuln": 79,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.3,
+          "Moderately": 7.6,
+          "Highly": 57.0,
+          "Primarily": 34.2
+        },
+        "Vulnerability": {
+          "Not at all": 1.3,
+          "Minimally": 15.2,
+          "Moderately": 57.0,
+          "Highly": 15.2,
+          "Extremely": 11.4
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 69,
+        "n_vuln": 68,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 10.1,
+          "Highly": 56.5,
+          "Primarily": 33.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 7.4,
+          "Moderately": 64.7,
+          "Highly": 17.6,
+          "Extremely": 10.3
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 79,
+        "n_vuln": 79,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 6.3,
+          "Highly": 77.2,
+          "Primarily": 16.5
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 5.1,
+          "Moderately": 16.5,
+          "Highly": 68.4,
+          "Extremely": 10.1
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 67,
+        "n_vuln": 70,
+        "Responsibility": {
+          "Not at all": 13.4,
+          "Minimally": 11.9,
+          "Moderately": 59.7,
+          "Highly": 11.9,
+          "Primarily": 3.0
+        },
+        "Vulnerability": {
+          "Not at all": 5.7,
+          "Minimally": 21.4,
+          "Moderately": 57.1,
+          "Highly": 11.4,
+          "Extremely": 4.3
+        }
+      },
+      "AI User": {
+        "n_resp": 79,
+        "n_vuln": 78,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 7.6,
+          "Moderately": 17.7,
+          "Highly": 58.2,
+          "Primarily": 16.5
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.3,
+          "Moderately": 0.0,
+          "Highly": 10.3,
+          "Extremely": 88.5
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 66,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 10.6,
+          "Minimally": 39.4,
+          "Moderately": 30.3,
+          "Highly": 13.6,
+          "Primarily": 6.1
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 2.9,
+          "Highly": 29.0,
+          "Extremely": 68.1
+        }
+      }
+    },
+    "5.2": {
+      "AI Deployer": {
+        "n_resp": 84,
+        "n_vuln": 85,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 4.8,
+          "Highly": 65.5,
+          "Primarily": 29.8
+        },
+        "Vulnerability": {
+          "Not at all": 1.2,
+          "Minimally": 4.7,
+          "Moderately": 16.5,
+          "Highly": 64.7,
+          "Extremely": 12.9
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 84,
+        "n_vuln": 85,
+        "Responsibility": {
+          "Not at all": 1.2,
+          "Minimally": 2.4,
+          "Moderately": 15.5,
+          "Highly": 21.4,
+          "Primarily": 59.5
+        },
+        "Vulnerability": {
+          "Not at all": 1.2,
+          "Minimally": 14.1,
+          "Moderately": 41.2,
+          "Highly": 32.9,
+          "Extremely": 10.6
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 71,
+        "n_vuln": 70,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 4.2,
+          "Moderately": 14.1,
+          "Highly": 67.6,
+          "Primarily": 14.1
+        },
+        "Vulnerability": {
+          "Not at all": 2.9,
+          "Minimally": 10.0,
+          "Moderately": 64.3,
+          "Highly": 15.7,
+          "Extremely": 7.1
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 84,
+        "n_vuln": 85,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 6.0,
+          "Highly": 56.0,
+          "Primarily": 38.1
+        },
+        "Vulnerability": {
+          "Not at all": 1.2,
+          "Minimally": 3.5,
+          "Moderately": 22.4,
+          "Highly": 54.1,
+          "Extremely": 18.8
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 71,
+        "n_vuln": 71,
+        "Responsibility": {
+          "Not at all": 4.2,
+          "Minimally": 29.6,
+          "Moderately": 49.3,
+          "Highly": 12.7,
+          "Primarily": 4.2
+        },
+        "Vulnerability": {
+          "Not at all": 8.5,
+          "Minimally": 62.0,
+          "Moderately": 18.3,
+          "Highly": 5.6,
+          "Extremely": 5.6
+        }
+      },
+      "AI User": {
+        "n_resp": 83,
+        "n_vuln": 85,
+        "Responsibility": {
+          "Not at all": 1.2,
+          "Minimally": 10.8,
+          "Moderately": 50.6,
+          "Highly": 25.3,
+          "Primarily": 12.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 2.4,
+          "Moderately": 3.5,
+          "Highly": 11.8,
+          "Extremely": 82.4
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 71,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 5.6,
+          "Minimally": 36.6,
+          "Moderately": 39.4,
+          "Highly": 12.7,
+          "Primarily": 4.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.4,
+          "Moderately": 2.9,
+          "Highly": 15.9,
+          "Extremely": 79.7
+        }
+      }
+    },
+    "6.1": {
+      "AI Deployer": {
+        "n_resp": 53,
+        "n_vuln": 52,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 7.5,
+          "Moderately": 22.6,
+          "Highly": 64.2,
+          "Primarily": 5.7
+        },
+        "Vulnerability": {
+          "Not at all": 1.9,
+          "Minimally": 9.6,
+          "Moderately": 55.8,
+          "Highly": 23.1,
+          "Extremely": 9.6
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 53,
+        "n_vuln": 52,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 3.8,
+          "Moderately": 5.7,
+          "Highly": 62.3,
+          "Primarily": 28.3
+        },
+        "Vulnerability": {
+          "Not at all": 3.8,
+          "Minimally": 34.6,
+          "Moderately": 44.2,
+          "Highly": 11.5,
+          "Extremely": 5.8
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 45,
+        "n_vuln": 45,
+        "Responsibility": {
+          "Not at all": 4.4,
+          "Minimally": 8.9,
+          "Moderately": 57.8,
+          "Highly": 17.8,
+          "Primarily": 11.1
+        },
+        "Vulnerability": {
+          "Not at all": 2.2,
+          "Minimally": 13.3,
+          "Moderately": 53.3,
+          "Highly": 22.2,
+          "Extremely": 8.9
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 53,
+        "n_vuln": 53,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 1.9,
+          "Highly": 11.3,
+          "Primarily": 86.8
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 3.8,
+          "Moderately": 17.0,
+          "Highly": 66.0,
+          "Extremely": 13.2
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 45,
+        "n_vuln": 46,
+        "Responsibility": {
+          "Not at all": 4.4,
+          "Minimally": 11.1,
+          "Moderately": 13.3,
+          "Highly": 64.4,
+          "Primarily": 4.4
+        },
+        "Vulnerability": {
+          "Not at all": 4.3,
+          "Minimally": 13.0,
+          "Moderately": 63.0,
+          "Highly": 10.9,
+          "Extremely": 8.7
+        }
+      },
+      "AI User": {
+        "n_resp": 53,
+        "n_vuln": 53,
+        "Responsibility": {
+          "Not at all": 24.5,
+          "Minimally": 52.8,
+          "Moderately": 11.3,
+          "Highly": 7.5,
+          "Primarily": 3.8
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 3.8,
+          "Moderately": 1.9,
+          "Highly": 13.2,
+          "Extremely": 81.1
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 45,
+        "n_vuln": 46,
+        "Responsibility": {
+          "Not at all": 28.9,
+          "Minimally": 51.1,
+          "Moderately": 4.4,
+          "Highly": 6.7,
+          "Primarily": 8.9
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 2.2,
+          "Highly": 21.7,
+          "Extremely": 76.1
+        }
+      }
+    },
+    "6.2": {
+      "AI Deployer": {
+        "n_resp": 43,
+        "n_vuln": 43,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 20.9,
+          "Highly": 67.4,
+          "Primarily": 11.6
+        },
+        "Vulnerability": {
+          "Not at all": 2.3,
+          "Minimally": 11.6,
+          "Moderately": 44.2,
+          "Highly": 37.2,
+          "Extremely": 4.7
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 43,
+        "n_vuln": 43,
+        "Responsibility": {
+          "Not at all": 2.3,
+          "Minimally": 0.0,
+          "Moderately": 9.3,
+          "Highly": 72.1,
+          "Primarily": 16.3
+        },
+        "Vulnerability": {
+          "Not at all": 11.6,
+          "Minimally": 7.0,
+          "Moderately": 55.8,
+          "Highly": 20.9,
+          "Extremely": 4.7
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 37,
+        "n_vuln": 37,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 8.1,
+          "Moderately": 54.1,
+          "Highly": 24.3,
+          "Primarily": 10.8
+        },
+        "Vulnerability": {
+          "Not at all": 2.7,
+          "Minimally": 10.8,
+          "Moderately": 51.4,
+          "Highly": 29.7,
+          "Extremely": 2.7
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 43,
+        "n_vuln": 43,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.3,
+          "Moderately": 4.7,
+          "Highly": 18.6,
+          "Primarily": 74.4
+        },
+        "Vulnerability": {
+          "Not at all": 4.7,
+          "Minimally": 9.3,
+          "Moderately": 44.2,
+          "Highly": 30.2,
+          "Extremely": 11.6
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 37,
+        "n_vuln": 37,
+        "Responsibility": {
+          "Not at all": 5.4,
+          "Minimally": 37.8,
+          "Moderately": 40.5,
+          "Highly": 10.8,
+          "Primarily": 5.4
+        },
+        "Vulnerability": {
+          "Not at all": 2.7,
+          "Minimally": 62.2,
+          "Moderately": 21.6,
+          "Highly": 10.8,
+          "Extremely": 2.7
+        }
+      },
+      "AI User": {
+        "n_resp": 43,
+        "n_vuln": 43,
+        "Responsibility": {
+          "Not at all": 4.7,
+          "Minimally": 74.4,
+          "Moderately": 11.6,
+          "Highly": 4.7,
+          "Primarily": 4.7
+        },
+        "Vulnerability": {
+          "Not at all": 2.3,
+          "Minimally": 4.7,
+          "Moderately": 4.7,
+          "Highly": 16.3,
+          "Extremely": 72.1
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 37,
+        "n_vuln": 37,
+        "Responsibility": {
+          "Not at all": 10.8,
+          "Minimally": 54.1,
+          "Moderately": 21.6,
+          "Highly": 5.4,
+          "Primarily": 5.4
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 2.7,
+          "Moderately": 8.1,
+          "Highly": 10.8,
+          "Extremely": 75.7
+        }
+      }
+    },
+    "6.3": {
+      "AI Deployer": {
+        "n_resp": 30,
+        "n_vuln": 30,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 3.3,
+          "Moderately": 20.0,
+          "Highly": 50.0,
+          "Primarily": 26.7
+        },
+        "Vulnerability": {
+          "Not at all": 6.7,
+          "Minimally": 10.0,
+          "Moderately": 30.0,
+          "Highly": 43.3,
+          "Extremely": 10.0
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 30,
+        "n_vuln": 30,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 3.3,
+          "Moderately": 6.7,
+          "Highly": 60.0,
+          "Primarily": 30.0
+        },
+        "Vulnerability": {
+          "Not at all": 6.7,
+          "Minimally": 43.3,
+          "Moderately": 26.7,
+          "Highly": 20.0,
+          "Extremely": 3.3
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 24,
+        "n_vuln": 24,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 8.3,
+          "Moderately": 16.7,
+          "Highly": 58.3,
+          "Primarily": 16.7
+        },
+        "Vulnerability": {
+          "Not at all": 4.2,
+          "Minimally": 29.2,
+          "Moderately": 45.8,
+          "Highly": 16.7,
+          "Extremely": 4.2
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 30,
+        "n_vuln": 30,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 6.7,
+          "Highly": 53.3,
+          "Primarily": 40.0
+        },
+        "Vulnerability": {
+          "Not at all": 3.3,
+          "Minimally": 6.7,
+          "Moderately": 56.7,
+          "Highly": 26.7,
+          "Extremely": 6.7
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 25,
+        "n_vuln": 24,
+        "Responsibility": {
+          "Not at all": 12.0,
+          "Minimally": 44.0,
+          "Moderately": 24.0,
+          "Highly": 8.0,
+          "Primarily": 12.0
+        },
+        "Vulnerability": {
+          "Not at all": 12.5,
+          "Minimally": 66.7,
+          "Moderately": 16.7,
+          "Highly": 0.0,
+          "Extremely": 4.2
+        }
+      },
+      "AI User": {
+        "n_resp": 30,
+        "n_vuln": 30,
+        "Responsibility": {
+          "Not at all": 6.7,
+          "Minimally": 56.7,
+          "Moderately": 13.3,
+          "Highly": 20.0,
+          "Primarily": 3.3
+        },
+        "Vulnerability": {
+          "Not at all": 3.3,
+          "Minimally": 0.0,
+          "Moderately": 3.3,
+          "Highly": 23.3,
+          "Extremely": 70.0
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 24,
+        "n_vuln": 25,
+        "Responsibility": {
+          "Not at all": 20.8,
+          "Minimally": 20.8,
+          "Moderately": 37.5,
+          "Highly": 8.3,
+          "Primarily": 12.5
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 8.0,
+          "Highly": 20.0,
+          "Extremely": 72.0
+        }
+      }
+    },
+    "6.4": {
+      "AI Deployer": {
+        "n_resp": 40,
+        "n_vuln": 41,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 5.0,
+          "Moderately": 22.5,
+          "Highly": 62.5,
+          "Primarily": 10.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 2.4,
+          "Moderately": 9.8,
+          "Highly": 65.9,
+          "Extremely": 22.0
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 41,
+        "n_vuln": 41,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 0.0,
+          "Highly": 24.4,
+          "Primarily": 75.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 7.3,
+          "Highly": 14.6,
+          "Extremely": 78.0
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 37,
+        "n_vuln": 37,
+        "Responsibility": {
+          "Not at all": 2.7,
+          "Minimally": 8.1,
+          "Moderately": 27.0,
+          "Highly": 43.2,
+          "Primarily": 18.9
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 5.4,
+          "Moderately": 18.9,
+          "Highly": 62.2,
+          "Extremely": 13.5
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 41,
+        "n_vuln": 41,
+        "Responsibility": {
+          "Not at all": 2.4,
+          "Minimally": 0.0,
+          "Moderately": 0.0,
+          "Highly": 7.3,
+          "Primarily": 90.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 9.8,
+          "Highly": 65.9,
+          "Extremely": 24.4
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 37,
+        "n_vuln": 38,
+        "Responsibility": {
+          "Not at all": 2.7,
+          "Minimally": 10.8,
+          "Moderately": 67.6,
+          "Highly": 13.5,
+          "Primarily": 5.4
+        },
+        "Vulnerability": {
+          "Not at all": 2.6,
+          "Minimally": 0.0,
+          "Moderately": 60.5,
+          "Highly": 31.6,
+          "Extremely": 5.3
+        }
+      },
+      "AI User": {
+        "n_resp": 40,
+        "n_vuln": 41,
+        "Responsibility": {
+          "Not at all": 15.0,
+          "Minimally": 60.0,
+          "Moderately": 20.0,
+          "Highly": 5.0,
+          "Primarily": 0.0
+        },
+        "Vulnerability": {
+          "Not at all": 2.4,
+          "Minimally": 2.4,
+          "Moderately": 19.5,
+          "Highly": 51.2,
+          "Extremely": 24.4
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 37,
+        "n_vuln": 37,
+        "Responsibility": {
+          "Not at all": 21.6,
+          "Minimally": 59.5,
+          "Moderately": 10.8,
+          "Highly": 2.7,
+          "Primarily": 5.4
+        },
+        "Vulnerability": {
+          "Not at all": 2.7,
+          "Minimally": 8.1,
+          "Moderately": 13.5,
+          "Highly": 37.8,
+          "Extremely": 37.8
+        }
+      }
+    },
+    "6.5": {
+      "AI Deployer": {
+        "n_resp": 116,
+        "n_vuln": 115,
+        "Responsibility": {
+          "Not at all": 2.6,
+          "Minimally": 4.3,
+          "Moderately": 12.9,
+          "Highly": 68.1,
+          "Primarily": 12.1
+        },
+        "Vulnerability": {
+          "Not at all": 0.9,
+          "Minimally": 5.2,
+          "Moderately": 7.8,
+          "Highly": 65.2,
+          "Extremely": 20.9
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 116,
+        "n_vuln": 115,
+        "Responsibility": {
+          "Not at all": 1.7,
+          "Minimally": 2.6,
+          "Moderately": 9.5,
+          "Highly": 69.0,
+          "Primarily": 17.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.9,
+          "Minimally": 2.6,
+          "Moderately": 17.4,
+          "Highly": 60.9,
+          "Extremely": 18.3
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 99,
+        "n_vuln": 103,
+        "Responsibility": {
+          "Not at all": 3.0,
+          "Minimally": 1.0,
+          "Moderately": 17.2,
+          "Highly": 64.6,
+          "Primarily": 12.1
+        },
+        "Vulnerability": {
+          "Not at all": 1.0,
+          "Minimally": 3.9,
+          "Moderately": 9.7,
+          "Highly": 67.0,
+          "Extremely": 15.5
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 116,
+        "n_vuln": 116,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 0.9,
+          "Highly": 6.9,
+          "Primarily": 92.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 2.6,
+          "Moderately": 4.3,
+          "Highly": 28.4,
+          "Extremely": 63.8
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 99,
+        "n_vuln": 103,
+        "Responsibility": {
+          "Not at all": 4.0,
+          "Minimally": 9.1,
+          "Moderately": 53.5,
+          "Highly": 24.2,
+          "Primarily": 8.1
+        },
+        "Vulnerability": {
+          "Not at all": 2.9,
+          "Minimally": 12.6,
+          "Moderately": 48.5,
+          "Highly": 21.4,
+          "Extremely": 13.6
+        }
+      },
+      "AI User": {
+        "n_resp": 116,
+        "n_vuln": 116,
+        "Responsibility": {
+          "Not at all": 12.9,
+          "Minimally": 65.5,
+          "Moderately": 12.1,
+          "Highly": 4.3,
+          "Primarily": 5.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.9,
+          "Minimally": 0.9,
+          "Moderately": 1.7,
+          "Highly": 15.5,
+          "Extremely": 81.0
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 98,
+        "n_vuln": 103,
+        "Responsibility": {
+          "Not at all": 12.2,
+          "Minimally": 64.3,
+          "Moderately": 9.2,
+          "Highly": 7.1,
+          "Primarily": 6.1
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 4.9,
+          "Highly": 9.7,
+          "Extremely": 84.5
+        }
+      }
+    },
+    "6.6": {
+      "AI Deployer": {
+        "n_resp": 23,
+        "n_vuln": 22,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 4.3,
+          "Moderately": 4.3,
+          "Highly": 17.4,
+          "Primarily": 73.9
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 9.1,
+          "Moderately": 13.6,
+          "Highly": 50.0,
+          "Extremely": 27.3
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 23,
+        "n_vuln": 22,
+        "Responsibility": {
+          "Not at all": 4.3,
+          "Minimally": 0.0,
+          "Moderately": 17.4,
+          "Highly": 13.0,
+          "Primarily": 65.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 22.7,
+          "Moderately": 18.2,
+          "Highly": 40.9,
+          "Extremely": 18.2
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 19,
+        "n_vuln": 19,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 10.5,
+          "Moderately": 0.0,
+          "Highly": 63.2,
+          "Primarily": 26.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 21.1,
+          "Moderately": 36.8,
+          "Highly": 21.1,
+          "Extremely": 21.1
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 23,
+        "n_vuln": 22,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 4.3,
+          "Moderately": 8.7,
+          "Highly": 13.0,
+          "Primarily": 73.9
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 13.6,
+          "Moderately": 18.2,
+          "Highly": 50.0,
+          "Extremely": 18.2
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 19,
+        "n_vuln": 19,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 5.3,
+          "Highly": 10.5,
+          "Primarily": 84.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 15.8,
+          "Moderately": 0.0,
+          "Highly": 10.5,
+          "Extremely": 73.7
+        }
+      },
+      "AI User": {
+        "n_resp": 23,
+        "n_vuln": 22,
+        "Responsibility": {
+          "Not at all": 13.0,
+          "Minimally": 34.8,
+          "Moderately": 39.1,
+          "Highly": 13.0,
+          "Primarily": 0.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 18.2,
+          "Moderately": 0.0,
+          "Highly": 22.7,
+          "Extremely": 59.1
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 19,
+        "n_vuln": 19,
+        "Responsibility": {
+          "Not at all": 31.6,
+          "Minimally": 31.6,
+          "Moderately": 15.8,
+          "Highly": 15.8,
+          "Primarily": 5.3
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 10.5,
+          "Moderately": 5.3,
+          "Highly": 15.8,
+          "Extremely": 68.4
+        }
+      }
+    },
+    "7.1": {
+      "AI Deployer": {
+        "n_resp": 84,
+        "n_vuln": 83,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 7.1,
+          "Moderately": 20.2,
+          "Highly": 57.1,
+          "Primarily": 15.5
+        },
+        "Vulnerability": {
+          "Not at all": 3.6,
+          "Minimally": 0.0,
+          "Moderately": 7.2,
+          "Highly": 66.3,
+          "Extremely": 22.9
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 84,
+        "n_vuln": 83,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 0.0,
+          "Highly": 7.1,
+          "Primarily": 92.9
+        },
+        "Vulnerability": {
+          "Not at all": 3.6,
+          "Minimally": 0.0,
+          "Moderately": 10.8,
+          "Highly": 50.6,
+          "Extremely": 34.9
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 71,
+        "n_vuln": 68,
+        "Responsibility": {
+          "Not at all": 4.2,
+          "Minimally": 2.8,
+          "Moderately": 9.9,
+          "Highly": 38.0,
+          "Primarily": 42.3
+        },
+        "Vulnerability": {
+          "Not at all": 2.9,
+          "Minimally": 5.9,
+          "Moderately": 11.8,
+          "Highly": 58.8,
+          "Extremely": 17.6
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 84,
+        "n_vuln": 83,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 7.1,
+          "Highly": 56.0,
+          "Primarily": 36.9
+        },
+        "Vulnerability": {
+          "Not at all": 3.6,
+          "Minimally": 1.2,
+          "Moderately": 8.4,
+          "Highly": 57.8,
+          "Extremely": 28.9
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 73,
+        "n_vuln": 69,
+        "Responsibility": {
+          "Not at all": 2.7,
+          "Minimally": 16.4,
+          "Moderately": 60.3,
+          "Highly": 12.3,
+          "Primarily": 5.5
+        },
+        "Vulnerability": {
+          "Not at all": 4.3,
+          "Minimally": 5.8,
+          "Moderately": 46.4,
+          "Highly": 27.5,
+          "Extremely": 13.0
+        }
+      },
+      "AI User": {
+        "n_resp": 84,
+        "n_vuln": 84,
+        "Responsibility": {
+          "Not at all": 11.9,
+          "Minimally": 65.5,
+          "Moderately": 14.3,
+          "Highly": 6.0,
+          "Primarily": 2.4
+        },
+        "Vulnerability": {
+          "Not at all": 2.4,
+          "Minimally": 1.2,
+          "Moderately": 3.6,
+          "Highly": 22.6,
+          "Extremely": 70.2
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 71,
+        "n_vuln": 67,
+        "Responsibility": {
+          "Not at all": 21.1,
+          "Minimally": 53.5,
+          "Moderately": 11.3,
+          "Highly": 5.6,
+          "Primarily": 4.2
+        },
+        "Vulnerability": {
+          "Not at all": 3.0,
+          "Minimally": 0.0,
+          "Moderately": 4.5,
+          "Highly": 11.9,
+          "Extremely": 77.6
+        }
+      }
+    },
+    "7.2": {
+      "AI Deployer": {
+        "n_resp": 79,
+        "n_vuln": 78,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.5,
+          "Moderately": 11.4,
+          "Highly": 63.3,
+          "Primarily": 22.8
+        },
+        "Vulnerability": {
+          "Not at all": 3.8,
+          "Minimally": 2.6,
+          "Moderately": 14.1,
+          "Highly": 55.1,
+          "Extremely": 24.4
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 79,
+        "n_vuln": 77,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 1.3,
+          "Highly": 5.1,
+          "Primarily": 93.7
+        },
+        "Vulnerability": {
+          "Not at all": 2.6,
+          "Minimally": 2.6,
+          "Moderately": 13.0,
+          "Highly": 33.8,
+          "Extremely": 48.1
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 69,
+        "n_vuln": 67,
+        "Responsibility": {
+          "Not at all": 1.4,
+          "Minimally": 2.9,
+          "Moderately": 8.7,
+          "Highly": 30.4,
+          "Primarily": 55.1
+        },
+        "Vulnerability": {
+          "Not at all": 1.5,
+          "Minimally": 6.0,
+          "Moderately": 14.9,
+          "Highly": 55.2,
+          "Extremely": 20.9
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 79,
+        "n_vuln": 78,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 6.3,
+          "Highly": 22.8,
+          "Primarily": 70.9
+        },
+        "Vulnerability": {
+          "Not at all": 1.3,
+          "Minimally": 3.8,
+          "Moderately": 15.4,
+          "Highly": 44.9,
+          "Extremely": 34.6
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 69,
+        "n_vuln": 67,
+        "Responsibility": {
+          "Not at all": 2.9,
+          "Minimally": 23.2,
+          "Moderately": 37.7,
+          "Highly": 24.6,
+          "Primarily": 10.1
+        },
+        "Vulnerability": {
+          "Not at all": 3.0,
+          "Minimally": 11.9,
+          "Moderately": 14.9,
+          "Highly": 55.2,
+          "Extremely": 13.4
+        }
+      },
+      "AI User": {
+        "n_resp": 79,
+        "n_vuln": 78,
+        "Responsibility": {
+          "Not at all": 19.0,
+          "Minimally": 48.1,
+          "Moderately": 22.8,
+          "Highly": 6.3,
+          "Primarily": 3.8
+        },
+        "Vulnerability": {
+          "Not at all": 1.3,
+          "Minimally": 3.8,
+          "Moderately": 5.1,
+          "Highly": 20.5,
+          "Extremely": 69.2
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 69,
+        "n_vuln": 70,
+        "Responsibility": {
+          "Not at all": 40.6,
+          "Minimally": 37.7,
+          "Moderately": 7.2,
+          "Highly": 4.3,
+          "Primarily": 7.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 2.9,
+          "Highly": 10.0,
+          "Extremely": 82.9
+        }
+      }
+    },
+    "7.3": {
+      "AI Deployer": {
+        "n_resp": 81,
+        "n_vuln": 80,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 6.2,
+          "Highly": 56.8,
+          "Primarily": 37.0
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 3.8,
+          "Moderately": 10.0,
+          "Highly": 63.7,
+          "Extremely": 22.5
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 81,
+        "n_vuln": 80,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 3.7,
+          "Highly": 21.0,
+          "Primarily": 75.3
+        },
+        "Vulnerability": {
+          "Not at all": 2.5,
+          "Minimally": 6.2,
+          "Moderately": 18.8,
+          "Highly": 55.0,
+          "Extremely": 17.5
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 70,
+        "n_vuln": 71,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 2.9,
+          "Highly": 15.7,
+          "Primarily": 81.4
+        },
+        "Vulnerability": {
+          "Not at all": 2.8,
+          "Minimally": 1.4,
+          "Moderately": 18.3,
+          "Highly": 62.0,
+          "Extremely": 15.5
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 81,
+        "n_vuln": 80,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.5,
+          "Moderately": 18.5,
+          "Highly": 69.1,
+          "Primarily": 9.9
+        },
+        "Vulnerability": {
+          "Not at all": 3.8,
+          "Minimally": 6.2,
+          "Moderately": 52.5,
+          "Highly": 25.0,
+          "Extremely": 12.5
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 68,
+        "n_vuln": 71,
+        "Responsibility": {
+          "Not at all": 2.9,
+          "Minimally": 16.2,
+          "Moderately": 51.5,
+          "Highly": 20.6,
+          "Primarily": 8.8
+        },
+        "Vulnerability": {
+          "Not at all": 5.6,
+          "Minimally": 11.3,
+          "Moderately": 64.8,
+          "Highly": 14.1,
+          "Extremely": 4.2
+        }
+      },
+      "AI User": {
+        "n_resp": 81,
+        "n_vuln": 80,
+        "Responsibility": {
+          "Not at all": 8.6,
+          "Minimally": 17.3,
+          "Moderately": 59.3,
+          "Highly": 12.3,
+          "Primarily": 2.5
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 6.2,
+          "Highly": 15.0,
+          "Extremely": 78.8
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 69,
+        "n_vuln": 68,
+        "Responsibility": {
+          "Not at all": 50.7,
+          "Minimally": 27.5,
+          "Moderately": 14.5,
+          "Highly": 4.3,
+          "Primarily": 2.9
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.5,
+          "Moderately": 4.4,
+          "Highly": 10.3,
+          "Extremely": 83.8
+        }
+      }
+    },
+    "7.4": {
+      "AI Deployer": {
+        "n_resp": 110,
+        "n_vuln": 107,
+        "Responsibility": {
+          "Not at all": 0.9,
+          "Minimally": 2.7,
+          "Moderately": 5.5,
+          "Highly": 68.2,
+          "Primarily": 22.7
+        },
+        "Vulnerability": {
+          "Not at all": 0.9,
+          "Minimally": 4.7,
+          "Moderately": 8.4,
+          "Highly": 70.1,
+          "Extremely": 15.9
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 110,
+        "n_vuln": 108,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 4.5,
+          "Highly": 18.2,
+          "Primarily": 77.3
+        },
+        "Vulnerability": {
+          "Not at all": 2.8,
+          "Minimally": 5.6,
+          "Moderately": 49.1,
+          "Highly": 29.6,
+          "Extremely": 13.0
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 94,
+        "n_vuln": 93,
+        "Responsibility": {
+          "Not at all": 2.1,
+          "Minimally": 2.1,
+          "Moderately": 5.3,
+          "Highly": 43.6,
+          "Primarily": 46.8
+        },
+        "Vulnerability": {
+          "Not at all": 4.3,
+          "Minimally": 2.2,
+          "Moderately": 11.8,
+          "Highly": 72.0,
+          "Extremely": 9.7
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 110,
+        "n_vuln": 108,
+        "Responsibility": {
+          "Not at all": 0.9,
+          "Minimally": 2.7,
+          "Moderately": 11.8,
+          "Highly": 69.1,
+          "Primarily": 15.5
+        },
+        "Vulnerability": {
+          "Not at all": 1.9,
+          "Minimally": 1.9,
+          "Moderately": 13.0,
+          "Highly": 35.2,
+          "Extremely": 48.1
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 91,
+        "n_vuln": 93,
+        "Responsibility": {
+          "Not at all": 12.1,
+          "Minimally": 42.9,
+          "Moderately": 26.4,
+          "Highly": 12.1,
+          "Primarily": 6.6
+        },
+        "Vulnerability": {
+          "Not at all": 9.7,
+          "Minimally": 60.2,
+          "Moderately": 19.4,
+          "Highly": 5.4,
+          "Extremely": 5.4
+        }
+      },
+      "AI User": {
+        "n_resp": 110,
+        "n_vuln": 109,
+        "Responsibility": {
+          "Not at all": 17.3,
+          "Minimally": 64.5,
+          "Moderately": 11.8,
+          "Highly": 2.7,
+          "Primarily": 3.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.9,
+          "Moderately": 4.6,
+          "Highly": 19.3,
+          "Extremely": 75.2
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 93,
+        "n_vuln": 94,
+        "Responsibility": {
+          "Not at all": 46.2,
+          "Minimally": 35.5,
+          "Moderately": 10.8,
+          "Highly": 5.4,
+          "Primarily": 1.1
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.1,
+          "Moderately": 6.4,
+          "Highly": 19.1,
+          "Extremely": 72.3
+        }
+      }
+    },
+    "7.5": {
+      "AI Deployer": {
+        "n_resp": 35,
+        "n_vuln": 35,
+        "Responsibility": {
+          "Not at all": 2.9,
+          "Minimally": 5.7,
+          "Moderately": 5.7,
+          "Highly": 65.7,
+          "Primarily": 20.0
+        },
+        "Vulnerability": {
+          "Not at all": 28.6,
+          "Minimally": 14.3,
+          "Moderately": 45.7,
+          "Highly": 8.6,
+          "Extremely": 2.9
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 35,
+        "n_vuln": 35,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 2.9,
+          "Moderately": 0.0,
+          "Highly": 11.4,
+          "Primarily": 85.7
+        },
+        "Vulnerability": {
+          "Not at all": 37.1,
+          "Minimally": 31.4,
+          "Moderately": 20.0,
+          "Highly": 5.7,
+          "Extremely": 5.7
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 34,
+        "n_vuln": 34,
+        "Responsibility": {
+          "Not at all": 5.9,
+          "Minimally": 5.9,
+          "Moderately": 14.7,
+          "Highly": 55.9,
+          "Primarily": 17.6
+        },
+        "Vulnerability": {
+          "Not at all": 47.1,
+          "Minimally": 29.4,
+          "Moderately": 17.6,
+          "Highly": 0.0,
+          "Extremely": 2.9
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 35,
+        "n_vuln": 35,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 0.0,
+          "Highly": 17.1,
+          "Primarily": 82.9
+        },
+        "Vulnerability": {
+          "Not at all": 20.0,
+          "Minimally": 40.0,
+          "Moderately": 14.3,
+          "Highly": 22.9,
+          "Extremely": 2.9
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 34,
+        "n_vuln": 33,
+        "Responsibility": {
+          "Not at all": 2.9,
+          "Minimally": 55.9,
+          "Moderately": 23.5,
+          "Highly": 11.8,
+          "Primarily": 5.9
+        },
+        "Vulnerability": {
+          "Not at all": 36.4,
+          "Minimally": 48.5,
+          "Moderately": 9.1,
+          "Highly": 0.0,
+          "Extremely": 3.0
+        }
+      },
+      "AI User": {
+        "n_resp": 35,
+        "n_vuln": 35,
+        "Responsibility": {
+          "Not at all": 8.6,
+          "Minimally": 17.1,
+          "Moderately": 60.0,
+          "Highly": 5.7,
+          "Primarily": 8.6
+        },
+        "Vulnerability": {
+          "Not at all": 20.0,
+          "Minimally": 14.3,
+          "Moderately": 31.4,
+          "Highly": 28.6,
+          "Extremely": 5.7
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 34,
+        "n_vuln": 34,
+        "Responsibility": {
+          "Not at all": 5.9,
+          "Minimally": 67.6,
+          "Moderately": 17.6,
+          "Highly": 2.9,
+          "Primarily": 2.9
+        },
+        "Vulnerability": {
+          "Not at all": 17.6,
+          "Minimally": 5.9,
+          "Moderately": 26.5,
+          "Highly": 8.8,
+          "Extremely": 35.3
+        }
+      }
+    },
+    "7.6": {
+      "AI Deployer": {
+        "n_resp": 72,
+        "n_vuln": 71,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 1.4,
+          "Moderately": 1.4,
+          "Highly": 26.4,
+          "Primarily": 70.8
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.4,
+          "Moderately": 11.3,
+          "Highly": 64.8,
+          "Extremely": 22.5
+        }
+      },
+      "AI Developer (General-purpose AI)": {
+        "n_resp": 72,
+        "n_vuln": 71,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 2.8,
+          "Highly": 25.0,
+          "Primarily": 72.2
+        },
+        "Vulnerability": {
+          "Not at all": 1.4,
+          "Minimally": 2.8,
+          "Moderately": 14.1,
+          "Highly": 46.5,
+          "Extremely": 35.2
+        }
+      },
+      "AI Developer (Specialised AI)": {
+        "n_resp": 59,
+        "n_vuln": 60,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 3.4,
+          "Moderately": 3.4,
+          "Highly": 20.3,
+          "Primarily": 72.9
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.7,
+          "Moderately": 15.0,
+          "Highly": 65.0,
+          "Extremely": 18.3
+        }
+      },
+      "AI Governance Actor": {
+        "n_resp": 72,
+        "n_vuln": 71,
+        "Responsibility": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 6.9,
+          "Highly": 69.4,
+          "Primarily": 23.6
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 1.4,
+          "Moderately": 14.1,
+          "Highly": 71.8,
+          "Extremely": 12.7
+        }
+      },
+      "AI Infrastructure Provider": {
+        "n_resp": 59,
+        "n_vuln": 60,
+        "Responsibility": {
+          "Not at all": 3.4,
+          "Minimally": 10.2,
+          "Moderately": 47.5,
+          "Highly": 28.8,
+          "Primarily": 10.2
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 8.3,
+          "Moderately": 48.3,
+          "Highly": 28.3,
+          "Extremely": 15.0
+        }
+      },
+      "AI User": {
+        "n_resp": 72,
+        "n_vuln": 71,
+        "Responsibility": {
+          "Not at all": 5.6,
+          "Minimally": 20.8,
+          "Moderately": 62.5,
+          "Highly": 9.7,
+          "Primarily": 1.4
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 7.0,
+          "Highly": 22.5,
+          "Extremely": 70.4
+        }
+      },
+      "Affected Stakeholder": {
+        "n_resp": 59,
+        "n_vuln": 61,
+        "Responsibility": {
+          "Not at all": 8.5,
+          "Minimally": 62.7,
+          "Moderately": 13.6,
+          "Highly": 10.2,
+          "Primarily": 5.1
+        },
+        "Vulnerability": {
+          "Not at all": 0.0,
+          "Minimally": 0.0,
+          "Moderately": 4.9,
+          "Highly": 19.7,
+          "Extremely": 75.4
+        }
+      }
+    }
+  }
+}
