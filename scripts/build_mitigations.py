@@ -11,7 +11,7 @@ Visualization: 2-level drill-down donut.
 
 Source:
     Base:  appUJl8KRAUMeIVXs  (AI Risk Mitigation Database)
-    Taxonomy: tbl0HE3lEEmyHhcFr (MitigationTaxonomy)
+    Taxonomy: tblj4yMDyNG0jlJAq (SysRev_MitTaxonomy)
     Mitigations: tblZRKlssxugpZAfr (SysRev_MitigationDatabase)
     Documents: tbleVxrlfEZvuFBJI (SysRev_Documents)
 
@@ -31,7 +31,7 @@ Output shape:
       },
       "mitigations_by_category": {
         "rec...": [
-          {"name": "...", "definition": "...", "source": "Bengio 2025", "url": "..."}
+          {"name": "...", "definition": "...", "source_ref": "Bengio 2025", "url": "..."}
         ]
       }
     }
@@ -49,22 +49,24 @@ from _airtable import fetch_all_records, iter_fields  # noqa: E402
 
 
 BASE_ID = "appUJl8KRAUMeIVXs"
-TBL_TAXONOMY = "tbl0HE3lEEmyHhcFr"
+TBL_TAXONOMY = "tblj4yMDyNG0jlJAq"   # SysRev_MitTaxonomy (correct linked table)
 TBL_MITIGATIONS = "tblZRKlssxugpZAfr"
 TBL_DOCUMENTS = "tbleVxrlfEZvuFBJI"
 
-# MitigationTaxonomy field IDs
-FLD_TAX_CODE = "fldVFtTPbBCY7li1Q"
-FLD_TAX_NAME = "fldGd3FJtVyRWOLWG"
-FLD_TAX_DESC = "fldAOXJeRBY5GVXIV"
-FLD_TAX_PARENT = "fldPCFKWGi4jAKuSA"
-FLD_TAX_CHILDREN = "fld8BZXiKNVGkga0y"
+# SysRev_MitTaxonomy field IDs
+FLD_TAX_CODE = "fldZgIhbdNwy9cXYU"       # Code (singleLineText)
+FLD_TAX_NAME = "fld0IFojmxOLEytNP"       # Name (singleLineText)
+FLD_TAX_DEFINITION = "fldIZSWZhKNeac3ie"  # Definition (multilineText)
+FLD_TAX_LEVEL = "fldaY7h4NdTkPvpnj"       # Level (number: 1=top, 2=sub, 3=leaf)
+FLD_TAX_PARENT_TEXT = "fldrism21rQnuHtbP" # Parent (singleLineText, code reference)
+FLD_TAX_PARENT_LINK = "fldXDAhgxcYdwboYl" # Parent_Link (multipleRecordLinks)
+FLD_TAX_CHILDREN_LINK = "fld4rhIaN9pAJEswr" # Child_Link (multipleRecordLinks)
 
 # SysRev_MitigationDatabase field IDs
 FLD_MIT_NAME = "fldiyzQ7077CdlIkz"
 FLD_MIT_DEFINITION = "fldsznGxvHRriPqnj"
 FLD_MIT_SOURCE = "fld830Pz8KFM2rvH3"
-FLD_MIT_TAX_PRIMARY = "fldW9EqhIJdfqGRiu"
+FLD_MIT_TAX_PRIMARY = "fldW9EqhIJdfqGRiu"   # MitigationTax_Primary -> SysRev_MitTaxonomy
 FLD_MIT_AILIFECYCLE = "fldz7u54ojipVOPcK"
 FLD_MIT_AIACTOR = "fldG0Z0Jh7oh2l3bm"
 FLD_MIT_AIRM = "fldroRjbRhJzpzPur"
@@ -101,30 +103,34 @@ def build():
     tax_records = fetch_all_records(
         base_id=BASE_ID,
         table_id=TBL_TAXONOMY,
-        fields=[FLD_TAX_CODE, FLD_TAX_NAME, FLD_TAX_DESC,
-                FLD_TAX_PARENT, FLD_TAX_CHILDREN],
+        fields=[FLD_TAX_CODE, FLD_TAX_NAME, FLD_TAX_DEFINITION,
+                FLD_TAX_LEVEL, FLD_TAX_PARENT_LINK, FLD_TAX_CHILDREN_LINK],
     )
     print(f"  fetched {len(tax_records)} taxonomy records")
 
-    # Build taxonomy lookup: rec_id -> { code, name, parent_id, children_ids }
+    # Build taxonomy lookup
     taxonomy = {}
     for rec in tax_records:
         rec_id = rec.get("id")
         fields = rec.get("fields", {})
-        parent_links = fields.get(FLD_TAX_PARENT) or []
-        children_links = fields.get(FLD_TAX_CHILDREN) or []
+        parent_links = fields.get(FLD_TAX_PARENT_LINK) or []
+        children_links = fields.get(FLD_TAX_CHILDREN_LINK) or []
         taxonomy[rec_id] = {
             "id": rec_id,
             "code": (fields.get(FLD_TAX_CODE) or "").strip(),
             "name": (fields.get(FLD_TAX_NAME) or "").strip(),
-            "description": (fields.get(FLD_TAX_DESC) or "").strip(),
+            "definition": (fields.get(FLD_TAX_DEFINITION) or "").strip(),
+            "level": fields.get(FLD_TAX_LEVEL),
             "parent_id": parent_links[0] if parent_links else None,
             "children_ids": list(children_links),
         }
 
-    # Identify top-level categories (no parent)
-    top_categories = [t for t in taxonomy.values() if not t["parent_id"]]
-    # Sort by code numerically if possible, else by name
+    # Identify top-level categories using Level=1
+    top_categories = [t for t in taxonomy.values() if t["level"] == 1]
+    # Fallback: if no records have level=1, use records with no parent
+    if not top_categories:
+        top_categories = [t for t in taxonomy.values() if not t["parent_id"]]
+
     def sort_key(t):
         code = t["code"]
         try:
@@ -132,9 +138,12 @@ def build():
         except (TypeError, ValueError):
             return (1, code.lower())
     top_categories.sort(key=sort_key)
-    print(f"  identified {len(top_categories)} top-level categories")
+    print(f"  identified {len(top_categories)} top-level categories:")
+    for t in top_categories:
+        print(f"    [{t['code']}]  {t['name']}  "
+              f"({len(t['children_ids'])} children)")
 
-    # Fetch all documents so we can attach source info
+    # Fetch documents
     print(f"\nFetching documents: {TBL_DOCUMENTS}")
     doc_records = fetch_all_records(
         base_id=BASE_ID,
@@ -154,7 +163,6 @@ def build():
         url = (fields.get(FLD_DOC_URL) or "").strip() or None
         source_id = (fields.get(FLD_DOC_SOURCE_ID) or "").strip()
 
-        # Build a short reference like "Bengio 2025"
         if first_author and year:
             short_ref = f"{first_author.split(',')[0].split()[-1]} {int(year)}"
         elif source_id:
@@ -167,7 +175,7 @@ def build():
             "url": url,
         }
 
-    # Fetch all mitigations
+    # Fetch mitigations
     print(f"\nFetching mitigations: {TBL_MITIGATIONS}")
     mit_records = fetch_all_records(
         base_id=BASE_ID,
@@ -178,10 +186,10 @@ def build():
     )
     print(f"  fetched {len(mit_records)} mitigations")
 
-    # Count mitigations per taxonomy category
     counts_by_category = Counter()
     candidates_by_category = defaultdict(list)
     unclassified = 0
+    tax_link_missing_from_taxonomy = 0
 
     for rec in mit_records:
         fields = rec.get("fields", {})
@@ -191,7 +199,7 @@ def build():
             continue
         tax_id = tax_links[0]
         if tax_id not in taxonomy:
-            unclassified += 1
+            tax_link_missing_from_taxonomy += 1
             continue
 
         # Count for this category AND every ancestor (so parents inherit counts)
@@ -200,7 +208,7 @@ def build():
             counts_by_category[current_id] += 1
             current_id = taxonomy[current_id]["parent_id"]
 
-        # Collect as candidate for THIS specific category (not rolled up)
+        # Collect as candidate for THIS specific category
         name = truncate(fields.get(FLD_MIT_NAME))
         if not name:
             continue
@@ -218,7 +226,7 @@ def build():
             "actor": fields.get(FLD_MIT_AIACTOR),
         })
 
-    # Build output structure
+    # Build output
     top_cats_output = []
     children_by_parent = {}
     for top in top_categories:
@@ -229,7 +237,6 @@ def build():
             "count": counts_by_category.get(top["id"], 0),
             "children_count": len(top["children_ids"]),
         })
-        # Collect direct children only (one level deep)
         kids = []
         for kid_id in top["children_ids"]:
             if kid_id not in taxonomy:
@@ -244,12 +251,10 @@ def build():
         kids.sort(key=lambda x: (-x["count"], x["code"]))
         children_by_parent[top["id"]] = kids
 
-    # Top mitigations per category (for the modal)
+    # Top mitigations per category
     mitigations_by_category = {}
     for cat_id, items in candidates_by_category.items():
-        # Drop items without source URLs for public display
         with_source = [it for it in items if it["source"] and it["source"].get("url")]
-        # Sort alphabetically by name
         with_source.sort(key=lambda x: x["name"].lower())
         top = with_source[:TOP_MITIGATIONS_PER_CATEGORY]
         cleaned = []
@@ -264,13 +269,14 @@ def build():
         mitigations_by_category[cat_id] = cleaned
 
     # Interpretation copy
-    total_mits = sum(1 for rec in mit_records)
+    total_mits = len(mit_records)
+    classified = total_mits - unclassified - tax_link_missing_from_taxonomy
     top_cat = max(top_cats_output, key=lambda c: c["count"], default=None)
     interpretation_title = "A catalogued landscape of AI risk mitigations"
     parts = [
-        f"The database has catalogued {total_mits:,} mitigation actions "
-        f"across {len(top_cats_output)} top-level categories "
-        f"drawn from {len(doc_records)} source documents.",
+        f"The database has catalogued {classified:,} classified "
+        f"mitigation actions across {len(top_cats_output)} top-level categories "
+        f"drawn from {len(doc_records)} source documents."
     ]
     if top_cat and top_cat["count"] > 0:
         parts.append(
@@ -284,7 +290,8 @@ def build():
             "dataset": "mitigations",
             "last_updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "source": f"Airtable {BASE_ID} / SysRev_MitigationDatabase",
-            "record_count": total_mits,
+            "record_count": classified,
+            "record_count_total": total_mits,
             "top_level_count": len(top_cats_output),
             "document_count": len(doc_records),
             "interpretation_title": interpretation_title,
@@ -301,10 +308,12 @@ def build():
 
     # Summary
     print("\nBuild summary:")
-    print(f"  mitigations in:       {total_mits}")
-    print(f"  unclassified:         {unclassified}")
-    print(f"  taxonomy records:     {len(tax_records)}")
-    print(f"  top-level categories: {len(top_cats_output)}")
+    print(f"  mitigations fetched:      {total_mits}")
+    print(f"  classified:               {classified}")
+    print(f"  no taxonomy link:         {unclassified}")
+    print(f"  link to missing taxonomy: {tax_link_missing_from_taxonomy}")
+    print(f"  taxonomy records:         {len(tax_records)}")
+    print(f"  top-level categories:     {len(top_cats_output)}")
     print("\n  top categories by count:")
     for c in sorted(top_cats_output, key=lambda x: -x["count"]):
         kids = len(children_by_parent.get(c["id"], []))
