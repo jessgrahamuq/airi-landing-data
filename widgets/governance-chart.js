@@ -1,5 +1,5 @@
 /**
- * AIRI Governance stacked bar chart
+ * AIRI Governance stacked bar chart (v1.0.1)
  *
  * Mounts into an element with id="airi-chart-governance".
  * Fetches from /data/governance.json in the same repo.
@@ -11,6 +11,8 @@
  * with Good / Minimal / No-Coverage segments. Bar color = parent risk domain.
  * Hover a bar: tooltip with counts. Click: modal listing top documents
  * covering that subdomain with links to source.
+ *
+ * v1.0.1 — taller chart (480 viewBox), smaller muted legend beneath.
  */
 (function () {
   var DATA_URL = 'https://jessgrahamuq.github.io/airi-landing-data/data/governance.json';
@@ -70,7 +72,8 @@
     var levels = data.chart.coverage_levels; // ["Good", "Minimal", "None"]
     var topDocs = data.top_documents_by_subdomain || {};
 
-    var W = 700, H = 340, mL = 36, mR = 12, mT = 14, mB = 56;
+    // Chart is taller now and wider — takes more vertical space in the panel
+    var W = 700, H = 480, mL = 40, mR = 16, mT = 16, mB = 72;
     var iw = W - mL - mR, ih = H - mT - mB;
 
     var yMax = Math.max.apply(null, series.map(function (r) { return r.total; })) || 1;
@@ -125,26 +128,24 @@
     });
 
     // Domain group brackets underneath
-    var groupStart = 0;
-    var groupLabelY = H - mB + 36;
-    var i = 0;
-    while (i < series.length) {
-      var curDomain = series[i].domain;
-      var j = i;
+    var groupLabelY = H - mB + 44;
+    var i2 = 0;
+    while (i2 < series.length) {
+      var curDomain = series[i2].domain;
+      var j = i2;
       while (j < series.length && series[j].domain === curDomain) j++;
-      var x1 = xCenter(i) - bandWidth * 0.38;
+      var x1 = xCenter(i2) - bandWidth * 0.38;
       var x2 = xCenter(j - 1) + bandWidth * 0.38;
       var xMid = (x1 + x2) / 2;
-      var color = COLORS[curDomain] || '#ccc';
+      var color2 = COLORS[curDomain] || '#ccc';
       svg += '<line x1="' + x1.toFixed(2) + '" y1="' + (groupLabelY - 10) + '" ' +
         'x2="' + x2.toFixed(2) + '" y2="' + (groupLabelY - 10) + '" ' +
-        'stroke="' + color + '" stroke-width="2" opacity="0.8"/>';
-      // Short label (first word or two of domain)
+        'stroke="' + color2 + '" stroke-width="2" opacity="0.8"/>';
       var short = shortDomain(curDomain);
       svg += '<text x="' + xMid.toFixed(2) + '" y="' + groupLabelY + '" ' +
         'text-anchor="middle" font-size="9.5" fill="' + TEXT_MUTED + '">' +
         esc(short) + '</text>';
-      i = j;
+      i2 = j;
     }
 
     // Hit regions covering each full bar column
@@ -157,7 +158,7 @@
 
     svg += '</svg>';
 
-    // ---------- Legend ---------------------------------------------------
+    // ---------- Legend (small, muted, below chart) -----------------------
     var legend = '<div class="airi-gchart-legend">';
     levels.forEach(function (lvl) {
       legend += '<span class="airi-gchart-legend-item">' +
@@ -183,11 +184,10 @@
     // ---------- Styles ---------------------------------------------------
     var style = '<style>' +
       '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; }' +
-      '.airi-gchart-hit:hover ~ .airi-gchart-seg { }' + // placeholder
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
-      '.airi-gchart-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; margin-top: 10px; font-size: 12px; color: ' + TEXT_PRIMARY + '; }' +
-      '.airi-gchart-legend-item { display: inline-flex; align-items: center; gap: 5px; }' +
-      '.airi-gchart-legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }' +
+      '.airi-gchart-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; justify-content: center; margin-top: 6px; font-size: 10px; color: ' + TEXT_MUTED + '; }' +
+      '.airi-gchart-legend-item { display: inline-flex; align-items: center; gap: 4px; }' +
+      '.airi-gchart-legend-swatch { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }' +
       '.airi-gchart-tooltip { position: absolute; background: #111; color: #fff; padding: 10px 12px; border-radius: 6px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.12s ease; z-index: 10; font-family: Figtree, sans-serif; max-width: 280px; line-height: 1.4; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }' +
       '.airi-gchart-tooltip.is-visible { opacity: 1; }' +
       '.airi-gchart-tt-sub { font-weight: 600; margin-bottom: 2px; font-size: 13px; }' +
@@ -198,7 +198,7 @@
       '.airi-gchart-tt-count { font-variant-numeric: tabular-nums; color: #bbb; }' +
       '.airi-gchart-tt-total { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; font-weight: 600; }' +
       '.airi-gchart-tt-hint { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; color: #aaa; font-size: 11px; }' +
-      '.airi-gchart-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 10px; font-family: Figtree, sans-serif; }' +
+      '.airi-gchart-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 8px; font-family: Figtree, sans-serif; }' +
       '.airi-gchart-hint { color: ' + TEXT_MUTED + '; }' +
       '.airi-gchart-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.airi-gchart-modal.is-visible { opacity: 1; pointer-events: auto; }' +
@@ -233,9 +233,6 @@
     function highlightColumn(code) {
       segs.forEach(function (s) {
         var isColumn = s.getAttribute('data-subdomain') === code;
-        // When highlighting a column, dim all segments in other columns.
-        // Preserve each segment's own coverage-level opacity via CSS custom behavior:
-        // we just drop non-column segments to 22% of their original.
         if (isColumn) {
           s.style.opacity = COVERAGE_STYLE[s.getAttribute('data-level')].opacity;
         } else {
@@ -365,7 +362,6 @@
   }
 
   function shortDomain(d) {
-    // Short labels to fit under the bracket
     var map = {
       'Discrimination & Toxicity': 'Discrim. & Toxicity',
       'Privacy & Security': 'Privacy & Security',
