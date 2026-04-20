@@ -1,234 +1,2104 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-04-20T05:08:01+00:00",
+    "last_updated": "2026-04-20T05:17:58+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
-    "record_count": 2891,
-    "top_level_count": 5,
+    "record_count": 2463,
+    "record_count_total": 2891,
+    "top_level_count": 4,
     "document_count": 61,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,891 mitigation actions across 5 top-level categories drawn from 61 source documents.",
+    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1087 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
   "taxonomy": {
     "top_categories": [
       {
-        "id": "recN6D7Urjb6Hyunf",
+        "id": "recI4nymJwsk9OYBA",
         "code": "1",
-        "name": "Governance & Oversight Controls",
-        "count": 0,
-        "children_count": 8
+        "name": "AI System",
+        "count": 599,
+        "children_count": 3
       },
       {
-        "id": "recDUrUkY2nl3shJL",
+        "id": "rec5Jml8RLERlfbtT",
         "code": "2",
-        "name": "Technical & Security Controls",
-        "count": 0,
-        "children_count": 5
+        "name": "Organisation",
+        "count": 1087,
+        "children_count": 4
       },
       {
-        "id": "reczghK66UugWFjt0",
+        "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
-        "name": "Operational Process Controls",
-        "count": 0,
-        "children_count": 7
+        "name": "Ecosystem",
+        "count": 460,
+        "children_count": 4
       },
       {
-        "id": "receWn3P7Leg0CnF3",
-        "code": "4",
-        "name": "Transparency & Accountability Controls",
-        "count": 0,
-        "children_count": 7
-      },
-      {
-        "id": "recZ510DfH1XdV643",
-        "code": "X",
+        "id": "recKDrtqO6anv7Mcj",
+        "code": "99",
         "name": "Other",
-        "count": 0,
+        "count": 114,
         "children_count": 1
       }
     ],
     "children_by_parent": {
-      "recN6D7Urjb6Hyunf": [
+      "recI4nymJwsk9OYBA": [
         {
-          "id": "recPqtdPuglpqpAUo",
-          "code": "1.1",
-          "name": "Board Structure & Oversight",
-          "count": 0
-        },
-        {
-          "id": "recpubqqD7pwYGqIe",
+          "id": "recN8nHl2CJ2l1bQR",
           "code": "1.2",
-          "name": "Risk Management",
-          "count": 0
+          "name": "Non-Model",
+          "count": 322
         },
         {
-          "id": "rec5jG1cmTj7ZFQFP",
-          "code": "1.3",
-          "name": "Conflict of Interest Protections",
-          "count": 0
+          "id": "rec3kPN9w30ZIf0ok",
+          "code": "1.1",
+          "name": "Model",
+          "count": 251
         },
         {
-          "id": "recfWsCYuFich8eCB",
-          "code": "1.4",
-          "name": "Whistleblower Reporting & Protection",
-          "count": 0
-        },
-        {
-          "id": "recISvV6C3hjjY8HM",
-          "code": "1.5",
-          "name": "Safety Decision Frameworks",
-          "count": 0
-        },
-        {
-          "id": "recZqLnez90qPLeS8",
-          "code": "1.6",
-          "name": "Environmental Impact Management",
-          "count": 0
-        },
-        {
-          "id": "recaiLMHrVvkXgJOi",
-          "code": "1.7",
-          "name": "Societal Impact Assessment",
-          "count": 0
-        },
-        {
-          "id": "recbo7aPv4qG9St50",
-          "code": "1.X",
-          "name": "Governance & Oversight Control not otherwise categorized",
-          "count": 0
+          "id": "rechkvbiJitGFFyed",
+          "code": "1.9",
+          "name": "Other",
+          "count": 2
         }
       ],
-      "recDUrUkY2nl3shJL": [
+      "rec5Jml8RLERlfbtT": [
         {
-          "id": "recOT18tbF9Okbvns",
-          "code": "2.1",
-          "name": "Model & Infrastructure Security",
-          "count": 0
-        },
-        {
-          "id": "recEsmP3oYkjiRjvm",
+          "id": "recus4S9wRDjUK7co",
           "code": "2.2",
-          "name": "Model Alignment",
-          "count": 0
+          "name": "Risk & Assurance",
+          "count": 563
         },
         {
-          "id": "recG3Cy0vaqrnwlAP",
+          "id": "recvf5stbwCV4rwuI",
           "code": "2.3",
-          "name": "Model Safety Engineering",
-          "count": 0
+          "name": "Operations & Security",
+          "count": 286
         },
         {
-          "id": "recpmHt0Z4pJTJsaR",
+          "id": "recu97TvMvkJbjQBg",
           "code": "2.4",
-          "name": "Content Safety Controls",
-          "count": 0
+          "name": "Engineering & Development",
+          "count": 234
         },
         {
-          "id": "recNMuCEAE7YMue2I",
-          "code": "2.X",
-          "name": "Technical & Security Control not otherwise categorized",
-          "count": 0
+          "id": "recLJbd5gmiEmSJsf",
+          "code": "2.9",
+          "name": "Other",
+          "count": 2
         }
       ],
-      "reczghK66UugWFjt0": [
+      "recJQgUd7WcZ4EUPw": [
         {
-          "id": "recDb3S8A1Zzv0i7w",
+          "id": "recWteocmG0jmdjV0",
           "code": "3.1",
-          "name": "Testing & Auditing",
-          "count": 0
+          "name": "Legal & Regulatory",
+          "count": 194
         },
         {
-          "id": "recQWPEwiECOEgnnw",
+          "id": "recB7UZgikAebnlwO",
           "code": "3.2",
-          "name": "Data Governance",
-          "count": 0
+          "name": "Shared Infrastructure",
+          "count": 137
         },
         {
-          "id": "recnmvMgWUX9AFwZd",
+          "id": "recm718iigOdrTFs8",
           "code": "3.3",
-          "name": "Access Management",
-          "count": 0
+          "name": "Voluntary & Cooperative",
+          "count": 119
         },
         {
-          "id": "recaxbYseniX7Raok",
-          "code": "3.4",
-          "name": "Staged Deployment",
-          "count": 0
-        },
-        {
-          "id": "recw7MlMxp6mjZFjw",
-          "code": "3.5",
-          "name": "Post-deployment Monitoring",
-          "count": 0
-        },
-        {
-          "id": "rec3ke4rbJc9Oj2Fb",
-          "code": "3.6",
-          "name": "Incident Response & Recovery",
-          "count": 0
-        },
-        {
-          "id": "rec0DD2TiMTGHUxtV",
-          "code": "3.X",
-          "name": "Operational Process Control not otherwise categorized",
-          "count": 0
+          "id": "recaKRRZjLuXRlwsI",
+          "code": "3.9",
+          "name": "Other",
+          "count": 2
         }
       ],
-      "receWn3P7Leg0CnF3": [
+      "recKDrtqO6anv7Mcj": [
         {
-          "id": "rec7VPC3nG1z4BPQh",
-          "code": "4.1",
-          "name": "System Documentation",
-          "count": 0
-        },
-        {
-          "id": "rec2M7R1xqJ9NX6vz",
-          "code": "4.2",
-          "name": "Risk Disclosure",
-          "count": 0
-        },
-        {
-          "id": "rec3aXf161utegooN",
-          "code": "4.3",
-          "name": "Incident Reporting",
-          "count": 0
-        },
-        {
-          "id": "recXfy5oq5oAW5Cu5",
-          "code": "4.4",
-          "name": "Governance Disclosure",
-          "count": 0
-        },
-        {
-          "id": "recrQRf1tGDpJmZ2S",
-          "code": "4.5",
-          "name": "Third-Party System Access",
-          "count": 0
-        },
-        {
-          "id": "recMCEJZUyV6DrkkV",
-          "code": "4.6",
-          "name": "User Rights & Recourse",
-          "count": 0
-        },
-        {
-          "id": "rec3N3Wpa6fgB5Ml2",
-          "code": "4.X",
-          "name": "Transparency & Accountability Control not otherwise categorized",
-          "count": 0
-        }
-      ],
-      "recZ510DfH1XdV643": [
-        {
-          "id": "recWqMbfOXaMyTTiM",
-          "code": "X.X",
-          "name": "Control not otherwise categorized",
-          "count": 0
+          "id": "recG4vs1Ryh828Li5",
+          "code": "99.9",
+          "name": "Other",
+          "count": 52
         }
       ]
     }
   },
-  "mitigations_by_category": {}
+  "mitigations_by_category": {
+    "recpFC70xjkGXCTHv": [
+      {
+        "name": "4.5 Manual Human Review",
+        "definition": "In some cases, humans can review outputs that have been flagged for abuse as potentially problematic by\nautomated classifiers. Microsoft's Azure OpenAI Service demonstrates this approach, where…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Abuse monitoring",
+        "definition": "Monitor for harmful applications of AI systems by analysing patterns of behaviour.",
+        "source_ref": "Jones 2024",
+        "source_title": "The AI regulator’s toolbox: A list of concrete AI governance practices",
+        "url": "https://adamjones.me/blog/ai-regulator-toolbox/"
+      },
+      {
+        "name": "Actively monitor model behavior",
+        "definition": " Collect logs to cover inputs, outputs, intermediate states, and errors; automate alerts\nand triggers [CPG 2.T].\n Monitor the model's architecture and configuration settings for any…",
+        "source_ref": "US_AISC 2024",
+        "source_title": "Deploying AI Systems Securely: Best Practices for Deploying Secure and Resilient AI Systems",
+        "url": "https://www.cyber.gov.au/business-government/secure-design/artificial-intelligence/deploying-ai-systems-securely"
+      },
+      {
+        "name": "Agent Observability (New)",
+        "definition": "Ensure an agent's actions, tool use, and reasoning are transparent and auditable through logging, allowing for debugging, security oversight, and user insights into agent activity.",
+        "source_ref": "Google 2024",
+        "source_title": "Google Secure AI Framework",
+        "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
+      },
+      {
+        "name": "AI risks and beneﬁts from third-party resources are regularly monitored, and risk controls are applied and documented.",
+        "definition": null,
+        "source_ref": "US_NIST 2024",
+        "source_title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)",
+        "url": "https://doi.org/10.6028/nist.ai.600-1"
+      }
+    ],
+    "recGWs9nYPzFwMjfk": [
+      {
+        "name": "7.3 Modeling Residual Risk",
+        "definition": "Some developers and third-party researchers have begun exploring structured approaches for translating\nsafeguard evaluations into residual risk estimates, considering the individual controls, their…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Accelerate adaptation",
+        "definition": "Accelerate adaptation to the adversary by e.g. analyzing past moves of an\nadversary and developing new tactics",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      },
+      {
+        "name": "Address emerging risks and concerns",
+        "definition": "Emerging risks and concerns that are identified must be\naddressed in order to maintain assurance.",
+        "source_ref": "Kapusta 2025",
+        "source_title": "A Framework for the Assurance of AI-Enabled Systems",
+        "url": "https://arxiv.org/abs/2504.16937"
+      },
+      {
+        "name": "After putting in place mitigations, reassess any residual risk posed",
+        "definition": "to determine whether additional mitigations are required. Due to the unpredictability of capabilities advancements and the limitations of model evaluation science, pre-agreed mitigations may prove…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "AI Assurance Needs Discovery Protocol",
+        "definition": "A standardized multi-dimensional protocol designed\nto discover, identify, and prioritize problem-specifc AI assurance needs. The protocol, with key\nstakeholder input, facilitates that exploration…",
+        "source_ref": "Robbins 2024",
+        "source_title": "AI ASSURANCE: A Repeatable Process for Assuring AI-enabled Systems",
+        "url": "https://www.mitre.org/sites/default/files/2024-06/PR-24-1768-AI-Assurance-A-Repeatable-Process-Assuring-AI-Enabled-Systems.pdf?utm_source=chatgpt.com"
+      }
+    ],
+    "recaiJuFc0cfa8Aqg": [
+      {
+        "name": "Aegis AI Content Safety Dataset 1.0",
+        "definition": "11k manually\nannotated interactions\nbetween humans and LLMs\ncovering content safety\ntopics",
+        "source_ref": "Francois 2025",
+        "source_title": "A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety",
+        "url": "https://arxiv.org/abs/2506.22183"
+      },
+      {
+        "name": "Audit techniques and benchmarks",
+        "definition": "Techniques and benchmarks with which AI systems can be effectively and efficiently\ntested for harmful behaviours are highly varied and central to risk assessments (IAISR,\nBirhane-A).",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      },
+      {
+        "name": "Avoiding benchmark data with publicly available solutions and releasing contextual information for internet-derived data",
+        "definition": "Evaluators can improve the integrity of benchmarks by avoiding data with publicly available solutions. When using internet-derived data, supplementing it\nwith contextual information (such as entity…",
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "Benchmarking",
+        "definition": "Benchmarking is an evaluation method where different models are compared\nagainst a standardized dataset or a predetermined task. It allows comparison\nboth across different models and over time…",
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "Benchmarking",
+        "definition": null,
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      }
+    ],
+    "reclKDrfpPOS6cdVV": [
+      {
+        "name": "AI safety and security committee",
+        "definition": "Establish a dedicated committee to oversee AI risk\nidentification, mitigation strategies, and system deployment approvals, ensuring\ncompliance with security standards and regulations",
+        "source_ref": "Tse 2025",
+        "source_title": "Frontier AI Risk Management Framework (v1.0)",
+        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
+      },
+      {
+        "name": "Board risk committee",
+        "definition": "AGI labs should have a board risk committee, i.e. a permanent committee within the board of directors which oversees the lab’s risk management practices.*",
+        "source_ref": "Schuett 2023",
+        "source_title": "Towards best practices in AGI safety and governance: A survey of expert opinion",
+        "url": "https://arxiv.org/abs/2305.07153"
+      },
+      {
+        "name": "Decision-Making",
+        "definition": "The decisions made by senior management that create or mitigate risk",
+        "source_ref": "Campos 2025",
+        "source_title": "A Frontier AI Risk Management Framework: Bridging the Gap Between Current AI Practices and Established Risk Management",
+        "url": "https://arxiv.org/abs/2502.06656"
+      },
+      {
+        "name": "Institutional Review Boards (IRBs)",
+        "definition": "[fn578]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Leadership commitment for RAI",
+        "definition": "The management teams need to understand the values,\ncost, and risk for adopting AI in an organization. Commitment needs to be made by the management team to build an RAI culture within an…",
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      }
+    ],
+    "recCT2ODH0Pjvhcs3": [
+      {
+        "name": "1. Applying “safety by design” principles",
+        "definition": "Mitigating deployment risk does not mean\nwaiting until after training to implement measures, but includes measures built into\nthe system design and training process, such as data filtering (CISA…",
+        "source_ref": "Buhl 2025",
+        "source_title": "Emerging Practices in Frontier AI Safety Frameworks",
+        "url": "https://arxiv.org/abs/2503.04746"
+      },
+      {
+        "name": "2.1 Data Filtering",
+        "definition": "Data filtering involves removing content from training datasets that\ncould lead to dual-use or potentially harmful capabilities. Developers\ncan use several methods: automated classifiers to identify…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Acknowledge the limitations of input data audit",
+        "definition": "Techniques for understanding the impacts of data and filtering out specific data are limited (for example, excluding information from a dataset does not always prevent the AI system from reasoning…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Adversarial Training",
+        "definition": "We consider adversarial robustness a case of distribution shift failure caused partly by a mismatch between AI\nsystems’ training distribution (where the training inputs are not adversarially…",
+        "source_ref": "Ji 2023",
+        "source_title": "AI Alignment: A Comprehensive Survey",
+        "url": "https://arxiv.org/abs/2310.19852"
+      },
+      {
+        "name": "Assess the proportion of synthetic to non-synthetic training data and verify training data is not overly homogenous or GAI-produced to…",
+        "definition": null,
+        "source_ref": "US_NIST 2024",
+        "source_title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)",
+        "url": "https://doi.org/10.6028/nist.ai.600-1"
+      }
+    ],
+    "recKDrtqO6anv7Mcj": [
+      {
+        "name": "Achieve AI efficiency improvements to reduce investment costs",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      },
+      {
+        "name": "Addressing AI’s inherent safety risks",
+        "definition": null,
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Addressing safety risks in AI applications",
+        "definition": null,
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Agency",
+        "definition": null,
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "AI as a tool to support privacy",
+        "definition": null,
+        "source_ref": "ITechLaw 2019",
+        "source_title": "Responsible AI: A Global Policy Framework",
+        "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      }
+    ],
+    "reciHfSta95bngYoI": [
+      {
+        "name": "5.2 Staged Deployment",
+        "definition": "Developers may implement staged rollouts for powerful new models, starting with highly controlled\nenvironments and gradually expanding access as controls are validated. Initial deployment could…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Adapting mitigations to stages of deployment",
+        "definition": null,
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "API access to powerful models",
+        "definition": "AGI labs should strongly consider only deploying powerful models via an application programming interface (API).",
+        "source_ref": "Schuett 2023",
+        "source_title": "Towards best practices in AGI safety and governance: A survey of expert opinion",
+        "url": "https://arxiv.org/abs/2305.07153"
+      },
+      {
+        "name": "Authorization levels and responsibility matching mechanisms",
+        "definition": "Prior to model or\nsystem deployment, authorizations should be based on risk levels, e.g., limited to closed\nbeta testing, regulatory sandboxes, or critical industry users. Higher levels of…",
+        "source_ref": "Tse 2025",
+        "source_title": "Frontier AI Risk Management Framework (v1.0)",
+        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
+      },
+      {
+        "name": "Avoid Capabilities Jumps",
+        "definition": "AGI labs should not deploy models that are much more capable than any existing models.*",
+        "source_ref": "Schuett 2023",
+        "source_title": "Towards best practices in AGI safety and governance: A survey of expert opinion",
+        "url": "https://arxiv.org/abs/2305.07153"
+      }
+    ],
+    "recqHPiY7qghgrsbA": [
+      {
+        "name": "3.1 Current Alignment Methods",
+        "definition": "Pre-trained models possess broad capabilities but lack built-in safety\nprotocols, potentially generating harmful outputs or failing to follow\ninstructions. “Post-training” processes steer model…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Adversarial robustness to perturbations",
+        "definition": "This area investigates how models can be made more resilient to carefully crafted adversarial perturbations designed to degrade performance or reveal vulnerabilities. Research involves identifying…",
+        "source_ref": "O'Brien 2025",
+        "source_title": "Expert Survey: AI Reliability & Security Research Priorities",
+        "url": "https://arxiv.org/abs/2505.21664"
+      },
+      {
+        "name": "Adversarial training",
+        "definition": null,
+        "source_ref": "Jin 2024",
+        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
+      },
+      {
+        "name": "Adversarial training",
+        "definition": "Adversarial training [83] is a technique for training AI models in which adversarial inputs are generated for a model, and the model is then trained to give\nthe correct outputs for those adversarial…",
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "AI model-assisted oversight of AI systems",
+        "definition": "AI model-assisted oversight can help monitor and supervise the training of increasingly capable GPAI systems, which may become difficult to oversee at scale\nby human supervisors during training or…",
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      }
+    ],
+    "recWteocmG0jmdjV0": [
+      {
+        "name": "Comply with sector-specific regulations",
+        "definition": "e.g. require informed consent for AI advice, audit\nautomated decisions for fairness",
+        "source_ref": "Tong 2025",
+        "source_title": "A First-Principles Based Risk Assessment Framework and the IEEE P3396 Standard",
+        "url": "https://doi.org/10.1109/CAI64502.2025.00237"
+      },
+      {
+        "name": "Comprehensive frameworks on governance",
+        "definition": "Governance frameworks should:\n• Support increasing collective understanding of the AI phenomenon and collective reflection and informed policy decisions on the need for and means of governing AI\n•…",
+        "source_ref": "Sigfrids 2022",
+        "source_title": "How Should Public Administrations Foster the Ethical Development and Use of Artificial Intelligence? A Review of Proposals for Developing Governance of AI",
+        "url": "https://doi.org/10.3389/fhumd.2022.858108"
+      },
+      {
+        "name": "Compute Controls",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Compute Controls",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Develop general principles for AI regulation, establish a customised AI regulation system, a government supervisory authority, and an AI…",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      }
+    ],
+    "recProq0wjSpFGSc3": [
+      {
+        "name": "A comprehensive approach to fairness",
+        "definition": null,
+        "source_ref": "ITechLaw 2019",
+        "source_title": "Responsible AI: A Global Policy Framework",
+        "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      },
+      {
+        "name": "Adjust planning\nhorizon",
+        "definition": "Lengthen or shorten the planning horizon to match the ability to forecast",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      },
+      {
+        "name": "AI development",
+        "definition": "Coordinated and accountable AI development operations is key to sustainable AI development in organizations.\nThe Head of AI should ensure that the organization designs and implements\n6) appropriate…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "AI governance integration",
+        "definition": "AI systems are tools that serve business or operational purposes. AI system governance overlaps with business and operational, data, IT system, and governance and strategic\ngovernance. AI system…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "AI operations",
+        "definition": "Coordinated and accountable AI operations are key to sustainable AI use in organizations.\nThe Head of AI should ensure that the organization designs and implements\n1) appropriate workflows and…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      }
+    ],
+    "reczr3YoTyfaiySXJ": [
+      {
+        "name": "7.1 Testing Individual Controls",
+        "definition": "Developers may test specific technical properties of individual\nsafeguards, such as precision and recall of classifier models, jailbreak\ndetection rates of detection systems, or effectiveness of…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "7.2 Testing Controls in Combination",
+        "definition": "Developers may test mitigations in combination to evaluate how\nsafeguards function as an integrated system. This can give a clearer\npicture of how the combined system will behave under…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Adversarial Attack",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      },
+      {
+        "name": "Adversarial Attacks",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      },
+      {
+        "name": "Adversarial Attacks",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      }
+    ],
+    "recAXj16oYZACyzHO": [
+      {
+        "name": "Bill of Materials Registry",
+        "definition": ". The bill of materials registry [12, 88] can be designed to keep\na formal machine-readable record of the supply chain details of the components used in building an AI system, including component…",
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      },
+      {
+        "name": "Calibrated confidence measures for model predictions",
+        "definition": "Incorporating calibrated confidence measures alongside a model’s predictions\nand standard performance metrics, such as accuracy, can help users identify instances of overconfidence in incorrect…",
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "Cybertip API:",
+        "definition": "Tool to report\nchild exploitation to NCMEC",
+        "source_ref": "Francois 2025",
+        "source_title": "A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety",
+        "url": "https://arxiv.org/abs/2506.22183"
+      },
+      {
+        "name": "Eliminate input variables",
+        "definition": "Reduce uncertainty about a plan or system but eliminating variables affecting its\noperation or reducing their variability",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      },
+      {
+        "name": "Embodied Agents",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      }
+    ],
+    "recUuJJ0kuRzMUUQT": [
+      {
+        "name": "Accountability",
+        "definition": "Moreover,\naccountability is a key practice “to define roles and obligations for\nall relevant stakeholders” (Candidate 5), and “further to comply\nwith the upcoming regulation” (Candidate 6).",
+        "source_ref": "Lucaj 2023",
+        "source_title": "AI Regulation Is (not) All You Need",
+        "url": "https://doi.org/10.1145/3593013.3594079"
+      },
+      {
+        "name": "Accountability",
+        "definition": null,
+        "source_ref": "ITechLaw 2019",
+        "source_title": "Responsible AI: A Global Policy Framework",
+        "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      },
+      {
+        "name": "Accountability and ownership",
+        "definition": "Ensuring necessary decision rights and responsibilities to govern the AI system and its algorithmic components to align the system with the organization’s strategic goals and values.",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Accountability Structures",
+        "definition": "“Establishing accountability requires the creation of clear, pre-defined structures that assign responsibility for the system's behavior to specific human actors or organizational entities.”",
+        "source_ref": "Tariq 2025",
+        "source_title": "Ethical Imperatives in AI Design: A Comprehensive Framework for Risk Mitigation and Responsible Innovation",
+        "url": "https://crosslinkstudies.com/ubicc/index.php/utj/article/view/23/12"
+      },
+      {
+        "name": "Advisory and Challenge",
+        "definition": "Risk experts who advise and challenge senior management on their decisions",
+        "source_ref": "Campos 2025",
+        "source_title": "A Frontier AI Risk Management Framework: Bridging the Gap Between Current AI Practices and Established Risk Management",
+        "url": "https://arxiv.org/abs/2502.06656"
+      }
+    ],
+    "recFhxvWLNYvthEon": [
+      {
+        "name": "AI Act enforcement issues",
+        "definition": null,
+        "source_ref": "Lucaj 2023",
+        "source_title": "AI Regulation Is (not) All You Need",
+        "url": "https://doi.org/10.1145/3593013.3594079"
+      },
+      {
+        "name": "Content Moderation and Platform Accountability",
+        "definition": "Online platforms bear significant\nresponsibility for curbing the spread of harmful AI-generated content. To effectively counter\nthe proliferation of deepfakes and other deceptive media, platforms…",
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      },
+      {
+        "name": "Differential technological development (innovation prizes)",
+        "definition": "[fn583]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Economic Incentives",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Ensure global competitiveness and fairness and particularly support SMEs to cope with high AI costs in order to stay competitive",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      }
+    ],
+    "recG4vs1Ryh828Li5": [
+      {
+        "name": "[Shaping the governmental decisions of] Executives",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Adversarial Attacks",
+        "definition": "Adversarial attacks subtly manipulate input data to fool machine learning models, causing misclassification without noticeably changing the input, usually in order to compromise model performance.",
+        "source_ref": "Hodes 2025",
+        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
+        "url": "https://aisafetypreparedness.com/explore"
+      },
+      {
+        "name": "Agent",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      },
+      {
+        "name": "Alignment",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Bias / Discrimination (alternatively, Legal and Rights Related)",
+        "definition": "Generation of content and/or predictive decisions that are biased,\ndiscriminatory and/or inconsistent; related to sensitive characteristics such as\nrace, ethnicity, gender, nationality, income…",
+        "source_ref": "Francois 2025",
+        "source_title": "A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety",
+        "url": "https://arxiv.org/abs/2506.22183"
+      }
+    ],
+    "recQk91BWchxlU6Cl": [
+      {
+        "name": "Agent identifiers",
+        "definition": "One crucial method for enhancing visibility is through the use of agent\nidentifiers. These identifiers include deployment information and the metadata of underlying\nsystems, which help in tracking…",
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      },
+      {
+        "name": "AI identification",
+        "definition": "AI identifiers can be used to indicate that an AI is involved in a process or an\ninteraction [40].\nFor AI systems that interact directly with users, a visible output may be used,\ne.g., a displayed…",
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "AI output metadata",
+        "definition": "Output produced or whose production is aided by AI can contain metadata to\nrecord its origin and the transformations it has undergone. Metadata is evidence\nthat subsequent versions or its…",
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "AI output watermaking",
+        "definition": "Output produced by or with AI assistance can be marked to clearly identify\nits origin. Verification of the watermark can involve the use of statistical tests\nor having the mark immediately visible…",
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "AI Watermarking and Content Authentication",
+        "definition": "AI-generated content can Embed watermarks or another traceable identifier to help determine artificial media from authentic media, mitigating issues like misinformation and deepfakes.",
+        "source_ref": "Pathan 2025",
+        "source_title": "Ethical Considerations and Responsible Governance of Generative AI: A Systematic Review",
+        "url": "https://doi.org/10.70389/pjai.100016"
+      }
+    ],
+    "recrdga7gj7Wqc1ZJ": [
+      {
+        "name": "(Societal Resilience) To Catastrophe",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "(Societal Resilience) To Disruption",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Accountability",
+        "definition": "Organisations that develop, deploy or use AI systems and any\nnational laws that regulate such use shall respect and adopt the\neight principles of this Policy Framework for Responsible AI (or\nother…",
+        "source_ref": "ITechLaw 2019",
+        "source_title": "Responsible AI: A Global Policy Framework",
+        "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      },
+      {
+        "name": "Advancing standardization of advanced AI-relevant safety best practices",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Agent authentication",
+        "definition": "Some protocols can allow for the verification of AI agent identities while they are using web services. As AI systems become increasingly capable and\nagentic, methods to authenticate AI agents when…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      }
+    ],
+    "rechr5qv80gdjSL6v": [
+      {
+        "name": "\"Model cards\" for the transparent reporting of benchmarked evaluations of a model's performance across conditions and for different groups",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "'Safety of the Intended Function' (SOTIF)",
+        "definition": "An approach that requires\nengineers to provide evidence\nthat a system is safe when\noperating as intended",
+        "source_ref": "Bengio 2025",
+        "source_title": "International AI Safety Report",
+        "url": "https://assets.publishing.service.gov.uk/media/679a0c48a77d250007d313ee/International_AI_Safety_Report_2025_accessible_f.pdf"
+      },
+      {
+        "name": "7.4 Documenting Mitigation Assessments",
+        "definition": "Some developers have begun to explore structured documentation approaches for their mitigation\nassessments. This approach is inspired by safety case approaches in other industries and may…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Acquisition Request for Information (RFI)\nAnalysis Tool",
+        "definition": "An-LLM enabled tool that helps\nacquisition staff better understand and process\nRFIs and their responses. The tool ingests\nacquisition artifacts and accelerates the timeline of documentation outputs…",
+        "source_ref": "Robbins 2024",
+        "source_title": "AI ASSURANCE: A Repeatable Process for Assuring AI-enabled Systems",
+        "url": "https://www.mitre.org/sites/default/files/2024-06/PR-24-1768-AI-Assurance-A-Repeatable-Process-Assuring-AI-Enabled-Systems.pdf?utm_source=chatgpt.com"
+      },
+      {
+        "name": "AI system performance or assurance criteria are measured qualitatively or quantitatively and demonstrated for conditions similar to…",
+        "definition": null,
+        "source_ref": "US_NIST 2024",
+        "source_title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)",
+        "url": "https://doi.org/10.6028/nist.ai.600-1"
+      }
+    ],
+    "reccmCjVMgLXF4xzo": [
+      {
+        "name": "Active architectural on-chip constraints (e.g., shutdown mechanisms)",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Agent Permissions",
+        "definition": "Use least-privilege principle as the upper bound on agentic system permissions to minimize the number of tools that an agent is permitted to interact with and the actions it is allowed to take. An…",
+        "source_ref": "Google 2024",
+        "source_title": "Google Secure AI Framework",
+        "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
+      },
+      {
+        "name": "Compute governance",
+        "definition": "Establish on-chip firmware mechanisms, inspection regimes, and supply chain monitoring and custody mechanisms to ensure no actor can use large quantities of specialized chips to execute ML training…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Confidential computing and environment isolation",
+        "definition": "Using trusted execution environments (such as secure enclaves) to ensure that model weights and computations remain confidential and tamper-proof during large-scale AI inference and training. This…",
+        "source_ref": "O'Brien 2025",
+        "source_title": "Expert Survey: AI Reliability & Security Research Priorities",
+        "url": "https://arxiv.org/abs/2505.21664"
+      },
+      {
+        "name": "Control-flow integrity",
+        "definition": null,
+        "source_ref": "Jin 2024",
+        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
+      }
+    ],
+    "reckYlFCROi19kf7q": [
+      {
+        "name": "2.2 Exploratory Methods",
+        "definition": "Beyond data filtering, researchers are investigating additional capability limitation approaches. However,\nthese methods face technical challenges, and their effectiveness remains uncertain.\n● Model…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Anonymizing Writing Style with LLM Rewrites",
+        "definition": "LLMs can be used to rewrite text to anonymize an author's writing style, helping protect against AI systems that can identify writers with high accuracy based on their linguistic patterns.",
+        "source_ref": "Hodes 2025",
+        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
+        "url": "https://aisafetypreparedness.com/explore"
+      },
+      {
+        "name": "Avoiding hazardous capabilities",
+        "definition": "It is challenging to ensure that AI systems cannot cause harm when they have powerful\ncapabilities. There is a broad space of AI capabilities, and risks generally increase with high\nautonomy, high…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      },
+      {
+        "name": "Capability Limitation Mitigations",
+        "definition": "Capability limitation mitigations aim to prevent models from\npossessing knowledge or abilities that could enable harm. These\nmethods alter the model's weights or training process, so that it\ncannot…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Capability Limitation Mitigations",
+        "definition": "Capability limitation mitigations aim to prevent models from possessing knowledge or abilities that could enable harm. These methods alter the model’s weights or training process, so that it cannot…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      }
+    ],
+    "rec0Ms4duG11I6REJ": [
+      {
+        "name": "Assess capacity of existing institutions",
+        "definition": "Assess the capacity of existing institutions, such as national civil courts, to redress\nthe mistakes made or harms inflicted by AI systems. This assessment should\nevaluate the presence of…",
+        "source_ref": "Foridi 2018",
+        "source_title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
+        "url": "https://doi.org/10.1007/s11023-018-9482-5"
+      },
+      {
+        "name": "Defining clear boundaries for acceptable behaviour",
+        "definition": "When designing frontier AI systems, it is difficult to precisely define the boundaries between acceptable and unacceptable\nbehaviour. Many of these challenges stem from the dual use nature of…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      }
+    ],
+    "recHDWLTPUMGJfN0P": [
+      {
+        "name": "At the point of deployment, share details of the model, any risks the model might pose and what steps have been taken to mitigate those…",
+        "definition": "Information can be provided in full to the relevant government authority, ensuring that robust security measures are in place to protect sensitive information. Some of this information can be made…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Before training, share high-level model details with the relevant government authorities and justify why the training run does not impose…",
+        "definition": "This could include:\n\na high-level description of the model (including high-level information on intended use cases, intended users, training data, and model architecture)\ncompute details (including…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Building Code",
+        "definition": "AI systems may have various degrees of risk depending on the design and\napplication domains. To ensure that AI systems are trustworthy and meet certain minimum standards, building code can be…",
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      },
+      {
+        "name": "Certifications",
+        "definition": "Certification emerged throughout\nfour interviews as fundamental in improving the ecosystem (Candidates 1, 3, 4, 5). Certifications “enable companies to cooperate with\nexperts, that can guide them to…",
+        "source_ref": "Lucaj 2023",
+        "source_title": "AI Regulation Is (not) All You Need",
+        "url": "https://doi.org/10.1145/3593013.3594079"
+      },
+      {
+        "name": "Compliance with national and industry security standards",
+        "definition": "Adhere to standards such\nas the “Information security technology - Technical requirements of security design for\nclassified protection of cybersecurity” (GB/T 25070-2019)\n63\n. Implement classified…",
+        "source_ref": "Tse 2025",
+        "source_title": "Frontier AI Risk Management Framework (v1.0)",
+        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
+      }
+    ],
+    "rec7WCy7JEIpyidOT": [
+      {
+        "name": "AI ethics advisory committees",
+        "definition": "[fn566]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Committing to robust internal accountability and governance mechanisms, alongside external verification",
+        "definition": null,
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Comprehensive governance measures",
+        "definition": null,
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Corporate social responsibility",
+        "definition": "Another best practice is “corporate\nsocial responsibility” and the necessity to adopt better oversight\nmechanisms for corporate responsibility as “it is problematic to\ntranslate them into a legal…",
+        "source_ref": "Lucaj 2023",
+        "source_title": "AI Regulation Is (not) All You Need",
+        "url": "https://doi.org/10.1145/3593013.3594079"
+      },
+      {
+        "name": "Emergency Control Mechanism",
+        "definition": null,
+        "source_ref": "Tse 2025",
+        "source_title": "Frontier AI Risk Management Framework (v1.0)",
+        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
+      }
+    ],
+    "recvf5stbwCV4rwuI": [
+      {
+        "name": "Building in redundancy",
+        "definition": "As with deployment safeguards, developers can aim to\nimplement a “defense-in-depth” strategy.",
+        "source_ref": "Buhl 2025",
+        "source_title": "Emerging Practices in Frontier AI Safety Frameworks",
+        "url": "https://arxiv.org/abs/2503.04746"
+      },
+      {
+        "name": "continuous model oversight",
+        "definition": "Establish\ncontinuous\nmodel oversight\nwith real-time\nperformance\ntracking, drift\ndetection, and\nincident\nresponse\nprotocols to\nadapt to\nregulatory and\nenvironmental\nshifts.",
+        "source_ref": "Gandi 2025",
+        "source_title": "Approaches to Responsible Governance of GenAI in Organizations",
+        "url": "https://arxiv.org/abs/2504.17044"
+      },
+      {
+        "name": "Cybersecurity",
+        "definition": null,
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "Defence in Depth",
+        "definition": "The idea that multiple\nindependent and overlapping\nlayers of defence can be\nimplemented such that if one\nfails, others will still be effective",
+        "source_ref": "Bengio 2025",
+        "source_title": "International AI Safety Report",
+        "url": "https://assets.publishing.service.gov.uk/media/679a0c48a77d250007d313ee/International_AI_Safety_Report_2025_accessible_f.pdf"
+      },
+      {
+        "name": "Defence interventions",
+        "definition": "Holding fixed that the potentially harmful use of AI occurs, society can reduce the expected extent of the corresponding initial harm. In our spear phishing example, “defence” is a matter of…",
+        "source_ref": "Bernardi 2025",
+        "source_title": "Societal Adaptation to Advanced AI",
+        "url": "https://arxiv.org/abs/2405.10295"
+      }
+    ],
+    "recL9Yy9qwWUxzPlc": [
+      {
+        "name": "\"Regulatory markets\" and private regulatory authorities",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "A mix of features of other actors, from setting policies to adjudicating disputes to enforcing decisions",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Adjudicating and arbitrating state disagreements",
+        "definition": "Arbitral bodies (e.g., WTO Appellate Body); adjudicatory tribunals (e.g., ICJ); treaty bodies (e.g., Human Rights Committee); other dispute resolution mechanisms (e.g., BWC or Resolution 1540…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Agile and adaptive governance processes and coordination",
+        "definition": "• AI governance should utilize adaptive, people-centered, and inclusive policy-making, as governance is a result of multi-stakeholder action coordinated by the state\n• It should adopt decentralized…",
+        "source_ref": "Sigfrids 2022",
+        "source_title": "How Should Public Administrations Foster the Ethical Development and Use of Artificial Intelligence? A Review of Proposals for Developing Governance of AI",
+        "url": "https://doi.org/10.3389/fhumd.2022.858108"
+      },
+      {
+        "name": "Certification, audition, and development",
+        "definition": "• Assessment of ethical issues and social impacts of AI, data governance and risk-management mechanisms, the impacts on and of legislation, and AI development processes",
+        "source_ref": "Sigfrids 2022",
+        "source_title": "How Should Public Administrations Foster the Ethical Development and Use of Artificial Intelligence? A Review of Proposals for Developing Governance of AI",
+        "url": "https://doi.org/10.3389/fhumd.2022.858108"
+      }
+    ],
+    "recus4S9wRDjUK7co": [
+      {
+        "name": "Assess",
+        "definition": "After all the needed information is collected, the process moves on to the AI system\nassessment. At the Assess stage, a quantitative assessment in terms of metrics is executed,\nwhich is provided as…",
+        "source_ref": "Fikardos 2025",
+        "source_title": "Trustworthiness Optimisation Process: A Methodology for Assessing and Enhancing Trust in AI Systems",
+        "url": "https://doi.org/10.3390/electronics14071454"
+      },
+      {
+        "name": "Assess biases",
+        "definition": "Developers should assess potential biases in AI models and algorithms,\nimprove sampling and testing for training data content and quality, and\ncome up with effective and reliable alignment…",
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Assessing risk-management frameworks",
+        "definition": "Technical tools for risk management are only\neffective inasmuch as they are meaningfully integrated into safety frameworks. Just as it\nis key to evaluate and monitor AI systems, it is also necessary…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      },
+      {
+        "name": "Auditing Mechanisms and Feedback Loops",
+        "definition": "This requires establishing robust auditing mechanisms and feedback loops that allow for iterative refinement and continuous improvement of the system's ethical performance",
+        "source_ref": "Tariq 2025",
+        "source_title": "Ethical Imperatives in AI Design: A Comprehensive Framework for Risk Mitigation and Responsible Innovation",
+        "url": "https://crosslinkstudies.com/ubicc/index.php/utj/article/view/23/12"
+      },
+      {
+        "name": "Bias Auditing",
+        "definition": "bias auditing and mitigation techniques provide a suite of technical methods for addressing discrimination.",
+        "source_ref": "Tariq 2025",
+        "source_title": "Ethical Imperatives in AI Design: A Comprehensive Framework for Risk Mitigation and Responsible Innovation",
+        "url": "https://crosslinkstudies.com/ubicc/index.php/utj/article/view/23/12"
+      }
+    ],
+    "recHNGAxxZkFD3y7e": [
+      {
+        "name": "(Permanent) moratoria on developing (certain forms of) advanced AI",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "(Temporary) moratoria",
+        "definition": "[fn584]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "[Shaping the governmental decisions of] Legislatures",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Advocacy within the legislative AI policymaking process",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "AI and Intellectual Property",
+        "definition": "Organisations that develop, deploy or use AI systems should take\nnecessary steps to protect the rights in the resulting works through\nappropriate and directed application of existing…",
+        "source_ref": "ITechLaw 2019",
+        "source_title": "Responsible AI: A Global Policy Framework",
+        "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      }
+    ],
+    "recagP6PiShsUgQQQ": [
+      {
+        "name": "4.1 LLM-based Prompted Classifiers",
+        "definition": "Language models can be prompted to act as classifiers on inputs to and outputs of the model. The classifier\nlarge language model (LLM) can be another instance of the same model or a separate model…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "4.2 Custom-trained Classifier Models",
+        "definition": "Language models can be trained via fine tuning to classify inputs and outputs from the model, producing\nprobability scores that indicate whether content violates safety policies, contains…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "4.4 Static Analysis Tools",
+        "definition": "Static tooling can also be deployed to increase the robustness of LLM outputs. For example, CodeShield,\npart of Meta's PurpleLlama project, is a static analysis engine that detects insecure code…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Adjusting the Order of Pre-Defined Prompt",
+        "definition": "Some defense methods achieve their goals by adjusting the order of predefined prompts. One such method involves placing the user\ninput before the pre-defined prompt, known as post-prompting\ndefense…",
+        "source_ref": "Cui 2024",
+        "source_title": "Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems",
+        "url": "https://arxiv.org/abs/2401.05778"
+      },
+      {
+        "name": "Adjusting the order of predefined prompt",
+        "definition": null,
+        "source_ref": "Jin 2024",
+        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
+      }
+    ],
+    "rec8cGc8fswyxsZKS": [
+      {
+        "name": "AI system non-discrimination assurance",
+        "definition": "Many jurisdictions have non-discrimination laws and impose equal treatment requirements. Non-compliance with the non-discrimination laws and equal treatment requirements is incompatible with…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Allow independent, external evaluators to conduct model evaluations throughout the model lifecycle",
+        "definition": "Evaluation by independent third parties will allow frontier AI organisations to draw on external expertise, have more ‘eyes on the problem’, and provide for more accountability. External evaluation…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Audit",
+        "definition": "Independent groups that test the efficacy and sufficiency of the risk management framework and of the risk mitigations",
+        "source_ref": "Campos 2025",
+        "source_title": "A Frontier AI Risk Management Framework: Bridging the Gap Between Current AI Practices and Established Risk Management",
+        "url": "https://arxiv.org/abs/2502.06656"
+      },
+      {
+        "name": "Audit datasets used for pre-training but also those used for fine-tuning, classifiers, and other tools",
+        "definition": "Inappropriate datasets could result in systems that fail to disobey harmful instructions.",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Auditing",
+        "definition": "Auditing emerged\nthrough most interviews as a key established methodology that\n“will be at the core of compliance with the AI Act” (Candidate 5) and\nthat can address the current issues of…",
+        "source_ref": "Lucaj 2023",
+        "source_title": "AI Regulation Is (not) All You Need",
+        "url": "https://doi.org/10.1145/3593013.3594079"
+      }
+    ],
+    "recD65iueHQLHBfha": [
+      {
+        "name": "1 Awareness and education",
+        "definition": null,
+        "source_ref": "ITechLaw 2019",
+        "source_title": "Responsible AI: A Global Policy Framework",
+        "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      },
+      {
+        "name": "Adapt existing training programs to include modules on digital content transparency",
+        "definition": null,
+        "source_ref": "US_NIST 2024",
+        "source_title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)",
+        "url": "https://doi.org/10.6028/nist.ai.600-1"
+      },
+      {
+        "name": "AI literacy",
+        "definition": "To complement the transparency\nmitigations we implement, it is also critical that\ngovernments and industry continue to educate\npeople about how to use AI, and its limitations.\nWe have committed $120…",
+        "source_ref": "Google 2025",
+        "source_title": "Responsible AI Progress Report",
+        "url": "https://ai.google/static/documents/ai-responsibility-update-published-february-2025.pdf"
+      },
+      {
+        "name": "Campaigns or resources to educate researchers about AI risk, making AI safety research more concrete and legible, and/or creating common…",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Culture",
+        "definition": "The set of norms, attitudes and behaviors related to awareness, management and controls of risks",
+        "source_ref": "Campos 2025",
+        "source_title": "A Frontier AI Risk Management Framework: Bridging the Gap Between Current AI Practices and Established Risk Management",
+        "url": "https://arxiv.org/abs/2502.06656"
+      }
+    ],
+    "recK6SYvNLnjdcG4m": [
+      {
+        "name": "5.3 Model Permissions and Sandboxing",
+        "definition": "Beyond controlling user access, developers implement restrictions on what models themselves can do\nwithin their operating environment. For example, sandboxing can isolate model execution from…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Ability to undo agent operations",
+        "definition": "Establish an “undo” mechanism for agent operations to\nensure that agent actions can be interrupted or rolled back in a timely manner when\ncoordination failure, conflict escalation, or anomalous…",
+        "source_ref": "Tse 2025",
+        "source_title": "Frontier AI Risk Management Framework (v1.0)",
+        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
+      },
+      {
+        "name": "Agent User Control",
+        "definition": "Ensure user approval for any actions performed by agents/plugins that alter user data or act on the user’s behalf.",
+        "source_ref": "Google 2024",
+        "source_title": "Google Secure AI Framework",
+        "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
+      },
+      {
+        "name": "AI mode switcher",
+        "definition": "Adding an AI mode switcher to the AI system\noffers users efficient invocation and dismissal mechanisms for activating and deactivating the AI\ncomponent whenever needed, thus defer the architectural…",
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      },
+      {
+        "name": "Automatic\ncontainment\nsystem",
+        "definition": "A physical system that automatically responds to impacting events by containing\nthe damage",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      }
+    ],
+    "rec3kPN9w30ZIf0ok": [
+      {
+        "name": "Adversarial Defenses",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      },
+      {
+        "name": "Adversarial robustness in vision and perception systems",
+        "definition": "Studying how malicious inputs can deceive image recognition or sensor-based models, and creating defenses—such as adversarial training, certifiable robustness methods, and detection schemes—to…",
+        "source_ref": "O'Brien 2025",
+        "source_title": "Expert Survey: AI Reliability & Security Research Priorities",
+        "url": "https://arxiv.org/abs/2505.21664"
+      },
+      {
+        "name": "AI Alignment",
+        "definition": "To address the issues of reward hacking and distributional shift discussed in Section 5.6, researchers have proposed various mitigation strategies.",
+        "source_ref": "Chen 2024",
+        "source_title": "Trustworthy, Responsible, and Safe AI: A Comprehensive Architectural Framework for AI Safety with Challenges and Mitigations",
+        "url": "https://arxiv.org/abs/2408.12935"
+      },
+      {
+        "name": "Alignment Techniques",
+        "definition": "AGI labs should implement state-of-the-art safety and alignment techniques.",
+        "source_ref": "Schuett 2023",
+        "source_title": "Towards best practices in AGI safety and governance: A survey of expert opinion",
+        "url": "https://arxiv.org/abs/2305.07153"
+      },
+      {
+        "name": "Backdoor & Poisoning Defenses",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      }
+    ],
+    "recN8nHl2CJ2l1bQR": [
+      {
+        "name": "Access control and interface hardening",
+        "definition": "Approaches include creating minimal, verifiable interfaces for weight access, deploying multiparty authorization and cryptographic attestation protocols to guard against model extraction, novel…",
+        "source_ref": "O'Brien 2025",
+        "source_title": "Expert Survey: AI Reliability & Security Research Priorities",
+        "url": "https://arxiv.org/abs/2505.21664"
+      },
+      {
+        "name": "AI Control",
+        "definition": "AI control encompasses methods designed to safely extract useful work from potentially misaligned AI systems through constraints, monitoring, and termination capabilities, while preventing them from…",
+        "source_ref": "Hodes 2025",
+        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
+        "url": "https://aisafetypreparedness.com/explore"
+      },
+      {
+        "name": "Aligner",
+        "definition": "(Ji et al., 2024)",
+        "source_ref": "Zhang 2025",
+        "source_title": "AISafetyLab: A Comprehensive Framework for AI Safety Evaluation and Improvement",
+        "url": "https://arxiv.org/abs/2502.16776"
+      },
+      {
+        "name": "Attack defense",
+        "definition": null,
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      },
+      {
+        "name": "Attacks and Defenses for ViT",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      }
+    ],
+    "recu97TvMvkJbjQBg": [
+      {
+        "name": "Design",
+        "definition": null,
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      },
+      {
+        "name": "Design and implementation: Building the system",
+        "definition": "This section focuses on techniques to make systems that meet their specifications. The\ndesign and implementation process involves sourcing data, pretraining models, post-training models, and…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      },
+      {
+        "name": "Mitigation in Toolchain Modules",
+        "definition": "Existing studies have designed methods to alleviate the security issues of tools in the lifecycle of LLMs. In this section,\nwe summarize the mitigations of those issues according to the\ncategories…",
+        "source_ref": "Cui 2024",
+        "source_title": "Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems",
+        "url": "https://arxiv.org/abs/2401.05778"
+      },
+      {
+        "name": "Model development",
+        "definition": null,
+        "source_ref": "Gipiskis 2024",
+        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
+        "url": "https://arxiv.org/abs/2410.23472"
+      },
+      {
+        "name": "Requirement Engineering",
+        "definition": null,
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      }
+    ],
+    "recAirWkyJU1jB1Ib": [
+      {
+        "name": "AI Ethical Practices",
+        "definition": "To address this gap, organizations\nmust ground AI ethical principles with actionable practices that\nrelate to business applications.",
+        "source_ref": "McGrath 2025",
+        "source_title": "Designing an Enhanced Enterprise Risk Management System to Mitigate Ethical Risks of Artificial Intelligence Applications",
+        "url": "https://doi.org/10.1109/TEM.2025.3565221"
+      },
+      {
+        "name": "Algorithm use case design",
+        "definition": "Understanding the intended uses of an algorithm together with its possible misuses is key to sustainable AI development and use.\nFor each algorithm in its Algorithm Repository, the organization…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Apply good infrastructure principles to every part of this process",
+        "definition": "from design to decommissioning. This is important as threats can occur at different stages of an AI project’s life cycle.",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Before collecting training data, take account of applicable regulatory frameworks",
+        "definition": "This may involve, for example, establishing a legal basis to process training data and understanding any copyright considerations that might apply. This could help to mitigate risks further down the…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Compliance by design with competition/antitrust laws",
+        "definition": null,
+        "source_ref": "ITechLaw 2019",
+        "source_title": "Responsible AI: A Global Policy Framework",
+        "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      }
+    ],
+    "rec2Ok2jfAdV1hQUw": [
+      {
+        "name": "6.1 Information Sharing and Documentation",
+        "definition": "Developers can enhance AI ecosystem defenses through voluntary\ninformation sharing. This includes sharing threat models and risk\nassessments that help recipients understand potential threat…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "6.3 Reporting and Early Warning Systems",
+        "definition": "Developers can establish mechanisms for rapid threat detection and response. This includes contributing to\nearly warning systems by reporting novel threats or concerning behaviors to relevant…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "AI firms cooperate for the public benefit",
+        "definition": "One of the most effective ways for AI firms to contribute to public\nbenefit is through open-source initiatives.\n\nBy participating in forums like the Partnership on AI, firms can\nagree on shared…",
+        "source_ref": "Radanliev 2025",
+        "source_title": "Frontier AI regulation: what form should it take?",
+        "url": "https://doi.org/10.3389/fpos.2025.1561776"
+      },
+      {
+        "name": "Allow evaluators to share and discuss the results of their evaluations, with potential restrictions where necessary",
+        "definition": "for example, not sharing proprietary information, information whose spread could lead to substantial harm or information that would have an adverse effect on competition in the market. Sharing the…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Assess tasks and decision-making functionalities",
+        "definition": "Assess which tasks and decision-making functionalities should not be delegated to\nAI systems, through the use of participatory mechanisms to ensure alignment with societal values and understanding…",
+        "source_ref": "Foridi 2018",
+        "source_title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
+        "url": "https://doi.org/10.1007/s11023-018-9482-5"
+      }
+    ],
+    "rec8guXSxvdk7M1yY": [
+      {
+        "name": "AI system version control",
+        "definition": "The AI System Owner should ensure that the organization implements the planned AI system version control processes.\nIf the system version control processes disclose a breach of version control…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "AI system version control",
+        "definition": "AI systems will likely undergo several redesigns and update cycles during their lifetime.\nDesigning and implementing an effective version control system integrated with the AI\ngovernance framework…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "AI system version control design",
+        "definition": "AI system algorithms will likely undergo several redesigns and update cycles during their\nlifetime. Some algorithms may learn continually. Designing and implementing an effective \nversion control…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Algorithm version control",
+        "definition": "The Algorithm Owner should ensure that the organization implements the planned AI system\nversion control processes.\nIf the system version control processes disclose a breach of version control…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Applying Solutions",
+        "definition": "After a proposed solution is approved, it is applied while\nmaking all the necessary changes to the AI system (AIS) and the respective documentation\ncards. Depending on the enhancement methods (ems)…",
+        "source_ref": "Fikardos 2025",
+        "source_title": "Trustworthiness Optimisation Process: A Methodology for Assessing and Enhancing Trust in AI Systems",
+        "url": "https://doi.org/10.3390/electronics14071454"
+      }
+    ],
+    "recBWBmV1OOiPHEs0": [
+      {
+        "name": "4.3 Linear Probes",
+        "definition": "Linear probes, also referred to as “probes”, are simple classifiers trained to predict specific properties based\non a model's activations. These activations are the intermediate computational states…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Activity logging",
+        "definition": "Activity logs play a critical role in understanding and auditing agent\nbehavior. By recording detailed input and output data, these logs can help identify improper\ncommunications or actions taken by…",
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      },
+      {
+        "name": "Agent identifier",
+        "definition": "Explore and experimentally develop an AI agent identifier system, e.g.,\nassigning a unique ID to each agent. Enhance monitoring capabilities through identity\nmarking to ensure the transparency…",
+        "source_ref": "Tse 2025",
+        "source_title": "Frontier AI Risk Management Framework (v1.0)",
+        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
+      },
+      {
+        "name": "AI for Cybersecurity",
+        "definition": "AI for cybersecurity refers to the application of artificial intelligence and machine learning techniques to enhance computer systems' security, detect threats, and protect against cyber attacks…",
+        "source_ref": "Hodes 2025",
+        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
+        "url": "https://aisafetypreparedness.com/explore"
+      },
+      {
+        "name": "AI system monitoring",
+        "definition": "In emerging technical fields, new systems cannot be reasonably expected to always behave\nas intended and impact society as expected. Monitoring techniques play an essential role in\nthe iterative…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      }
+    ],
+    "recrgn0BnF6pFueCY": [
+      {
+        "name": "Address system incidents:",
+        "definition": "Incidents, such as system mishaps, must be addressed promptly and effectively in order to understand causes, mitigate harms, and prevent future occurrences.",
+        "source_ref": "Kapusta 2025",
+        "source_title": "A Framework for the Assurance of AI-Enabled Systems",
+        "url": "https://arxiv.org/abs/2504.16937"
+      },
+      {
+        "name": "Avoid complete reliance on AI",
+        "definition": "Users should avoid complete reliance on AI for decision making, monitor\nand record instances where users turn down AI decisions, and analyze inconsistencies in decision-making. They should have the…",
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Bug bounties",
+        "definition": "Provide (usually monetary) rewards to people making genuine reports.",
+        "source_ref": "Jones 2024",
+        "source_title": "The AI regulator’s toolbox: A list of concrete AI governance practices",
+        "url": "https://adamjones.me/blog/ai-regulator-toolbox/"
+      },
+      {
+        "name": "Bug bounty programs",
+        "definition": "AGI labs should have bug bounty programs, i.e. recognize and compensate people for reporting unknown vulnerabilities and dangerous capabilities.",
+        "source_ref": "Schuett 2023",
+        "source_title": "Towards best practices in AGI safety and governance: A survey of expert opinion",
+        "url": "https://arxiv.org/abs/2305.07153"
+      },
+      {
+        "name": "Conduct after-action assessments for GAI system incidents to verify incident response and recovery processes are followed and effective…",
+        "definition": null,
+        "source_ref": "US_NIST 2024",
+        "source_title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)",
+        "url": "https://doi.org/10.6028/nist.ai.600-1"
+      }
+    ],
+    "reczBXs37Ijqq7EWX": [
+      {
+        "name": "AI Arms Controls",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Clarify global administrative law obligations",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Conduct state behavior around AI issues in such a way as to contribute to the establishment of binding customary international law (CIL)",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Establish multilateral international agreements",
+        "definition": "Treaty proposals including: \"Treaty on Artificial Intelligence Safety and Cooperation (TAISC),\" global compute cap treaty, \"AI development convention,\" \"Emerging Technologies Treaty,\" \"Benevolent…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Extend or apply existing principles and regimes in international law",
+        "definition": "Extend or apply existing principles and regimes in international law, including amongst others: norms of international peace and security law; principles of international humanitarian law; norms of…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "reca1jTfqEZjraLJj": [
+      {
+        "name": "Building verifiable and robust AI architectures",
+        "definition": "Constructing AI systems with architectures that support formal verification and robustness guarantees, such as world models that enable safe and reliable planning, or guaranteed safe AI with…",
+        "source_ref": "O'Brien 2025",
+        "source_title": "Expert Survey: AI Reliability & Security Research Priorities",
+        "url": "https://arxiv.org/abs/2505.21664"
+      },
+      {
+        "name": "Communication protocols between agents",
+        "definition": "Design and implement standardized\ncommunication protocols for agents to enhance the stability and security of multi-agent\nsystems in safety-critical areas such as industrial control, transportation…",
+        "source_ref": "Tse 2025",
+        "source_title": "Frontier AI Risk Management Framework (v1.0)",
+        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
+      },
+      {
+        "name": "Designing modular, easily monitorable systems",
+        "definition": "Methods for decomposing complex\nsystems into easy-to-monitor components have the potential to improve oversight in two\nways. First, they mitigate risks of situational awareness and strategic evasion…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      },
+      {
+        "name": "Explainability",
+        "definition": "Explainability, a related but distinct concept, pertains to the ability to furnish a clear, human-understandable rationale for a specific decision or prediction made by the system.",
+        "source_ref": "Tariq 2025",
+        "source_title": "Ethical Imperatives in AI Design: A Comprehensive Framework for Risk Mitigation and Responsible Innovation",
+        "url": "https://crosslinkstudies.com/ubicc/index.php/utj/article/view/23/12"
+      },
+      {
+        "name": "Explainability",
+        "definition": "Methods to understand why a model generates specific outputs. Technical approaches include developing post-hoc or embedded explanation methods, measuring and improving explanation fidelity, and…",
+        "source_ref": "O'Brien 2025",
+        "source_title": "Expert Survey: AI Reliability & Security Research Priorities",
+        "url": "https://arxiv.org/abs/2505.21664"
+      }
+    ],
+    "recF4jWnsIEorB4Tx": [
+      {
+        "name": "5.1 Access Control Frameworks",
+        "definition": "While developers typically implement mitigations for general access\ndeployments, they may complement this with additional access\ncontrols when providing versions with modified or reduced\nmitigations…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Access Control Mitigations",
+        "definition": "Access Control Mitigations govern who can use a model, what\ncapabilities they can access, and how the model can interact with\nexternal systems. Approaches include user verification protocols,\ntiered…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Access restrictions",
+        "definition": "Models with dangerous capabilities can be restricted to vetted user groups\nand use cases, reducing the surface area of dangerous capabilities that an actor can attempt to\ninappropriately access.…",
+        "source_ref": "Shah 2025",
+        "source_title": "An Approach to Technical AGI Safety and Security",
+        "url": "https://arxiv.org/abs/2504.01849"
+      },
+      {
+        "name": "Adapt mitigations in recognition of risks from unintended model use or use in unexpected contexts",
+        "definition": "such as a model that is modified to remove safeguards after open-sourcing or a model that is combined with another model for unanticipated purposes. For example, at a given risk threshold…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Amass resources",
+        "definition": "Make the arsenal of resources as large as possible",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      }
+    ],
+    "recQbNhpjHC86GOIF": [
+      {
+        "name": "3.2 Promising Research Directions",
+        "definition": "The following research directions show promise for improving behavioral alignment mitigations and/or our\nunderstanding of their effectiveness:\n● Adversarial Training: Developers can improve…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "4.6 Promising Research Directions",
+        "definition": "Current detection and intervention systems face challenges that will likely intensify as models become more\ncapable. Research efforts are focused on addressing these limitations through several…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "Accountability",
+        "definition": "Research focusing on ensuring AI systems are transparent, reliable, and compliant, including developing auditing tools, attributing AI outputs to specific models, mitigating risks of power…",
+        "source_ref": "O'Brien 2025",
+        "source_title": "Expert Survey: AI Reliability & Security Research Priorities",
+        "url": "https://arxiv.org/abs/2505.21664"
+      },
+      {
+        "name": "Advance research on AI explainability",
+        "definition": "We should organize and\nconduct research on the transparency, trustworthiness, and error-correction\nmechanism in AI decision-making from the perspectives of machine learning\ntheory, training methods…",
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Agentic LLMs and single-agent risks",
+        "definition": "Developing a deeper understanding of agentic behavior in LLM-based systems. This work clarifies how LLM-agents learn over time, respond to underspecified goals, and engage with their environments.",
+        "source_ref": "O'Brien 2025",
+        "source_title": "Expert Survey: AI Reliability & Security Research Priorities",
+        "url": "https://arxiv.org/abs/2505.21664"
+      }
+    ],
+    "rechkvbiJitGFFyed": [
+      {
+        "name": "Consolidate\ncomponents",
+        "definition": "Reduce the number of independent agents or degrees of freedom to make it more\npredictable or manageable",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      },
+      {
+        "name": "Tighten\ncomponent\ntolerances",
+        "definition": "Increase the quality requirements of system components in order to reduce risk of\nfailures",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      }
+    ],
+    "rec9l0Ip5YLL4EXP6": [
+      {
+        "name": "Allow market self-regulation without state intervention to prevent disruption of economic systems",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      },
+      {
+        "name": "Allow social norms to evolve steadily without hard regulation",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      },
+      {
+        "name": "At each risk threshold, proactively commit to only proceed with certain development or deployment steps if specific mitigations are in…",
+        "definition": "Such mitigations could include many of the practices outlined in this document.",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Defense Acceleration",
+        "definition": "Defense Acceleration (d/acc) is a strategy focused on rapidly developing and deploying defensive technologies to outpace and protect against harmful AI applications, similar to creating \"societal…",
+        "source_ref": "Hodes 2025",
+        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
+        "url": "https://aisafetypreparedness.com/explore"
+      },
+      {
+        "name": "Establish lab-level safety practices",
+        "definition": "Proposals for establishing corporate governance and soft law: establish Responsible Scaling Policies (RSPs)[fn763] and establish corporate governance and AI certification schemes.[fn764]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recEieEhh46VU8FZG": [
+      {
+        "name": "Advance legal scholarship with new arguments, interpretations, or analogies and metaphors for AI technology",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Advise policymakers about the existence and meaning of international law and which obligations these impose",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "AI Assurance Knowledge Base",
+        "definition": "An AI Assurance\nKnowledge Base (AAKB) to enable the utilization\nof AI assurance knowledge that can inform\nthe design of assurance investigations. The\nAAKB provides information to an AI…",
+        "source_ref": "Robbins 2024",
+        "source_title": "AI ASSURANCE: A Repeatable Process for Assuring AI-enabled Systems",
+        "url": "https://www.mitre.org/sites/default/files/2024-06/PR-24-1768-AI-Assurance-A-Repeatable-Process-Assuring-AI-Enabled-Systems.pdf?utm_source=chatgpt.com"
+      },
+      {
+        "name": "Creating alternatives",
+        "definition": "Public interest technology research; creating alternative (types of) institutions[fn644] and new AI labs.",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Develop observatory for AI",
+        "definition": "Develop a European observatory for AI. The mission of the observatory would\nbe to watch developments, provide a forum to nurture debate and consensus,\nprovide a repository for AI literature and…",
+        "source_ref": "Foridi 2018",
+        "source_title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
+        "url": "https://doi.org/10.1007/s11023-018-9482-5"
+      }
+    ],
+    "rec9bafBVrJmNhCJc": [
+      {
+        "name": "Bypass or challenge existing institutions by engaging in \"competitive regime creation,\" \"forum shopping,\" or the strategic creation of…",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Coordinating behavior; reducing uncertainty, improving trust",
+        "definition": "Confidence-building measures;[fn653] review conferences (e.g., BWC); conferences of parties (e.g., UNFCCC); establishing information and benefit-sharing mechanisms.",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Create or propose soft law",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Creating common knowledge or shared perceptions of problems; establish 'fire alarms'",
+        "definition": "Intergovernmental scientific bodies (e.g., IPCC and IPBES); international warning systems (e.g., WHO's 'public health emergency of international concern' mechanism).",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Establish bilateral agreements and dialogues",
+        "definition": "Establish confidence-building measures[fn783] and pursue international AI safety dialogues.[fn784]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recm718iigOdrTFs8": [
+      {
+        "name": "Establish and improve the mechanisms for AI safety\neducation, industry self-regulation, and social supervision",
+        "definition": "We\nshould strengthen education and training on the safe and proper use of AI\namong government, enterprises, and public service units. We should step\nup the promotion of knowledge related to AI risks…",
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "International Cooperation Proposals",
+        "definition": "Given these challenges, a flexible, multi-tiered framework for international AI regulation is\nthe global desideratum. This framework should operate through a combination of binding\ninternational…",
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      },
+      {
+        "name": "Open-Source Governance",
+        "definition": "The debate over the open-sourcing of contemporary AI models is contentious in AI governance, particularly as\nthese models gain increased potency (Seger et al., 2023). The potential security hazards…",
+        "source_ref": "Ji 2023",
+        "source_title": "AI Alignment: A Comprehensive Survey",
+        "url": "https://arxiv.org/abs/2310.19852"
+      },
+      {
+        "name": "Pathways to influence (on each key actor)",
+        "definition": "A tool or intervention by which other actors (that may not themselves be key actors) can affect, persuade, induce, incentivize, or require key actors to make certain key decisions around the…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Pathways to shaping AI developers' decisions",
+        "definition": "Shaping individual lab decisions around AI governance, and shaping industry-wide decisions around AI governance",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recaKRRZjLuXRlwsI": [
+      {
+        "name": "Lab-level (external) levers",
+        "definition": "Stigmatization of irresponsible practices;[fn636] investigative journalism, awareness-raising of scandals and incidents, hacking and leaks, and whistleblowing; impact litigation[fn637] and…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Public-focused levers",
+        "definition": "Media content creation;[fn641] boycott and divestment; shaming of state noncompliance with international law;[fn642] emotional contagion - shaping and disseminating of public emotional dynamics or…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recI4nymJwsk9OYBA": [
+      {
+        "name": "adversarial defenses",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      },
+      {
+        "name": "Agent safety mitigation",
+        "definition": null,
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      },
+      {
+        "name": "Agentic Attacks & Defenses",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      },
+      {
+        "name": "AI Capability Control",
+        "definition": "Achieving full control over AI systems, especially Superintelligence, is a challenging problem in the field of AI Safety",
+        "source_ref": "Chen 2024",
+        "source_title": "Trustworthy, Responsible, and Safe AI: A Comprehensive Architectural Framework for AI Safety with Challenges and Mitigations",
+        "url": "https://arxiv.org/abs/2408.12935"
+      },
+      {
+        "name": "Attacks and Defenses for SAM",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      }
+    ],
+    "recB7UZgikAebnlwO": [
+      {
+        "name": "6.2 Supporting Defensive Systems and Research",
+        "definition": "Developers, other actors in the AI ecosystem, and society broadly can\ndevelop or support the development of systems specifically designed\nto strengthen defensive capabilities, potentially including…",
+        "source_ref": "FMF 2025",
+        "source_title": "Frontier Mitigations",
+        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+      },
+      {
+        "name": "AI ecosystem monitoring",
+        "definition": "Just as system monitoring techniques help AI developers oversee their systems, techniques for monitoring the broader AI ecosystem help stakeholders in society oversee the\nfield of AI. Methods for…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      },
+      {
+        "name": "Enabling the ecosystem with mitigation tools",
+        "definition": "We\nbelieve that we also need to complement our mitigation\nefforts by offering mitigations for the ecosystem.\n• We released ShieldGemma — a series of state-ofthe-art safety classifiers that…",
+        "source_ref": "Google 2025",
+        "source_title": "Responsible AI Progress Report",
+        "url": "https://ai.google/static/documents/ai-responsibility-update-published-february-2025.pdf"
+      },
+      {
+        "name": "Governance tools and novel policymaking solutions",
+        "definition": "The fourth theme explored the relevance and the experts’ knowledge on the new regulatory instruments, to support the effectiveness of the AI Act. Practices such as policy-prototyping…",
+        "source_ref": "Lucaj 2023",
+        "source_title": "AI Regulation Is (not) All You Need",
+        "url": "https://doi.org/10.1145/3593013.3594079"
+      },
+      {
+        "name": "Institutional, software, and hardware mechanisms for enabling developers to make verifiable claims",
+        "definition": "[fn568]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "rec7NSuahWQpqxjTl": [
+      {
+        "name": "Compute and hardware tracking",
+        "definition": "Researching techniques and gathering intelligence to\nmonitor the distribution of AI hardware, both legal and illegal, enables the assessment of\nrisks of malicious and irresponsible use and the…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      }
+    ],
+    "rec5Jml8RLERlfbtT": [
+      {
+        "name": "Developer (intra-lab)-level levers",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Intervention",
+        "definition": null,
+        "source_ref": "Jin 2024",
+        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
+      }
+    ],
+    "recJQgUd7WcZ4EUPw": [
+      {
+        "name": "Adaptation Interventions",
+        "definition": "Adaptation interventions, the primary focus of this paper, intervene at later stages in the causal chain. Such interventions immediately precede the “use”, “initial harm” or “impact” stages of that…",
+        "source_ref": "Bernardi 2025",
+        "source_title": "Societal Adaptation to Advanced AI",
+        "url": "https://arxiv.org/abs/2405.10295"
+      },
+      {
+        "name": "Avoidance interventions",
+        "definition": "Society can reduce the expected extent of the potentially harmful use of AI, making the problematic actions in question more difficult to engage in, or more costly compared to relevant…",
+        "source_ref": "Bernardi 2025",
+        "source_title": "Societal Adaptation to Advanced AI",
+        "url": "https://arxiv.org/abs/2405.10295"
+      },
+      {
+        "name": "Economic AI Guidelines",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      },
+      {
+        "name": "Governance",
+        "definition": "As the integration of AI into various aspects of human endeavor accelerates, the necessity for\ncomprehensive and robust governance frameworks becomes increasingly critical. Effective\ngovernance in…",
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      },
+      {
+        "name": "International regime levers",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recLJbd5gmiEmSJsf": [
+      {
+        "name": "Human In the Loop",
+        "definition": "Human-in-the-Loop (HITL) is a framework where humans actively participate in AI systems' development and operation through feedback, demonstrations, and oversight.",
+        "source_ref": "Hodes 2025",
+        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
+        "url": "https://aisafetypreparedness.com/explore"
+      },
+      {
+        "name": "Strategies to LLM Safety in Practice",
+        "definition": null,
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      }
+    ],
+    "recXtL9YQc1TeR6cJ": [
+      {
+        "name": "Foster creation and transfer of AI knowledge (e.g., training of AI experts and education of society) to enable and realise innovation…",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      },
+      {
+        "name": "Norm entrepreneurship",
+        "definition": "Lobbying, public statements, or initiatives that signal public concern and/or dissatisfaction with an existing state of affairs, potentially alerting others to the existence of a shared complaint…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Work to shape broad narratives around advanced AI, such as through compelling narratives or depictions of good outcomes",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recTE9xxlGBVbYRqD": [
+      {
+        "name": "Ethics committee",
+        "definition": "Organizations need to build capability incorporating multiple areas of\nexpertise to address RAI issues. An AI ethics committee is an AI governance body that is established to develop standard…",
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      },
+      {
+        "name": "Lab-level (internal) levers",
+        "definition": "Shareholder activism, voting out CEOs; unions and intra-organizational advocacy, strikes, and walkouts;[fn635] capacity-building of employee activism via recruitment, political education, training…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recukEmWcpGGpiNw2": [
+      {
+        "name": "Data security",
+        "definition": "Developers should strengthening data security and personal information\nprotection, respect intellectual property and copyright, and ensure that data sources are clear and acquisition methods are…",
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Decommission responsibly",
+        "definition": "Decommission\nresponsibly\nthrough formal\noff-boarding,\nsecure data\nhandling, and\naudit-ready\ndocumentation.",
+        "source_ref": "Gandi 2025",
+        "source_title": "Approaches to Responsible Governance of GenAI in Organizations",
+        "url": "https://arxiv.org/abs/2504.17044"
+      },
+      {
+        "name": "Insurance &\nfinancial\ninstruments",
+        "definition": "Use contracts or financial instruments to indemnify against possible losses",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      }
+    ],
+    "recxGSZUOgdOJXgz1": [
+      {
+        "name": "GLiNER",
+        "definition": "Model artifacts:",
+        "source_ref": "Francois 2025",
+        "source_title": "A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety",
+        "url": "https://arxiv.org/abs/2506.22183"
+      }
+    ]
+  }
 }
