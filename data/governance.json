@@ -1,0 +1,1242 @@
+{
+  "meta": {
+    "dataset": "governance",
+    "last_updated": "2026-04-20T03:21:21+00:00",
+    "source": "Airtable appLSe43cSlDiYZyA / Risk Domain Upload",
+    "record_count": 963,
+    "row_count": 23112,
+    "interpretation_title": "Coverage is uneven across the risk landscape",
+    "interpretation": "AGORA has catalogued 963 governance documents across 24 risk subdomains. Coverage is deepest on governance failure (224 documents with good coverage).",
+    "cta_url": "https://airisk.mit.edu/ai-governance",
+    "cta_label": "Explore the mapping →"
+  },
+  "chart": {
+    "type": "stacked_bar",
+    "x_field": "subdomain",
+    "stack_field": "coverage",
+    "coverage_levels": [
+      "Good",
+      "Minimal",
+      "None"
+    ],
+    "series": [
+      {
+        "subdomain": "1.1",
+        "domain": "Discrimination & Toxicity",
+        "full_name": "Unfair discrimination and misrepresentation",
+        "Good": 121,
+        "Minimal": 115,
+        "None": 727,
+        "total": 963
+      },
+      {
+        "subdomain": "1.2",
+        "domain": "Discrimination & Toxicity",
+        "full_name": "Exposure to toxic content",
+        "Good": 52,
+        "Minimal": 41,
+        "None": 870,
+        "total": 963
+      },
+      {
+        "subdomain": "1.3",
+        "domain": "Discrimination & Toxicity",
+        "full_name": "Unequal performance across groups",
+        "Good": 76,
+        "Minimal": 130,
+        "None": 757,
+        "total": 963
+      },
+      {
+        "subdomain": "2.1",
+        "domain": "Privacy & Security",
+        "full_name": "Compromise of privacy by obtaining, leaking or correctly inferring sensitive information",
+        "Good": 135,
+        "Minimal": 237,
+        "None": 591,
+        "total": 963
+      },
+      {
+        "subdomain": "2.2",
+        "domain": "Privacy & Security",
+        "full_name": "AI system security vulnerabilities and attacks",
+        "Good": 141,
+        "Minimal": 334,
+        "None": 488,
+        "total": 963
+      },
+      {
+        "subdomain": "3.1",
+        "domain": "Misinformation",
+        "full_name": "False or misleading information",
+        "Good": 79,
+        "Minimal": 147,
+        "None": 737,
+        "total": 963
+      },
+      {
+        "subdomain": "3.2",
+        "domain": "Misinformation",
+        "full_name": "Pollution of information ecosystem and loss of consensus reality",
+        "Good": 25,
+        "Minimal": 70,
+        "None": 868,
+        "total": 963
+      },
+      {
+        "subdomain": "4.1",
+        "domain": "Malicious Actors",
+        "full_name": "Disinformation, surveillance, and influence at scale",
+        "Good": 107,
+        "Minimal": 145,
+        "None": 711,
+        "total": 963
+      },
+      {
+        "subdomain": "4.2",
+        "domain": "Malicious Actors",
+        "full_name": "Cyberattacks, weapon development or use, and mass harm",
+        "Good": 91,
+        "Minimal": 135,
+        "None": 737,
+        "total": 963
+      },
+      {
+        "subdomain": "4.3",
+        "domain": "Malicious Actors",
+        "full_name": "Fraud, scams, and targeted manipulation",
+        "Good": 115,
+        "Minimal": 145,
+        "None": 703,
+        "total": 963
+      },
+      {
+        "subdomain": "5.1",
+        "domain": "Human-Computer Interaction",
+        "full_name": "Overreliance and unsafe use",
+        "Good": 62,
+        "Minimal": 145,
+        "None": 756,
+        "total": 963
+      },
+      {
+        "subdomain": "5.2",
+        "domain": "Human-Computer Interaction",
+        "full_name": "Loss of human agency and autonomy",
+        "Good": 49,
+        "Minimal": 127,
+        "None": 787,
+        "total": 963
+      },
+      {
+        "subdomain": "6.1",
+        "domain": "Socioeconomic & Environmental",
+        "full_name": "Power centralization and unfair distribution of benefits",
+        "Good": 6,
+        "Minimal": 43,
+        "None": 914,
+        "total": 963
+      },
+      {
+        "subdomain": "6.2",
+        "domain": "Socioeconomic & Environmental",
+        "full_name": "Increased inequality and decline in employment quality",
+        "Good": 11,
+        "Minimal": 77,
+        "None": 875,
+        "total": 963
+      },
+      {
+        "subdomain": "6.3",
+        "domain": "Socioeconomic & Environmental",
+        "full_name": "Economic and cultural devaluation of human effort",
+        "Good": 1,
+        "Minimal": 37,
+        "None": 925,
+        "total": 963
+      },
+      {
+        "subdomain": "6.4",
+        "domain": "Socioeconomic & Environmental",
+        "full_name": "Competitive dynamics",
+        "Good": 56,
+        "Minimal": 247,
+        "None": 660,
+        "total": 963
+      },
+      {
+        "subdomain": "6.5",
+        "domain": "Socioeconomic & Environmental",
+        "full_name": "Governance failure",
+        "Good": 224,
+        "Minimal": 205,
+        "None": 534,
+        "total": 963
+      },
+      {
+        "subdomain": "6.6",
+        "domain": "Socioeconomic & Environmental",
+        "full_name": "Environmental harm",
+        "Good": 3,
+        "Minimal": 71,
+        "None": 889,
+        "total": 963
+      },
+      {
+        "subdomain": "7.1",
+        "domain": "AI System Safety, Failures & Limitations",
+        "full_name": "AI pursuing its own goals in conflict with human goals or values",
+        "Good": 40,
+        "Minimal": 61,
+        "None": 862,
+        "total": 963
+      },
+      {
+        "subdomain": "7.2",
+        "domain": "AI System Safety, Failures & Limitations",
+        "full_name": "AI possessing dangerous capabilities",
+        "Good": 72,
+        "Minimal": 115,
+        "None": 776,
+        "total": 963
+      },
+      {
+        "subdomain": "7.3",
+        "domain": "AI System Safety, Failures & Limitations",
+        "full_name": "Lack of capability or robustness",
+        "Good": 171,
+        "Minimal": 246,
+        "None": 546,
+        "total": 963
+      },
+      {
+        "subdomain": "7.4",
+        "domain": "AI System Safety, Failures & Limitations",
+        "full_name": "Lack of transparency or interpretability",
+        "Good": 202,
+        "Minimal": 155,
+        "None": 606,
+        "total": 963
+      },
+      {
+        "subdomain": "7.5",
+        "domain": "AI System Safety, Failures & Limitations",
+        "full_name": "AI welfare and rights",
+        "Good": 1,
+        "Minimal": 3,
+        "None": 959,
+        "total": 963
+      },
+      {
+        "subdomain": "7.6",
+        "domain": "AI System Safety, Failures & Limitations",
+        "full_name": "Multi-agent risks",
+        "Good": 2,
+        "Minimal": 16,
+        "None": 945,
+        "total": 963
+      }
+    ]
+  },
+  "top_documents_by_subdomain": {
+    "1.1": [
+      {
+        "title": "1026 - USDA Framework for State, Local, Tribal, and Territorial Use of Artificial Intelligence for Public Benefit Administration",
+        "authority": "Department of Agriculture",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit"
+      },
+      {
+        "title": "1027 - HHS Public Benefits and AI",
+        "authority": "Department of Health and Human Services",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hhs.gov/sites/default/files/public-benefits-and-ai.pdf"
+      },
+      {
+        "title": "1029 - Guidance on Application of the Fair Housing Act to the Advertising of Housing, Credit, and Other Real Estate-Related Transactions…",
+        "authority": "Department of Housing and Urban Development",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hud.gov/sites/dfiles/FHEO/documents/FHEO_Guidance_on_Advertising_through_Digital_Platforms.pdf"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      }
+    ],
+    "1.2": [
+      {
+        "title": "1097 - Proposed Model AI Governance Framework for Generative AI",
+        "authority": "Government of Singapore",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://aiverifyfoundation.sg/downloads/Proposed_MGF_Gen_AI_2024.pdf"
+      },
+      {
+        "title": "1137 - Interim Measures for the Management of Generative Artificial Intelligence Services",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.chinalawtranslate.com/en/generative-ai-interim/"
+      },
+      {
+        "title": "1151 - Technical Documentation of National Technical Committee 260 on Cybersecurity of Standardization Administration of China: Basic…",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://cset.georgetown.edu/publication/china-safety-requirements-for-generative-ai-final/"
+      },
+      {
+        "title": "1258 - Digital Social Platform Transparency Act",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/9126"
+      },
+      {
+        "title": "1287 - Social Media and AI Resiliency Toolkits in Schools Act",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/4614/text"
+      }
+    ],
+    "1.3": [
+      {
+        "title": "1026 - USDA Framework for State, Local, Tribal, and Territorial Use of Artificial Intelligence for Public Benefit Administration",
+        "authority": "Department of Agriculture",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit"
+      },
+      {
+        "title": "1027 - HHS Public Benefits and AI",
+        "authority": "Department of Health and Human Services",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hhs.gov/sites/default/files/public-benefits-and-ai.pdf"
+      },
+      {
+        "title": "1029 - Guidance on Application of the Fair Housing Act to the Advertising of Housing, Credit, and Other Real Estate-Related Transactions…",
+        "authority": "Department of Housing and Urban Development",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hud.gov/sites/dfiles/FHEO/documents/FHEO_Guidance_on_Advertising_through_Digital_Platforms.pdf"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      },
+      {
+        "title": "1052 - Canada Artificial Intelligence and Data Act (Companion document)",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act-aida-companion-document"
+      }
+    ],
+    "2.1": [
+      {
+        "title": "1014 - Government Surveillance Reform Act of 2023, Title VII (Protection of Car Data from Warrantless Searches)",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3234"
+      },
+      {
+        "title": "1027 - HHS Public Benefits and AI",
+        "authority": "Department of Health and Human Services",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hhs.gov/sites/default/files/public-benefits-and-ai.pdf"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      },
+      {
+        "title": "1045 - Australia’s AI Ethics Principles",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-framework/australias-ai-ethics-principles"
+      },
+      {
+        "title": "1054 - Directive on Automated Decision-Making (Canada)",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592"
+      }
+    ],
+    "2.2": [
+      {
+        "title": "1018 - Federal Register Doc. No. 2024-01580. Taking Additional Steps To Address the National Emergency With Respect to Significant…",
+        "authority": "Department of Commerce",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.federalregister.gov/documents/2024/01/29/2024-01580/taking-additional-steps-to-address-the-national-emergency-with-respect-to-significant-malicious"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      },
+      {
+        "title": "1045 - Australia’s AI Ethics Principles",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-framework/australias-ai-ethics-principles"
+      },
+      {
+        "title": "1046 - The Bletchley Declaration by Countries Attending the AI Safety Summit",
+        "authority": "Other multinational",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023"
+      }
+    ],
+    "3.1": [
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      },
+      {
+        "title": "1087 - Artificial Intelligence and the Information Privacy Principles",
+        "authority": "Government of New Zealand",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://privacy.org.nz/assets/New-order/Resources-/Publications/Guidance-resources/AI-Guidance-Resources-/AI-and-the-Information-Privacy-Principles.pdf"
+      },
+      {
+        "title": "1088 - Initial advice on Generative Artificial Intelligence in the public service (New Zealand)",
+        "authority": "Government of New Zealand",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.digital.govt.nz/assets/Standards-guidance/Technology-and-architecture/Generative-AI/Joint-System-Leads-tactical-guidance-on-public-service-use-of-GenAI-September-2023.pdf"
+      },
+      {
+        "title": "1097 - Proposed Model AI Governance Framework for Generative AI",
+        "authority": "Government of Singapore",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://aiverifyfoundation.sg/downloads/Proposed_MGF_Gen_AI_2024.pdf"
+      },
+      {
+        "title": "1137 - Interim Measures for the Management of Generative Artificial Intelligence Services",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.chinalawtranslate.com/en/generative-ai-interim/"
+      }
+    ],
+    "3.2": [
+      {
+        "title": "1009 - Kids Online Safety Act, Title II (Filter Bubble Transparency)",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/7891/text"
+      },
+      {
+        "title": "1097 - Proposed Model AI Governance Framework for Generative AI",
+        "authority": "Government of Singapore",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://aiverifyfoundation.sg/downloads/Proposed_MGF_Gen_AI_2024.pdf"
+      },
+      {
+        "title": "1216 - Veterans Online Information and Cybersecurity Empowerment Act of 2024",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/9583"
+      },
+      {
+        "title": "1270 - Content Origin Protection and Integrity from Edited and Deepfaked Media Act of 2024",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/4674"
+      },
+      {
+        "title": "1280 - Securing Elections From AI Deception Act",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/8858/text"
+      }
+    ],
+    "4.1": [
+      {
+        "title": "1001 - 21st Century Peace through Strength Act, Division D (\"Protecting Americans from Foreign Adversary Controlled Applications Act\")",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/8038"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      },
+      {
+        "title": "1046 - The Bletchley Declaration by Countries Attending the AI Safety Summit",
+        "authority": "Other multinational",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023"
+      },
+      {
+        "title": "1053 - Canadian Guardrails for Generative AI – Code of Practice",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://ised-isde.canada.ca/site/ised/en/consultation-development-canadian-code-practice-generative-artificial-intelligence-systems/canadian-guardrails-generative-ai-code-practice"
+      },
+      {
+        "title": "1137 - Interim Measures for the Management of Generative Artificial Intelligence Services",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.chinalawtranslate.com/en/generative-ai-interim/"
+      }
+    ],
+    "4.2": [
+      {
+        "title": "1018 - Federal Register Doc. No. 2024-01580. Taking Additional Steps To Address the National Emergency With Respect to Significant…",
+        "authority": "Department of Commerce",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.federalregister.gov/documents/2024/01/29/2024-01580/taking-additional-steps-to-address-the-national-emergency-with-respect-to-significant-malicious"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      },
+      {
+        "title": "1046 - The Bletchley Declaration by Countries Attending the AI Safety Summit",
+        "authority": "Other multinational",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023"
+      },
+      {
+        "title": "1052 - Canada Artificial Intelligence and Data Act (Companion document)",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act-aida-companion-document"
+      },
+      {
+        "title": "1053 - Canadian Guardrails for Generative AI – Code of Practice",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://ised-isde.canada.ca/site/ised/en/consultation-development-canadian-code-practice-generative-artificial-intelligence-systems/canadian-guardrails-generative-ai-code-practice"
+      }
+    ],
+    "4.3": [
+      {
+        "title": "1029 - Guidance on Application of the Fair Housing Act to the Advertising of Housing, Credit, and Other Real Estate-Related Transactions…",
+        "authority": "Department of Housing and Urban Development",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hud.gov/sites/dfiles/FHEO/documents/FHEO_Guidance_on_Advertising_through_Digital_Platforms.pdf"
+      },
+      {
+        "title": "1052 - Canada Artificial Intelligence and Data Act (Companion document)",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act-aida-companion-document"
+      },
+      {
+        "title": "1053 - Canadian Guardrails for Generative AI – Code of Practice",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://ised-isde.canada.ca/site/ised/en/consultation-development-canadian-code-practice-generative-artificial-intelligence-systems/canadian-guardrails-generative-ai-code-practice"
+      },
+      {
+        "title": "1208 - AI Ads Act",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/9639"
+      },
+      {
+        "title": "1214 - SAFE Bet Act",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/9590/text"
+      }
+    ],
+    "5.1": [
+      {
+        "title": "1026 - USDA Framework for State, Local, Tribal, and Territorial Use of Artificial Intelligence for Public Benefit Administration",
+        "authority": "Department of Agriculture",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit"
+      },
+      {
+        "title": "1027 - HHS Public Benefits and AI",
+        "authority": "Department of Health and Human Services",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hhs.gov/sites/default/files/public-benefits-and-ai.pdf"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      },
+      {
+        "title": "1045 - Australia’s AI Ethics Principles",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-framework/australias-ai-ethics-principles"
+      },
+      {
+        "title": "1053 - Canadian Guardrails for Generative AI – Code of Practice",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://ised-isde.canada.ca/site/ised/en/consultation-development-canadian-code-practice-generative-artificial-intelligence-systems/canadian-guardrails-generative-ai-code-practice"
+      }
+    ],
+    "5.2": [
+      {
+        "title": "1009 - Kids Online Safety Act, Title II (Filter Bubble Transparency)",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/7891/text"
+      },
+      {
+        "title": "1026 - USDA Framework for State, Local, Tribal, and Territorial Use of Artificial Intelligence for Public Benefit Administration",
+        "authority": "Department of Agriculture",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit"
+      },
+      {
+        "title": "1027 - HHS Public Benefits and AI",
+        "authority": "Department of Health and Human Services",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hhs.gov/sites/default/files/public-benefits-and-ai.pdf"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      },
+      {
+        "title": "1045 - Australia’s AI Ethics Principles",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-framework/australias-ai-ethics-principles"
+      }
+    ],
+    "6.1": [
+      {
+        "title": "1138 - Remarks by Ambassador Zhang Jun at the UN Security Council Briefing on Artificial Intelligence: Opportunities and Risks for…",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "http://un.china-mission.gov.cn/eng/hyyfy/202307/t20230719_11114947.htm"
+      },
+      {
+        "title": "1144 - Global AI Governance Initiative",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm"
+      },
+      {
+        "title": "1152 - UN General Assembly Resolution A/78/L.49 (\"Seizing the opportunities of safe, secure and trustworthy artificial intelligence…",
+        "authority": "United Nations",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://digitallibrary.un.org/record/4040897?v=pdf&ln=en"
+      },
+      {
+        "title": "1381 - Seizing the opportunities of safe, secure and trustworthy artificial intelligence systems for sustainable development",
+        "authority": "United Nations",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://documents.un.org/doc/undoc/ltd/n24/065/92/pdf/n2406592.pdf"
+      },
+      {
+        "title": "444 - CREATE AI Act of 2023",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/2714"
+      }
+    ],
+    "6.2": [
+      {
+        "title": "1152 - UN General Assembly Resolution A/78/L.49 (\"Seizing the opportunities of safe, secure and trustworthy artificial intelligence…",
+        "authority": "United Nations",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://digitallibrary.un.org/record/4040897?v=pdf&ln=en"
+      },
+      {
+        "title": "1214 - SAFE Bet Act",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/9590/text"
+      },
+      {
+        "title": "1219 - Workforce of the Future Act of 2024",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/5031"
+      },
+      {
+        "title": "1381 - Seizing the opportunities of safe, secure and trustworthy artificial intelligence systems for sustainable development",
+        "authority": "United Nations",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://documents.un.org/doc/undoc/ltd/n24/065/92/pdf/n2406592.pdf"
+      },
+      {
+        "title": "1396 - Recommendation of the Council on Artificial Intelligence (5/2/2024)",
+        "authority": "OECD",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449"
+      }
+    ],
+    "6.3": [
+      {
+        "title": "1974 - California Attorney General’s Legal Advisory on the Application of Existing California Laws to Artificial Intelligence",
+        "authority": "California",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://oag.ca.gov/system/files/attachments/press-docs/Legal%20Advisory%20-%20Application%20of%20Existing%20CA%20Laws%20to%20Artificial%20Intelligence.pdf"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Minimal",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      },
+      {
+        "title": "1087 - Artificial Intelligence and the Information Privacy Principles",
+        "authority": "Government of New Zealand",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Minimal",
+        "url": "https://privacy.org.nz/assets/New-order/Resources-/Publications/Guidance-resources/AI-Guidance-Resources-/AI-and-the-Information-Privacy-Principles.pdf"
+      },
+      {
+        "title": "1097 - Proposed Model AI Governance Framework for Generative AI",
+        "authority": "Government of Singapore",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Minimal",
+        "url": "https://aiverifyfoundation.sg/downloads/Proposed_MGF_Gen_AI_2024.pdf"
+      },
+      {
+        "title": "1109 - Artificial Intelligence (Regulation) Act 2024",
+        "authority": "Government of the United Kingdom",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Hard Law",
+        "level": "Minimal",
+        "url": "https://bills.parliament.uk/publications/53068/documents/4030"
+      }
+    ],
+    "6.4": [
+      {
+        "title": "1001 - 21st Century Peace through Strength Act, Division D (\"Protecting Americans from Foreign Adversary Controlled Applications Act\")",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/8038"
+      },
+      {
+        "title": "1046 - The Bletchley Declaration by Countries Attending the AI Safety Summit",
+        "authority": "Other multinational",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023"
+      },
+      {
+        "title": "1064 - Regulations of Shenzhen Special Economic Zone on Promoting the Artificial Intelligence Industry",
+        "authority": "Chinese provincial and local governments",
+        "jurisdiction": "China",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://sf.sz.gov.cn/fggzywyb/content/post_11216296.html#:~:text=Article%2037%20Shenzhen%20Municipal%20People's,products%20and%20new%20AI%20models."
+      },
+      {
+        "title": "1126 - Position Paper of the People’s Republic of China on Regulating Military Applications of Artificial Intelligence",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "http://geneva.china-mission.gov.cn/eng/dbdt/202112/t20211213_10467517.htm"
+      },
+      {
+        "title": "1135 - Measures of Beijing Municipality on Promoting the Innovative Development of Artificial General Intelligence",
+        "authority": "Chinese provincial and local governments",
+        "jurisdiction": "China",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://english.beijing.gov.cn/investinginbeijing/WhyBeijing/lawpolicy/policies/202307/t20230724_3205629.html"
+      }
+    ],
+    "6.5": [
+      {
+        "title": "1001 - 21st Century Peace through Strength Act, Division D (\"Protecting Americans from Foreign Adversary Controlled Applications Act\")",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/8038"
+      },
+      {
+        "title": "1026 - USDA Framework for State, Local, Tribal, and Territorial Use of Artificial Intelligence for Public Benefit Administration",
+        "authority": "Department of Agriculture",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit"
+      },
+      {
+        "title": "1027 - HHS Public Benefits and AI",
+        "authority": "Department of Health and Human Services",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hhs.gov/sites/default/files/public-benefits-and-ai.pdf"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      }
+    ],
+    "6.6": [
+      {
+        "title": "1112 - National Artificial Intelligence Research and Development Strategic Plan 2023 Update",
+        "authority": "Executive Office of the President",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2023/05/National-Artificial-Intelligence-Research-and-Development-Strategic-Plan-2023-Update.pdf"
+      },
+      {
+        "title": "1377 - Artificial Intelligence Law of the People’s Republic of China (Draft for Suggestions from Scholars)",
+        "authority": "Other authorities",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://cset.georgetown.edu/publication/china-ai-law-draft/"
+      },
+      {
+        "title": "400 - Artificial Intelligence Environmental Impacts Act of 2024",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/7197"
+      },
+      {
+        "title": "1002 - Department of Peacebuilding Act of 2023, Sec. 107 (\"Office of Technology for Peace\")",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Minimal",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/1111"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Minimal",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      }
+    ],
+    "7.1": [
+      {
+        "title": "1046 - The Bletchley Declaration by Countries Attending the AI Safety Summit",
+        "authority": "Other multinational",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023"
+      },
+      {
+        "title": "1097 - Proposed Model AI Governance Framework for Generative AI",
+        "authority": "Government of Singapore",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://aiverifyfoundation.sg/downloads/Proposed_MGF_Gen_AI_2024.pdf"
+      },
+      {
+        "title": "1127 - Opinion on Strengthening Science and Technology Ethics Governance",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://ai-ethics-and-governance.institute/2022/03/22/china-released-opinion-on-strengthening-the-ethics-and-governance-in-science-and-technology/"
+      },
+      {
+        "title": "1163 - Safe and Secure Innovation for Frontier Artificial Intelligence Models Act (SB 1047)",
+        "authority": "California",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB1047"
+      },
+      {
+        "title": "1194 - Consensus Statement on AI Safety as a Global Public Good",
+        "authority": "Other multinational",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://idais.ai/dialogue/idais-venice/"
+      }
+    ],
+    "7.2": [
+      {
+        "title": "1018 - Federal Register Doc. No. 2024-01580. Taking Additional Steps To Address the National Emergency With Respect to Significant…",
+        "authority": "Department of Commerce",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.federalregister.gov/documents/2024/01/29/2024-01580/taking-additional-steps-to-address-the-national-emergency-with-respect-to-significant-malicious"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      },
+      {
+        "title": "1046 - The Bletchley Declaration by Countries Attending the AI Safety Summit",
+        "authority": "Other multinational",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023"
+      },
+      {
+        "title": "1053 - Canadian Guardrails for Generative AI – Code of Practice",
+        "authority": "Government of Canada",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://ised-isde.canada.ca/site/ised/en/consultation-development-canadian-code-practice-generative-artificial-intelligence-systems/canadian-guardrails-generative-ai-code-practice"
+      },
+      {
+        "title": "1097 - Proposed Model AI Governance Framework for Generative AI",
+        "authority": "Government of Singapore",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://aiverifyfoundation.sg/downloads/Proposed_MGF_Gen_AI_2024.pdf"
+      }
+    ],
+    "7.3": [
+      {
+        "title": "1026 - USDA Framework for State, Local, Tribal, and Territorial Use of Artificial Intelligence for Public Benefit Administration",
+        "authority": "Department of Agriculture",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit"
+      },
+      {
+        "title": "1027 - HHS Public Benefits and AI",
+        "authority": "Department of Health and Human Services",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hhs.gov/sites/default/files/public-benefits-and-ai.pdf"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      },
+      {
+        "title": "1044 - Safe and Responsible AI in Australia Consultation, Interim Response",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/safe-and-responsible-ai-in-australia-governments-interim-response.pdf"
+      },
+      {
+        "title": "1045 - Australia’s AI Ethics Principles",
+        "authority": "Government of Australia",
+        "jurisdiction": "Other countries",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.industry.gov.au/publications/australias-artificial-intelligence-ethics-framework/australias-ai-ethics-principles"
+      }
+    ],
+    "7.4": [
+      {
+        "title": "1009 - Kids Online Safety Act, Title II (Filter Bubble Transparency)",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/7891/text"
+      },
+      {
+        "title": "1026 - USDA Framework for State, Local, Tribal, and Territorial Use of Artificial Intelligence for Public Benefit Administration",
+        "authority": "Department of Agriculture",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit"
+      },
+      {
+        "title": "1027 - HHS Public Benefits and AI",
+        "authority": "Department of Health and Human Services",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hhs.gov/sites/default/files/public-benefits-and-ai.pdf"
+      },
+      {
+        "title": "1029 - Guidance on Application of the Fair Housing Act to the Advertising of Housing, Credit, and Other Real Estate-Related Transactions…",
+        "authority": "Department of Housing and Urban Development",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://www.hud.gov/sites/dfiles/FHEO/documents/FHEO_Guidance_on_Advertising_through_Digital_Platforms.pdf"
+      },
+      {
+        "title": "1032 - Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence",
+        "authority": "Office of Management and Budget",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf"
+      }
+    ],
+    "7.5": [
+      {
+        "title": "1447 - Utah House Bill 249 (Utah Legal Personhood Amendments)",
+        "authority": "Utah",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://le.utah.gov/~2024/bills/static/HB0249.html"
+      },
+      {
+        "title": "1127 - Opinion on Strengthening Science and Technology Ethics Governance",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Hard Law",
+        "level": "Minimal",
+        "url": "https://ai-ethics-and-governance.institute/2022/03/22/china-released-opinion-on-strengthening-the-ethics-and-governance-in-science-and-technology/"
+      },
+      {
+        "title": "2098 - Guiding Opinions on Strengthening the Governance of Science and Technology Ethics (Draft for Feedback)",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Soft Law",
+        "level": "Minimal",
+        "url": "https://cset.georgetown.edu/wp-content/uploads/t0613_science_ethics_opinions_draft_EN.pdf"
+      },
+      {
+        "title": "210 - An act to amend and reenact subsection 8 of section 1-01-49 of the North Dakota Century Code, relating to the definition of person…",
+        "authority": "North Dakota",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Minimal",
+        "url": "https://ndlegis.gov/assembly/68-2023/regular/documents/23-0346-05000.pdf"
+      }
+    ],
+    "7.6": [
+      {
+        "title": "1194 - Consensus Statement on AI Safety as a Global Public Good",
+        "authority": "Other multinational",
+        "jurisdiction": "Multinational",
+        "legislative_status": "Soft Law",
+        "level": "Good",
+        "url": "https://idais.ai/dialogue/idais-venice/"
+      },
+      {
+        "title": "415 - Preventing Algorithmic Collusion Act of 2024",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Good",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/3686"
+      },
+      {
+        "title": "1112 - National Artificial Intelligence Research and Development Strategic Plan 2023 Update",
+        "authority": "Executive Office of the President",
+        "jurisdiction": "United States",
+        "legislative_status": "Soft Law",
+        "level": "Minimal",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2023/05/National-Artificial-Intelligence-Research-and-Development-Strategic-Plan-2023-Update.pdf"
+      },
+      {
+        "title": "1123 - National New Generation AI Standards System Construction Guide",
+        "authority": "Chinese central government",
+        "jurisdiction": "China",
+        "legislative_status": "Soft Law",
+        "level": "Minimal",
+        "url": "https://cset.georgetown.edu/wp-content/uploads/t0401_AI_standards_guidelines_EN.pdf"
+      },
+      {
+        "title": "1198 - Artificial Intelligence Weapon Accountability and Risk Evaluation Act of 2024",
+        "authority": "United States Congress",
+        "jurisdiction": "United States",
+        "legislative_status": "Hard Law",
+        "level": "Minimal",
+        "url": "https://www.congress.gov/bill/118th-congress/senate-bill/5239/text"
+      }
+    ]
+  }
+}
