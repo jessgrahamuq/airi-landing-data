@@ -19,37 +19,26 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    steps:
+  steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: "pip"
           cache-dependency-path: scripts/requirements.txt
-
       - name: Install deps
         run: pip install -r scripts/requirements.txt
-
-      - name: Build incidents
+      - name: Build incidents dataset
         env:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
         run: python scripts/build_incidents.py
-
-        - name: Build incidents dataset
-        run: python scripts/build_incidents.py
-        env:
-          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
-
       - name: Build governance dataset
-        run: python scripts/build_governance.py
         env:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
-
+        run: python scripts/build_governance.py
       # Future datasets: add additional `- name: Build <dataset>` steps here.
       # Each step should be independent so one failing dataset doesn't block
       # the others.
-
       - name: Commit changes
         run: |
           git config user.name "airi-data-bot"
