@@ -36,6 +36,16 @@ jobs:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
         run: python scripts/build_incidents.py
 
+        - name: Build incidents dataset
+        run: python scripts/build_incidents.py
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+
+      - name: Build governance dataset
+        run: python scripts/build_governance.py
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+
       # Future datasets: add additional `- name: Build <dataset>` steps here.
       # Each step should be independent so one failing dataset doesn't block
       # the others.
