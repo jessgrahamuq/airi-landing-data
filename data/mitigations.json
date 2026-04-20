@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "dataset": "mitigations",
+    "last_updated": "2026-04-20T05:08:01+00:00",
+    "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
+    "record_count": 2891,
+    "top_level_count": 5,
+    "document_count": 61,
+    "interpretation_title": "A catalogued landscape of AI risk mitigations",
+    "interpretation": "The database has catalogued 2,891 mitigation actions across 5 top-level categories drawn from 61 source documents.",
+    "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
+    "cta_label": "Explore the database →"
+  },
+  "taxonomy": {
+    "top_categories": [
+      {
+        "id": "recN6D7Urjb6Hyunf",
+        "code": "1",
+        "name": "Governance & Oversight Controls",
+        "count": 0,
+        "children_count": 8
+      },
+      {
+        "id": "recDUrUkY2nl3shJL",
+        "code": "2",
+        "name": "Technical & Security Controls",
+        "count": 0,
+        "children_count": 5
+      },
+      {
+        "id": "reczghK66UugWFjt0",
+        "code": "3",
+        "name": "Operational Process Controls",
+        "count": 0,
+        "children_count": 7
+      },
+      {
+        "id": "receWn3P7Leg0CnF3",
+        "code": "4",
+        "name": "Transparency & Accountability Controls",
+        "count": 0,
+        "children_count": 7
+      },
+      {
+        "id": "recZ510DfH1XdV643",
+        "code": "X",
+        "name": "Other",
+        "count": 0,
+        "children_count": 1
+      }
+    ],
+    "children_by_parent": {
+      "recN6D7Urjb6Hyunf": [
+        {
+          "id": "recPqtdPuglpqpAUo",
+          "code": "1.1",
+          "name": "Board Structure & Oversight",
+          "count": 0
+        },
+        {
+          "id": "recpubqqD7pwYGqIe",
+          "code": "1.2",
+          "name": "Risk Management",
+          "count": 0
+        },
+        {
+          "id": "rec5jG1cmTj7ZFQFP",
+          "code": "1.3",
+          "name": "Conflict of Interest Protections",
+          "count": 0
+        },
+        {
+          "id": "recfWsCYuFich8eCB",
+          "code": "1.4",
+          "name": "Whistleblower Reporting & Protection",
+          "count": 0
+        },
+        {
+          "id": "recISvV6C3hjjY8HM",
+          "code": "1.5",
+          "name": "Safety Decision Frameworks",
+          "count": 0
+        },
+        {
+          "id": "recZqLnez90qPLeS8",
+          "code": "1.6",
+          "name": "Environmental Impact Management",
+          "count": 0
+        },
+        {
+          "id": "recaiLMHrVvkXgJOi",
+          "code": "1.7",
+          "name": "Societal Impact Assessment",
+          "count": 0
+        },
+        {
+          "id": "recbo7aPv4qG9St50",
+          "code": "1.X",
+          "name": "Governance & Oversight Control not otherwise categorized",
+          "count": 0
+        }
+      ],
+      "recDUrUkY2nl3shJL": [
+        {
+          "id": "recOT18tbF9Okbvns",
+          "code": "2.1",
+          "name": "Model & Infrastructure Security",
+          "count": 0
+        },
+        {
+          "id": "recEsmP3oYkjiRjvm",
+          "code": "2.2",
+          "name": "Model Alignment",
+          "count": 0
+        },
+        {
+          "id": "recG3Cy0vaqrnwlAP",
+          "code": "2.3",
+          "name": "Model Safety Engineering",
+          "count": 0
+        },
+        {
+          "id": "recpmHt0Z4pJTJsaR",
+          "code": "2.4",
+          "name": "Content Safety Controls",
+          "count": 0
+        },
+        {
+          "id": "recNMuCEAE7YMue2I",
+          "code": "2.X",
+          "name": "Technical & Security Control not otherwise categorized",
+          "count": 0
+        }
+      ],
+      "reczghK66UugWFjt0": [
+        {
+          "id": "recDb3S8A1Zzv0i7w",
+          "code": "3.1",
+          "name": "Testing & Auditing",
+          "count": 0
+        },
+        {
+          "id": "recQWPEwiECOEgnnw",
+          "code": "3.2",
+          "name": "Data Governance",
+          "count": 0
+        },
+        {
+          "id": "recnmvMgWUX9AFwZd",
+          "code": "3.3",
+          "name": "Access Management",
+          "count": 0
+        },
+        {
+          "id": "recaxbYseniX7Raok",
+          "code": "3.4",
+          "name": "Staged Deployment",
+          "count": 0
+        },
+        {
+          "id": "recw7MlMxp6mjZFjw",
+          "code": "3.5",
+          "name": "Post-deployment Monitoring",
+          "count": 0
+        },
+        {
+          "id": "rec3ke4rbJc9Oj2Fb",
+          "code": "3.6",
+          "name": "Incident Response & Recovery",
+          "count": 0
+        },
+        {
+          "id": "rec0DD2TiMTGHUxtV",
+          "code": "3.X",
+          "name": "Operational Process Control not otherwise categorized",
+          "count": 0
+        }
+      ],
+      "receWn3P7Leg0CnF3": [
+        {
+          "id": "rec7VPC3nG1z4BPQh",
+          "code": "4.1",
+          "name": "System Documentation",
+          "count": 0
+        },
+        {
+          "id": "rec2M7R1xqJ9NX6vz",
+          "code": "4.2",
+          "name": "Risk Disclosure",
+          "count": 0
+        },
+        {
+          "id": "rec3aXf161utegooN",
+          "code": "4.3",
+          "name": "Incident Reporting",
+          "count": 0
+        },
+        {
+          "id": "recXfy5oq5oAW5Cu5",
+          "code": "4.4",
+          "name": "Governance Disclosure",
+          "count": 0
+        },
+        {
+          "id": "recrQRf1tGDpJmZ2S",
+          "code": "4.5",
+          "name": "Third-Party System Access",
+          "count": 0
+        },
+        {
+          "id": "recMCEJZUyV6DrkkV",
+          "code": "4.6",
+          "name": "User Rights & Recourse",
+          "count": 0
+        },
+        {
+          "id": "rec3N3Wpa6fgB5Ml2",
+          "code": "4.X",
+          "name": "Transparency & Accountability Control not otherwise categorized",
+          "count": 0
+        }
+      ],
+      "recZ510DfH1XdV643": [
+        {
+          "id": "recWqMbfOXaMyTTiM",
+          "code": "X.X",
+          "name": "Control not otherwise categorized",
+          "count": 0
+        }
+      ]
+    }
+  },
+  "mitigations_by_category": {}
+}
