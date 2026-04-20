@@ -37,6 +37,8 @@ jobs:
         env:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
         run: python scripts/build_mitigations.py
+      - name: Build delphi dataset
+        run: python scripts/build_delphi.py
       # Future datasets: add additional `- name: Build <dataset>` steps here.
       # Each step should be independent so one failing dataset doesn't block
       # the others.
