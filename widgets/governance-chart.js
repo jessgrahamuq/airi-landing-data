@@ -1,6 +1,8 @@
 /**
- * AIRI Governance stacked bar chart (v1.0.2)
+ * AIRI Governance stacked bar chart (v1.0.3)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
+ *
+ * v1.0.3 — all text/lines dark, wider container-tuned viewBox (1100 x 500)
  */
 (function () {
   var DATA_URL = 'https://jessgrahamuq.github.io/airi-landing-data/data/governance.json';
@@ -72,13 +74,14 @@
     var levels = data.chart.coverage_levels;
     var topDocs = data.top_documents_by_subdomain || {};
 
-    var W = 1000, H = 480, mL = 48, mR = 20, mT = 16, mB = 72;
+    // Wider and taller viewBox tuned for the slide container
+    var W = 1100, H = 500, mL = 52, mR = 20, mT = 18, mB = 80;
     var iw = W - mL - mR, ih = H - mT - mB;
 
     var yMax = Math.max.apply(null, series.map(function (r) { return r.total; })) || 1;
     var n = series.length;
     var bandWidth = iw / n;
-    var barWidth = Math.max(4, bandWidth * 0.75);
+    var barWidth = Math.max(4, bandWidth * 0.78);
 
     function xCenter(i) { return mL + bandWidth * (i + 0.5); }
     function yScale(v) { return mT + ih - (v / yMax) * ih; }
@@ -110,10 +113,11 @@
     });
 
     series.forEach(function (row, i) {
-      svg += '<text x="' + xCenter(i).toFixed(2) + '" y="' + (H - mB + 16) + '" text-anchor="middle" font-size="10" fill="' + TEXT_PRIMARY + '">' + esc(row.subdomain) + '</text>';
+      svg += '<text x="' + xCenter(i).toFixed(2) + '" y="' + (H - mB + 18) + '" text-anchor="middle" font-size="10" fill="' + TEXT_PRIMARY + '">' + esc(row.subdomain) + '</text>';
     });
 
-    var groupLabelY = H - mB + 44;
+    // Domain brackets — dark text to match rest of chart
+    var groupLabelY = H - mB + 48;
     var i2 = 0;
     while (i2 < series.length) {
       var curDomain = series[i2].domain;
@@ -124,7 +128,7 @@
       var xMid = (x1 + x2) / 2;
       var c2 = COLORS[curDomain] || '#ccc';
       svg += '<line x1="' + x1.toFixed(2) + '" y1="' + (groupLabelY - 10) + '" x2="' + x2.toFixed(2) + '" y2="' + (groupLabelY - 10) + '" stroke="' + c2 + '" stroke-width="2" opacity="0.8"/>';
-      svg += '<text x="' + xMid.toFixed(2) + '" y="' + groupLabelY + '" text-anchor="middle" font-size="10" fill="' + TEXT_MUTED + '">' + esc(shortDomain(curDomain)) + '</text>';
+      svg += '<text x="' + xMid.toFixed(2) + '" y="' + groupLabelY + '" text-anchor="middle" font-size="10" fill="' + TEXT_PRIMARY + '">' + esc(shortDomain(curDomain)) + '</text>';
       i2 = j;
     }
 
@@ -134,6 +138,7 @@
 
     svg += '</svg>';
 
+    // Legend — dark text, slightly larger to match incidents chart readability
     var legend = '<div class="airi-gchart-legend">';
     levels.forEach(function (lvl) {
       legend += '<span class="airi-gchart-legend-item"><span class="airi-gchart-legend-swatch" style="background:' + TEXT_PRIMARY + ';opacity:' + COVERAGE_STYLE[lvl].opacity + '"></span>' + esc(COVERAGE_STYLE[lvl].label) + '</span>';
@@ -149,9 +154,9 @@
     var style = '<style>' +
       '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
-      '.airi-gchart-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; justify-content: center; margin-top: 6px; font-size: 10px; color: ' + TEXT_MUTED + '; }' +
-      '.airi-gchart-legend-item { display: inline-flex; align-items: center; gap: 4px; }' +
-      '.airi-gchart-legend-swatch { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }' +
+      '.airi-gchart-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; margin-top: 8px; font-size: 12px; color: ' + TEXT_PRIMARY + '; }' +
+      '.airi-gchart-legend-item { display: inline-flex; align-items: center; gap: 5px; }' +
+      '.airi-gchart-legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }' +
       '.airi-gchart-tooltip { position: absolute; background: #111; color: #fff; padding: 10px 12px; border-radius: 6px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.12s ease; z-index: 10; font-family: Figtree, sans-serif; max-width: 280px; line-height: 1.4; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }' +
       '.airi-gchart-tooltip.is-visible { opacity: 1; }' +
       '.airi-gchart-tt-sub { font-weight: 600; margin-bottom: 2px; font-size: 13px; }' +
@@ -162,7 +167,7 @@
       '.airi-gchart-tt-count { font-variant-numeric: tabular-nums; color: #bbb; }' +
       '.airi-gchart-tt-total { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; font-weight: 600; }' +
       '.airi-gchart-tt-hint { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; color: #aaa; font-size: 11px; }' +
-      '.airi-gchart-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 8px; font-family: Figtree, sans-serif; }' +
+      '.airi-gchart-footer { text-align: center; font-size: 11px; color: ' + TEXT_PRIMARY + '; margin-top: 8px; font-family: Figtree, sans-serif; }' +
       '.airi-gchart-hint { color: ' + TEXT_MUTED + '; }' +
       '.airi-gchart-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.airi-gchart-modal.is-visible { opacity: 1; pointer-events: auto; }' +
