@@ -41,6 +41,7 @@ Output shape (see CLAUDE.md for the general contract):
 from __future__ import annotations
 
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
@@ -63,20 +64,26 @@ FLD_TITLE = "fld7tPwvbS1nqyXBg"
 
 REQUIRED_FIELDS = [FLD_INCIDENT_ID, FLD_DOMAIN, FLD_YEAR, FLD_TITLE]
 
-# --- Canonical domain order (stable color assignment in the widget) ----------
-# Matches the 7-domain MIT Risk Repository taxonomy. "Other" catches anything
-# that doesn't map cleanly so we never silently drop data from the chart.
-# Prefixes like "1." are tolerated on input; we normalize to the bare label.
-CANONICAL_DOMAINS = [
-    "Discrimination & Toxicity",
-    "Privacy & Security",
-    "Misinformation",
-    "Malicious Use",
-    "Human-Computer Interaction",
-    "Socioeconomic & Environmental",
-    "AI System Safety, Failures & Limitations",
-]
+# --- Canonical domains -------------------------------------------------------
+# These are the 7 MIT Risk Repository domain labels used on the site. We map
+# the raw Airtable strings (which have various formats: "4 Malicious actors",
+# "7 AI system safety, failures, & limitations") onto these canonical display
+# labels. The key is the domain number (1-7); the value is the display label.
+DOMAIN_BY_NUMBER = {
+    1: "Discrimination & Toxicity",
+    2: "Privacy & Security",
+    3: "Misinformation",
+    4: "Malicious Actors",
+    5: "Human-Computer Interaction",
+    6: "Socioeconomic & Environmental",
+    7: "AI System Safety, Failures & Limitations",
+}
+CANONICAL_DOMAINS = [DOMAIN_BY_NUMBER[i] for i in range(1, 8)]
 OTHER_BUCKET = "Other"
+
+# Regex: leading digit, optional punctuation/whitespace, rest of label.
+# Matches: "4 Malicious actors", "4. Malicious Actors", "4) foo", "4: bar"
+_LEADING_NUM_RE = re.compile(r"^\s*(\d+)\s*[\.\):]?\s+(.+)$")
 
 
 # --- Output paths ------------------------------------------------------------
@@ -87,21 +94,35 @@ OUTPUT_PATH = REPO_ROOT / "data" / "incidents.json"
 def normalize_domain(raw: str | None) -> str:
     """
     Normalize a raw Domain string from Airtable to one of CANONICAL_DOMAINS.
-    Returns OTHER_BUCKET if no match. Tolerates common formatting variations:
-    leading numeric prefixes ("1. "), trailing whitespace, differing ampersand
-    styles.
+    Returns OTHER_BUCKET if no match.
+
+    Strategy: extract the leading domain number if present and map via
+    DOMAIN_BY_NUMBER. If no leading number, fall back to case-insensitive
+    label match.
     """
     if not raw:
         return OTHER_BUCKET
     s = raw.strip()
-    # Strip leading "N." or "N)" prefixes if the taxonomy is numbered
-    import re
-    s = re.sub(r"^\s*\d+\s*[\.\)]\s*", "", s)
-    s = s.replace(" and ", " & ")
-    # Case-insensitive match against canonical
+    if not s:
+        return OTHER_BUCKET
+
+    # Try leading-number prefix: "4 Malicious actors" -> 4
+    m = _LEADING_NUM_RE.match(s)
+    if m:
+        try:
+            num = int(m.group(1))
+        except ValueError:
+            num = None
+        if num is not None and num in DOMAIN_BY_NUMBER:
+            return DOMAIN_BY_NUMBER[num]
+
+    # Fallback: case-insensitive match against canonical labels
+    # (also swap common variations)
+    s_norm = s.lower().replace(" and ", " & ")
     for canon in CANONICAL_DOMAINS:
-        if s.lower() == canon.lower():
+        if s_norm == canon.lower():
             return canon
+
     return OTHER_BUCKET
 
 
@@ -119,6 +140,7 @@ def build() -> dict:
     dropped_no_year = 0
     bucketed_other = 0
     domain_raw_counts: Counter = Counter()
+    domain_canonical_counts: Counter = Counter()
 
     for fields in iter_fields(records):
         year = fields.get(FLD_YEAR)
@@ -135,6 +157,7 @@ def build() -> dict:
             continue
 
         domain = normalize_domain(domain_raw)
+        domain_canonical_counts[domain] += 1
         if domain == OTHER_BUCKET:
             bucketed_other += 1
         by_year[year_int][domain] += 1
@@ -143,7 +166,7 @@ def build() -> dict:
     all_domains = CANONICAL_DOMAINS + [OTHER_BUCKET]
     series = []
     for year in sorted(by_year.keys()):
-        row = {"year": year}
+        row: dict = {"year": year}
         total = 0
         for d in all_domains:
             count = by_year[year].get(d, 0)
@@ -155,15 +178,30 @@ def build() -> dict:
     total_kept = sum(r["total"] for r in series)
 
     # --- Interpretation copy (editable; reviewed as part of data PRs) --------
-    interpretation_title = (
-        "Reports of AI incidents are rising sharply"
-    )
+    # Figure out which domain is the largest for the most recent year with
+    # complete data, to keep the prose honest.
+    latest_year_row = series[-1] if series else None
+    top_domain = ""
+    if latest_year_row:
+        counts = [
+            (latest_year_row[d], d)
+            for d in CANONICAL_DOMAINS
+            if latest_year_row.get(d, 0) > 0
+        ]
+        if counts:
+            counts.sort(reverse=True)
+            top_domain = counts[0][1]
+
+    interpretation_title = "Reports of AI incidents are rising sharply"
     interpretation = (
         f"The tracker has classified {total_kept:,} incidents to date "
-        f"across seven MIT Risk Repository domains. Misinformation and "
-        f"Malicious Use dominate recent years, though all domains have "
-        f"grown as reporting matures."
+        f"across the seven MIT Risk Repository domains. "
     )
+    if top_domain:
+        interpretation += (
+            f"In {latest_year_row['year']}, {top_domain} accounted for the "
+            f"largest share of reports."
+        )
 
     output = {
         "meta": {
@@ -191,6 +229,10 @@ def build() -> dict:
     print(f"  kept (with year):     {total_kept}")
     print(f"  dropped (no year):    {dropped_no_year}")
     print(f"  bucketed as 'Other':  {bucketed_other}")
+    print("\n  canonical domain counts:")
+    for d in all_domains:
+        cnt = domain_canonical_counts.get(d, 0)
+        print(f"    {cnt:>5}  {d}")
     print("\n  raw Domain values seen (top 10):")
     for val, cnt in domain_raw_counts.most_common(10):
         print(f"    {cnt:>5}  {val}")
@@ -207,6 +249,9 @@ def main() -> int:
     print(f"\nWrote {OUTPUT_PATH.relative_to(REPO_ROOT)}")
     return 0
 
+
+if __name__ == "__main__":
+    raise SystemExit(main())
 
 if __name__ == "__main__":
     raise SystemExit(main())
