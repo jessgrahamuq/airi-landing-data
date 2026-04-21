@@ -1,5 +1,8 @@
 /**
- * AIRI Incidents stacked area chart
+ * AIRI Incidents stacked area chart (v1.0.1)
+ *
+ * v1.0.1 — SVG fills container in both dimensions
+ *          (preserveAspectRatio + height 100% + flex-column root)
  *
  * Mounts into an element with id="airi-chart-incidents".
  * Fetches data from /data/incidents.json in the same repo.
@@ -103,9 +106,9 @@
     function yScale(y) { return mT + ih - (y / yMax) * ih; }
 
     // ---------- SVG ------------------------------------------------------
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg"' +
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"' +
       ' role="img" aria-label="AI incidents per year, stacked by risk domain"' +
-      ' style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
+      ' style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
     [0, 0.25, 0.5, 0.75, 1].forEach(function (p) {
       var v = Math.round(yMax * p);
@@ -169,7 +172,7 @@
 
     // ---------- Styles ---------------------------------------------------
     var style = '<style>' +
-      '#airi-chart-incidents { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; }' +
+      '#airi-chart-incidents { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
       '.airi-chart-band { transition: opacity 0.15s ease; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band { opacity: 0.22; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band.is-active { opacity: 1; }' +

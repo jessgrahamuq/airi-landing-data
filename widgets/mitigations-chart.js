@@ -1,5 +1,5 @@
 /**
- * AIRI Mitigations drill-down donut chart (v1.0.1)
+ * AIRI Mitigations drill-down donut chart (v1.0.2)
  *
  * Mounts into an element with id="airi-chart-mitigations".
  * Fetches from /data/mitigations.json in the same repo.
@@ -7,6 +7,8 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/mitigations-chart.js
  *
+ * v1.0.2 — SVG fills container in both dimensions
+ *          (preserveAspectRatio + height 100% + flex-column root)
  * v1.0.1 — bigger donut, tighter labels, more square viewBox
  *          (was 1000x520 r150/88, now 820x540 r180/105)
  */
@@ -108,7 +110,7 @@
     var outer = 180, inner = 105;
 
     var style = '<style>' +
-      '#airi-chart-mitigations { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; }' +
+      '#airi-chart-mitigations { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
       '.mit-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; min-height: 28px; }' +
       '.mit-back { background: none; border: none; padding: 0; cursor: pointer; color: ' + TEXT_MUTED + '; font-size: 13px; font-family: inherit; }' +
       '.mit-back:hover { color: ' + TEXT_PRIMARY + '; }' +
@@ -162,7 +164,7 @@
         ? '<div class="mit-breadcrumb" style="color:' + TEXT_MUTED + ';">All categories</div>'
         : '<div class="mit-breadcrumb"><button class="mit-back">\u2190 All categories</button><span style="color:' + TEXT_MUTED + ';">/</span><span style="color:' + TEXT_PRIMARY + ';font-weight:500;">' + esc(parentObj ? parentObj.name : '') + '</span></div>';
 
-      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Mitigation categories donut chart" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
+      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mitigation categories donut chart" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
       var startAngle = -Math.PI / 2;
       var sliceData = [];

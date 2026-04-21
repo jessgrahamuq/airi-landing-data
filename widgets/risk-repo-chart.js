@@ -1,5 +1,9 @@
 /**
- * AIRI Risk Repository causal taxonomy matrix (v1.0.0)
+ * AIRI Risk Repository causal taxonomy matrix (v1.0.1)
+ *
+ * v1.0.1 — Root container fills parent height (flex-column + height 100%)
+ *          so the matrix stretches to fill its mount div. Matrix renders as
+ *          an HTML grid (not SVG), so no preserveAspectRatio change needed.
  *
  * Mounts into an element with id="airi-chart-risk-repo".
  * Fetches from /data/risk_repo.json in the same repo.
@@ -79,7 +83,7 @@
     var html = '';
 
     html += '<style>' +
-      '#airi-chart-risk-repo { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; font-size: 13px; }' +
+      '#airi-chart-risk-repo { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; font-size: 13px; display: flex; flex-direction: column; height: 100%; }' +
       '.rr-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 12px; }' +
       '.rr-legend { display: flex; gap: 28px; margin-top: 14px; font-size: 11px; color: ' + TEXT_MUTED + '; flex-wrap: wrap; justify-content: center; }' +
       '.rr-legend-item { display: flex; align-items: center; gap: 6px; }' +

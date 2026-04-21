@@ -1,5 +1,8 @@
 /**
- * AIRI Delphi butterfly chart (v1.0.0)
+ * AIRI Delphi butterfly chart (v1.0.1)
+ *
+ * v1.0.1 — SVG fills container in both dimensions
+ *          (preserveAspectRatio + height 100% + flex-column root)
  *
  * Mounts into an element with id="airi-chart-delphi".
  * Fetches from /data/delphi.json in the same repo.
@@ -62,7 +65,7 @@
     var vulnLevels = data.levels.Vulnerability;
 
     var style = '<style>' +
-      '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; }' +
+      '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
       '.delphi-controls { display: flex; gap: 12px; margin-bottom: 1rem; flex-wrap: wrap; }' +
       '.delphi-control { flex: 1; min-width: 220px; }' +
       '.delphi-control label { font-size: 11px; color: ' + TEXT_MUTED + '; display: block; margin-bottom: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; }' +
@@ -99,7 +102,7 @@
         }).join('') +
         '</select></div></div>';
 
-      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility for selected risk and actor" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
+      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility for selected risk and actor" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
       svg += '<text x="' + (cx - 20) + '" y="30" text-anchor="end" font-size="13" font-weight="500" fill="' + VULN_COLOR + '">Vulnerability \u2190</text>';
       svg += '<text x="' + (cx + 20) + '" y="30" text-anchor="start" font-size="13" font-weight="500" fill="' + RESP_COLOR + '">\u2192 Responsibility</text>';
