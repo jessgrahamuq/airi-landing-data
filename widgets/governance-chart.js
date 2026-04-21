@@ -75,7 +75,7 @@
     var topDocs = data.top_documents_by_subdomain || {};
 
     // Wider and taller viewBox tuned for the slide container
-    var W = 1100, H = 500, mL = 52, mR = 20, mT = 18, mB = 80;
+    var W = 1100, H = 795, mL = 52, mR = 20, mT = 20, mB = 90;
     var iw = W - mL - mR, ih = H - mT - mB;
 
     var yMax = Math.max.apply(null, series.map(function (r) { return r.total; })) || 1;
