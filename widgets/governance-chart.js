@@ -1,7 +1,8 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.2)
+ * AIRI Governance horizontal stacked bar chart (v1.1.3)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.3 — SVG stretches to fill container height (preserveAspectRatio + height 100%)
  * v1.1.2 — remove stray row total labels, bigger chart, narrower legend, bigger axis title
  * v1.1.1 — Epoch-style bold axis labels + right-side stacked legend
  * v1.1.0 — REWRITE: horizontal bars, full subdomain names on Y-axis, readable labels
@@ -115,7 +116,8 @@
 
     function xScale(v) { return mL + (v / xMax) * iw; }
 
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
+    // v1.1.3: preserveAspectRatio + height:100% so the SVG fills the container fully
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
     // X-axis title — bigger, bold, Epoch-style
     svg += '<text x="' + mL + '" y="28" font-size="22" font-weight="700" fill="' + TEXT_PRIMARY + '">Number of documents</text>';
@@ -186,10 +188,11 @@
 
     var chartArea = '<div class="airi-gchart-area">' + svg + legend + '</div>';
 
+    // v1.1.3: chart-area stretches to fill container height; SVG inside takes height:100%
     var style = '<style>' +
-      '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; }' +
-      '.airi-gchart-area { display: flex; align-items: flex-start; gap: 16px; }' +
-      '.airi-gchart-area > svg { flex: 1; min-width: 0; }' +
+      '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
+      '.airi-gchart-area { display: flex; align-items: stretch; gap: 16px; flex: 1; min-height: 640px; }' +
+      '.airi-gchart-area > svg { flex: 1; min-width: 0; height: 100%; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
       '.airi-gchart-legend { display: flex; flex-direction: column; gap: 16px; flex-shrink: 0; width: 140px; padding-top: 40px; }' +
       '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 8px; }' +
