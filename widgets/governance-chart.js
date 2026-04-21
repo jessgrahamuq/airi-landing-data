@@ -1,7 +1,11 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.6)
+ * AIRI Governance horizontal stacked bar chart (v1.1.7)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.7 — Remove colored tab from domain headers, drop ALL-CAPS on
+ *          domain names, and bump text sizes (domain 15 → 18,
+ *          subdomain 13 → 14, legend label 12 → 14, legend desc
+ *          11 → 13, swatch 12 → 14).
  * v1.1.6 — Tighter top margin for closer alignment with text panel
  *          (mT 80 → 30)
  * v1.1.5 — Tighten caption spacing: chart hugs bottom of SVG
@@ -147,9 +151,8 @@
     domainGroups.forEach(function (group, gIdx) {
       var domColor = COLORS[group.domain] || '#ccc';
 
-      // Domain header
-      svg += '<rect x="' + (mL - 12) + '" y="' + y + '" width="6" height="' + headerH + '" fill="' + domColor + '" rx="2"/>';
-      svg += '<text x="' + (mL - 20) + '" y="' + (y + headerH / 2 + 5) + '" text-anchor="end" font-size="15" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(shortDomain(group.domain).toUpperCase()) + '</text>';
+      // Domain header — v1.1.7: no colored tab, mixed case, bigger text
+      svg += '<text x="' + (mL - 12) + '" y="' + (y + headerH / 2 + 6) + '" text-anchor="end" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(shortDomain(group.domain)) + '</text>';
       y += headerH;
 
       group.items.forEach(function (it) {
@@ -158,7 +161,7 @@
         var color = domColor;
 
         // Subdomain label
-        svg += '<text x="' + (mL - 12) + '" y="' + (y + rowH / 2 + 5) + '" text-anchor="end" font-size="13" fill="' + TEXT_PRIMARY + '">' + esc(subdomainLabel(row)) + '</text>';
+        svg += '<text x="' + (mL - 12) + '" y="' + (y + rowH / 2 + 5) + '" text-anchor="end" font-size="14" fill="' + TEXT_PRIMARY + '">' + esc(subdomainLabel(row)) + '</text>';
 
         var accumX = mL;
         levels.forEach(function (lvl) {
@@ -206,12 +209,12 @@
       '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; min-height: 640px; }' +
       '#airi-chart-governance > svg { flex: 1; min-width: 0; min-height: 0; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
-      '.airi-gchart-legend { display: flex; flex-direction: column; gap: 16px; font-family: Figtree, sans-serif; color: ' + TEXT_PRIMARY + '; }' +
-      '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 8px; }' +
-      '.airi-gchart-legend-swatch { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; margin-top: 3px; }' +
-      '.airi-gchart-legend-text { font-size: 12px; line-height: 1.35; }' +
+      '.airi-gchart-legend { display: flex; flex-direction: column; gap: 18px; font-family: Figtree, sans-serif; color: ' + TEXT_PRIMARY + '; }' +
+      '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 10px; }' +
+      '.airi-gchart-legend-swatch { width: 14px; height: 14px; border-radius: 2px; flex-shrink: 0; margin-top: 3px; }' +
+      '.airi-gchart-legend-text { font-size: 14px; line-height: 1.35; }' +
       '.airi-gchart-legend-label { font-weight: 700; color: ' + TEXT_PRIMARY + '; }' +
-      '.airi-gchart-legend-desc { color: ' + TEXT_MUTED + '; margin-top: 2px; font-size: 11px; }' +
+      '.airi-gchart-legend-desc { color: ' + TEXT_MUTED + '; margin-top: 2px; font-size: 13px; }' +
       '.airi-gchart-tooltip { position: absolute; background: #111; color: #fff; padding: 10px 12px; border-radius: 6px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.12s ease; z-index: 10; font-family: Figtree, sans-serif; max-width: 280px; line-height: 1.4; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }' +
       '.airi-gchart-tooltip.is-visible { opacity: 1; }' +
       '.airi-gchart-tt-sub { font-weight: 600; margin-bottom: 2px; font-size: 13px; }' +
