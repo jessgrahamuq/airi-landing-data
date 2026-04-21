@@ -1,6 +1,8 @@
 /**
- * AIRI Delphi butterfly chart (v1.1.1)
+ * AIRI Delphi butterfly chart (v1.1.2)
  *
+ * v1.1.2 — Larger in-chart text (tick %s, actor names, bar labels,
+ *          legend) and darker gridlines + tick numbers for readability.
  * v1.1.1 — Taller viewBox (~900 × 1000) via bigger ROW_H and BAR_H
  *          for better vertical fill / more generous per-actor spacing.
  * v1.1.0 — REDESIGN: small-multiples. Show one butterfly per actor
@@ -125,22 +127,24 @@
 
       // ---------- Gridlines + center axis -------------------------------
       var ticks = [25, 50, 75, 100];
+      // v1.1.2: darker gridlines — primary color with subtle dashes so they're visible but not dominant
       ticks.forEach(function (t) {
         var xR = cx + t * scale;
         var xL = cx - t * scale;
-        svg += '<line x1="' + xR + '" y1="' + gridTop + '" x2="' + xR + '" y2="' + gridBottom + '" stroke="' + TEXT_MUTED + '" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.45"/>';
-        svg += '<line x1="' + xL + '" y1="' + gridTop + '" x2="' + xL + '" y2="' + gridBottom + '" stroke="' + TEXT_MUTED + '" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.45"/>';
+        svg += '<line x1="' + xR + '" y1="' + gridTop + '" x2="' + xR + '" y2="' + gridBottom + '" stroke="' + TEXT_PRIMARY + '" stroke-width="0.8" stroke-dasharray="2,4" opacity="0.4"/>';
+        svg += '<line x1="' + xL + '" y1="' + gridTop + '" x2="' + xL + '" y2="' + gridBottom + '" stroke="' + TEXT_PRIMARY + '" stroke-width="0.8" stroke-dasharray="2,4" opacity="0.4"/>';
       });
-      svg += '<line x1="' + cx + '" y1="' + gridTop + '" x2="' + cx + '" y2="' + gridBottom + '" stroke="' + TEXT_PRIMARY + '" stroke-width="1"/>';
+      svg += '<line x1="' + cx + '" y1="' + gridTop + '" x2="' + cx + '" y2="' + gridBottom + '" stroke="' + TEXT_PRIMARY + '" stroke-width="1.2"/>';
 
       // ---------- Big axis titles (Vulnerability / Responsibility) ------
       svg += '<text x="' + (cx - 24) + '" y="40" text-anchor="end" font-size="22" font-weight="700" fill="' + VULN_COLOR + '">Vulnerability \u2190</text>';
       svg += '<text x="' + (cx + 24) + '" y="40" text-anchor="start" font-size="22" font-weight="700" fill="' + RESP_COLOR + '">\u2192 Responsibility</text>';
 
       // ---------- Tick labels at top (above the first row) --------------
+      // v1.1.2: bigger + darker (primary color, weight 600) so readable against the grid
       ticks.forEach(function (t) {
-        svg += '<text x="' + (cx + t * scale) + '" y="72" text-anchor="middle" font-size="11" fill="' + TEXT_MUTED + '">' + t + '%</text>';
-        svg += '<text x="' + (cx - t * scale) + '" y="72" text-anchor="middle" font-size="11" fill="' + TEXT_MUTED + '">' + t + '%</text>';
+        svg += '<text x="' + (cx + t * scale) + '" y="72" text-anchor="middle" font-size="14" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
+        svg += '<text x="' + (cx - t * scale) + '" y="72" text-anchor="middle" font-size="14" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
       });
 
       // ---------- Per-actor butterfly rows ------------------------------
@@ -149,10 +153,10 @@
         if (!actorData) return;
         var yBase = TOP_AREA + ai * ROW_H;
 
-        // Actor name (left-aligned inside its row)
-        svg += '<text x="' + SIDE_PAD + '" y="' + (yBase + 16) + '" text-anchor="start" font-size="13" font-weight="600" fill="' + TEXT_PRIMARY + '">' + esc(actor) + '</text>';
+        // Actor name (left-aligned inside its row) — v1.1.2: bigger
+        svg += '<text x="' + SIDE_PAD + '" y="' + (yBase + 18) + '" text-anchor="start" font-size="16" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(actor) + '</text>';
 
-        var barY = yBase + 24;
+        var barY = yBase + 32; // v1.1.2: drop bar a bit to clear bigger actor label
 
         // Responsibility (right) — strongest near center
         var xOffR = cx;
@@ -163,8 +167,8 @@
           var wR = valR * scale;
           var opR = opacityFor(i, respLevels.length);
           svg += '<rect x="' + xOffR + '" y="' + barY + '" width="' + wR + '" height="' + BAR_H + '" fill="' + RESP_COLOR + '" fill-opacity="' + opR + '"/>';
-          if (wR > 30) {
-            svg += '<text x="' + (xOffR + wR / 2) + '" y="' + (barY + BAR_H / 2 + 4) + '" text-anchor="middle" font-size="11" font-weight="500" fill="' + (opR > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + valR.toFixed(0) + '%</text>';
+          if (wR > 32) {
+            svg += '<text x="' + (xOffR + wR / 2) + '" y="' + (barY + BAR_H / 2 + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + (opR > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + valR.toFixed(0) + '%</text>';
           }
           xOffR += wR;
         }
@@ -178,28 +182,29 @@
           var wV = valV * scale;
           var opV = opacityFor(j, vulnLevels.length);
           svg += '<rect x="' + (xOffL - wV) + '" y="' + barY + '" width="' + wV + '" height="' + BAR_H + '" fill="' + VULN_COLOR + '" fill-opacity="' + opV + '"/>';
-          if (wV > 30) {
-            svg += '<text x="' + (xOffL - wV / 2) + '" y="' + (barY + BAR_H / 2 + 4) + '" text-anchor="middle" font-size="11" font-weight="500" fill="' + (opV > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + valV.toFixed(0) + '%</text>';
+          if (wV > 32) {
+            svg += '<text x="' + (xOffL - wV / 2) + '" y="' + (barY + BAR_H / 2 + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + (opV > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + valV.toFixed(0) + '%</text>';
           }
           xOffL -= wV;
         }
       });
 
       // ---------- Legend at the bottom ---------------------------------
+      // v1.1.2: bigger legend swatches + text
       var legendY = gridBottom + 20;
       var lgLeftWidth = (cx - 40) / vulnLevels.length;
       for (var li = vulnLevels.length - 1; li >= 0; li--) {
         var lvlName = vulnLevels[li];
         var lx = 20 + (vulnLevels.length - 1 - li) * lgLeftWidth;
-        svg += '<rect x="' + lx + '" y="' + legendY + '" width="11" height="11" fill="' + VULN_COLOR + '" fill-opacity="' + opacityFor(li, vulnLevels.length) + '"/>';
-        svg += '<text x="' + (lx + 15) + '" y="' + (legendY + 9) + '" font-size="11" fill="' + TEXT_PRIMARY + '">' + esc(lvlName) + '</text>';
+        svg += '<rect x="' + lx + '" y="' + legendY + '" width="14" height="14" fill="' + VULN_COLOR + '" fill-opacity="' + opacityFor(li, vulnLevels.length) + '"/>';
+        svg += '<text x="' + (lx + 19) + '" y="' + (legendY + 12) + '" font-size="13" fill="' + TEXT_PRIMARY + '">' + esc(lvlName) + '</text>';
       }
       var lgRightWidth = (cx - 40) / respLevels.length;
       for (var ri = respLevels.length - 1; ri >= 0; ri--) {
         var lvlName2 = respLevels[ri];
         var lx2 = cx + 20 + (respLevels.length - 1 - ri) * lgRightWidth;
-        svg += '<rect x="' + lx2 + '" y="' + legendY + '" width="11" height="11" fill="' + RESP_COLOR + '" fill-opacity="' + opacityFor(ri, respLevels.length) + '"/>';
-        svg += '<text x="' + (lx2 + 15) + '" y="' + (legendY + 9) + '" font-size="11" fill="' + TEXT_PRIMARY + '">' + esc(lvlName2) + '</text>';
+        svg += '<rect x="' + lx2 + '" y="' + legendY + '" width="14" height="14" fill="' + RESP_COLOR + '" fill-opacity="' + opacityFor(ri, respLevels.length) + '"/>';
+        svg += '<text x="' + (lx2 + 19) + '" y="' + (legendY + 12) + '" font-size="13" fill="' + TEXT_PRIMARY + '">' + esc(lvlName2) + '</text>';
       }
 
       svg += '</svg>';
