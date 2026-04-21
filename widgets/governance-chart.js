@@ -1,7 +1,9 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.4)
+ * AIRI Governance horizontal stacked bar chart (v1.1.5)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.5 — Tighten caption spacing: chart hugs bottom of SVG
+ *          (preserveAspectRatio=xMidYMax) and footer margin shrinks.
  * v1.1.4 — Thicker bars (rowH × 0.90) and legend moved inside the SVG as a
  *          foreignObject so its top always aligns with the top of the plot,
  *          independent of how the SVG scales in the container.
@@ -124,7 +126,7 @@
     function xScale(v) { return mL + (v / xMax) * iw; }
 
     // v1.1.3: preserveAspectRatio + height:100% so the SVG fills the container fully
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
     // X-axis title — bigger, bold, Epoch-style
     svg += '<text x="' + mL + '" y="28" font-size="22" font-weight="700" fill="' + TEXT_PRIMARY + '">Number of documents</text>';
@@ -218,7 +220,7 @@
       '.airi-gchart-tt-count { font-variant-numeric: tabular-nums; color: #bbb; }' +
       '.airi-gchart-tt-total { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; font-weight: 600; }' +
       '.airi-gchart-tt-hint { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; color: #aaa; font-size: 11px; }' +
-      '.airi-gchart-footer { text-align: center; font-size: 13px; color: ' + TEXT_PRIMARY + '; margin-top: 12px; font-family: Figtree, sans-serif; }' +
+      '.airi-gchart-footer { text-align: center; font-size: 13px; color: ' + TEXT_PRIMARY + '; margin-top: 4px; font-family: Figtree, sans-serif; }' +
       '.airi-gchart-hint { color: ' + TEXT_MUTED + '; }' +
       '.airi-gchart-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.airi-gchart-modal.is-visible { opacity: 1; pointer-events: auto; }' +

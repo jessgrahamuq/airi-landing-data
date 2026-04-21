@@ -1,6 +1,7 @@
 /**
- * AIRI Delphi butterfly chart (v1.0.1)
+ * AIRI Delphi butterfly chart (v1.0.2)
  *
+ * v1.0.2 — Tighten caption spacing above and below the chart
  * v1.0.1 — SVG fills container in both dimensions
  *          (preserveAspectRatio + height 100% + flex-column root)
  *
@@ -66,13 +67,13 @@
 
     var style = '<style>' +
       '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
-      '.delphi-controls { display: flex; gap: 12px; margin-bottom: 1rem; flex-wrap: wrap; }' +
+      '.delphi-controls { display: flex; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }' +
       '.delphi-control { flex: 1; min-width: 220px; }' +
       '.delphi-control label { font-size: 11px; color: ' + TEXT_MUTED + '; display: block; margin-bottom: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; }' +
       '.delphi-control select { width: 100%; padding: 8px 10px; border: 0.5px solid rgba(0,0,0,0.25); border-radius: 6px; font-size: 13px; font-family: inherit; background: #fff; color: ' + TEXT_PRIMARY + '; cursor: pointer; }' +
       '.delphi-control select:hover { border-color: rgba(0,0,0,0.45); }' +
       '.delphi-control select:focus { outline: none; border-color: ' + VULN_COLOR + '; box-shadow: 0 0 0 2px rgba(141,160,203,0.2); }' +
-      '.delphi-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 10px; }' +
+      '.delphi-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; }' +
       '</style>';
 
     function doRender() {

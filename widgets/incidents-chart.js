@@ -1,6 +1,8 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.2)
+ * AIRI Incidents stacked area chart (v1.0.3)
  *
+ * v1.0.3 — Tighten caption spacing: chart hugs bottom of SVG
+ *          (preserveAspectRatio=xMidYMax) and caption margins shrink.
  * v1.0.2 — Add "Total incidents" title, top-left, bold black
  * v1.0.1 — SVG fills container in both dimensions
  *          (preserveAspectRatio + height 100% + flex-column root)
@@ -107,7 +109,7 @@
     function yScale(y) { return mT + ih - (y / yMax) * ih; }
 
     // ---------- SVG ------------------------------------------------------
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"' +
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg"' +
       ' role="img" aria-label="AI incidents per year, stacked by risk domain"' +
       ' style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
@@ -180,7 +182,7 @@
       '.airi-chart-band { transition: opacity 0.15s ease; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band { opacity: 0.22; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band.is-active { opacity: 1; }' +
-      '.airi-chart-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; margin-top: 10px; font-size: 12px; color: ' + TEXT_PRIMARY + '; }' +
+      '.airi-chart-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; margin-top: 4px; font-size: 12px; color: ' + TEXT_PRIMARY + '; }' +
       '.airi-chart-legend-item { display: inline-flex; align-items: center; gap: 5px; transition: opacity 0.15s ease; cursor: default; }' +
       '.airi-chart-legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-legend-item { opacity: 0.35; }' +
@@ -194,7 +196,7 @@
       '.airi-chart-tooltip-count { font-variant-numeric: tabular-nums; color: #bbb; }' +
       '.airi-chart-tooltip-total { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; font-weight: 600; }' +
       '.airi-chart-tooltip-hint { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; color: #aaa; font-size: 11px; }' +
-      '.airi-chart-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 10px; font-family: Figtree, sans-serif; }' +
+      '.airi-chart-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; font-family: Figtree, sans-serif; }' +
       '.airi-chart-hint { color: ' + TEXT_MUTED + '; }' +
       '.airi-chart-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.airi-chart-modal.is-visible { opacity: 1; pointer-events: auto; }' +

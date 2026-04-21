@@ -1,5 +1,5 @@
 /**
- * AIRI Mitigations drill-down donut chart (v1.0.2)
+ * AIRI Mitigations drill-down donut chart (v1.0.3)
  *
  * Mounts into an element with id="airi-chart-mitigations".
  * Fetches from /data/mitigations.json in the same repo.
@@ -7,6 +7,8 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/mitigations-chart.js
  *
+ * v1.0.3 — Tighten caption spacing: donut hugs bottom of SVG
+ *          (preserveAspectRatio=xMidYMax) and hint/footer margins shrink.
  * v1.0.2 — SVG fills container in both dimensions
  *          (preserveAspectRatio + height 100% + flex-column root)
  * v1.0.1 — bigger donut, tighter labels, more square viewBox
@@ -115,8 +117,8 @@
       '.mit-back { background: none; border: none; padding: 0; cursor: pointer; color: ' + TEXT_MUTED + '; font-size: 13px; font-family: inherit; }' +
       '.mit-back:hover { color: ' + TEXT_PRIMARY + '; }' +
       '.mit-slice { cursor: pointer; transition: fill-opacity 0.15s ease; }' +
-      '.mit-hint { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: -4px; }' +
-      '.mit-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 8px; }' +
+      '.mit-hint { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 2px; }' +
+      '.mit-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; }' +
       '.mit-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.mit-modal.is-visible { opacity: 1; pointer-events: auto; }' +
       '.mit-modal-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }' +
@@ -164,7 +166,7 @@
         ? '<div class="mit-breadcrumb" style="color:' + TEXT_MUTED + ';">All categories</div>'
         : '<div class="mit-breadcrumb"><button class="mit-back">\u2190 All categories</button><span style="color:' + TEXT_MUTED + ';">/</span><span style="color:' + TEXT_PRIMARY + ';font-weight:500;">' + esc(parentObj ? parentObj.name : '') + '</span></div>';
 
-      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mitigation categories donut chart" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Mitigation categories donut chart" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
       var startAngle = -Math.PI / 2;
       var sliceData = [];
