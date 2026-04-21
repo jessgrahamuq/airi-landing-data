@@ -1,6 +1,11 @@
 /**
- * AIRI Delphi butterfly chart (v1.0.2)
+ * AIRI Delphi butterfly chart (v1.1.0)
  *
+ * v1.1.0 — REDESIGN: small-multiples. Show one butterfly per actor
+ *          (7 stacked rows) for a selected risk, with alternating
+ *          background stripes for per-actor segmentation. Axis titles
+ *          ("Vulnerability" / "Responsibility") enlarged. Actor dropdown
+ *          removed — all actors visible at once.
  * v1.0.2 — Tighten caption spacing above and below the chart
  * v1.0.1 — SVG fills container in both dimensions
  *          (preserveAspectRatio + height 100% + flex-column root)
@@ -11,11 +16,11 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/delphi-chart.js
  *
- * Visual: diverging horizontal bar chart.
+ * Visual: small-multiples butterfly chart. One butterfly per actor (7 rows),
+ *   stacked vertically for the selected risk.
  *   Left side: Vulnerability stacked by 5 Likert levels (strongest near center).
  *   Right side: Responsibility stacked by 5 Likert levels (strongest near center).
- *   Dropdowns let user pick risk (24 options) and actor (7 options).
- *   Round 3 (final consensus) only.
+ *   Risk dropdown lets user pick among 24 risks. Round 3 only.
  */
 (function () {
   var DATA_URL = 'https://jessgrahamuq.github.io/airi-landing-data/data/delphi.json';
@@ -61,9 +66,10 @@
   }
 
   function render(mount, data) {
-    var state = { riskId: data.risks[0].number, actor: data.actors[0] };
+    var state = { riskId: data.risks[0].number };
     var respLevels = data.levels.Responsibility;
     var vulnLevels = data.levels.Vulnerability;
+    var actors = data.actors;
 
     var style = '<style>' +
       '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
@@ -77,17 +83,25 @@
       '</style>';
 
     function doRender() {
-      var actorData = data.data[state.riskId] && data.data[state.riskId][state.actor];
-      if (!actorData) {
-        mount.innerHTML = style + '<div style="color:' + TEXT_MUTED + ';padding:2rem;text-align:center;">No data for this combination.</div>';
+      var riskData = data.data[state.riskId];
+      if (!riskData) {
+        mount.innerHTML = style + '<div style="color:' + TEXT_MUTED + ';padding:2rem;text-align:center;">No data for this risk.</div>';
         return;
       }
 
-      var W = 700, H = 320;
+      // ---------- Layout --------------------------------------------------
+      var W = 900;
+      var ROW_H = 82;            // per-actor row height
+      var BAR_H = 40;            // butterfly bar height
+      var TOP_AREA = 84;         // axis titles + tick labels
+      var LEGEND_H = 48;         // legend band at bottom
+      var SIDE_PAD = 30;
+      var H = TOP_AREA + actors.length * ROW_H + LEGEND_H;
       var cx = W / 2;
-      var barHeight = 56;
-      var topY = 90;
-      var scale = (W / 2 - 80) / 100;
+      var halfPlot = (W / 2) - SIDE_PAD;
+      var scale = halfPlot / 100;
+      var gridTop = TOP_AREA;
+      var gridBottom = TOP_AREA + actors.length * ROW_H;
 
       var controls = '<div class="delphi-controls">' +
         '<div class="delphi-control"><label>Risk</label>' +
@@ -95,86 +109,104 @@
         data.risks.map(function (r) {
           return '<option value="' + esc(r.number) + '"' + (r.number === state.riskId ? ' selected' : '') + '>' + esc(r.number + ' ' + r.name) + '</option>';
         }).join('') +
-        '</select></div>' +
-        '<div class="delphi-control"><label>Actor</label>' +
-        '<select id="delphi-actor-select">' +
-        data.actors.map(function (a) {
-          return '<option value="' + esc(a) + '"' + (a === state.actor ? ' selected' : '') + '>' + esc(a) + '</option>';
-        }).join('') +
         '</select></div></div>';
 
-      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility for selected risk and actor" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
-      svg += '<text x="' + (cx - 20) + '" y="30" text-anchor="end" font-size="13" font-weight="500" fill="' + VULN_COLOR + '">Vulnerability \u2190</text>';
-      svg += '<text x="' + (cx + 20) + '" y="30" text-anchor="start" font-size="13" font-weight="500" fill="' + RESP_COLOR + '">\u2192 Responsibility</text>';
+      // ---------- Alternating row backgrounds (segmentation) -------------
+      actors.forEach(function (actor, ai) {
+        if (ai % 2 === 0) {
+          var yBase = TOP_AREA + ai * ROW_H;
+          svg += '<rect x="0" y="' + yBase + '" width="' + W + '" height="' + ROW_H + '" fill="#f5f6f8"/>';
+        }
+      });
 
+      // ---------- Gridlines + center axis -------------------------------
       var ticks = [25, 50, 75, 100];
       ticks.forEach(function (t) {
         var xR = cx + t * scale;
         var xL = cx - t * scale;
-        svg += '<line x1="' + xR + '" y1="' + (topY - 10) + '" x2="' + xR + '" y2="' + (topY + barHeight + 18) + '" stroke="' + TEXT_MUTED + '" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.5"/>';
-        svg += '<line x1="' + xL + '" y1="' + (topY - 10) + '" x2="' + xL + '" y2="' + (topY + barHeight + 18) + '" stroke="' + TEXT_MUTED + '" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.5"/>';
-        svg += '<text x="' + xR + '" y="' + (topY + barHeight + 30) + '" text-anchor="middle" font-size="10" fill="' + TEXT_MUTED + '">' + t + '%</text>';
-        svg += '<text x="' + xL + '" y="' + (topY + barHeight + 30) + '" text-anchor="middle" font-size="10" fill="' + TEXT_MUTED + '">' + t + '%</text>';
+        svg += '<line x1="' + xR + '" y1="' + gridTop + '" x2="' + xR + '" y2="' + gridBottom + '" stroke="' + TEXT_MUTED + '" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.45"/>';
+        svg += '<line x1="' + xL + '" y1="' + gridTop + '" x2="' + xL + '" y2="' + gridBottom + '" stroke="' + TEXT_MUTED + '" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.45"/>';
+      });
+      svg += '<line x1="' + cx + '" y1="' + gridTop + '" x2="' + cx + '" y2="' + gridBottom + '" stroke="' + TEXT_PRIMARY + '" stroke-width="1"/>';
+
+      // ---------- Big axis titles (Vulnerability / Responsibility) ------
+      svg += '<text x="' + (cx - 24) + '" y="40" text-anchor="end" font-size="22" font-weight="700" fill="' + VULN_COLOR + '">Vulnerability \u2190</text>';
+      svg += '<text x="' + (cx + 24) + '" y="40" text-anchor="start" font-size="22" font-weight="700" fill="' + RESP_COLOR + '">\u2192 Responsibility</text>';
+
+      // ---------- Tick labels at top (above the first row) --------------
+      ticks.forEach(function (t) {
+        svg += '<text x="' + (cx + t * scale) + '" y="72" text-anchor="middle" font-size="11" fill="' + TEXT_MUTED + '">' + t + '%</text>';
+        svg += '<text x="' + (cx - t * scale) + '" y="72" text-anchor="middle" font-size="11" fill="' + TEXT_MUTED + '">' + t + '%</text>';
       });
 
-      // Center line
-      svg += '<line x1="' + cx + '" y1="' + (topY - 10) + '" x2="' + cx + '" y2="' + (topY + barHeight + 18) + '" stroke="' + TEXT_PRIMARY + '" stroke-width="1"/>';
+      // ---------- Per-actor butterfly rows ------------------------------
+      actors.forEach(function (actor, ai) {
+        var actorData = riskData[actor];
+        if (!actorData) return;
+        var yBase = TOP_AREA + ai * ROW_H;
 
-      // Responsibility (right) — strongest near center
-      var xOffset = cx;
-      for (var i = respLevels.length - 1; i >= 0; i--) {
-        var level = respLevels[i];
-        var val = actorData.Responsibility[level] || 0;
-        if (val === 0) continue;
-        var w = val * scale;
-        var op = opacityFor(i, respLevels.length);
-        svg += '<rect x="' + xOffset + '" y="' + topY + '" width="' + w + '" height="' + barHeight + '" fill="' + RESP_COLOR + '" fill-opacity="' + op + '" />';
-        if (w > 34) {
-          svg += '<text x="' + (xOffset + w / 2) + '" y="' + (topY + barHeight / 2 + 4) + '" text-anchor="middle" font-size="12" font-weight="500" fill="' + (op > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + val.toFixed(0) + '%</text>';
+        // Actor name (left-aligned inside its row)
+        svg += '<text x="' + SIDE_PAD + '" y="' + (yBase + 16) + '" text-anchor="start" font-size="13" font-weight="600" fill="' + TEXT_PRIMARY + '">' + esc(actor) + '</text>';
+
+        var barY = yBase + 24;
+
+        // Responsibility (right) — strongest near center
+        var xOffR = cx;
+        for (var i = respLevels.length - 1; i >= 0; i--) {
+          var levelR = respLevels[i];
+          var valR = actorData.Responsibility[levelR] || 0;
+          if (valR === 0) continue;
+          var wR = valR * scale;
+          var opR = opacityFor(i, respLevels.length);
+          svg += '<rect x="' + xOffR + '" y="' + barY + '" width="' + wR + '" height="' + BAR_H + '" fill="' + RESP_COLOR + '" fill-opacity="' + opR + '"/>';
+          if (wR > 30) {
+            svg += '<text x="' + (xOffR + wR / 2) + '" y="' + (barY + BAR_H / 2 + 4) + '" text-anchor="middle" font-size="11" font-weight="500" fill="' + (opR > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + valR.toFixed(0) + '%</text>';
+          }
+          xOffR += wR;
         }
-        xOffset += w;
-      }
 
-      // Vulnerability (left) — strongest near center
-      xOffset = cx;
-      for (var j = vulnLevels.length - 1; j >= 0; j--) {
-        var level2 = vulnLevels[j];
-        var val2 = actorData.Vulnerability[level2] || 0;
-        if (val2 === 0) continue;
-        var w2 = val2 * scale;
-        var op2 = opacityFor(j, vulnLevels.length);
-        svg += '<rect x="' + (xOffset - w2) + '" y="' + topY + '" width="' + w2 + '" height="' + barHeight + '" fill="' + VULN_COLOR + '" fill-opacity="' + op2 + '" />';
-        if (w2 > 34) {
-          svg += '<text x="' + (xOffset - w2 / 2) + '" y="' + (topY + barHeight / 2 + 4) + '" text-anchor="middle" font-size="12" font-weight="500" fill="' + (op2 > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + val2.toFixed(0) + '%</text>';
+        // Vulnerability (left) — strongest near center
+        var xOffL = cx;
+        for (var j = vulnLevels.length - 1; j >= 0; j--) {
+          var levelV = vulnLevels[j];
+          var valV = actorData.Vulnerability[levelV] || 0;
+          if (valV === 0) continue;
+          var wV = valV * scale;
+          var opV = opacityFor(j, vulnLevels.length);
+          svg += '<rect x="' + (xOffL - wV) + '" y="' + barY + '" width="' + wV + '" height="' + BAR_H + '" fill="' + VULN_COLOR + '" fill-opacity="' + opV + '"/>';
+          if (wV > 30) {
+            svg += '<text x="' + (xOffL - wV / 2) + '" y="' + (barY + BAR_H / 2 + 4) + '" text-anchor="middle" font-size="11" font-weight="500" fill="' + (opV > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + valV.toFixed(0) + '%</text>';
+          }
+          xOffL -= wV;
         }
-        xOffset -= w2;
-      }
+      });
 
-      // Legends beneath, strongest first
-      var legendY = topY + barHeight + 56;
+      // ---------- Legend at the bottom ---------------------------------
+      var legendY = gridBottom + 20;
       var lgLeftWidth = (cx - 40) / vulnLevels.length;
       for (var li = vulnLevels.length - 1; li >= 0; li--) {
         var lvlName = vulnLevels[li];
         var lx = 20 + (vulnLevels.length - 1 - li) * lgLeftWidth;
-        svg += '<rect x="' + lx + '" y="' + legendY + '" width="11" height="11" fill="' + VULN_COLOR + '" fill-opacity="' + opacityFor(li, vulnLevels.length) + '" />';
-        svg += '<text x="' + (lx + 15) + '" y="' + (legendY + 9) + '" font-size="10" fill="' + TEXT_PRIMARY + '">' + esc(lvlName) + '</text>';
+        svg += '<rect x="' + lx + '" y="' + legendY + '" width="11" height="11" fill="' + VULN_COLOR + '" fill-opacity="' + opacityFor(li, vulnLevels.length) + '"/>';
+        svg += '<text x="' + (lx + 15) + '" y="' + (legendY + 9) + '" font-size="11" fill="' + TEXT_PRIMARY + '">' + esc(lvlName) + '</text>';
       }
       var lgRightWidth = (cx - 40) / respLevels.length;
       for (var ri = respLevels.length - 1; ri >= 0; ri--) {
         var lvlName2 = respLevels[ri];
         var lx2 = cx + 20 + (respLevels.length - 1 - ri) * lgRightWidth;
-        svg += '<rect x="' + lx2 + '" y="' + legendY + '" width="11" height="11" fill="' + RESP_COLOR + '" fill-opacity="' + opacityFor(ri, respLevels.length) + '" />';
-        svg += '<text x="' + (lx2 + 15) + '" y="' + (legendY + 9) + '" font-size="10" fill="' + TEXT_PRIMARY + '">' + esc(lvlName2) + '</text>';
+        svg += '<rect x="' + lx2 + '" y="' + legendY + '" width="11" height="11" fill="' + RESP_COLOR + '" fill-opacity="' + opacityFor(ri, respLevels.length) + '"/>';
+        svg += '<text x="' + (lx2 + 15) + '" y="' + (legendY + 9) + '" font-size="11" fill="' + TEXT_PRIMARY + '">' + esc(lvlName2) + '</text>';
       }
 
       svg += '</svg>';
 
-      var nResp = actorData.n_resp || 0;
-      var nVuln = actorData.n_vuln || 0;
-      var nDisplay = (nResp === nVuln) ? 'n = ' + nResp : 'n = ' + nResp + ' (resp.), ' + nVuln + ' (vuln.)';
+      // ---------- Footer -----------------------------------------------
+      var firstActor = actors.find(function (a) { return riskData[a]; });
+      var nApprox = firstActor ? (riskData[firstActor].n_resp || 0) : 0;
       var lu = formatDate(data.meta && data.meta.last_updated);
-      var footer = '<div class="delphi-footer">Round 3 \u00b7 ' + nDisplay + ' expert responses' +
+      var footer = '<div class="delphi-footer">Round 3 \u00b7 n \u2248 ' + nApprox + ' expert responses per actor' +
         (lu ? ' \u00b7 Last updated ' + esc(lu) : '') +
         '</div>';
 
@@ -182,10 +214,6 @@
 
       mount.querySelector('#delphi-risk-select').addEventListener('change', function (e) {
         state.riskId = e.target.value;
-        doRender();
-      });
-      mount.querySelector('#delphi-actor-select').addEventListener('change', function (e) {
-        state.actor = e.target.value;
         doRender();
       });
     }
