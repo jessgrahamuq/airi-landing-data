@@ -1,7 +1,8 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.0)
+ * AIRI Governance horizontal stacked bar chart (v1.1.1)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.1 — Epoch-style bold axis labels + right-side stacked legend
  * v1.1.0 — REWRITE: horizontal bars, full subdomain names on Y-axis, readable labels
  * v1.0.4 — taller viewBox (1100 x 795) + larger readable label/legend/footer sizes
  * v1.0.3 — all text/lines dark, wider container-tuned viewBox (1100 x 500)
@@ -19,9 +20,9 @@
     'AI System Safety, Failures & Limitations': '#E5C494'
   };
   var COVERAGE_STYLE = {
-    'Good':    { opacity: 1.00, label: 'Good coverage' },
-    'Minimal': { opacity: 0.55, label: 'Minimal coverage' },
-    'None':    { opacity: 0.18, label: 'No coverage' }
+    'Good':    { opacity: 1.00, label: 'Good coverage',    desc: 'Explicitly addressed in ≥3 documents' },
+    'Minimal': { opacity: 0.55, label: 'Minimal coverage', desc: 'Mentioned briefly in 1-2 documents' },
+    'None':    { opacity: 0.18, label: 'No coverage',      desc: 'Not addressed in any document' }
   };
 
   var TEXT_PRIMARY = '#1A1A1A';
@@ -71,10 +72,8 @@
     return map[d] || d;
   }
 
-  // Truncate long subdomain names if needed
   function subdomainLabel(row) {
     var name = row.full_name || '';
-    // Trim very long names gently
     if (name.length > 42) name = name.slice(0, 40) + '…';
     return row.subdomain + ' ' + name;
   }
@@ -86,17 +85,15 @@
 
     // Horizontal layout: tall viewBox, Y = subdomains, X = count
     var W = 1100, H = 900;
-    var mL = 340;   // left margin for subdomain labels (full names need room)
+    var mL = 340;   // left margin for subdomain labels
     var mR = 30;    // right margin
-    var mT = 60;    // top margin (legend space)
-    var mB = 70;    // bottom margin (axis + footer text)
+    var mT = 70;    // top margin (x-axis title + axis numbers)
+    var mB = 40;    // bottom margin
     var iw = W - mL - mR;
     var ih = H - mT - mB;
 
-    // Calculate xMax for axis scale
     var xMax = Math.max.apply(null, series.map(function (r) { return r.total; })) || 1;
 
-    // We need to account for domain group headers. Each domain group gets a header row.
     var domainGroups = [];
     var curGroup = null;
     series.forEach(function (row, i) {
@@ -107,54 +104,48 @@
       curGroup.items.push({ row: row, idx: i });
     });
 
-    // Row layout calculation:
-    // Each domain group has: 1 header row (headerH) + N data rows (rowH each) + gap between groups
-    var headerH = 20;   // domain header label height
-    var rowH;           // computed from available space
-    var groupGap = 8;   // gap after each group
+    var headerH = 20;
+    var groupGap = 8;
     var totalHeaders = domainGroups.length;
     var totalRows = series.length;
     var totalGaps = domainGroups.length - 1;
-    // ih = totalHeaders * headerH + totalRows * rowH + totalGaps * groupGap
-    rowH = (ih - totalHeaders * headerH - totalGaps * groupGap) / totalRows;
+    var rowH = (ih - totalHeaders * headerH - totalGaps * groupGap) / totalRows;
     var barH = Math.max(10, rowH * 0.72);
 
     function xScale(v) { return mL + (v / xMax) * iw; }
 
     var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
 
-    // X-axis grid (vertical lines at count intervals)
+    // X-axis title — Epoch style: bold, above chart, dark
+    svg += '<text x="' + mL + '" y="22" font-size="16" font-weight="700" fill="' + TEXT_PRIMARY + '">Number of documents</text>';
+
+    // X-axis grid + numbers
     var xTicks = 5;
     for (var t = 0; t <= xTicks; t++) {
       var v = Math.round((xMax * t) / xTicks);
       var x = xScale(v);
       svg += '<line x1="' + x + '" y1="' + mT + '" x2="' + x + '" y2="' + (mT + ih) + '" stroke="' + GRID_COLOR + '"/>';
-      svg += '<text x="' + x + '" y="' + (mT - 8) + '" text-anchor="middle" font-size="14" fill="' + TEXT_PRIMARY + '">' + v + '</text>';
+      svg += '<text x="' + x + '" y="' + (mT - 10) + '" text-anchor="middle" font-size="13" fill="' + TEXT_PRIMARY + '">' + v + '</text>';
     }
-
-    // X-axis title
-    svg += '<text x="' + (mL + iw / 2) + '" y="' + (H - mB + 45) + '" text-anchor="middle" font-size="13" fill="' + TEXT_MUTED + '" font-weight="500">Number of documents</text>';
 
     // Iterate domain groups, draw header + bars
     var y = mT;
     domainGroups.forEach(function (group, gIdx) {
       var domColor = COLORS[group.domain] || '#ccc';
 
-      // Domain header bar — colored stripe + label
+      // Domain header
       svg += '<rect x="' + (mL - 12) + '" y="' + y + '" width="6" height="' + headerH + '" fill="' + domColor + '" rx="2"/>';
       svg += '<text x="' + (mL - 20) + '" y="' + (y + headerH / 2 + 5) + '" text-anchor="end" font-size="14" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(shortDomain(group.domain).toUpperCase()) + '</text>';
       y += headerH;
 
-      // Data rows
       group.items.forEach(function (it) {
         var row = it.row;
         var rowY = y + (rowH - barH) / 2;
         var color = domColor;
 
-        // Subdomain label on the left
+        // Subdomain label
         svg += '<text x="' + (mL - 12) + '" y="' + (y + rowH / 2 + 5) + '" text-anchor="end" font-size="13" fill="' + TEXT_PRIMARY + '">' + esc(subdomainLabel(row)) + '</text>';
 
-        // Stacked horizontal segments
         var accumX = mL;
         levels.forEach(function (lvl) {
           var c = row[lvl] || 0;
@@ -164,27 +155,27 @@
           accumX += segW;
         });
 
-        // Total count at the end of the bar
         if (row.total > 0) {
           svg += '<text x="' + (accumX + 6).toFixed(2) + '" y="' + (y + rowH / 2 + 5) + '" font-size="12" fill="' + TEXT_MUTED + '">' + row.total + '</text>';
         }
 
-        // Invisible hit rect for hover/click
         svg += '<rect class="airi-gchart-hit" data-subdomain="' + esc(row.subdomain) + '" x="' + mL + '" y="' + y + '" width="' + iw + '" height="' + rowH + '" fill="transparent" style="cursor:pointer"/>';
 
         y += rowH;
       });
 
-      // Gap between groups
       if (gIdx < domainGroups.length - 1) y += groupGap;
     });
 
     svg += '</svg>';
 
-    // Legend — inline at the top
+    // Epoch-style vertical stacked legend
     var legend = '<div class="airi-gchart-legend">';
     levels.forEach(function (lvl) {
-      legend += '<span class="airi-gchart-legend-item"><span class="airi-gchart-legend-swatch" style="background:' + TEXT_PRIMARY + ';opacity:' + COVERAGE_STYLE[lvl].opacity + '"></span>' + esc(COVERAGE_STYLE[lvl].label) + '</span>';
+      legend += '<div class="airi-gchart-legend-item">' +
+        '<span class="airi-gchart-legend-swatch" style="background:' + TEXT_PRIMARY + ';opacity:' + COVERAGE_STYLE[lvl].opacity + '"></span>' +
+        '<div class="airi-gchart-legend-text"><div class="airi-gchart-legend-label">' + esc(COVERAGE_STYLE[lvl].label) + '</div><div class="airi-gchart-legend-desc">' + esc(COVERAGE_STYLE[lvl].desc) + '</div></div>' +
+        '</div>';
     });
     legend += '</div>';
 
@@ -194,12 +185,20 @@
     var tooltip = '<div class="airi-gchart-tooltip" role="tooltip" aria-hidden="true"></div>';
     var modal = '<div class="airi-gchart-modal" role="dialog" aria-modal="true" aria-hidden="true"></div>';
 
+    // Wrap SVG + legend in a flex row (chart left, legend right)
+    var chartArea = '<div class="airi-gchart-area">' + svg + legend + '</div>';
+
     var style = '<style>' +
       '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; }' +
+      '.airi-gchart-area { display: flex; align-items: flex-start; gap: 20px; }' +
+      '.airi-gchart-area > svg { flex: 1; min-width: 0; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
-      '.airi-gchart-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; margin-bottom: 8px; font-size: 14px; color: ' + TEXT_PRIMARY + '; }' +
-      '.airi-gchart-legend-item { display: inline-flex; align-items: center; gap: 6px; }' +
-      '.airi-gchart-legend-swatch { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }' +
+      '.airi-gchart-legend { display: flex; flex-direction: column; gap: 18px; flex-shrink: 0; width: 180px; padding-top: 8px; }' +
+      '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 10px; }' +
+      '.airi-gchart-legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; margin-top: 3px; }' +
+      '.airi-gchart-legend-text { font-size: 13px; line-height: 1.35; }' +
+      '.airi-gchart-legend-label { font-weight: 700; color: ' + TEXT_PRIMARY + '; }' +
+      '.airi-gchart-legend-desc { color: ' + TEXT_MUTED + '; margin-top: 2px; font-size: 12px; }' +
       '.airi-gchart-tooltip { position: absolute; background: #111; color: #fff; padding: 10px 12px; border-radius: 6px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.12s ease; z-index: 10; font-family: Figtree, sans-serif; max-width: 280px; line-height: 1.4; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }' +
       '.airi-gchart-tooltip.is-visible { opacity: 1; }' +
       '.airi-gchart-tt-sub { font-weight: 600; margin-bottom: 2px; font-size: 13px; }' +
@@ -210,7 +209,7 @@
       '.airi-gchart-tt-count { font-variant-numeric: tabular-nums; color: #bbb; }' +
       '.airi-gchart-tt-total { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; font-weight: 600; }' +
       '.airi-gchart-tt-hint { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; color: #aaa; font-size: 11px; }' +
-      '.airi-gchart-footer { text-align: center; font-size: 13px; color: ' + TEXT_PRIMARY + '; margin-top: 8px; font-family: Figtree, sans-serif; }' +
+      '.airi-gchart-footer { text-align: center; font-size: 13px; color: ' + TEXT_PRIMARY + '; margin-top: 12px; font-family: Figtree, sans-serif; }' +
       '.airi-gchart-hint { color: ' + TEXT_MUTED + '; }' +
       '.airi-gchart-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.airi-gchart-modal.is-visible { opacity: 1; pointer-events: auto; }' +
@@ -234,7 +233,7 @@
       '.airi-gchart-modal-footer a:hover { text-decoration: underline; }' +
       '</style>';
 
-    mount.innerHTML = style + legend + svg + footer + tooltip + modal;
+    mount.innerHTML = style + chartArea + footer + tooltip + modal;
 
     var segs = mount.querySelectorAll('.airi-gchart-seg');
     var hits = mount.querySelectorAll('.airi-gchart-hit');
