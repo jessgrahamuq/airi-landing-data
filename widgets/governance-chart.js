@@ -1,7 +1,9 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.5)
+ * AIRI Governance horizontal stacked bar chart (v1.1.6)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.6 — Tighter top margin for closer alignment with text panel
+ *          (mT 80 → 30)
  * v1.1.5 — Tighten caption spacing: chart hugs bottom of SVG
  *          (preserveAspectRatio=xMidYMax) and footer margin shrinks.
  * v1.1.4 — Thicker bars (rowH × 0.90) and legend moved inside the SVG as a
@@ -97,7 +99,7 @@
     var W = 1340, H = 1050;
     var mL = 340;
     var mR = LEGEND_W + LEGEND_GAP + 10; // reserve legend column + a little breathing room
-    var mT = 80;   // more room for the bigger x-axis title
+    var mT = 30;   // v1.1.6: tighter top margin (was 80); x-axis title still sits at y=28
     var mB = 40;
     var iw = W - mL - mR;
     var ih = H - mT - mB;

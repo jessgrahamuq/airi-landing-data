@@ -1,6 +1,8 @@
 /**
- * AIRI Delphi butterfly chart (v1.1.2)
+ * AIRI Delphi butterfly chart (v1.1.3)
  *
+ * v1.1.3 — Tighter top margin for closer alignment with text panel
+ *          (TOP_AREA 84 → 50, axis titles y 40 → 22, ticks y 72 → 42)
  * v1.1.2 — Larger in-chart text (tick %s, actor names, bar labels,
  *          legend) and darker gridlines + tick numbers for readability.
  * v1.1.1 — Taller viewBox (~900 × 1000) via bigger ROW_H and BAR_H
@@ -97,7 +99,7 @@
       var W = 900;
       var ROW_H = 124;           // v1.1.1: per-actor row height (bumped for taller viewBox)
       var BAR_H = 60;            // v1.1.1: butterfly bar height (bumped)
-      var TOP_AREA = 84;         // axis titles + tick labels
+      var TOP_AREA = 50;         // v1.1.3: axis titles + tick labels (was 84)
       var LEGEND_H = 48;         // legend band at bottom
       var SIDE_PAD = 30;
       var H = TOP_AREA + actors.length * ROW_H + LEGEND_H;
@@ -137,14 +139,15 @@
       svg += '<line x1="' + cx + '" y1="' + gridTop + '" x2="' + cx + '" y2="' + gridBottom + '" stroke="' + TEXT_PRIMARY + '" stroke-width="1.2"/>';
 
       // ---------- Big axis titles (Vulnerability / Responsibility) ------
-      svg += '<text x="' + (cx - 24) + '" y="40" text-anchor="end" font-size="22" font-weight="700" fill="' + VULN_COLOR + '">Vulnerability \u2190</text>';
-      svg += '<text x="' + (cx + 24) + '" y="40" text-anchor="start" font-size="22" font-weight="700" fill="' + RESP_COLOR + '">\u2192 Responsibility</text>';
+      // v1.1.3: titles moved up from y=40 to y=22 for tighter top margin
+      svg += '<text x="' + (cx - 24) + '" y="22" text-anchor="end" font-size="22" font-weight="700" fill="' + VULN_COLOR + '">Vulnerability \u2190</text>';
+      svg += '<text x="' + (cx + 24) + '" y="22" text-anchor="start" font-size="22" font-weight="700" fill="' + RESP_COLOR + '">\u2192 Responsibility</text>';
 
       // ---------- Tick labels at top (above the first row) --------------
-      // v1.1.2: bigger + darker (primary color, weight 600) so readable against the grid
+      // v1.1.2: bigger + darker. v1.1.3: moved up from y=72 to y=42 (sits between titles and plot)
       ticks.forEach(function (t) {
-        svg += '<text x="' + (cx + t * scale) + '" y="72" text-anchor="middle" font-size="14" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
-        svg += '<text x="' + (cx - t * scale) + '" y="72" text-anchor="middle" font-size="14" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
+        svg += '<text x="' + (cx + t * scale) + '" y="42" text-anchor="middle" font-size="14" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
+        svg += '<text x="' + (cx - t * scale) + '" y="42" text-anchor="middle" font-size="14" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
       });
 
       // ---------- Per-actor butterfly rows ------------------------------

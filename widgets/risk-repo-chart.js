@@ -1,6 +1,8 @@
 /**
- * AIRI Risk Repository causal taxonomy matrix (v1.0.2)
+ * AIRI Risk Repository causal taxonomy matrix (v1.0.3)
  *
+ * v1.0.3 — Tighter top margin N/A (HTML grid has no viewBox / mT);
+ *          matrix already starts at the top of its mount div.
  * v1.0.2 — Tighten caption spacing (legend + footer hug the matrix)
  * v1.0.1 — Root container fills parent height (flex-column + height 100%)
  *          so the matrix stretches to fill its mount div. Matrix renders as

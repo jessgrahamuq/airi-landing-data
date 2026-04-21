@@ -1,6 +1,8 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.4)
+ * AIRI Incidents stacked area chart (v1.0.5)
  *
+ * v1.0.5 — Tighter top margin for closer alignment with text panel
+ *          (mT 46 → 28, title y 26 → 22)
  * v1.0.4 — Taller viewBox (700 × 500) for better vertical fill
  * v1.0.3 — Tighten caption spacing: chart hugs bottom of SVG
  *          (preserveAspectRatio=xMidYMax) and caption margins shrink.
@@ -88,7 +90,7 @@
     });
     var notableByYear = data.notable_incidents_by_year || {};
 
-    var W = 700, H = 500, mL = 40, mR = 16, mT = 46, mB = 32; // v1.0.4: taller viewBox; v1.0.2: top margin for title
+    var W = 700, H = 500, mL = 40, mR = 16, mT = 28, mB = 32; // v1.0.5: tighter top margin (46 → 28)
     var iw = W - mL - mR, ih = H - mT - mB;
 
     var years = series.map(function (s) { return s.year; });
@@ -114,8 +116,8 @@
       ' role="img" aria-label="AI incidents per year, stacked by risk domain"' +
       ' style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
-    // v1.0.2: chart title, left-aligned to plot, bold black
-    svg += '<text x="' + mL + '" y="26" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
+    // v1.0.2: chart title, left-aligned to plot, bold black. v1.0.5: title y 26 → 22 for tighter top.
+    svg += '<text x="' + mL + '" y="22" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
 
     [0, 0.25, 0.5, 0.75, 1].forEach(function (p) {
       var v = Math.round(yMax * p);
