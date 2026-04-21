@@ -1,7 +1,10 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.3)
+ * AIRI Governance horizontal stacked bar chart (v1.1.4)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.4 — Thicker bars (rowH × 0.90) and legend moved inside the SVG as a
+ *          foreignObject so its top always aligns with the top of the plot,
+ *          independent of how the SVG scales in the container.
  * v1.1.3 — SVG stretches to fill container height (preserveAspectRatio + height 100%)
  * v1.1.2 — remove stray row total labels, bigger chart, narrower legend, bigger axis title
  * v1.1.1 — Epoch-style bold axis labels + right-side stacked legend
@@ -86,13 +89,17 @@
     var topDocs = data.top_documents_by_subdomain || {};
 
     // Taller viewBox — fills vertical space better
-    var W = 1100, H = 1050;
+    // v1.1.4: wider viewBox reserves a legend column inside the SVG
+    var LEGEND_W = 220;
+    var LEGEND_GAP = 24;
+    var W = 1340, H = 1050;
     var mL = 340;
-    var mR = 30;
+    var mR = LEGEND_W + LEGEND_GAP + 10; // reserve legend column + a little breathing room
     var mT = 80;   // more room for the bigger x-axis title
     var mB = 40;
     var iw = W - mL - mR;
     var ih = H - mT - mB;
+    var LEGEND_X = mL + iw + LEGEND_GAP;
 
     var xMax = Math.max.apply(null, series.map(function (r) { return r.total; })) || 1;
 
@@ -112,7 +119,7 @@
     var totalRows = series.length;
     var totalGaps = domainGroups.length - 1;
     var rowH = (ih - totalHeaders * headerH - totalGaps * groupGap) / totalRows;
-    var barH = Math.max(10, rowH * 0.72);
+    var barH = Math.max(12, rowH * 0.90); // v1.1.4: thicker bars
 
     function xScale(v) { return mL + (v / xMax) * iw; }
 
@@ -168,17 +175,21 @@
       if (gIdx < domainGroups.length - 1) y += groupGap;
     });
 
-    svg += '</svg>';
-
-    // Vertical stacked legend — narrower (140px) so chart gets more space
-    var legend = '<div class="airi-gchart-legend">';
+    // v1.1.4: legend is inside the SVG as a foreignObject anchored at y=mT,
+    // so it always aligns with the top of the plot area, regardless of how
+    // the SVG is scaled by preserveAspectRatio.
+    var legendInner = '';
     levels.forEach(function (lvl) {
-      legend += '<div class="airi-gchart-legend-item">' +
+      legendInner += '<div class="airi-gchart-legend-item">' +
         '<span class="airi-gchart-legend-swatch" style="background:' + TEXT_PRIMARY + ';opacity:' + COVERAGE_STYLE[lvl].opacity + '"></span>' +
         '<div class="airi-gchart-legend-text"><div class="airi-gchart-legend-label">' + esc(COVERAGE_STYLE[lvl].label) + '</div><div class="airi-gchart-legend-desc">' + esc(COVERAGE_STYLE[lvl].desc) + '</div></div>' +
         '</div>';
     });
-    legend += '</div>';
+    svg += '<foreignObject x="' + LEGEND_X + '" y="' + mT + '" width="' + LEGEND_W + '" height="' + (H - mT - mB) + '">' +
+      '<div xmlns="http://www.w3.org/1999/xhtml" class="airi-gchart-legend">' + legendInner + '</div>' +
+      '</foreignObject>';
+
+    svg += '</svg>';
 
     var lu = formatDate(data.meta && data.meta.last_updated);
     var footer = '<div class="airi-gchart-footer">' + (lu ? 'Last updated ' + esc(lu) : '') + (data.meta && data.meta.record_count ? ' \u00b7 ' + data.meta.record_count.toLocaleString() + ' governance documents' : '') + ' \u00b7 <span class="airi-gchart-hint">Click a row to see documents</span></div>';
@@ -186,15 +197,12 @@
     var tooltip = '<div class="airi-gchart-tooltip" role="tooltip" aria-hidden="true"></div>';
     var modal = '<div class="airi-gchart-modal" role="dialog" aria-modal="true" aria-hidden="true"></div>';
 
-    var chartArea = '<div class="airi-gchart-area">' + svg + legend + '</div>';
-
-    // v1.1.3: chart-area stretches to fill container height; SVG inside takes height:100%
+    // v1.1.4: legend lives inside the SVG now; chart-area wrapper is gone.
     var style = '<style>' +
-      '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
-      '.airi-gchart-area { display: flex; align-items: stretch; gap: 16px; flex: 1; min-height: 640px; }' +
-      '.airi-gchart-area > svg { flex: 1; min-width: 0; height: 100%; }' +
+      '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; min-height: 640px; }' +
+      '#airi-chart-governance > svg { flex: 1; min-width: 0; min-height: 0; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
-      '.airi-gchart-legend { display: flex; flex-direction: column; gap: 16px; flex-shrink: 0; width: 140px; padding-top: 40px; }' +
+      '.airi-gchart-legend { display: flex; flex-direction: column; gap: 16px; font-family: Figtree, sans-serif; color: ' + TEXT_PRIMARY + '; }' +
       '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 8px; }' +
       '.airi-gchart-legend-swatch { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; margin-top: 3px; }' +
       '.airi-gchart-legend-text { font-size: 12px; line-height: 1.35; }' +
@@ -234,7 +242,7 @@
       '.airi-gchart-modal-footer a:hover { text-decoration: underline; }' +
       '</style>';
 
-    mount.innerHTML = style + chartArea + footer + tooltip + modal;
+    mount.innerHTML = style + svg + footer + tooltip + modal;
 
     var segs = mount.querySelectorAll('.airi-gchart-seg');
     var hits = mount.querySelectorAll('.airi-gchart-hit');
