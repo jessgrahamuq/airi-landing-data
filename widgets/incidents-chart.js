@@ -1,6 +1,7 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.1)
+ * AIRI Incidents stacked area chart (v1.0.2)
  *
+ * v1.0.2 — Add "Total incidents" title, top-left, bold black
  * v1.0.1 — SVG fills container in both dimensions
  *          (preserveAspectRatio + height 100% + flex-column root)
  *
@@ -84,7 +85,7 @@
     });
     var notableByYear = data.notable_incidents_by_year || {};
 
-    var W = 700, H = 340, mL = 40, mR = 16, mT = 14, mB = 32;
+    var W = 700, H = 340, mL = 40, mR = 16, mT = 46, mB = 32; // v1.0.2: taller top margin for title
     var iw = W - mL - mR, ih = H - mT - mB;
 
     var years = series.map(function (s) { return s.year; });
@@ -109,6 +110,9 @@
     var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"' +
       ' role="img" aria-label="AI incidents per year, stacked by risk domain"' +
       ' style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+
+    // v1.0.2: chart title, left-aligned to plot, bold black
+    svg += '<text x="' + mL + '" y="26" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
 
     [0, 0.25, 0.5, 0.75, 1].forEach(function (p) {
       var v = Math.round(yMax * p);
