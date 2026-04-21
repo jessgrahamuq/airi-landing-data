@@ -1,6 +1,8 @@
 /**
- * AIRI Delphi butterfly chart (v1.1.0)
+ * AIRI Delphi butterfly chart (v1.1.1)
  *
+ * v1.1.1 — Taller viewBox (~900 × 1000) via bigger ROW_H and BAR_H
+ *          for better vertical fill / more generous per-actor spacing.
  * v1.1.0 — REDESIGN: small-multiples. Show one butterfly per actor
  *          (7 stacked rows) for a selected risk, with alternating
  *          background stripes for per-actor segmentation. Axis titles
@@ -91,8 +93,8 @@
 
       // ---------- Layout --------------------------------------------------
       var W = 900;
-      var ROW_H = 82;            // per-actor row height
-      var BAR_H = 40;            // butterfly bar height
+      var ROW_H = 124;           // v1.1.1: per-actor row height (bumped for taller viewBox)
+      var BAR_H = 60;            // v1.1.1: butterfly bar height (bumped)
       var TOP_AREA = 84;         // axis titles + tick labels
       var LEGEND_H = 48;         // legend band at bottom
       var SIDE_PAD = 30;

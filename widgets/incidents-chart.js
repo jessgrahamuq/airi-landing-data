@@ -1,6 +1,7 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.3)
+ * AIRI Incidents stacked area chart (v1.0.4)
  *
+ * v1.0.4 — Taller viewBox (700 × 500) for better vertical fill
  * v1.0.3 — Tighten caption spacing: chart hugs bottom of SVG
  *          (preserveAspectRatio=xMidYMax) and caption margins shrink.
  * v1.0.2 — Add "Total incidents" title, top-left, bold black
@@ -87,7 +88,7 @@
     });
     var notableByYear = data.notable_incidents_by_year || {};
 
-    var W = 700, H = 340, mL = 40, mR = 16, mT = 46, mB = 32; // v1.0.2: taller top margin for title
+    var W = 700, H = 500, mL = 40, mR = 16, mT = 46, mB = 32; // v1.0.4: taller viewBox; v1.0.2: top margin for title
     var iw = W - mL - mR, ih = H - mT - mB;
 
     var years = series.map(function (s) { return s.year; });

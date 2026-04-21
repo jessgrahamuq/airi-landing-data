@@ -1,5 +1,5 @@
 /**
- * AIRI Mitigations drill-down donut chart (v1.0.3)
+ * AIRI Mitigations drill-down donut chart (v1.0.4)
  *
  * Mounts into an element with id="airi-chart-mitigations".
  * Fetches from /data/mitigations.json in the same repo.
@@ -7,6 +7,7 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/mitigations-chart.js
  *
+ * v1.0.4 — Taller viewBox (820 × 750) for better vertical fill
  * v1.0.3 — Tighten caption spacing: donut hugs bottom of SVG
  *          (preserveAspectRatio=xMidYMax) and hint/footer margins shrink.
  * v1.0.2 — SVG fills container in both dimensions
@@ -107,7 +108,7 @@
     var state = { level: 0, parentId: null };
 
     // Tuned for better fit in Webflow slide container
-    var W = 820, H = 540;
+    var W = 820, H = 750; // v1.0.4: taller viewBox for better vertical fill
     var cx = W / 2, cy = H / 2 + 10;
     var outer = 180, inner = 105;
 
