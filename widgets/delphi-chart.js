@@ -1,6 +1,13 @@
 /**
- * AIRI Delphi butterfly chart (v1.1.3)
+ * AIRI Delphi butterfly chart (v1.2.0)
  *
+ * v1.2.0 — New diverging Spectral palette (5 distinct colors per side
+ *          instead of single hue with varying opacity). Wider viewBox
+ *          (W 900 → 1000) so legend items don't crowd. Slightly shorter
+ *          (ROW_H 124 → 106, BAR_H 60 → 52). Removed alternating row
+ *          background stripes. Actor names bigger (16 → 20) and pushed
+ *          further left (SIDE_PAD 30 → 16). Axis titles moved up
+ *          (y 22 → 16).
  * v1.1.3 — Tighter top margin for closer alignment with text panel
  *          (TOP_AREA 84 → 50, axis titles y 40 → 22, ticks y 72 → 42)
  * v1.1.2 — Larger in-chart text (tick %s, actor names, bar labels,
@@ -31,10 +38,20 @@
 (function () {
   var DATA_URL = 'https://jessgrahamuq.github.io/airi-landing-data/data/delphi.json';
 
-  var VULN_COLOR = '#8DA0CB';  // AIRI HCI blue
-  var RESP_COLOR = '#66C2A5';  // AIRI Privacy teal
+  // v1.2.0: diverging Spectral palette. Weakest level → lightest color,
+  // strongest level → darkest color. Indexed by level position in data.levels.*.
+  // Responsibility Likert: Not at all · Minimally · Moderately · Highly · Primarily
+  var RESP_COLORS = ['#fee08b', '#fdae61', '#f46d43', '#d53e4f', '#9e0142'];
+  // Vulnerability Likert: Not at all · Minimally · Moderately · Highly · Extremely
+  var VULN_COLORS = ['#e6f598', '#abdda4', '#66c2a5', '#3288bd', '#5e4fa2'];
+  // "Header" hues for the axis titles + select focus ring
+  var VULN_LABEL_COLOR = '#3288bd';
+  var RESP_LABEL_COLOR = '#d53e4f';
   var TEXT_PRIMARY = '#1A1A1A';
   var TEXT_MUTED = '#898A8D';
+
+  // Use light (white) text on the 2 darkest colors, primary text on the 3 lightest.
+  function useLightText(levelIdx) { return levelIdx >= 3; }
 
   function run() {
     var mount = document.getElementById('airi-chart-delphi');
@@ -66,11 +83,6 @@
     } catch (e) { return ''; }
   }
 
-  function opacityFor(index, total) {
-    // index 0 = weakest, total-1 = strongest
-    return 0.2 + (index / Math.max(total - 1, 1)) * 0.8;
-  }
-
   function render(mount, data) {
     var state = { riskId: data.risks[0].number };
     var respLevels = data.levels.Responsibility;
@@ -84,7 +96,7 @@
       '.delphi-control label { font-size: 11px; color: ' + TEXT_MUTED + '; display: block; margin-bottom: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; }' +
       '.delphi-control select { width: 100%; padding: 8px 10px; border: 0.5px solid rgba(0,0,0,0.25); border-radius: 6px; font-size: 13px; font-family: inherit; background: #fff; color: ' + TEXT_PRIMARY + '; cursor: pointer; }' +
       '.delphi-control select:hover { border-color: rgba(0,0,0,0.45); }' +
-      '.delphi-control select:focus { outline: none; border-color: ' + VULN_COLOR + '; box-shadow: 0 0 0 2px rgba(141,160,203,0.2); }' +
+      '.delphi-control select:focus { outline: none; border-color: ' + VULN_LABEL_COLOR + '; box-shadow: 0 0 0 2px rgba(50,136,189,0.2); }' +
       '.delphi-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; }' +
       '</style>';
 
@@ -96,12 +108,13 @@
       }
 
       // ---------- Layout --------------------------------------------------
-      var W = 900;
-      var ROW_H = 124;           // v1.1.1: per-actor row height (bumped for taller viewBox)
-      var BAR_H = 60;            // v1.1.1: butterfly bar height (bumped)
-      var TOP_AREA = 50;         // v1.1.3: axis titles + tick labels (was 84)
+      // v1.2.0: wider (more room for legend), slightly shorter, tighter side pad.
+      var W = 1000;
+      var ROW_H = 106;           // per-actor row height
+      var BAR_H = 52;            // butterfly bar height
+      var TOP_AREA = 50;         // axis titles + tick labels
       var LEGEND_H = 48;         // legend band at bottom
-      var SIDE_PAD = 30;
+      var SIDE_PAD = 16;         // v1.2.0: actor name pushed further left, bars wider
       var H = TOP_AREA + actors.length * ROW_H + LEGEND_H;
       var cx = W / 2;
       var halfPlot = (W / 2) - SIDE_PAD;
@@ -119,13 +132,7 @@
 
       var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
-      // ---------- Alternating row backgrounds (segmentation) -------------
-      actors.forEach(function (actor, ai) {
-        if (ai % 2 === 0) {
-          var yBase = TOP_AREA + ai * ROW_H;
-          svg += '<rect x="0" y="' + yBase + '" width="' + W + '" height="' + ROW_H + '" fill="#f5f6f8"/>';
-        }
-      });
+      // v1.2.0: no alternating row stripes — larger actor labels provide segmentation.
 
       // ---------- Gridlines + center axis -------------------------------
       var ticks = [25, 50, 75, 100];
@@ -139,9 +146,9 @@
       svg += '<line x1="' + cx + '" y1="' + gridTop + '" x2="' + cx + '" y2="' + gridBottom + '" stroke="' + TEXT_PRIMARY + '" stroke-width="1.2"/>';
 
       // ---------- Big axis titles (Vulnerability / Responsibility) ------
-      // v1.1.3: titles moved up from y=40 to y=22 for tighter top margin
-      svg += '<text x="' + (cx - 24) + '" y="22" text-anchor="end" font-size="22" font-weight="700" fill="' + VULN_COLOR + '">Vulnerability \u2190</text>';
-      svg += '<text x="' + (cx + 24) + '" y="22" text-anchor="start" font-size="22" font-weight="700" fill="' + RESP_COLOR + '">\u2192 Responsibility</text>';
+      // v1.2.0: pulled up to y=16 (was 22)
+      svg += '<text x="' + (cx - 24) + '" y="16" text-anchor="end" font-size="22" font-weight="700" fill="' + VULN_LABEL_COLOR + '">Vulnerability \u2190</text>';
+      svg += '<text x="' + (cx + 24) + '" y="16" text-anchor="start" font-size="22" font-weight="700" fill="' + RESP_LABEL_COLOR + '">\u2192 Responsibility</text>';
 
       // ---------- Tick labels at top (above the first row) --------------
       // v1.1.2: bigger + darker. v1.1.3: moved up from y=72 to y=42 (sits between titles and plot)
@@ -156,57 +163,57 @@
         if (!actorData) return;
         var yBase = TOP_AREA + ai * ROW_H;
 
-        // Actor name (left-aligned inside its row) — v1.1.2: bigger
-        svg += '<text x="' + SIDE_PAD + '" y="' + (yBase + 18) + '" text-anchor="start" font-size="16" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(actor) + '</text>';
+        // Actor name (left-aligned inside its row) — v1.2.0: bigger, pushed left
+        svg += '<text x="' + SIDE_PAD + '" y="' + (yBase + 22) + '" text-anchor="start" font-size="20" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(actor) + '</text>';
 
-        var barY = yBase + 32; // v1.1.2: drop bar a bit to clear bigger actor label
+        var barY = yBase + 36;
 
-        // Responsibility (right) — strongest near center
+        // Responsibility (right) — strongest near center. v1.2.0: per-level colors.
         var xOffR = cx;
         for (var i = respLevels.length - 1; i >= 0; i--) {
           var levelR = respLevels[i];
           var valR = actorData.Responsibility[levelR] || 0;
           if (valR === 0) continue;
           var wR = valR * scale;
-          var opR = opacityFor(i, respLevels.length);
-          svg += '<rect x="' + xOffR + '" y="' + barY + '" width="' + wR + '" height="' + BAR_H + '" fill="' + RESP_COLOR + '" fill-opacity="' + opR + '"/>';
+          var fillR = RESP_COLORS[i] || '#ccc';
+          svg += '<rect x="' + xOffR + '" y="' + barY + '" width="' + wR + '" height="' + BAR_H + '" fill="' + fillR + '"/>';
           if (wR > 32) {
-            svg += '<text x="' + (xOffR + wR / 2) + '" y="' + (barY + BAR_H / 2 + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + (opR > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + valR.toFixed(0) + '%</text>';
+            svg += '<text x="' + (xOffR + wR / 2) + '" y="' + (barY + BAR_H / 2 + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + (useLightText(i) ? '#fff' : TEXT_PRIMARY) + '">' + valR.toFixed(0) + '%</text>';
           }
           xOffR += wR;
         }
 
-        // Vulnerability (left) — strongest near center
+        // Vulnerability (left) — strongest near center. v1.2.0: per-level colors.
         var xOffL = cx;
         for (var j = vulnLevels.length - 1; j >= 0; j--) {
           var levelV = vulnLevels[j];
           var valV = actorData.Vulnerability[levelV] || 0;
           if (valV === 0) continue;
           var wV = valV * scale;
-          var opV = opacityFor(j, vulnLevels.length);
-          svg += '<rect x="' + (xOffL - wV) + '" y="' + barY + '" width="' + wV + '" height="' + BAR_H + '" fill="' + VULN_COLOR + '" fill-opacity="' + opV + '"/>';
+          var fillV = VULN_COLORS[j] || '#ccc';
+          svg += '<rect x="' + (xOffL - wV) + '" y="' + barY + '" width="' + wV + '" height="' + BAR_H + '" fill="' + fillV + '"/>';
           if (wV > 32) {
-            svg += '<text x="' + (xOffL - wV / 2) + '" y="' + (barY + BAR_H / 2 + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + (opV > 0.6 ? '#fff' : TEXT_PRIMARY) + '">' + valV.toFixed(0) + '%</text>';
+            svg += '<text x="' + (xOffL - wV / 2) + '" y="' + (barY + BAR_H / 2 + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + (useLightText(j) ? '#fff' : TEXT_PRIMARY) + '">' + valV.toFixed(0) + '%</text>';
           }
           xOffL -= wV;
         }
       });
 
       // ---------- Legend at the bottom ---------------------------------
-      // v1.1.2: bigger legend swatches + text
+      // v1.2.0: per-level colors from the Spectral palette.
       var legendY = gridBottom + 20;
       var lgLeftWidth = (cx - 40) / vulnLevels.length;
       for (var li = vulnLevels.length - 1; li >= 0; li--) {
         var lvlName = vulnLevels[li];
         var lx = 20 + (vulnLevels.length - 1 - li) * lgLeftWidth;
-        svg += '<rect x="' + lx + '" y="' + legendY + '" width="14" height="14" fill="' + VULN_COLOR + '" fill-opacity="' + opacityFor(li, vulnLevels.length) + '"/>';
+        svg += '<rect x="' + lx + '" y="' + legendY + '" width="14" height="14" fill="' + (VULN_COLORS[li] || '#ccc') + '"/>';
         svg += '<text x="' + (lx + 19) + '" y="' + (legendY + 12) + '" font-size="13" fill="' + TEXT_PRIMARY + '">' + esc(lvlName) + '</text>';
       }
       var lgRightWidth = (cx - 40) / respLevels.length;
       for (var ri = respLevels.length - 1; ri >= 0; ri--) {
         var lvlName2 = respLevels[ri];
         var lx2 = cx + 20 + (respLevels.length - 1 - ri) * lgRightWidth;
-        svg += '<rect x="' + lx2 + '" y="' + legendY + '" width="14" height="14" fill="' + RESP_COLOR + '" fill-opacity="' + opacityFor(ri, respLevels.length) + '"/>';
+        svg += '<rect x="' + lx2 + '" y="' + legendY + '" width="14" height="14" fill="' + (RESP_COLORS[ri] || '#ccc') + '"/>';
         svg += '<text x="' + (lx2 + 19) + '" y="' + (legendY + 12) + '" font-size="13" fill="' + TEXT_PRIMARY + '">' + esc(lvlName2) + '</text>';
       }
 
