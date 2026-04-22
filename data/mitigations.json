@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-04-21T06:42:28+00:00",
+    "last_updated": "2026-04-22T06:43:31+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
@@ -32,14 +32,14 @@
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 460,
+        "count": 459,
         "children_count": 4
       },
       {
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 114,
+        "count": 115,
         "children_count": 1
       }
     ],
@@ -69,13 +69,13 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 563
+          "count": 564
         },
         {
           "id": "recvf5stbwCV4rwuI",
           "code": "2.3",
           "name": "Operations & Security",
-          "count": 286
+          "count": 285
         },
         {
           "id": "recu97TvMvkJbjQBg",
@@ -95,7 +95,7 @@
           "id": "recWteocmG0jmdjV0",
           "code": "3.1",
           "name": "Legal & Regulatory",
-          "count": 194
+          "count": 192
         },
         {
           "id": "recB7UZgikAebnlwO",
@@ -107,7 +107,7 @@
           "id": "recm718iigOdrTFs8",
           "code": "3.3",
           "name": "Voluntary & Cooperative",
-          "count": 119
+          "count": 120
         },
         {
           "id": "recaKRRZjLuXRlwsI",
@@ -1024,11 +1024,11 @@
         "url": "https://doi.org/10.3389/fhumd.2022.858108"
       },
       {
-        "name": "Certification, audition, and development",
-        "definition": "• Assessment of ethical issues and social impacts of AI, data governance and risk-management mechanisms, the impacts on and of legislation, and AI development processes",
-        "source_ref": "Sigfrids 2022",
-        "source_title": "How Should Public Administrations Foster the Ethical Development and Use of Artificial Intelligence? A Review of Proposals for Developing Governance of AI",
-        "url": "https://doi.org/10.3389/fhumd.2022.858108"
+        "name": "Develop new oversight agency to protect public welfare",
+        "definition": "Develop a new EU oversight agency responsible for the protection of public welfare through the scientific evaluation and supervision of AI products, software,\nsystems, or services.",
+        "source_ref": "Foridi 2018",
+        "source_title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
+        "url": "https://doi.org/10.1007/s11023-018-9482-5"
       }
     ],
     "recus4S9wRDjUK7co": [
@@ -1780,11 +1780,11 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       },
       {
-        "name": "Develop observatory for AI",
-        "definition": "Develop a European observatory for AI. The mission of the observatory would\nbe to watch developments, provide a forum to nurture debate and consensus,\nprovide a repository for AI literature and…",
-        "source_ref": "Foridi 2018",
-        "source_title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
-        "url": "https://doi.org/10.1007/s11023-018-9482-5"
+        "name": "Develop a common taxonomy of TTPs describing malicious use of frontier models to impact other actors and systems.",
+        "definition": "Develop a common taxonomy of TTPs describing malicious use of frontier\nmodels to impact other actors and systems. (5.3.2.2 | An “effect on world”\napproach) The knowledge base should combine…",
+        "source_ref": "Ee 2024",
+        "source_title": "Adapting cybersecurity frameworks to manage frontier AI risks: A defense-in-depth approach",
+        "url": "https://arxiv.org/abs/2408.07933"
       }
     ],
     "rec9bafBVrJmNhCJc": [
@@ -2030,6 +2030,13 @@
       }
     ],
     "recXtL9YQc1TeR6cJ": [
+      {
+        "name": "Discussion on bias mitigation and digital inequality",
+        "definition": "While AI regulation aims to foster responsible and fair technology use,\nits effectiveness depends on equitable access to digital resources. Many\npopulations, particularly in the Global South and…",
+        "source_ref": "Radanliev 2025",
+        "source_title": "Frontier AI regulation: what form should it take?",
+        "url": "https://doi.org/10.3389/fpos.2025.1561776"
+      },
       {
         "name": "Foster creation and transfer of AI knowledge (e.g., training of AI experts and education of society) to enable and realise innovation…",
         "definition": null,
