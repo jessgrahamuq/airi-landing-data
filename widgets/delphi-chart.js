@@ -1,6 +1,14 @@
 /**
- * AIRI Delphi butterfly chart (v1.3.2)
+ * AIRI Delphi butterfly chart (v1.3.3)
  *
+ * v1.3.3 — Two fixes on top of v1.3.2:
+ *          (a) Scale all Y dimensions ~1.4x (ROW_H 86→120, BAR_H 42→58,
+ *              TOP_AREA 50→70, LEGEND_H 48→67, fonts 22→30/20→28/14→20/
+ *              13→18, y offsets proportionally) to restore chart render
+ *              size after the v1.3.2 gutter addition — viewBox aspect is
+ *              now ~1.43 again, matching pre-gutter.
+ *          (b) Callout donut outline, connector line, and title are now
+ *              black (TEXT_PRIMARY) rather than accent-colored.
  * v1.3.2 — Callouts moved outside the chart (matches mitigations-treemap
  *          style): viewBox widened with a 200px gutter on each side. For
  *          the selected risk's callout, draw a small open donut at the
@@ -178,12 +186,14 @@
       }
 
       // ---------- Layout --------------------------------------------------
-      // v1.2.0: wider (more room for legend), slightly shorter, tighter side pad.
+      // v1.3.3: Y dimensions scaled ~1.4x so the chart's rendered size is
+      // restored after v1.3.2 widened the viewBox with 200px gutters on
+      // each side. ViewBox aspect (W+2*GUTTER)/H ≈ 1.43 again.
       var W = 1000;
-      var ROW_H = 86;            // v1.2.5: very slightly less tall (was 92)
-      var BAR_H = 42;            // v1.2.5: very slightly less tall (was 46)
-      var TOP_AREA = 50;         // axis titles + tick labels
-      var LEGEND_H = 48;         // legend band at bottom
+      var ROW_H = 120;           // v1.3.3: was 86
+      var BAR_H = 58;            // v1.3.3: was 42
+      var TOP_AREA = 70;         // v1.3.3: was 50
+      var LEGEND_H = 67;         // v1.3.3: was 48
       var SIDE_PAD = 16;         // v1.2.0: actor name pushed further left, bars wider
       var H = TOP_AREA + actors.length * ROW_H + LEGEND_H;
       var cx = W / 2;
@@ -223,15 +233,15 @@
       svg += '<line x1="' + cx + '" y1="' + gridTop + '" x2="' + cx + '" y2="' + gridBottom + '" stroke="' + TEXT_PRIMARY + '" stroke-width="1.2"/>';
 
       // ---------- Big axis titles (Vulnerability / Responsibility) ------
-      // v1.2.0: pulled up to y=16 (was 22)
-      svg += '<text x="' + (cx - 24) + '" y="16" text-anchor="end" font-size="22" font-weight="700" fill="' + VULN_LABEL_COLOR + '">Vulnerability \u2190</text>';
-      svg += '<text x="' + (cx + 24) + '" y="16" text-anchor="start" font-size="22" font-weight="700" fill="' + RESP_LABEL_COLOR + '">\u2192 Responsibility</text>';
+      // v1.3.3: y 16→22, font 22→30.
+      svg += '<text x="' + (cx - 24) + '" y="22" text-anchor="end" font-size="30" font-weight="700" fill="' + VULN_LABEL_COLOR + '">Vulnerability \u2190</text>';
+      svg += '<text x="' + (cx + 24) + '" y="22" text-anchor="start" font-size="30" font-weight="700" fill="' + RESP_LABEL_COLOR + '">\u2192 Responsibility</text>';
 
       // ---------- Tick labels at top (above the first row) --------------
-      // v1.1.2: bigger + darker. v1.1.3: moved up from y=72 to y=42 (sits between titles and plot)
+      // v1.3.3: y 42→58, font 14→20.
       ticks.forEach(function (t) {
-        svg += '<text x="' + (cx + t * scale) + '" y="42" text-anchor="middle" font-size="14" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
-        svg += '<text x="' + (cx - t * scale) + '" y="42" text-anchor="middle" font-size="14" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
+        svg += '<text x="' + (cx + t * scale) + '" y="58" text-anchor="middle" font-size="20" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
+        svg += '<text x="' + (cx - t * scale) + '" y="58" text-anchor="middle" font-size="20" font-weight="600" fill="' + TEXT_PRIMARY + '">' + t + '%</text>';
       });
 
       // ---------- Per-actor butterfly rows ------------------------------
@@ -240,10 +250,10 @@
         if (!actorData) return;
         var yBase = TOP_AREA + ai * ROW_H;
 
-        // Actor name (left-aligned inside its row) — v1.2.0: bigger, pushed left
-        svg += '<text x="' + SIDE_PAD + '" y="' + (yBase + 22) + '" text-anchor="start" font-size="20" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(actor) + '</text>';
+        // Actor name (left-aligned inside its row) — v1.3.3: y+22→y+30, font 20→28.
+        svg += '<text x="' + SIDE_PAD + '" y="' + (yBase + 30) + '" text-anchor="start" font-size="28" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(actor) + '</text>';
 
-        var barY = yBase + 36;
+        var barY = yBase + 50;
 
         // Responsibility (right) — strongest near center. v1.2.0: per-level colors.
         var xOffR = cx;
@@ -255,7 +265,7 @@
           var fillR = RESP_COLORS[i] || '#ccc';
           svg += '<rect x="' + xOffR + '" y="' + barY + '" width="' + wR + '" height="' + BAR_H + '" fill="' + fillR + '"/>';
           if (wR > 32) {
-            svg += '<text x="' + (xOffR + wR / 2) + '" y="' + (barY + BAR_H / 2 + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + (useLightText(i) ? '#fff' : TEXT_PRIMARY) + '">' + valR.toFixed(0) + '%</text>';
+            svg += '<text x="' + (xOffR + wR / 2) + '" y="' + (barY + BAR_H / 2 + 7) + '" text-anchor="middle" font-size="20" font-weight="600" fill="' + (useLightText(i) ? '#fff' : TEXT_PRIMARY) + '">' + valR.toFixed(0) + '%</text>';
           }
           xOffR += wR;
         }
@@ -270,7 +280,7 @@
           var fillV = VULN_COLORS[j] || '#ccc';
           svg += '<rect x="' + (xOffL - wV) + '" y="' + barY + '" width="' + wV + '" height="' + BAR_H + '" fill="' + fillV + '"/>';
           if (wV > 32) {
-            svg += '<text x="' + (xOffL - wV / 2) + '" y="' + (barY + BAR_H / 2 + 5) + '" text-anchor="middle" font-size="14" font-weight="600" fill="' + (useLightText(j) ? '#fff' : TEXT_PRIMARY) + '">' + valV.toFixed(0) + '%</text>';
+            svg += '<text x="' + (xOffL - wV / 2) + '" y="' + (barY + BAR_H / 2 + 7) + '" text-anchor="middle" font-size="20" font-weight="600" fill="' + (useLightText(j) ? '#fff' : TEXT_PRIMARY) + '">' + valV.toFixed(0) + '%</text>';
           }
           xOffL -= wV;
         }
@@ -292,60 +302,61 @@
             acc += (tad[tField][tLevels[tk]] || 0) * scale;
           }
           var tx = cb.target.side === 'R' ? (cx + acc) : (cx - acc);
-          var ty = TOP_AREA + tai * ROW_H + 36 + BAR_H / 2;
+          var ty = TOP_AREA + tai * ROW_H + 50 + BAR_H / 2;
 
-          var coColor = cb.target.side === 'R' ? RESP_LABEL_COLOR : VULN_LABEL_COLOR;
-          var dotR = 6;
+          var dotR = 8;
 
           // Line extends from just outside the donut into the outer gutter.
           var lineStartX, lineEndX, textX, textAnchor;
           if (cb.target.side === 'R') {
             lineStartX = tx + dotR + 2;
-            lineEndX = W + 12;           // just past the plot edge
-            textX = W + 20;              // 8px past lineEndX
+            lineEndX = W + 16;
+            textX = W + 26;
             textAnchor = 'start';
           } else {
             lineStartX = tx - dotR - 2;
-            lineEndX = -12;
-            textX = -20;
+            lineEndX = -16;
+            textX = -26;
             textAnchor = 'end';
           }
 
+          // v1.3.3: donut outline, connector line, and title are all black.
           // Open donut at the target bar edge
           svg += '<circle cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) +
-                 '" r="' + dotR + '" fill="#ffffff" stroke="' + coColor + '" stroke-width="2"/>';
+                 '" r="' + dotR + '" fill="#ffffff" stroke="' + TEXT_PRIMARY + '" stroke-width="2"/>';
 
           // Thin horizontal connector out to the gutter
           svg += '<line x1="' + lineStartX.toFixed(1) + '" y1="' + ty.toFixed(1) +
                  '" x2="' + lineEndX + '" y2="' + ty.toFixed(1) +
-                 '" stroke="' + coColor + '" stroke-width="1"/>';
+                 '" stroke="' + TEXT_PRIMARY + '" stroke-width="1.2"/>';
 
-          // Title (colored bold) + sub (primary text)
-          svg += '<text x="' + textX + '" y="' + (ty - 4).toFixed(1) +
-                 '" text-anchor="' + textAnchor + '" font-size="15" font-weight="700" fill="' + coColor + '">' +
+          // Title (bold black) + sub (primary text)
+          svg += '<text x="' + textX + '" y="' + (ty - 6).toFixed(1) +
+                 '" text-anchor="' + textAnchor + '" font-size="21" font-weight="700" fill="' + TEXT_PRIMARY + '">' +
                  esc(cb.title) + '</text>';
-          svg += '<text x="' + textX + '" y="' + (ty + 14).toFixed(1) +
-                 '" text-anchor="' + textAnchor + '" font-size="13" fill="' + TEXT_PRIMARY + '">' +
+          svg += '<text x="' + textX + '" y="' + (ty + 20).toFixed(1) +
+                 '" text-anchor="' + textAnchor + '" font-size="17" fill="' + TEXT_PRIMARY + '">' +
                  esc(cb.sub) + '</text>';
         }
       }
 
       // ---------- Legend at the bottom ---------------------------------
-      // v1.2.0: per-level colors from the Spectral palette.
-      var legendY = gridBottom + 20;
+      // v1.3.3: swatch 14→20, text offset 19→26 and +12→+16, font 13→18,
+      //         legendY offset 20→28.
+      var legendY = gridBottom + 28;
       var lgLeftWidth = (cx - 40) / vulnLevels.length;
       for (var li = vulnLevels.length - 1; li >= 0; li--) {
         var lvlName = vulnLevels[li];
         var lx = 20 + (vulnLevels.length - 1 - li) * lgLeftWidth;
-        svg += '<rect x="' + lx + '" y="' + legendY + '" width="14" height="14" fill="' + (VULN_COLORS[li] || '#ccc') + '"/>';
-        svg += '<text x="' + (lx + 19) + '" y="' + (legendY + 12) + '" font-size="13" fill="' + TEXT_PRIMARY + '">' + esc(lvlName) + '</text>';
+        svg += '<rect x="' + lx + '" y="' + legendY + '" width="20" height="20" fill="' + (VULN_COLORS[li] || '#ccc') + '"/>';
+        svg += '<text x="' + (lx + 26) + '" y="' + (legendY + 16) + '" font-size="18" fill="' + TEXT_PRIMARY + '">' + esc(lvlName) + '</text>';
       }
       var lgRightWidth = (cx - 40) / respLevels.length;
       for (var ri = respLevels.length - 1; ri >= 0; ri--) {
         var lvlName2 = respLevels[ri];
         var lx2 = cx + 20 + (respLevels.length - 1 - ri) * lgRightWidth;
-        svg += '<rect x="' + lx2 + '" y="' + legendY + '" width="14" height="14" fill="' + (RESP_COLORS[ri] || '#ccc') + '"/>';
-        svg += '<text x="' + (lx2 + 19) + '" y="' + (legendY + 12) + '" font-size="13" fill="' + TEXT_PRIMARY + '">' + esc(lvlName2) + '</text>';
+        svg += '<rect x="' + lx2 + '" y="' + legendY + '" width="20" height="20" fill="' + (RESP_COLORS[ri] || '#ccc') + '"/>';
+        svg += '<text x="' + (lx2 + 26) + '" y="' + (legendY + 16) + '" font-size="18" fill="' + TEXT_PRIMARY + '">' + esc(lvlName2) + '</text>';
       }
 
       svg += '</svg>';
