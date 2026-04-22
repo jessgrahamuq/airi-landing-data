@@ -1,6 +1,8 @@
 /**
- * AIRI Delphi butterfly chart (v1.2.2)
+ * AIRI Delphi butterfly chart (v1.2.3)
  *
+ * v1.2.3 — Slightly less tall: ROW_H 106 → 92, BAR_H 52 → 46.
+ *          Derived H drops from 840 → 742.
  * v1.2.2 — Restore fill behavior: root is height:100% and SVG has
  *          flex:1 so the chart stretches to fill the cell (instead of
  *          rendering at natural aspect, which had made it look small).
@@ -117,8 +119,8 @@
       // ---------- Layout --------------------------------------------------
       // v1.2.0: wider (more room for legend), slightly shorter, tighter side pad.
       var W = 1000;
-      var ROW_H = 106;           // per-actor row height
-      var BAR_H = 52;            // butterfly bar height
+      var ROW_H = 92;            // v1.2.3: slightly less tall (was 106)
+      var BAR_H = 46;            // v1.2.3: slightly less tall (was 52)
       var TOP_AREA = 50;         // axis titles + tick labels
       var LEGEND_H = 48;         // legend band at bottom
       var SIDE_PAD = 16;         // v1.2.0: actor name pushed further left, bars wider
