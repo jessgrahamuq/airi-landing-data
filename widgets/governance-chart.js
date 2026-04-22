@@ -1,7 +1,12 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.11)
+ * AIRI Governance horizontal stacked bar chart (v1.1.12)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.12 — Restore fill behavior: root is height:100% and svg-wrap is
+ *           flex:1 so the chart stretches to fill the cell. v1.1.10's
+ *           height:auto change had made the chart visually too small.
+ *           Footer still sits tight below; modal still sized to SVG
+ *           only (via svg-wrap).
  * v1.1.11 — Wrap SVG in a position:relative div and nest the documents
  *           modal inside it, so the modal sizes to the chart area only
  *           (not chart + footer) and can't overshoot in Webflow.
@@ -152,7 +157,7 @@
     function xScale(v) { return mL + (v / xMax) * iw; }
 
     // v1.1.3: preserveAspectRatio + height:100% so the SVG fills the container fully
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
     // X-axis title — v1.1.9: lifted to y=18, bumped to 26px bold.
     svg += '<text x="' + mL + '" y="18" font-size="26" font-weight="700" fill="' + TEXT_PRIMARY + '">Number of documents</text>';
@@ -226,9 +231,9 @@
 
     // v1.1.4: legend lives inside the SVG now; chart-area wrapper is gone.
     var style = '<style>' +
-      '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
-      '#airi-chart-governance > svg { min-width: 0; }' +
-      '.airi-gchart-svg-wrap { position: relative; }' +
+      '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
+      '.airi-gchart-svg-wrap { position: relative; flex: 1; min-width: 0; min-height: 0; }' +
+      '.airi-gchart-svg-wrap > svg { display: block; width: 100%; height: 100%; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
       '.airi-gchart-legend { display: flex; flex-direction: column; gap: 24px; font-family: Figtree, sans-serif; color: ' + TEXT_PRIMARY + '; }' +
       '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 14px; }' +

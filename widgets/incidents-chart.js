@@ -1,6 +1,11 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.7)
+ * AIRI Incidents stacked area chart (v1.0.8)
  *
+ * v1.0.8 — Restore fill behavior: root is height:100% and svg-wrap
+ *          gets flex:1 so the SVG stretches to fill the cell (chart
+ *          no longer renders at natural aspect only, which had made
+ *          it visually small). Footer still sits tight below; modal
+ *          still sized to SVG only (via svg-wrap).
  * v1.0.7 — Wrap SVG in a position:relative div and nest the notable-
  *          incidents modal inside it. Modal now sizes to the SVG only
  *          (not the whole mount), so it can't overshoot the chart area
@@ -121,7 +126,7 @@
     // ---------- SVG ------------------------------------------------------
     var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg"' +
       ' role="img" aria-label="AI incidents per year, stacked by risk domain"' +
-      ' style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
+      ' style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
     // v1.0.2: chart title, left-aligned to plot, bold black. v1.0.5: title y 26 → 22 for tighter top.
     svg += '<text x="' + mL + '" y="22" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
@@ -188,8 +193,9 @@
 
     // ---------- Styles ---------------------------------------------------
     var style = '<style>' +
-      '#airi-chart-incidents { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
-      '.airi-chart-svg-wrap { position: relative; }' +
+      '#airi-chart-incidents { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
+      '.airi-chart-svg-wrap { position: relative; flex: 1; min-width: 0; min-height: 0; }' +
+      '.airi-chart-svg-wrap > svg { display: block; width: 100%; height: 100%; }' +
       '.airi-chart-band { transition: opacity 0.15s ease; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band { opacity: 0.22; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band.is-active { opacity: 1; }' +

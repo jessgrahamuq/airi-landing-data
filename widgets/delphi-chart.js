@@ -1,6 +1,10 @@
 /**
- * AIRI Delphi butterfly chart (v1.2.1)
+ * AIRI Delphi butterfly chart (v1.2.2)
  *
+ * v1.2.2 — Restore fill behavior: root is height:100% and SVG has
+ *          flex:1 so the chart stretches to fill the cell (instead of
+ *          rendering at natural aspect, which had made it look small).
+ *          Footer still sits tight below.
  * v1.2.1 — Drop forced full-container height (no trailing blank below
  *          the footer). SVG height:100% → auto.
  * v1.2.0 — New diverging Spectral palette (5 distinct colors per side
@@ -92,7 +96,8 @@
     var actors = data.actors;
 
     var style = '<style>' +
-      '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
+      '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
+      '#airi-chart-delphi > svg { flex: 1; min-width: 0; min-height: 0; }' +
       '.delphi-controls { display: flex; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }' +
       '.delphi-control { flex: 1; min-width: 220px; }' +
       '.delphi-control label { font-size: 11px; color: ' + TEXT_MUTED + '; display: block; margin-bottom: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; }' +
@@ -132,7 +137,7 @@
         }).join('') +
         '</select></div></div>';
 
-      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
+      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
       // v1.2.0: no alternating row stripes — larger actor labels provide segmentation.
 
