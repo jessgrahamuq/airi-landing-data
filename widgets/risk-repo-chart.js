@@ -1,6 +1,10 @@
 /**
- * AIRI Risk Repository causal taxonomy matrix (v1.0.4)
+ * AIRI Risk Repository causal taxonomy matrix (v1.0.5)
  *
+ * v1.0.5 — Single grid for header + body rows (guarantees Entity /
+ *          Intent / Timing section headers line up exactly with their
+ *          3-column blocks below). Taller data rows (padding 14 → 18)
+ *          and taller domain cell (padding 12 → 16) for breathing room.
  * v1.0.4 — Drop forced full-container height so the widget sizes to
  *          matrix + legend + footer (no trailing blank below footer).
  * v1.0.3 — Tighter top margin N/A (HTML grid has no viewBox / mT);
@@ -95,23 +99,24 @@
       '.rr-legend-swatch { display: inline-block; width: 56px; height: 10px; border-radius: 2px; border: 0.5px solid rgba(0,0,0,0.1); }' +
       '</style>';
 
-    // Section-header row
-    html += '<div style="display:grid;grid-template-columns:' + cols + ';gap:0;border:1px solid rgba(0,0,0,0.06);border-radius:8px 8px 0 0;overflow:hidden;border-bottom:none;">';
+    // v1.0.5: single grid container for the whole table, so section headers
+    // (each spanning 3 columns) share the exact same grid tracks as the
+    // per-column subheaders and data cells beneath them. Eliminates any
+    // inter-grid width drift between the old two-container layout.
+    html += '<div style="display:grid;grid-template-columns:' + cols + ';gap:0;border:1px solid rgba(0,0,0,0.06);border-radius:8px;overflow:hidden;">';
+
+    // Row 1 — section headers (empty corner + 3 × span-3 colored blocks)
     html += '<div style="background:#fff;"></div>';
     sections.forEach(function (sec) {
-      html += '<div style="grid-column:span 3;background:' + sec.accent + ';color:#fff;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;padding:9px 0;">' + esc(sec.title) + '</div>';
+      html += '<div style="grid-column:span 3;background:' + sec.accent + ';color:#fff;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;padding:11px 0;">' + esc(sec.title) + '</div>';
     });
-    html += '</div>';
 
-    // Table body
-    html += '<div style="display:grid;grid-template-columns:' + cols + ';gap:0;border:1px solid rgba(0,0,0,0.06);border-top:none;border-radius:0 0 8px 8px;overflow:hidden;">';
-
-    // Column header row
-    html += '<div style="background:#fff;padding:10px 12px;font-size:11px;color:' + TEXT_MUTED + ';border-bottom:1px solid rgba(0,0,0,0.06);">Domain</div>';
+    // Row 2 — column subheaders (Domain + 9 individual columns)
+    html += '<div style="background:#fff;padding:12px 12px;font-size:11px;color:' + TEXT_MUTED + ';border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);">Domain</div>';
     sections.forEach(function (sec, si) {
       sec.cols.forEach(function (col, ci) {
         var borderLeft = (si > 0 && ci === 0) ? '1px solid rgba(0,0,0,0.08)' : 'none';
-        html += '<div style="background:#fff;padding:10px 6px;font-size:11px;color:' + TEXT_PRIMARY + ';text-align:center;border-bottom:1px solid rgba(0,0,0,0.06);border-left:' + borderLeft + ';">' + esc(col) + '</div>';
+        html += '<div style="background:#fff;padding:12px 6px;font-size:11px;color:' + TEXT_PRIMARY + ';text-align:center;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);border-left:' + borderLeft + ';">' + esc(col) + '</div>';
       });
     });
 
@@ -122,7 +127,7 @@
 
       html += '<div style="display:flex;align-items:stretch;background:#fff;border-bottom:' + bottomBorder + ';">' +
         '<div style="width:4px;background:' + d.color + ';flex-shrink:0;"></div>' +
-        '<div style="flex:1;padding:12px 12px;font-size:12.5px;line-height:1.3;">' + esc(d.id + ' ' + d.name) + '</div>' +
+        '<div style="flex:1;padding:16px 12px;font-size:12.5px;line-height:1.3;">' + esc(d.id + ' ' + d.name) + '</div>' +
         '</div>';
 
       sections.forEach(function (sec, si) {
@@ -132,7 +137,7 @@
           var fill = rampFill(rgb, val);
           var tc = cellTextColor(val);
           var borderLeft = (si > 0 && ci === 0) ? '1px solid rgba(0,0,0,0.08)' : 'none';
-          html += '<div style="background:' + fill + ';border-bottom:' + bottomBorder + ';border-left:' + borderLeft + ';display:flex;align-items:center;justify-content:center;padding:14px 4px;font-size:12px;font-weight:500;color:' + tc + ';">' + val + '%</div>';
+          html += '<div style="background:' + fill + ';border-bottom:' + bottomBorder + ';border-left:' + borderLeft + ';display:flex;align-items:center;justify-content:center;padding:18px 4px;font-size:12px;font-weight:500;color:' + tc + ';">' + val + '%</div>';
         });
       });
     });

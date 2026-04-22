@@ -1,5 +1,5 @@
 /**
- * AIRI Mitigations drill-down donut chart (v1.0.7)
+ * AIRI Mitigations drill-down donut chart (v1.0.8)
  *
  * Mounts into an element with id="airi-chart-mitigations".
  * Fetches from /data/mitigations.json in the same repo.
@@ -7,6 +7,9 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/mitigations-chart.js
  *
+ * v1.0.8 — Wrap SVG in a position:relative div and nest the subcategory
+ *          modal inside it, so the modal sizes to the donut area only
+ *          (not donut + hint + footer) and can't overshoot in Webflow.
  * v1.0.7 — Drop forced full-container height (no trailing blank below
  *          the footer). SVG height:100% → auto.
  * v1.0.6 — Shrink viewBox height back to 540 (was 750). The extra 210
@@ -122,6 +125,7 @@
 
     var style = '<style>' +
       '#airi-chart-mitigations { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
+      '.mit-svg-wrap { position: relative; }' +
       '.mit-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; min-height: 28px; }' +
       '.mit-back { background: none; border: none; padding: 0; cursor: pointer; color: ' + TEXT_MUTED + '; font-size: 13px; font-family: inherit; }' +
       '.mit-back:hover { color: ' + TEXT_PRIMARY + '; }' +
@@ -249,7 +253,8 @@
 
       var modal = '<div class="mit-modal" role="dialog" aria-modal="true" aria-hidden="true"></div>';
 
-      mount.innerHTML = style + breadcrumb + svg + hint + footer + modal;
+      // v1.0.8: SVG + modal wrapped together so modal is sized to the SVG only.
+      mount.innerHTML = style + breadcrumb + '<div class="mit-svg-wrap">' + svg + modal + '</div>' + hint + footer;
 
       var modalEl = mount.querySelector('.mit-modal');
       var sliceEls = mount.querySelectorAll('.mit-slice');

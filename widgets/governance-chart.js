@@ -1,7 +1,10 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.10)
+ * AIRI Governance horizontal stacked bar chart (v1.1.11)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.11 — Wrap SVG in a position:relative div and nest the documents
+ *           modal inside it, so the modal sizes to the chart area only
+ *           (not chart + footer) and can't overshoot in Webflow.
  * v1.1.10 — Drop forced full-container height (no trailing blank below
  *           the footer). SVG height:100% → auto; mount no longer has
  *           height:100% / min-height:640 / flex:1 on SVG.
@@ -225,6 +228,7 @@
     var style = '<style>' +
       '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
       '#airi-chart-governance > svg { min-width: 0; }' +
+      '.airi-gchart-svg-wrap { position: relative; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
       '.airi-gchart-legend { display: flex; flex-direction: column; gap: 24px; font-family: Figtree, sans-serif; color: ' + TEXT_PRIMARY + '; }' +
       '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 14px; }' +
@@ -266,7 +270,8 @@
       '.airi-gchart-modal-footer a:hover { text-decoration: underline; }' +
       '</style>';
 
-    mount.innerHTML = style + svg + footer + tooltip + modal;
+    // v1.1.11: SVG + modal wrapped together so modal is sized to the SVG only.
+    mount.innerHTML = style + '<div class="airi-gchart-svg-wrap">' + svg + modal + '</div>' + footer + tooltip;
 
     var segs = mount.querySelectorAll('.airi-gchart-seg');
     var hits = mount.querySelectorAll('.airi-gchart-hit');

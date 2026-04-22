@@ -1,6 +1,10 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.6)
+ * AIRI Incidents stacked area chart (v1.0.7)
  *
+ * v1.0.7 — Wrap SVG in a position:relative div and nest the notable-
+ *          incidents modal inside it. Modal now sizes to the SVG only
+ *          (not the whole mount), so it can't overshoot the chart area
+ *          and get clipped by the Webflow panel.
  * v1.0.6 — Drop forced full-container height so the widget sizes to
  *          its chart + caption content (no trailing blank below the
  *          footer). SVG height:100% → auto.
@@ -185,6 +189,7 @@
     // ---------- Styles ---------------------------------------------------
     var style = '<style>' +
       '#airi-chart-incidents { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
+      '.airi-chart-svg-wrap { position: relative; }' +
       '.airi-chart-band { transition: opacity 0.15s ease; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band { opacity: 0.22; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band.is-active { opacity: 1; }' +
@@ -226,7 +231,8 @@
       '.airi-chart-modal-footer a:hover { text-decoration: underline; }' +
       '</style>';
 
-    mount.innerHTML = style + svg + legend + footer + tooltip + modal;
+    // v1.0.7: SVG + modal wrapped together so modal is sized to the SVG only.
+    mount.innerHTML = style + '<div class="airi-chart-svg-wrap">' + svg + modal + '</div>' + legend + footer + tooltip;
 
     // ---------- Wire up interactions -------------------------------------
     var bands = mount.querySelectorAll('.airi-chart-band');
