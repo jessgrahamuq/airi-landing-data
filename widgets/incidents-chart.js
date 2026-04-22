@@ -1,6 +1,9 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.5)
+ * AIRI Incidents stacked area chart (v1.0.6)
  *
+ * v1.0.6 — Drop forced full-container height so the widget sizes to
+ *          its chart + caption content (no trailing blank below the
+ *          footer). SVG height:100% → auto.
  * v1.0.5 — Tighter top margin for closer alignment with text panel
  *          (mT 46 → 28, title y 26 → 22)
  * v1.0.4 — Taller viewBox (700 × 500) for better vertical fill
@@ -114,7 +117,7 @@
     // ---------- SVG ------------------------------------------------------
     var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg"' +
       ' role="img" aria-label="AI incidents per year, stacked by risk domain"' +
-      ' style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+      ' style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
 
     // v1.0.2: chart title, left-aligned to plot, bold black. v1.0.5: title y 26 → 22 for tighter top.
     svg += '<text x="' + mL + '" y="22" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
@@ -181,7 +184,7 @@
 
     // ---------- Styles ---------------------------------------------------
     var style = '<style>' +
-      '#airi-chart-incidents { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
+      '#airi-chart-incidents { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
       '.airi-chart-band { transition: opacity 0.15s ease; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band { opacity: 0.22; }' +
       '#airi-chart-incidents.is-hovering .airi-chart-band.is-active { opacity: 1; }' +

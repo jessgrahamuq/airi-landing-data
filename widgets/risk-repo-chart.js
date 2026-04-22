@@ -1,6 +1,8 @@
 /**
- * AIRI Risk Repository causal taxonomy matrix (v1.0.3)
+ * AIRI Risk Repository causal taxonomy matrix (v1.0.4)
  *
+ * v1.0.4 — Drop forced full-container height so the widget sizes to
+ *          matrix + legend + footer (no trailing blank below footer).
  * v1.0.3 — Tighter top margin N/A (HTML grid has no viewBox / mT);
  *          matrix already starts at the top of its mount div.
  * v1.0.2 — Tighten caption spacing (legend + footer hug the matrix)
@@ -86,7 +88,7 @@
     var html = '';
 
     html += '<style>' +
-      '#airi-chart-risk-repo { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; font-size: 13px; display: flex; flex-direction: column; height: 100%; }' +
+      '#airi-chart-risk-repo { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; font-size: 13px; display: flex; flex-direction: column; }' +
       '.rr-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; }' +
       '.rr-legend { display: flex; gap: 28px; margin-top: 6px; font-size: 11px; color: ' + TEXT_MUTED + '; flex-wrap: wrap; justify-content: center; }' +
       '.rr-legend-item { display: flex; align-items: center; gap: 6px; }' +

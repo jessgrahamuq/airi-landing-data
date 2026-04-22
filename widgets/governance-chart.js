@@ -1,7 +1,10 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.9)
+ * AIRI Governance horizontal stacked bar chart (v1.1.10)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.10 — Drop forced full-container height (no trailing blank below
+ *           the footer). SVG height:100% → auto; mount no longer has
+ *           height:100% / min-height:640 / flex:1 on SVG.
  * v1.1.9 — "Number of documents" title lifted higher (y 22 → 18) and
  *          bumped again (24 → 26). Wider viewBox (W 1500 → 1600), and
  *          a noticeably bigger legend column (LEGEND_W 240 → 300,
@@ -146,7 +149,7 @@
     function xScale(v) { return mL + (v / xMax) * iw; }
 
     // v1.1.3: preserveAspectRatio + height:100% so the SVG fills the container fully
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
 
     // X-axis title — v1.1.9: lifted to y=18, bumped to 26px bold.
     svg += '<text x="' + mL + '" y="18" font-size="26" font-weight="700" fill="' + TEXT_PRIMARY + '">Number of documents</text>';
@@ -220,8 +223,8 @@
 
     // v1.1.4: legend lives inside the SVG now; chart-area wrapper is gone.
     var style = '<style>' +
-      '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; min-height: 640px; }' +
-      '#airi-chart-governance > svg { flex: 1; min-width: 0; min-height: 0; }' +
+      '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
+      '#airi-chart-governance > svg { min-width: 0; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
       '.airi-gchart-legend { display: flex; flex-direction: column; gap: 24px; font-family: Figtree, sans-serif; color: ' + TEXT_PRIMARY + '; }' +
       '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 14px; }' +

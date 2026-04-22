@@ -1,6 +1,8 @@
 /**
- * AIRI Delphi butterfly chart (v1.2.0)
+ * AIRI Delphi butterfly chart (v1.2.1)
  *
+ * v1.2.1 — Drop forced full-container height (no trailing blank below
+ *          the footer). SVG height:100% → auto.
  * v1.2.0 — New diverging Spectral palette (5 distinct colors per side
  *          instead of single hue with varying opacity). Wider viewBox
  *          (W 900 → 1000) so legend items don't crowd. Slightly shorter
@@ -90,7 +92,7 @@
     var actors = data.actors;
 
     var style = '<style>' +
-      '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
+      '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; }' +
       '.delphi-controls { display: flex; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }' +
       '.delphi-control { flex: 1; min-width: 220px; }' +
       '.delphi-control label { font-size: 11px; color: ' + TEXT_MUTED + '; display: block; margin-bottom: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; }' +
@@ -130,7 +132,7 @@
         }).join('') +
         '</select></div></div>';
 
-      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:auto;font-family:Figtree,sans-serif;">';
 
       // v1.2.0: no alternating row stripes — larger actor labels provide segmentation.
 
