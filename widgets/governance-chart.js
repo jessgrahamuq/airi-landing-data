@@ -1,7 +1,8 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.17)
+ * AIRI Governance horizontal stacked bar chart (v1.1.18)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.18 — Slightly taller viewBox: H 1400 → 1550.
  * v1.1.17 — Truncate subdomain labels by word count (first 6 words + ellipsis)
  *           instead of character count, so labels stay compact.
  * v1.1.16 — Wider again so subdomain labels stop getting cut off: viewBox
@@ -145,7 +146,7 @@
     //         mT back up to 52 so the axis title and tick numbers don't overlap.
     var LEGEND_W = 340; // v1.1.14: bigger legend column for bigger legend text
     var LEGEND_GAP = 24;
-    var W = 1950, H = 1400; // v1.1.16: wider viewBox so labels aren't cut off
+    var W = 1950, H = 1550; // v1.1.18: slightly taller
     var mL = 560; // v1.1.16: wider left margin so full subdomain names fit
     var mR = LEGEND_W + LEGEND_GAP + 10; // reserve legend column + a little breathing room
     var mT = 70;   // v1.1.14: bigger title + ticks; title fills y=4..36, ticks at y=mT-10 (=60), plot starts at y=70
