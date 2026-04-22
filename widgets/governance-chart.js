@@ -1,7 +1,10 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.14)
+ * AIRI Governance horizontal stacked bar chart (v1.1.15)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.15 — Widen the left label area so full subdomain names fit
+ *           without truncation: mL 340 → 400. Truncation threshold
+ *           relaxed (42 → 60, slice 40 → 58) to match the extra room.
  * v1.1.14 — Quite a bit taller (H 1050 → 1400) and slightly wider
  *           (W 1600 → 1700). "Number of documents" title anchored by
  *           its top (dominant-baseline=hanging) at y=4 and bumped
@@ -120,7 +123,8 @@
 
   function subdomainLabel(row) {
     var name = row.full_name || '';
-    if (name.length > 42) name = name.slice(0, 40) + '…';
+    // v1.1.15: relaxed truncation now that mL is wider (340 → 400)
+    if (name.length > 60) name = name.slice(0, 58) + '…';
     return row.subdomain + ' ' + name;
   }
 
@@ -136,7 +140,7 @@
     var LEGEND_W = 340; // v1.1.14: bigger legend column for bigger legend text
     var LEGEND_GAP = 24;
     var W = 1700, H = 1400; // v1.1.14: slightly wider + quite a bit taller
-    var mL = 340;
+    var mL = 400; // v1.1.15: wider so subdomain labels aren't truncated
     var mR = LEGEND_W + LEGEND_GAP + 10; // reserve legend column + a little breathing room
     var mT = 70;   // v1.1.14: bigger title + ticks; title fills y=4..36, ticks at y=mT-10 (=60), plot starts at y=70
     var mB = 40;
