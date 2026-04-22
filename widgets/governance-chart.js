@@ -1,7 +1,9 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.16)
+ * AIRI Governance horizontal stacked bar chart (v1.1.17)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.17 — Truncate subdomain labels by word count (first 6 words + ellipsis)
+ *           instead of character count, so labels stay compact.
  * v1.1.16 — Wider again so subdomain labels stop getting cut off: viewBox
  *           W 1700 → 1950, mL 400 → 560. Truncation threshold relaxed to
  *           effectively off (60 → 90, slice 58 → 88).
@@ -126,8 +128,9 @@
 
   function subdomainLabel(row) {
     var name = row.full_name || '';
-    // v1.1.16: truncation effectively off now that mL is 560
-    if (name.length > 90) name = name.slice(0, 88) + '…';
+    // v1.1.17: truncate to first 6 words
+    var words = name.split(/\s+/);
+    if (words.length > 6) name = words.slice(0, 6).join(' ') + '…';
     return row.subdomain + ' ' + name;
   }
 
