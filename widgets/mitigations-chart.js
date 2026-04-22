@@ -1,5 +1,5 @@
 /**
- * AIRI Mitigations drill-down donut chart (v1.0.5)
+ * AIRI Mitigations drill-down donut chart (v1.0.6)
  *
  * Mounts into an element with id="airi-chart-mitigations".
  * Fetches from /data/mitigations.json in the same repo.
@@ -7,6 +7,10 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/mitigations-chart.js
  *
+ * v1.0.6 — Shrink viewBox height back to 540 (was 750). The extra 210
+ *          viewBox units after v1.0.4 sat empty below the donut labels
+ *          and, with preserveAspectRatio=xMidYMax meet, rendered as a
+ *          visible gap between the donut and the hint/footer captions.
  * v1.0.5 — Tighter top margin for closer alignment with text panel
  *          (donut cy 385 → 280; donut top now ~100 instead of ~205)
  * v1.0.4 — Taller viewBox (820 × 750) for better vertical fill
@@ -110,9 +114,8 @@
     var state = { level: 0, parentId: null };
 
     // Tuned for better fit in Webflow slide container
-    var W = 820, H = 750; // v1.0.4: taller viewBox for better vertical fill
-    // v1.0.5: cy moved up for tighter top margin (was H/2 + 10 = 385)
-    var cx = W / 2, cy = 280;
+    var W = 820, H = 540; // v1.0.6: shrink H back (was 750) to close the gap to the caption
+    var cx = W / 2, cy = 280; // equals H/2 + 10 at H=540; donut labels end ~y=500, leaves ~40px bottom margin
     var outer = 180, inner = 105;
 
     var style = '<style>' +
