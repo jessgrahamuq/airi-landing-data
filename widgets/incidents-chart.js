@@ -1,6 +1,11 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.10)
+ * AIRI Incidents stacked area chart (v1.0.11)
  *
+ * v1.0.11 — Shrink the notable-incidents modal and nudge it down the
+ *           chart so it doesn't get clipped by the Webflow panel when
+ *           the panel is shorter than the chart. inset 20 (all sides)
+ *           → top 60 / sides 40 / bottom 30. Modal is narrower and
+ *           starts ~60px from the top of the SVG area.
  * v1.0.10 — "Total incidents" title moved up again (y 16 → 12) AND
  *           mT raised from 28 → 36. Gap between title bottom and the
  *           top tick number grows from ~5 to ~17 viewBox units.
@@ -221,7 +226,7 @@
       '.airi-chart-tooltip-hint { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; color: #aaa; font-size: 11px; }' +
       '.airi-chart-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; font-family: Figtree, sans-serif; }' +
       '.airi-chart-hint { color: ' + TEXT_MUTED + '; }' +
-      '.airi-chart-modal { position: absolute; inset: 20px; background: rgba(255,255,255,0.98); border-radius: 8px; padding: 1.25rem 1.5rem 1rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: 0 2px 10px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(0,0,0,0.08); }' +
+      '.airi-chart-modal { position: absolute; top: 60px; right: 40px; bottom: 30px; left: 40px; background: rgba(255,255,255,0.98); border-radius: 8px; padding: 1.1rem 1.35rem 0.9rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: 0 2px 10px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.airi-chart-modal.is-visible { opacity: 1; pointer-events: auto; }' +
       '.airi-chart-modal-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }' +
       '.airi-chart-modal-title { font-size: 1.1rem; font-weight: 600; color: ' + TEXT_PRIMARY + '; margin: 0; }' +
