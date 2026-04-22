@@ -1,7 +1,13 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.7)
+ * AIRI Governance horizontal stacked bar chart (v1.1.8)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.8 — Lift "Number of documents" title off the axis numbers
+ *          (title y 28 → 22, mT 30 → 52 so ticks fit between title
+ *          and plot). Wider viewBox (W 1340 → 1500). All text bigger:
+ *          title 22 → 24, axis numbers 14 → 16, domain 18 → 22,
+ *          subdomain 14 → 16, legend label 14 → 16, desc 13 → 14,
+ *          swatch 14 → 16.
  * v1.1.7 — Remove colored tab from domain headers, drop ALL-CAPS on
  *          domain names, and bump text sizes (domain 15 → 18,
  *          subdomain 13 → 14, legend label 12 → 14, legend desc
@@ -98,12 +104,14 @@
 
     // Taller viewBox — fills vertical space better
     // v1.1.4: wider viewBox reserves a legend column inside the SVG
-    var LEGEND_W = 220;
+    // v1.1.8: wider overall (W 1340 → 1500), bigger legend column (220 → 240),
+    //         mT back up to 52 so the axis title and tick numbers don't overlap.
+    var LEGEND_W = 240;
     var LEGEND_GAP = 24;
-    var W = 1340, H = 1050;
+    var W = 1500, H = 1050;
     var mL = 340;
     var mR = LEGEND_W + LEGEND_GAP + 10; // reserve legend column + a little breathing room
-    var mT = 30;   // v1.1.6: tighter top margin (was 80); x-axis title still sits at y=28
+    var mT = 52;   // axis title sits at y=22, ticks at y=mT-10 (=42), plot starts at y=52
     var mB = 40;
     var iw = W - mL - mR;
     var ih = H - mT - mB;
@@ -121,7 +129,7 @@
       curGroup.items.push({ row: row, idx: i });
     });
 
-    var headerH = 22;
+    var headerH = 28; // v1.1.8: taller so the bigger domain label fits
     var groupGap = 10;
     var totalHeaders = domainGroups.length;
     var totalRows = series.length;
@@ -134,16 +142,16 @@
     // v1.1.3: preserveAspectRatio + height:100% so the SVG fills the container fully
     var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governance document coverage by risk subdomain" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
-    // X-axis title — bigger, bold, Epoch-style
-    svg += '<text x="' + mL + '" y="28" font-size="22" font-weight="700" fill="' + TEXT_PRIMARY + '">Number of documents</text>';
+    // X-axis title — bigger, bold. v1.1.8: lifted to y=22 and bumped to 24px.
+    svg += '<text x="' + mL + '" y="22" font-size="24" font-weight="700" fill="' + TEXT_PRIMARY + '">Number of documents</text>';
 
-    // X-axis grid + numbers
+    // X-axis grid + numbers. v1.1.8: tick numbers bumped to 16px; sit at y=mT-10=42.
     var xTicks = 5;
     for (var t = 0; t <= xTicks; t++) {
       var v = Math.round((xMax * t) / xTicks);
       var x = xScale(v);
       svg += '<line x1="' + x + '" y1="' + mT + '" x2="' + x + '" y2="' + (mT + ih) + '" stroke="' + GRID_COLOR + '"/>';
-      svg += '<text x="' + x + '" y="' + (mT - 10) + '" text-anchor="middle" font-size="14" fill="' + TEXT_PRIMARY + '">' + v + '</text>';
+      svg += '<text x="' + x + '" y="' + (mT - 10) + '" text-anchor="middle" font-size="16" fill="' + TEXT_PRIMARY + '">' + v + '</text>';
     }
 
     // Iterate domain groups, draw header + bars
@@ -151,8 +159,8 @@
     domainGroups.forEach(function (group, gIdx) {
       var domColor = COLORS[group.domain] || '#ccc';
 
-      // Domain header — v1.1.7: no colored tab, mixed case, bigger text
-      svg += '<text x="' + (mL - 12) + '" y="' + (y + headerH / 2 + 6) + '" text-anchor="end" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(shortDomain(group.domain)) + '</text>';
+      // Domain header — v1.1.7: no colored tab, mixed case. v1.1.8: 18 → 22px.
+      svg += '<text x="' + (mL - 12) + '" y="' + (y + headerH / 2 + 7) + '" text-anchor="end" font-size="22" font-weight="700" fill="' + TEXT_PRIMARY + '">' + esc(shortDomain(group.domain)) + '</text>';
       y += headerH;
 
       group.items.forEach(function (it) {
@@ -161,7 +169,7 @@
         var color = domColor;
 
         // Subdomain label
-        svg += '<text x="' + (mL - 12) + '" y="' + (y + rowH / 2 + 5) + '" text-anchor="end" font-size="14" fill="' + TEXT_PRIMARY + '">' + esc(subdomainLabel(row)) + '</text>';
+        svg += '<text x="' + (mL - 12) + '" y="' + (y + rowH / 2 + 6) + '" text-anchor="end" font-size="16" fill="' + TEXT_PRIMARY + '">' + esc(subdomainLabel(row)) + '</text>';
 
         var accumX = mL;
         levels.forEach(function (lvl) {
@@ -209,12 +217,12 @@
       '#airi-chart-governance { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; min-height: 640px; }' +
       '#airi-chart-governance > svg { flex: 1; min-width: 0; min-height: 0; }' +
       '.airi-gchart-seg { transition: opacity 0.15s ease; }' +
-      '.airi-gchart-legend { display: flex; flex-direction: column; gap: 18px; font-family: Figtree, sans-serif; color: ' + TEXT_PRIMARY + '; }' +
-      '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 10px; }' +
-      '.airi-gchart-legend-swatch { width: 14px; height: 14px; border-radius: 2px; flex-shrink: 0; margin-top: 3px; }' +
-      '.airi-gchart-legend-text { font-size: 14px; line-height: 1.35; }' +
+      '.airi-gchart-legend { display: flex; flex-direction: column; gap: 20px; font-family: Figtree, sans-serif; color: ' + TEXT_PRIMARY + '; }' +
+      '.airi-gchart-legend-item { display: flex; align-items: flex-start; gap: 12px; }' +
+      '.airi-gchart-legend-swatch { width: 16px; height: 16px; border-radius: 2px; flex-shrink: 0; margin-top: 3px; }' +
+      '.airi-gchart-legend-text { font-size: 16px; line-height: 1.35; }' +
       '.airi-gchart-legend-label { font-weight: 700; color: ' + TEXT_PRIMARY + '; }' +
-      '.airi-gchart-legend-desc { color: ' + TEXT_MUTED + '; margin-top: 2px; font-size: 13px; }' +
+      '.airi-gchart-legend-desc { color: ' + TEXT_MUTED + '; margin-top: 2px; font-size: 14px; }' +
       '.airi-gchart-tooltip { position: absolute; background: #111; color: #fff; padding: 10px 12px; border-radius: 6px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.12s ease; z-index: 10; font-family: Figtree, sans-serif; max-width: 280px; line-height: 1.4; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }' +
       '.airi-gchart-tooltip.is-visible { opacity: 1; }' +
       '.airi-gchart-tt-sub { font-weight: 600; margin-bottom: 2px; font-size: 13px; }' +
