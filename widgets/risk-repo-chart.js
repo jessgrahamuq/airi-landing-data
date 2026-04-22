@@ -1,6 +1,10 @@
 /**
- * AIRI Risk Repository causal taxonomy matrix (v1.0.6)
+ * AIRI Risk Repository causal taxonomy matrix (v1.0.7)
  *
+ * v1.0.7 — Less tall: data cell padding 28 → 14, domain cell
+ *          padding 24 → 12, column subheader padding 16 → 10,
+ *          section header padding 14 → 10. Whole matrix shrinks
+ *          in height without changing layout.
  * v1.0.6 — Taller again: data cell padding 18 → 28, domain cell
  *          padding 16 → 24, column subheader padding 12 → 16,
  *          section header padding 11 → 14. Whole matrix grows in
@@ -112,15 +116,15 @@
     // Row 1 — section headers (empty corner + 3 × span-3 colored blocks)
     html += '<div style="background:#fff;"></div>';
     sections.forEach(function (sec) {
-      html += '<div style="grid-column:span 3;background:' + sec.accent + ';color:#fff;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;padding:14px 0;">' + esc(sec.title) + '</div>';
+      html += '<div style="grid-column:span 3;background:' + sec.accent + ';color:#fff;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;padding:10px 0;">' + esc(sec.title) + '</div>';
     });
 
     // Row 2 — column subheaders (Domain + 9 individual columns)
-    html += '<div style="background:#fff;padding:16px 12px;font-size:11px;color:' + TEXT_MUTED + ';border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);">Domain</div>';
+    html += '<div style="background:#fff;padding:10px 12px;font-size:11px;color:' + TEXT_MUTED + ';border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);">Domain</div>';
     sections.forEach(function (sec, si) {
       sec.cols.forEach(function (col, ci) {
         var borderLeft = (si > 0 && ci === 0) ? '1px solid rgba(0,0,0,0.08)' : 'none';
-        html += '<div style="background:#fff;padding:16px 6px;font-size:11px;color:' + TEXT_PRIMARY + ';text-align:center;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);border-left:' + borderLeft + ';">' + esc(col) + '</div>';
+        html += '<div style="background:#fff;padding:10px 6px;font-size:11px;color:' + TEXT_PRIMARY + ';text-align:center;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);border-left:' + borderLeft + ';">' + esc(col) + '</div>';
       });
     });
 
@@ -131,7 +135,7 @@
 
       html += '<div style="display:flex;align-items:stretch;background:#fff;border-bottom:' + bottomBorder + ';">' +
         '<div style="width:4px;background:' + d.color + ';flex-shrink:0;"></div>' +
-        '<div style="flex:1;padding:24px 12px;font-size:12.5px;line-height:1.3;">' + esc(d.id + ' ' + d.name) + '</div>' +
+        '<div style="flex:1;padding:12px 12px;font-size:12.5px;line-height:1.3;">' + esc(d.id + ' ' + d.name) + '</div>' +
         '</div>';
 
       sections.forEach(function (sec, si) {
@@ -141,7 +145,7 @@
           var fill = rampFill(rgb, val);
           var tc = cellTextColor(val);
           var borderLeft = (si > 0 && ci === 0) ? '1px solid rgba(0,0,0,0.08)' : 'none';
-          html += '<div style="background:' + fill + ';border-bottom:' + bottomBorder + ';border-left:' + borderLeft + ';display:flex;align-items:center;justify-content:center;padding:28px 4px;font-size:12px;font-weight:500;color:' + tc + ';">' + val + '%</div>';
+          html += '<div style="background:' + fill + ';border-bottom:' + bottomBorder + ';border-left:' + borderLeft + ';display:flex;align-items:center;justify-content:center;padding:14px 4px;font-size:12px;font-weight:500;color:' + tc + ';">' + val + '%</div>';
         });
       });
     });
