@@ -1,6 +1,14 @@
 /**
- * AIRI Delphi butterfly chart (v1.2.4)
+ * AIRI Delphi butterfly chart (v1.3.0)
  *
+ * v1.3.0 — Per-risk callouts: for selected risks, render a small pill
+ *          under the risk dropdown with a short framing (e.g. "Shared
+ *          responsibility" for Multi-agent risks). Callouts sourced
+ *          from Round-3 %s and surface the most striking pattern for
+ *          that risk. Risks without a callout render unchanged.
+ * v1.2.5 — Very slightly less tall: ROW_H 92 → 86, BAR_H 46 → 42.
+ *          Shorter viewBox → more breathing room between the risk
+ *          dropdown and the Vulnerability / Responsibility labels.
  * v1.2.4 — Tighter chart-to-caption gaps: drop margin-bottom on
  *          .delphi-controls (6 → 0) and margin-top on .delphi-footer
  *          (4 → 0). Chart now sits directly under the risk dropdown
@@ -65,6 +73,35 @@
   // Use light (white) text on the 2 darkest colors, primary text on the 3 lightest.
   function useLightText(levelIdx) { return levelIdx >= 3; }
 
+  // v1.3.0: per-risk callouts. Short framings for risks with a striking
+  // Round-3 pattern. Keyed by risk number; risks not listed render no pill.
+  var CALLOUTS = {
+    '7.6': {
+      title: 'Shared responsibility',
+      body: 'Three actors — both developer roles and the deployer — each receive ~70% "Primarily responsible." No single owner.'
+    },
+    '6.5': {
+      title: 'Clear ownership',
+      body: '92% place primary responsibility on AI Governance Actors — the most concentrated assignment across all 24 risks.'
+    },
+    '7.1': {
+      title: 'Near-unanimous',
+      body: '93% say general-purpose AI developers are primarily responsible when AI pursues goals in conflict with human values.'
+    },
+    '6.6': {
+      title: 'Infrastructure in the frame',
+      body: '84% assign primary responsibility to AI Infrastructure Providers — the only risk where this actor is the top-rated owner.'
+    },
+    '3.1': {
+      title: 'Users most exposed',
+      body: '88% say AI Users are extremely vulnerable to false or misleading information — the highest user-vulnerability score in the survey.'
+    },
+    '4.2': {
+      title: 'Developers own, users exposed',
+      body: '~80% assign primary responsibility to AI developers; 73% say AI Users are extremely vulnerable.'
+    }
+  };
+
   function run() {
     var mount = document.getElementById('airi-chart-delphi');
     if (!mount) return;
@@ -111,6 +148,9 @@
       '.delphi-control select:hover { border-color: rgba(0,0,0,0.45); }' +
       '.delphi-control select:focus { outline: none; border-color: ' + VULN_LABEL_COLOR + '; box-shadow: 0 0 0 2px rgba(50,136,189,0.2); }' +
       '.delphi-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 0; }' +
+      '.delphi-callout { background: rgba(213,62,79,0.06); border-left: 3px solid ' + RESP_LABEL_COLOR + '; padding: 6px 10px; border-radius: 4px; margin: 6px 0 0; }' +
+      '.delphi-callout-title { font-weight: 700; color: ' + RESP_LABEL_COLOR + '; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }' +
+      '.delphi-callout-body { color: ' + TEXT_PRIMARY + '; font-size: 12px; line-height: 1.35; margin-top: 2px; }' +
       '</style>';
 
     function doRender() {
@@ -123,8 +163,8 @@
       // ---------- Layout --------------------------------------------------
       // v1.2.0: wider (more room for legend), slightly shorter, tighter side pad.
       var W = 1000;
-      var ROW_H = 92;            // v1.2.3: slightly less tall (was 106)
-      var BAR_H = 46;            // v1.2.3: slightly less tall (was 52)
+      var ROW_H = 86;            // v1.2.5: very slightly less tall (was 92)
+      var BAR_H = 42;            // v1.2.5: very slightly less tall (was 46)
       var TOP_AREA = 50;         // axis titles + tick labels
       var LEGEND_H = 48;         // legend band at bottom
       var SIDE_PAD = 16;         // v1.2.0: actor name pushed further left, bars wider
@@ -142,6 +182,12 @@
           return '<option value="' + esc(r.number) + '"' + (r.number === state.riskId ? ' selected' : '') + '>' + esc(r.number + ' ' + r.name) + '</option>';
         }).join('') +
         '</select></div></div>';
+
+      // v1.3.0: optional per-risk callout pill beneath the dropdown.
+      var cb = CALLOUTS[state.riskId];
+      var callout = cb
+        ? '<div class="delphi-callout"><div class="delphi-callout-title">' + esc(cb.title) + '</div><div class="delphi-callout-body">' + esc(cb.body) + '</div></div>'
+        : '';
 
       var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
@@ -240,7 +286,7 @@
         (lu ? ' \u00b7 Last updated ' + esc(lu) : '') +
         '</div>';
 
-      mount.innerHTML = style + controls + svg + footer;
+      mount.innerHTML = style + controls + callout + svg + footer;
 
       mount.querySelector('#delphi-risk-select').addEventListener('change', function (e) {
         state.riskId = e.target.value;
