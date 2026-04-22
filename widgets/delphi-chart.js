@@ -1,6 +1,11 @@
 /**
- * AIRI Delphi butterfly chart (v1.3.0)
+ * AIRI Delphi butterfly chart (v1.3.1)
  *
+ * v1.3.1 — Replace pill with in-chart callouts: small white box with
+ *          title + sub, a dashed leader line, and an arrowhead pointing
+ *          at the target bar segment. Box is drawn in an empty region
+ *          of the plot; leader picks the box-edge midpoint closest to
+ *          the target. Six risks get callouts; others render unchanged.
  * v1.3.0 — Per-risk callouts: for selected risks, render a small pill
  *          under the risk dropdown with a short framing (e.g. "Shared
  *          responsibility" for Multi-agent risks). Callouts sourced
@@ -73,32 +78,48 @@
   // Use light (white) text on the 2 darkest colors, primary text on the 3 lightest.
   function useLightText(levelIdx) { return levelIdx >= 3; }
 
-  // v1.3.0: per-risk callouts. Short framings for risks with a striking
-  // Round-3 pattern. Keyed by risk number; risks not listed render no pill.
+  // v1.3.1: per-risk callouts rendered in-SVG with a dashed leader line +
+  // arrow pointing at the relevant bar segment. Each entry specifies:
+  //   target: actor + side ('R' or 'V') + level — identifies the bar segment
+  //   box:    {x, y} top-left of the callout box in viewBox coords
+  // The closest box-edge midpoint to the target is picked as the leader origin.
+  // Box x,y values are hand-tuned to sit in empty (low-%) regions of the chart.
   var CALLOUTS = {
     '7.6': {
       title: 'Shared responsibility',
-      body: 'Three actors — both developer roles and the deployer — each receive ~70% "Primarily responsible." No single owner.'
+      sub: '~70% across 3 actors',
+      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' },
+      box: { x: 600, y: 520 }
     },
     '6.5': {
       title: 'Clear ownership',
-      body: '92% place primary responsibility on AI Governance Actors — the most concentrated assignment across all 24 risks.'
+      sub: '92% → Governance Actor',
+      target: { actor: 'AI Governance Actor', side: 'R', level: 'Primarily' },
+      box: { x: 600, y: 606 }
     },
     '7.1': {
       title: 'Near-unanimous',
-      body: '93% say general-purpose AI developers are primarily responsible when AI pursues goals in conflict with human values.'
+      sub: '93% → Developer (GP)',
+      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' },
+      box: { x: 600, y: 520 }
     },
     '6.6': {
-      title: 'Infrastructure in the frame',
-      body: '84% assign primary responsibility to AI Infrastructure Providers — the only risk where this actor is the top-rated owner.'
+      title: 'Infrastructure owns it',
+      sub: '84% → Infrastructure Provider',
+      target: { actor: 'AI Infrastructure Provider', side: 'R', level: 'Primarily' },
+      box: { x: 600, y: 520 }
     },
     '3.1': {
       title: 'Users most exposed',
-      body: '88% say AI Users are extremely vulnerable to false or misleading information — the highest user-vulnerability score in the survey.'
+      sub: '88% Extremely vulnerable',
+      target: { actor: 'AI User', side: 'V', level: 'Extremely' },
+      box: { x: 620, y: 348 }
     },
     '4.2': {
-      title: 'Developers own, users exposed',
-      body: '~80% assign primary responsibility to AI developers; 73% say AI Users are extremely vulnerable.'
+      title: 'Developers own it',
+      sub: '~80% Dev responsibility',
+      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' },
+      box: { x: 620, y: 606 }
     }
   };
 
@@ -148,9 +169,6 @@
       '.delphi-control select:hover { border-color: rgba(0,0,0,0.45); }' +
       '.delphi-control select:focus { outline: none; border-color: ' + VULN_LABEL_COLOR + '; box-shadow: 0 0 0 2px rgba(50,136,189,0.2); }' +
       '.delphi-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 0; }' +
-      '.delphi-callout { background: rgba(213,62,79,0.06); border-left: 3px solid ' + RESP_LABEL_COLOR + '; padding: 6px 10px; border-radius: 4px; margin: 6px 0 0; }' +
-      '.delphi-callout-title { font-weight: 700; color: ' + RESP_LABEL_COLOR + '; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }' +
-      '.delphi-callout-body { color: ' + TEXT_PRIMARY + '; font-size: 12px; line-height: 1.35; margin-top: 2px; }' +
       '</style>';
 
     function doRender() {
@@ -182,12 +200,6 @@
           return '<option value="' + esc(r.number) + '"' + (r.number === state.riskId ? ' selected' : '') + '>' + esc(r.number + ' ' + r.name) + '</option>';
         }).join('') +
         '</select></div></div>';
-
-      // v1.3.0: optional per-risk callout pill beneath the dropdown.
-      var cb = CALLOUTS[state.riskId];
-      var callout = cb
-        ? '<div class="delphi-callout"><div class="delphi-callout-title">' + esc(cb.title) + '</div><div class="delphi-callout-body">' + esc(cb.body) + '</div></div>'
-        : '';
 
       var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
@@ -258,6 +270,73 @@
         }
       });
 
+      // ---------- Per-risk callout (v1.3.1) ----------------------------
+      var cb = CALLOUTS[state.riskId];
+      if (cb) {
+        var tai = actors.indexOf(cb.target.actor);
+        var tad = riskData[cb.target.actor];
+        var tLevels = cb.target.side === 'R' ? respLevels : vulnLevels;
+        var tField = cb.target.side === 'R' ? 'Responsibility' : 'Vulnerability';
+        var tLevelIdx = tLevels.indexOf(cb.target.level);
+        if (tai >= 0 && tad && tLevelIdx >= 0) {
+          // outer edge of the target level's segment = sum of all segments
+          // from innermost (last index) down to and including the target level
+          var acc = 0;
+          for (var tk = tLevels.length - 1; tk >= tLevelIdx; tk--) {
+            acc += (tad[tField][tLevels[tk]] || 0) * scale;
+          }
+          var tx = cb.target.side === 'R' ? (cx + acc) : (cx - acc);
+          var ty = TOP_AREA + tai * ROW_H + 36 + BAR_H / 2;
+
+          var bw = 220, bh = 36;
+          var bx = cb.box.x, by = cb.box.y;
+
+          // pick box-edge midpoint closest to the target
+          var edges = [
+            { x: bx + bw / 2, y: by },
+            { x: bx + bw / 2, y: by + bh },
+            { x: bx, y: by + bh / 2 },
+            { x: bx + bw, y: by + bh / 2 }
+          ];
+          var bestEdge = edges[0], bestD = Infinity;
+          edges.forEach(function (p) {
+            var d = (p.x - tx) * (p.x - tx) + (p.y - ty) * (p.y - ty);
+            if (d < bestD) { bestD = d; bestEdge = p; }
+          });
+
+          var coColor = cb.target.side === 'R' ? RESP_LABEL_COLOR : VULN_LABEL_COLOR;
+
+          // dashed leader line
+          svg += '<line x1="' + bestEdge.x.toFixed(1) + '" y1="' + bestEdge.y.toFixed(1) +
+                 '" x2="' + tx.toFixed(1) + '" y2="' + ty.toFixed(1) +
+                 '" stroke="' + coColor + '" stroke-width="1.5" stroke-dasharray="5,3"/>';
+
+          // arrowhead at the target, oriented along the leader
+          var dxA = tx - bestEdge.x, dyA = ty - bestEdge.y;
+          var lenA = Math.sqrt(dxA * dxA + dyA * dyA) || 1;
+          var uxA = dxA / lenA, uyA = dyA / lenA;
+          var ahLen = 11, ahW = 6;
+          var p1x = tx - uxA * ahLen + uyA * ahW;
+          var p1y = ty - uyA * ahLen - uxA * ahW;
+          var p2x = tx - uxA * ahLen - uyA * ahW;
+          var p2y = ty - uyA * ahLen + uxA * ahW;
+          svg += '<path d="M' + tx.toFixed(1) + ' ' + ty.toFixed(1) +
+                 ' L' + p1x.toFixed(1) + ' ' + p1y.toFixed(1) +
+                 ' L' + p2x.toFixed(1) + ' ' + p2y.toFixed(1) +
+                 ' Z" fill="' + coColor + '"/>';
+
+          // callout box + text
+          svg += '<rect x="' + bx + '" y="' + by + '" width="' + bw + '" height="' + bh +
+                 '" rx="4" ry="4" fill="#ffffff" stroke="' + coColor + '" stroke-width="1.2"/>';
+          svg += '<text x="' + (bx + bw / 2) + '" y="' + (by + 15) +
+                 '" text-anchor="middle" font-size="12" font-weight="700" fill="' + coColor + '">' +
+                 esc(cb.title) + '</text>';
+          svg += '<text x="' + (bx + bw / 2) + '" y="' + (by + 29) +
+                 '" text-anchor="middle" font-size="11" fill="' + TEXT_PRIMARY + '">' +
+                 esc(cb.sub) + '</text>';
+        }
+      }
+
       // ---------- Legend at the bottom ---------------------------------
       // v1.2.0: per-level colors from the Spectral palette.
       var legendY = gridBottom + 20;
@@ -286,7 +365,7 @@
         (lu ? ' \u00b7 Last updated ' + esc(lu) : '') +
         '</div>';
 
-      mount.innerHTML = style + controls + callout + svg + footer;
+      mount.innerHTML = style + controls + svg + footer;
 
       mount.querySelector('#delphi-risk-select').addEventListener('change', function (e) {
         state.riskId = e.target.value;
