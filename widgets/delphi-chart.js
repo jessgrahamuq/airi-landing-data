@@ -1,6 +1,12 @@
 /**
- * AIRI Delphi butterfly chart (v1.3.1)
+ * AIRI Delphi butterfly chart (v1.3.2)
  *
+ * v1.3.2 — Callouts moved outside the chart (matches mitigations-treemap
+ *          style): viewBox widened with a 200px gutter on each side. For
+ *          the selected risk's callout, draw a small open donut at the
+ *          target bar edge, a thin horizontal line out to the gutter,
+ *          and text (bold colored title + primary-colored sub) anchored
+ *          in the gutter, vertically aligned with the target row.
  * v1.3.1 — Replace pill with in-chart callouts: small white box with
  *          title + sub, a dashed leader line, and an arrowhead pointing
  *          at the target bar segment. Box is drawn in an empty region
@@ -78,48 +84,41 @@
   // Use light (white) text on the 2 darkest colors, primary text on the 3 lightest.
   function useLightText(levelIdx) { return levelIdx >= 3; }
 
-  // v1.3.1: per-risk callouts rendered in-SVG with a dashed leader line +
-  // arrow pointing at the relevant bar segment. Each entry specifies:
-  //   target: actor + side ('R' or 'V') + level — identifies the bar segment
-  //   box:    {x, y} top-left of the callout box in viewBox coords
-  // The closest box-edge midpoint to the target is picked as the leader origin.
-  // Box x,y values are hand-tuned to sit in empty (low-%) regions of the chart.
+  // v1.3.2: per-risk callouts rendered in the outer gutter of the SVG.
+  // Each entry specifies:
+  //   target: actor + side ('R' or 'V') + level — the bar segment being called out
+  // The callout consists of an open donut at the segment's outer edge, a
+  // horizontal connector to the gutter, and text anchored in the gutter.
   var CALLOUTS = {
     '7.6': {
       title: 'Shared responsibility',
       sub: '~70% across 3 actors',
-      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' },
-      box: { x: 600, y: 520 }
+      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' }
     },
     '6.5': {
       title: 'Clear ownership',
       sub: '92% → Governance Actor',
-      target: { actor: 'AI Governance Actor', side: 'R', level: 'Primarily' },
-      box: { x: 600, y: 606 }
+      target: { actor: 'AI Governance Actor', side: 'R', level: 'Primarily' }
     },
     '7.1': {
       title: 'Near-unanimous',
       sub: '93% → Developer (GP)',
-      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' },
-      box: { x: 600, y: 520 }
+      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' }
     },
     '6.6': {
       title: 'Infrastructure owns it',
       sub: '84% → Infrastructure Provider',
-      target: { actor: 'AI Infrastructure Provider', side: 'R', level: 'Primarily' },
-      box: { x: 600, y: 520 }
+      target: { actor: 'AI Infrastructure Provider', side: 'R', level: 'Primarily' }
     },
     '3.1': {
       title: 'Users most exposed',
       sub: '88% Extremely vulnerable',
-      target: { actor: 'AI User', side: 'V', level: 'Extremely' },
-      box: { x: 620, y: 348 }
+      target: { actor: 'AI User', side: 'V', level: 'Extremely' }
     },
     '4.2': {
       title: 'Developers own it',
       sub: '~80% Dev responsibility',
-      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' },
-      box: { x: 620, y: 606 }
+      target: { actor: 'AI Developer (General-purpose AI)', side: 'R', level: 'Primarily' }
     }
   };
 
@@ -201,7 +200,14 @@
         }).join('') +
         '</select></div></div>';
 
-      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+      // v1.3.2: outer gutters on left + right hold callout text. Plot
+      // coordinates (cx=500, bars, legend, axis titles) are unchanged —
+      // the viewBox simply extends into negative-x on the left and past
+      // W on the right.
+      var GUTTER = 200;
+      var vbX = -GUTTER;
+      var vbW = W + 2 * GUTTER;
+      var svg = '<svg viewBox="' + vbX + ' 0 ' + vbW + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Delphi butterfly chart of vulnerability and responsibility per actor for selected risk" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
       // v1.2.0: no alternating row stripes — larger actor labels provide segmentation.
 
@@ -270,7 +276,7 @@
         }
       });
 
-      // ---------- Per-risk callout (v1.3.1) ----------------------------
+      // ---------- Per-risk callout (v1.3.2, outer gutter) --------------
       var cb = CALLOUTS[state.riskId];
       if (cb) {
         var tai = actors.indexOf(cb.target.actor);
@@ -279,8 +285,8 @@
         var tField = cb.target.side === 'R' ? 'Responsibility' : 'Vulnerability';
         var tLevelIdx = tLevels.indexOf(cb.target.level);
         if (tai >= 0 && tad && tLevelIdx >= 0) {
-          // outer edge of the target level's segment = sum of all segments
-          // from innermost (last index) down to and including the target level
+          // Outer edge of the target level's segment = sum of all segments
+          // from innermost (last index) down to and including the target level.
           var acc = 0;
           for (var tk = tLevels.length - 1; tk >= tLevelIdx; tk--) {
             acc += (tad[tField][tLevels[tk]] || 0) * scale;
@@ -288,51 +294,38 @@
           var tx = cb.target.side === 'R' ? (cx + acc) : (cx - acc);
           var ty = TOP_AREA + tai * ROW_H + 36 + BAR_H / 2;
 
-          var bw = 220, bh = 36;
-          var bx = cb.box.x, by = cb.box.y;
-
-          // pick box-edge midpoint closest to the target
-          var edges = [
-            { x: bx + bw / 2, y: by },
-            { x: bx + bw / 2, y: by + bh },
-            { x: bx, y: by + bh / 2 },
-            { x: bx + bw, y: by + bh / 2 }
-          ];
-          var bestEdge = edges[0], bestD = Infinity;
-          edges.forEach(function (p) {
-            var d = (p.x - tx) * (p.x - tx) + (p.y - ty) * (p.y - ty);
-            if (d < bestD) { bestD = d; bestEdge = p; }
-          });
-
           var coColor = cb.target.side === 'R' ? RESP_LABEL_COLOR : VULN_LABEL_COLOR;
+          var dotR = 6;
 
-          // dashed leader line
-          svg += '<line x1="' + bestEdge.x.toFixed(1) + '" y1="' + bestEdge.y.toFixed(1) +
-                 '" x2="' + tx.toFixed(1) + '" y2="' + ty.toFixed(1) +
-                 '" stroke="' + coColor + '" stroke-width="1.5" stroke-dasharray="5,3"/>';
+          // Line extends from just outside the donut into the outer gutter.
+          var lineStartX, lineEndX, textX, textAnchor;
+          if (cb.target.side === 'R') {
+            lineStartX = tx + dotR + 2;
+            lineEndX = W + 12;           // just past the plot edge
+            textX = W + 20;              // 8px past lineEndX
+            textAnchor = 'start';
+          } else {
+            lineStartX = tx - dotR - 2;
+            lineEndX = -12;
+            textX = -20;
+            textAnchor = 'end';
+          }
 
-          // arrowhead at the target, oriented along the leader
-          var dxA = tx - bestEdge.x, dyA = ty - bestEdge.y;
-          var lenA = Math.sqrt(dxA * dxA + dyA * dyA) || 1;
-          var uxA = dxA / lenA, uyA = dyA / lenA;
-          var ahLen = 11, ahW = 6;
-          var p1x = tx - uxA * ahLen + uyA * ahW;
-          var p1y = ty - uyA * ahLen - uxA * ahW;
-          var p2x = tx - uxA * ahLen - uyA * ahW;
-          var p2y = ty - uyA * ahLen + uxA * ahW;
-          svg += '<path d="M' + tx.toFixed(1) + ' ' + ty.toFixed(1) +
-                 ' L' + p1x.toFixed(1) + ' ' + p1y.toFixed(1) +
-                 ' L' + p2x.toFixed(1) + ' ' + p2y.toFixed(1) +
-                 ' Z" fill="' + coColor + '"/>';
+          // Open donut at the target bar edge
+          svg += '<circle cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) +
+                 '" r="' + dotR + '" fill="#ffffff" stroke="' + coColor + '" stroke-width="2"/>';
 
-          // callout box + text
-          svg += '<rect x="' + bx + '" y="' + by + '" width="' + bw + '" height="' + bh +
-                 '" rx="4" ry="4" fill="#ffffff" stroke="' + coColor + '" stroke-width="1.2"/>';
-          svg += '<text x="' + (bx + bw / 2) + '" y="' + (by + 15) +
-                 '" text-anchor="middle" font-size="12" font-weight="700" fill="' + coColor + '">' +
+          // Thin horizontal connector out to the gutter
+          svg += '<line x1="' + lineStartX.toFixed(1) + '" y1="' + ty.toFixed(1) +
+                 '" x2="' + lineEndX + '" y2="' + ty.toFixed(1) +
+                 '" stroke="' + coColor + '" stroke-width="1"/>';
+
+          // Title (colored bold) + sub (primary text)
+          svg += '<text x="' + textX + '" y="' + (ty - 4).toFixed(1) +
+                 '" text-anchor="' + textAnchor + '" font-size="15" font-weight="700" fill="' + coColor + '">' +
                  esc(cb.title) + '</text>';
-          svg += '<text x="' + (bx + bw / 2) + '" y="' + (by + 29) +
-                 '" text-anchor="middle" font-size="11" fill="' + TEXT_PRIMARY + '">' +
+          svg += '<text x="' + textX + '" y="' + (ty + 14).toFixed(1) +
+                 '" text-anchor="' + textAnchor + '" font-size="13" fill="' + TEXT_PRIMARY + '">' +
                  esc(cb.sub) + '</text>';
         }
       }
