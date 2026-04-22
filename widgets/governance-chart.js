@@ -1,7 +1,9 @@
 /**
- * AIRI Governance horizontal stacked bar chart (v1.1.12)
+ * AIRI Governance horizontal stacked bar chart (v1.1.13)
  * Hosted at: https://jessgrahamuq.github.io/airi-landing-data/widgets/governance-chart.js
  *
+ * v1.1.13 — Modal rendered as a slightly smaller floating card
+ *           (inset 0 → 20px, explicit border-radius 8px, outer shadow).
  * v1.1.12 — Restore fill behavior: root is height:100% and svg-wrap is
  *           flex:1 so the chart stretches to fill the cell. v1.1.10's
  *           height:auto change had made the chart visually too small.
@@ -253,7 +255,7 @@
       '.airi-gchart-tt-hint { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; color: #aaa; font-size: 11px; }' +
       '.airi-gchart-footer { text-align: center; font-size: 13px; color: ' + TEXT_PRIMARY + '; margin-top: 4px; font-family: Figtree, sans-serif; }' +
       '.airi-gchart-hint { color: ' + TEXT_MUTED + '; }' +
-      '.airi-gchart-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
+      '.airi-gchart-modal { position: absolute; inset: 20px; background: rgba(255,255,255,0.98); border-radius: 8px; padding: 1.25rem 1.5rem 1rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: 0 2px 10px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.airi-gchart-modal.is-visible { opacity: 1; pointer-events: auto; }' +
       '.airi-gchart-modal-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }' +
       '.airi-gchart-modal-title { font-size: 1.05rem; font-weight: 600; color: ' + TEXT_PRIMARY + '; margin: 0; line-height: 1.3; }' +

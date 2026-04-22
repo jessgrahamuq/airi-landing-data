@@ -1,6 +1,9 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.8)
+ * AIRI Incidents stacked area chart (v1.0.9)
  *
+ * v1.0.9 — "Total incidents" title lifted again (y 22 → 16). Modal
+ *          rendered as a slightly smaller floating card (inset 0 →
+ *          20px, explicit border-radius 8px, outer shadow).
  * v1.0.8 — Restore fill behavior: root is height:100% and svg-wrap
  *          gets flex:1 so the SVG stretches to fill the cell (chart
  *          no longer renders at natural aspect only, which had made
@@ -128,8 +131,8 @@
       ' role="img" aria-label="AI incidents per year, stacked by risk domain"' +
       ' style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
-    // v1.0.2: chart title, left-aligned to plot, bold black. v1.0.5: title y 26 → 22 for tighter top.
-    svg += '<text x="' + mL + '" y="22" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
+    // v1.0.2: chart title, left-aligned to plot, bold black. v1.0.9: title y 22 → 16.
+    svg += '<text x="' + mL + '" y="16" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
 
     [0, 0.25, 0.5, 0.75, 1].forEach(function (p) {
       var v = Math.round(yMax * p);
@@ -215,7 +218,7 @@
       '.airi-chart-tooltip-hint { margin-top: 6px; padding-top: 6px; border-top: 1px solid #444; color: #aaa; font-size: 11px; }' +
       '.airi-chart-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; font-family: Figtree, sans-serif; }' +
       '.airi-chart-hint { color: ' + TEXT_MUTED + '; }' +
-      '.airi-chart-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
+      '.airi-chart-modal { position: absolute; inset: 20px; background: rgba(255,255,255,0.98); border-radius: 8px; padding: 1.25rem 1.5rem 1rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; font-family: Figtree, sans-serif; box-shadow: 0 2px 10px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.airi-chart-modal.is-visible { opacity: 1; pointer-events: auto; }' +
       '.airi-chart-modal-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }' +
       '.airi-chart-modal-title { font-size: 1.1rem; font-weight: 600; color: ' + TEXT_PRIMARY + '; margin: 0; }' +

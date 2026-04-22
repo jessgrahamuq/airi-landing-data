@@ -1,5 +1,5 @@
 /**
- * AIRI Mitigations drill-down donut chart (v1.0.9)
+ * AIRI Mitigations drill-down donut chart (v1.0.10)
  *
  * Mounts into an element with id="airi-chart-mitigations".
  * Fetches from /data/mitigations.json in the same repo.
@@ -7,6 +7,13 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/mitigations-chart.js
  *
+ * v1.0.10 — Bigger donut (outer 180 → 220, inner 105 → 130) and
+ *           vertically centered between breadcrumb (above) and
+ *           hint/footer (below): preserveAspectRatio xMidYMax →
+ *           xMidYMid, cy moved to viewBox center, H bumped 540 → 600
+ *           for label headroom. Center total number 32 → 40. Modal
+ *           rendered as a slightly smaller floating card (inset 0 →
+ *           20px, explicit border-radius 8px, outer shadow).
  * v1.0.9 — Restore fill behavior: root is height:100% and svg-wrap is
  *          flex:1 so the donut stretches to fill the cell (v1.0.7's
  *          height:auto change had made it render too small). Modal
@@ -123,9 +130,10 @@
     var state = { level: 0, parentId: null };
 
     // Tuned for better fit in Webflow slide container
-    var W = 820, H = 540; // v1.0.6: shrink H back (was 750) to close the gap to the caption
-    var cx = W / 2, cy = 280; // equals H/2 + 10 at H=540; donut labels end ~y=500, leaves ~40px bottom margin
-    var outer = 180, inner = 105;
+    // v1.0.10: taller viewBox + bigger donut, centered in the viewBox for xMidYMid rendering.
+    var W = 820, H = 600;
+    var cx = W / 2, cy = H / 2; // 300 — viewBox center
+    var outer = 220, inner = 130;
 
     var style = '<style>' +
       '#airi-chart-mitigations { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
@@ -137,7 +145,7 @@
       '.mit-slice { cursor: pointer; transition: fill-opacity 0.15s ease; }' +
       '.mit-hint { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 2px; }' +
       '.mit-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; }' +
-      '.mit-modal { position: absolute; inset: 0; background: rgba(255,255,255,0.98); border-radius: inherit; padding: 1.5rem 1.75rem 1.25rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08); }' +
+      '.mit-modal { position: absolute; inset: 20px; background: rgba(255,255,255,0.98); border-radius: 8px; padding: 1.25rem 1.5rem 1rem; opacity: 0; pointer-events: none; transition: opacity 0.18s ease; z-index: 20; overflow-y: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(0,0,0,0.08); }' +
       '.mit-modal.is-visible { opacity: 1; pointer-events: auto; }' +
       '.mit-modal-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }' +
       '.mit-modal-title { font-size: 1.05rem; font-weight: 600; color: ' + TEXT_PRIMARY + '; margin: 0; line-height: 1.3; }' +
@@ -184,7 +192,7 @@
         ? '<div class="mit-breadcrumb" style="color:' + TEXT_MUTED + ';">All categories</div>'
         : '<div class="mit-breadcrumb"><button class="mit-back">\u2190 All categories</button><span style="color:' + TEXT_MUTED + ';">/</span><span style="color:' + TEXT_PRIMARY + ';font-weight:500;">' + esc(parentObj ? parentObj.name : '') + '</span></div>';
 
-      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Mitigation categories donut chart" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
+      var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mitigation categories donut chart" style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
       var startAngle = -Math.PI / 2;
       var sliceData = [];
@@ -239,9 +247,10 @@
 
       svg += paths + labels;
 
-      svg += '<text x="' + cx + '" y="' + (cy - 6) + '" text-anchor="middle" font-size="32" font-weight="500" fill="' + TEXT_PRIMARY + '">' + totalValue.toLocaleString() + '</text>';
-      svg += '<text x="' + cx + '" y="' + (cy + 14) + '" text-anchor="middle" font-size="12" fill="' + TEXT_MUTED + '">' + esc(totalLabel) + '</text>';
-      svg += '<text x="' + cx + '" y="' + (cy + 30) + '" text-anchor="middle" font-size="11" fill="' + TEXT_MUTED + '" fill-opacity="0.7">' + esc(centerLine2) + '</text>';
+      // v1.0.10: bigger center total (32 → 40) to match the bigger donut
+      svg += '<text x="' + cx + '" y="' + (cy - 8) + '" text-anchor="middle" font-size="40" font-weight="500" fill="' + TEXT_PRIMARY + '">' + totalValue.toLocaleString() + '</text>';
+      svg += '<text x="' + cx + '" y="' + (cy + 18) + '" text-anchor="middle" font-size="13" fill="' + TEXT_MUTED + '">' + esc(totalLabel) + '</text>';
+      svg += '<text x="' + cx + '" y="' + (cy + 36) + '" text-anchor="middle" font-size="12" fill="' + TEXT_MUTED + '" fill-opacity="0.7">' + esc(centerLine2) + '</text>';
 
       svg += '</svg>';
 
