@@ -1,5 +1,5 @@
 /**
- * AIRI Mitigations drill-down donut chart (v1.0.10)
+ * AIRI Mitigations drill-down donut chart (v1.0.11)
  *
  * Mounts into an element with id="airi-chart-mitigations".
  * Fetches from /data/mitigations.json in the same repo.
@@ -7,6 +7,11 @@
  * Hosted at:
  *   https://jessgrahamuq.github.io/airi-landing-data/widgets/mitigations-chart.js
  *
+ * v1.0.11 — Reduce visible gap between breadcrumb/hint and donut by
+ *           pushing the donut to fill more of the viewBox vertically.
+ *           outer 220 → 260, inner 130 → 150. H trimmed 600 → 560 so
+ *           the donut + labels occupy ~93% of the viewBox height
+ *           instead of ~80%. Center total number 40 → 44 to match.
  * v1.0.10 — Bigger donut (outer 180 → 220, inner 105 → 130) and
  *           vertically centered between breadcrumb (above) and
  *           hint/footer (below): preserveAspectRatio xMidYMax →
@@ -130,10 +135,12 @@
     var state = { level: 0, parentId: null };
 
     // Tuned for better fit in Webflow slide container
-    // v1.0.10: taller viewBox + bigger donut, centered in the viewBox for xMidYMid rendering.
-    var W = 820, H = 600;
-    var cx = W / 2, cy = H / 2; // 300 — viewBox center
-    var outer = 220, inner = 130;
+    // v1.0.11: bigger donut fills more of the viewBox to shrink the visual
+    // gap between the breadcrumb/hint captions (which sit outside the SVG)
+    // and the donut itself. outer 220 → 260, labels reach cy ± 280.
+    var W = 820, H = 560;
+    var cx = W / 2, cy = H / 2; // 280 — viewBox center
+    var outer = 260, inner = 150;
 
     var style = '<style>' +
       '#airi-chart-mitigations { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
@@ -247,10 +254,10 @@
 
       svg += paths + labels;
 
-      // v1.0.10: bigger center total (32 → 40) to match the bigger donut
-      svg += '<text x="' + cx + '" y="' + (cy - 8) + '" text-anchor="middle" font-size="40" font-weight="500" fill="' + TEXT_PRIMARY + '">' + totalValue.toLocaleString() + '</text>';
-      svg += '<text x="' + cx + '" y="' + (cy + 18) + '" text-anchor="middle" font-size="13" fill="' + TEXT_MUTED + '">' + esc(totalLabel) + '</text>';
-      svg += '<text x="' + cx + '" y="' + (cy + 36) + '" text-anchor="middle" font-size="12" fill="' + TEXT_MUTED + '" fill-opacity="0.7">' + esc(centerLine2) + '</text>';
+      // v1.0.11: center total 40 → 44 to match the bigger donut
+      svg += '<text x="' + cx + '" y="' + (cy - 8) + '" text-anchor="middle" font-size="44" font-weight="500" fill="' + TEXT_PRIMARY + '">' + totalValue.toLocaleString() + '</text>';
+      svg += '<text x="' + cx + '" y="' + (cy + 20) + '" text-anchor="middle" font-size="13" fill="' + TEXT_MUTED + '">' + esc(totalLabel) + '</text>';
+      svg += '<text x="' + cx + '" y="' + (cy + 38) + '" text-anchor="middle" font-size="12" fill="' + TEXT_MUTED + '" fill-opacity="0.7">' + esc(centerLine2) + '</text>';
 
       svg += '</svg>';
 

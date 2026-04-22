@@ -1,6 +1,9 @@
 /**
- * AIRI Incidents stacked area chart (v1.0.9)
+ * AIRI Incidents stacked area chart (v1.0.10)
  *
+ * v1.0.10 — "Total incidents" title moved up again (y 16 → 12) AND
+ *           mT raised from 28 → 36. Gap between title bottom and the
+ *           top tick number grows from ~5 to ~17 viewBox units.
  * v1.0.9 — "Total incidents" title lifted again (y 22 → 16). Modal
  *          rendered as a slightly smaller floating card (inset 0 →
  *          20px, explicit border-radius 8px, outer shadow).
@@ -105,7 +108,7 @@
     });
     var notableByYear = data.notable_incidents_by_year || {};
 
-    var W = 700, H = 500, mL = 40, mR = 16, mT = 28, mB = 32; // v1.0.5: tighter top margin (46 → 28)
+    var W = 700, H = 500, mL = 40, mR = 16, mT = 36, mB = 32; // v1.0.10: mT 28 → 36 for more room between title and axis numbers
     var iw = W - mL - mR, ih = H - mT - mB;
 
     var years = series.map(function (s) { return s.year; });
@@ -131,8 +134,8 @@
       ' role="img" aria-label="AI incidents per year, stacked by risk domain"' +
       ' style="display:block;width:100%;height:100%;font-family:Figtree,sans-serif;">';
 
-    // v1.0.2: chart title, left-aligned to plot, bold black. v1.0.9: title y 22 → 16.
-    svg += '<text x="' + mL + '" y="16" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
+    // v1.0.10: title y 16 → 12 (higher still).
+    svg += '<text x="' + mL + '" y="12" text-anchor="start" font-size="18" font-weight="700" fill="' + TEXT_PRIMARY + '">Total incidents</text>';
 
     [0, 0.25, 0.5, 0.75, 1].forEach(function (p) {
       var v = Math.round(yMax * p);
