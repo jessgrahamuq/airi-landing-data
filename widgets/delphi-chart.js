@@ -1,6 +1,10 @@
 /**
- * AIRI Delphi butterfly chart (v1.2.3)
+ * AIRI Delphi butterfly chart (v1.2.4)
  *
+ * v1.2.4 — Tighter chart-to-caption gaps: drop margin-bottom on
+ *          .delphi-controls (6 → 0) and margin-top on .delphi-footer
+ *          (4 → 0). Chart now sits directly under the risk dropdown
+ *          and directly above the footer.
  * v1.2.3 — Slightly less tall: ROW_H 106 → 92, BAR_H 52 → 46.
  *          Derived H drops from 840 → 742.
  * v1.2.2 — Restore fill behavior: root is height:100% and SVG has
@@ -100,13 +104,13 @@
     var style = '<style>' +
       '#airi-chart-delphi { position: relative; color: ' + TEXT_PRIMARY + '; font-family: Figtree, sans-serif; display: flex; flex-direction: column; height: 100%; }' +
       '#airi-chart-delphi > svg { flex: 1; min-width: 0; min-height: 0; }' +
-      '.delphi-controls { display: flex; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }' +
+      '.delphi-controls { display: flex; gap: 12px; margin-bottom: 0; flex-wrap: wrap; }' +
       '.delphi-control { flex: 1; min-width: 220px; }' +
       '.delphi-control label { font-size: 11px; color: ' + TEXT_MUTED + '; display: block; margin-bottom: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em; }' +
       '.delphi-control select { width: 100%; padding: 8px 10px; border: 0.5px solid rgba(0,0,0,0.25); border-radius: 6px; font-size: 13px; font-family: inherit; background: #fff; color: ' + TEXT_PRIMARY + '; cursor: pointer; }' +
       '.delphi-control select:hover { border-color: rgba(0,0,0,0.45); }' +
       '.delphi-control select:focus { outline: none; border-color: ' + VULN_LABEL_COLOR + '; box-shadow: 0 0 0 2px rgba(50,136,189,0.2); }' +
-      '.delphi-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 4px; }' +
+      '.delphi-footer { text-align: center; font-size: 11px; color: ' + TEXT_MUTED + '; margin-top: 0; }' +
       '</style>';
 
     function doRender() {
