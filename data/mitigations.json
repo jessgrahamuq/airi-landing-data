@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-04-27T06:58:53+00:00",
+    "last_updated": "2026-04-28T06:58:41+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
     "top_level_count": 4,
     "document_count": 61,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1087 actions catalogued.",
+    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1088 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -18,14 +18,14 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 599,
+        "count": 598,
         "children_count": 3
       },
       {
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1087,
+        "count": 1088,
         "children_count": 4
       },
       {
@@ -55,7 +55,7 @@
           "id": "rec3kPN9w30ZIf0ok",
           "code": "1.1",
           "name": "Model",
-          "count": 251
+          "count": 250
         },
         {
           "id": "rechkvbiJitGFFyed",
@@ -69,7 +69,7 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 564
+          "count": 565
         },
         {
           "id": "recvf5stbwCV4rwuI",
@@ -95,7 +95,7 @@
           "id": "recWteocmG0jmdjV0",
           "code": "3.1",
           "name": "Legal & Regulatory",
-          "count": 192
+          "count": 191
         },
         {
           "id": "recB7UZgikAebnlwO",
@@ -107,7 +107,7 @@
           "id": "recm718iigOdrTFs8",
           "code": "3.3",
           "name": "Voluntary & Cooperative",
-          "count": 120
+          "count": 121
         },
         {
           "id": "recaKRRZjLuXRlwsI",
