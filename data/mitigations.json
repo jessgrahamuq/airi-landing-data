@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-04-28T06:58:41+00:00",
+    "last_updated": "2026-04-29T06:54:23+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
     "top_level_count": 4,
     "document_count": 61,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1088 actions catalogued.",
+    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1090 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -18,14 +18,14 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 598,
+        "count": 595,
         "children_count": 3
       },
       {
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1088,
+        "count": 1090,
         "children_count": 4
       },
       {
@@ -39,7 +39,7 @@
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 115,
+        "count": 116,
         "children_count": 1
       }
     ],
@@ -49,13 +49,13 @@
           "id": "recN8nHl2CJ2l1bQR",
           "code": "1.2",
           "name": "Non-Model",
-          "count": 322
+          "count": 318
         },
         {
           "id": "rec3kPN9w30ZIf0ok",
           "code": "1.1",
           "name": "Model",
-          "count": 250
+          "count": 249
         },
         {
           "id": "rechkvbiJitGFFyed",
@@ -69,13 +69,13 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 565
+          "count": 564
         },
         {
           "id": "recvf5stbwCV4rwuI",
           "code": "2.3",
           "name": "Operations & Security",
-          "count": 285
+          "count": 287
         },
         {
           "id": "recu97TvMvkJbjQBg",
@@ -121,7 +121,7 @@
           "id": "recG4vs1Ryh828Li5",
           "code": "99.9",
           "name": "Other",
-          "count": 52
+          "count": 53
         }
       ]
     }
@@ -1320,11 +1320,11 @@
         "url": "https://arxiv.org/abs/2412.17686"
       },
       {
-        "name": "Attacks and Defenses for ViT",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
+        "name": "Continuously update defensive tools as workarounds are discovered.",
+        "definition": "In some cases, this may be an ongoing effort that requires sustained investment.",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
       }
     ],
     "recu97TvMvkJbjQBg": [
@@ -1713,6 +1713,43 @@
         "url": "https://arxiv.org/abs/2505.17084"
       }
     ],
+    "recI4nymJwsk9OYBA": [
+      {
+        "name": "adversarial defenses",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      },
+      {
+        "name": "Agent safety mitigation",
+        "definition": null,
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      },
+      {
+        "name": "Agentic Attacks & Defenses",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      },
+      {
+        "name": "AI Capability Control",
+        "definition": "Achieving full control over AI systems, especially Superintelligence, is a challenging problem in the field of AI Safety",
+        "source_ref": "Chen 2024",
+        "source_title": "Trustworthy, Responsible, and Safe AI: A Comprehensive Architectural Framework for AI Safety with Challenges and Mitigations",
+        "url": "https://arxiv.org/abs/2408.12935"
+      },
+      {
+        "name": "Attacks and Defenses for SAM",
+        "definition": null,
+        "source_ref": "Ma 2025",
+        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+        "url": "https://arxiv.org/abs/2502.05206"
+      }
+    ],
     "rec9l0Ip5YLL4EXP6": [
       {
         "name": "Allow market self-regulation without state intervention to prevent disruption of economic systems",
@@ -1877,43 +1914,6 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       }
     ],
-    "recI4nymJwsk9OYBA": [
-      {
-        "name": "adversarial defenses",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
-      },
-      {
-        "name": "Agent safety mitigation",
-        "definition": null,
-        "source_ref": "She 2024",
-        "source_title": "Large Language Model Safety: A Holistic Survey",
-        "url": "https://arxiv.org/abs/2412.17686"
-      },
-      {
-        "name": "Agentic Attacks & Defenses",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
-      },
-      {
-        "name": "AI Capability Control",
-        "definition": "Achieving full control over AI systems, especially Superintelligence, is a challenging problem in the field of AI Safety",
-        "source_ref": "Chen 2024",
-        "source_title": "Trustworthy, Responsible, and Safe AI: A Comprehensive Architectural Framework for AI Safety with Challenges and Mitigations",
-        "url": "https://arxiv.org/abs/2408.12935"
-      },
-      {
-        "name": "Attacks and Defenses for SAM",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
-      }
-    ],
     "recB7UZgikAebnlwO": [
       {
         "name": "6.2 Supporting Defensive Systems and Research",
@@ -1953,6 +1953,13 @@
     ],
     "rec7NSuahWQpqxjTl": [
       {
+        "name": "ATLAS Mitigations",
+        "definition": "A set of security\nconcepts and classes of technologies that IT\nprofessionals can use to prevent a specifc\nattack technique in the ATLAS matrix from\nbeing successfully executed by an attacker.\nATLAS…",
+        "source_ref": "Robbins 2024",
+        "source_title": "AI ASSURANCE: A Repeatable Process for Assuring AI-enabled Systems",
+        "url": "https://www.mitre.org/sites/default/files/2024-06/PR-24-1768-AI-Assurance-A-Repeatable-Process-Assuring-AI-Enabled-Systems.pdf?utm_source=chatgpt.com"
+      },
+      {
         "name": "Compute and hardware tracking",
         "definition": "Researching techniques and gathering intelligence to\nmonitor the distribution of AI hardware, both legal and illegal, enables the assessment of\nrisks of malicious and irresponsible use and the…",
         "source_ref": "Bengio 2025",
@@ -1974,6 +1981,13 @@
         "source_ref": "Jin 2024",
         "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
         "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
+      },
+      {
+        "name": "Manage Risks",
+        "definition": "Once risks have been prioritized and evaluated,\npotential courses of action must be developed to\nmanage each risk and reach the assurance level\ndesignated as acceptable in the evaluation. One\nway to…",
+        "source_ref": "Robbins 2024",
+        "source_title": "AI ASSURANCE: A Repeatable Process for Assuring AI-enabled Systems",
+        "url": "https://www.mitre.org/sites/default/files/2024-06/PR-24-1768-AI-Assurance-A-Repeatable-Process-Assuring-AI-Enabled-Systems.pdf?utm_source=chatgpt.com"
       }
     ],
     "recJQgUd7WcZ4EUPw": [
