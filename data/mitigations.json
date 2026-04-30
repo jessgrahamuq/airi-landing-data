@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-04-29T06:54:23+00:00",
+    "last_updated": "2026-04-30T06:57:23+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
@@ -32,14 +32,14 @@
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 459,
+        "count": 458,
         "children_count": 4
       },
       {
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 116,
+        "count": 117,
         "children_count": 1
       }
     ],
@@ -55,7 +55,7 @@
           "id": "rec3kPN9w30ZIf0ok",
           "code": "1.1",
           "name": "Model",
-          "count": 249
+          "count": 248
         },
         {
           "id": "rechkvbiJitGFFyed",
@@ -81,13 +81,13 @@
           "id": "recu97TvMvkJbjQBg",
           "code": "2.4",
           "name": "Engineering & Development",
-          "count": 234
+          "count": 235
         },
         {
           "id": "recLJbd5gmiEmSJsf",
           "code": "2.9",
           "name": "Other",
-          "count": 2
+          "count": 1
         }
       ],
       "recJQgUd7WcZ4EUPw": [
@@ -101,7 +101,7 @@
           "id": "recB7UZgikAebnlwO",
           "code": "3.2",
           "name": "Shared Infrastructure",
-          "count": 137
+          "count": 136
         },
         {
           "id": "recm718iigOdrTFs8",
@@ -121,7 +121,7 @@
           "id": "recG4vs1Ryh828Li5",
           "code": "99.9",
           "name": "Other",
-          "count": 53
+          "count": 54
         }
       ]
     }
@@ -536,6 +536,13 @@
     ],
     "recAXj16oYZACyzHO": [
       {
+        "name": "Anonymizing Writing Style with LLM Rewrites",
+        "definition": "LLMs can be used to rewrite text to anonymize an author's writing style, helping protect against AI systems that can identify writers with high accuracy based on their linguistic patterns.",
+        "source_ref": "Hodes 2025",
+        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
+        "url": "https://aisafetypreparedness.com/explore"
+      },
+      {
         "name": "Bill of Materials Registry",
         "definition": ". The bill of materials registry [12, 88] can be designed to keep\na formal machine-readable record of the supply chain details of the components used in building an AI system, including component…",
         "source_ref": "Lu 2024",
@@ -562,13 +569,6 @@
         "source_ref": "Gutfraind 2025",
         "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
         "url": "https://arxiv.org/abs/2505.17084"
-      },
-      {
-        "name": "Embodied Agents",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
       }
     ],
     "recUuJJ0kuRzMUUQT": [
@@ -839,8 +839,8 @@
         "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
       },
       {
-        "name": "Anonymizing Writing Style with LLM Rewrites",
-        "definition": "LLMs can be used to rewrite text to anonymize an author's writing style, helping protect against AI systems that can identify writers with high accuracy based on their linguistic patterns.",
+        "name": "AI Circuit Breakers",
+        "definition": "Circuit breaking is a technical safeguard that automatically blocks or limits model outputs for unwanted or dangerous content.",
         "source_ref": "Hodes 2025",
         "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
         "url": "https://aisafetypreparedness.com/explore"
@@ -980,18 +980,18 @@
         "url": "https://arxiv.org/abs/2410.23472"
       },
       {
+        "name": "Decommission responsibly",
+        "definition": "Decommission\nresponsibly\nthrough formal\noff-boarding,\nsecure data\nhandling, and\naudit-ready\ndocumentation.",
+        "source_ref": "Gandi 2025",
+        "source_title": "Approaches to Responsible Governance of GenAI in Organizations",
+        "url": "https://arxiv.org/abs/2504.17044"
+      },
+      {
         "name": "Defence in Depth",
         "definition": "The idea that multiple\nindependent and overlapping\nlayers of defence can be\nimplemented such that if one\nfails, others will still be effective",
         "source_ref": "Bengio 2025",
         "source_title": "International AI Safety Report",
         "url": "https://assets.publishing.service.gov.uk/media/679a0c48a77d250007d313ee/International_AI_Safety_Report_2025_accessible_f.pdf"
-      },
-      {
-        "name": "Defence interventions",
-        "definition": "Holding fixed that the potentially harmful use of AI occurs, society can reduce the expected extent of the corresponding initial harm. In our spear phishing example, “defence” is a matter of…",
-        "source_ref": "Bernardi 2025",
-        "source_title": "Societal Adaptation to Advanced AI",
-        "url": "https://arxiv.org/abs/2405.10295"
       }
     ],
     "recL9Yy9qwWUxzPlc": [
@@ -2029,13 +2029,6 @@
     ],
     "recLJbd5gmiEmSJsf": [
       {
-        "name": "Human In the Loop",
-        "definition": "Human-in-the-Loop (HITL) is a framework where humans actively participate in AI systems' development and operation through feedback, demonstrations, and oversight.",
-        "source_ref": "Hodes 2025",
-        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
-        "url": "https://aisafetypreparedness.com/explore"
-      },
-      {
         "name": "Strategies to LLM Safety in Practice",
         "definition": null,
         "source_ref": "She 2024",
@@ -2096,13 +2089,6 @@
         "source_ref": "China_NTC260 2024",
         "source_title": "AI Safety Governance Framework",
         "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
-      },
-      {
-        "name": "Decommission responsibly",
-        "definition": "Decommission\nresponsibly\nthrough formal\noff-boarding,\nsecure data\nhandling, and\naudit-ready\ndocumentation.",
-        "source_ref": "Gandi 2025",
-        "source_title": "Approaches to Responsible Governance of GenAI in Organizations",
-        "url": "https://arxiv.org/abs/2504.17044"
       },
       {
         "name": "Insurance &\nfinancial\ninstruments",
