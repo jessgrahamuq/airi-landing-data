@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-01T06:59:36+00:00",
+    "last_updated": "2026-05-02T06:43:14+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
@@ -32,7 +32,7 @@
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 458,
+        "count": 457,
         "children_count": 4
       },
       {
@@ -95,19 +95,19 @@
           "id": "recWteocmG0jmdjV0",
           "code": "3.1",
           "name": "Legal & Regulatory",
-          "count": 191
+          "count": 190
         },
         {
           "id": "recB7UZgikAebnlwO",
           "code": "3.2",
           "name": "Shared Infrastructure",
-          "count": 136
+          "count": 135
         },
         {
           "id": "recm718iigOdrTFs8",
           "code": "3.3",
           "name": "Voluntary & Cooperative",
-          "count": 121
+          "count": 122
         },
         {
           "id": "recaKRRZjLuXRlwsI",
@@ -469,7 +469,7 @@
         "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
       },
       {
-        "name": "Adjust planning\nhorizon",
+        "name": "Adjust planning horizon",
         "definition": "Lengthen or shorten the planning horizon to match the ability to forecast",
         "source_ref": "Gutfraind 2025",
         "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
@@ -1246,8 +1246,8 @@
         "url": "https://doi.org/10.1145/3626234"
       },
       {
-        "name": "Automatic\ncontainment\nsystem",
-        "definition": "A physical system that automatically responds to impacting events by containing\nthe damage",
+        "name": "Automatic containment system",
+        "definition": "A physical system that automatically responds to impacting events by containing the damage",
         "source_ref": "Gutfraind 2025",
         "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
         "url": "https://arxiv.org/abs/2505.17084"
@@ -1699,8 +1699,8 @@
     ],
     "rechkvbiJitGFFyed": [
       {
-        "name": "Consolidate\ncomponents",
-        "definition": "Reduce the number of independent agents or degrees of freedom to make it more\npredictable or manageable",
+        "name": "Consolidate components",
+        "definition": "Reduce the number of independent agents or degrees of freedom to make it more predictable or manageable",
         "source_ref": "Gutfraind 2025",
         "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
         "url": "https://arxiv.org/abs/2505.17084"
@@ -2080,6 +2080,13 @@
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Right to object",
+        "definition": "Allow individuals to challenge decisions made by AI systems that significantly affect them, potentially requiring human review.",
+        "source_ref": "Jones 2024",
+        "source_title": "The AI regulator’s toolbox: A list of concrete AI governance practices",
+        "url": "https://adamjones.me/blog/ai-regulator-toolbox/"
       }
     ],
     "recukEmWcpGGpiNw2": [
