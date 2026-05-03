@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-02T06:43:14+00:00",
+    "last_updated": "2026-05-03T06:56:07+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
@@ -18,7 +18,7 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 595,
+        "count": 594,
         "children_count": 3
       },
       {
@@ -39,7 +39,7 @@
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 117,
+        "count": 118,
         "children_count": 1
       }
     ],
@@ -49,7 +49,7 @@
           "id": "recN8nHl2CJ2l1bQR",
           "code": "1.2",
           "name": "Non-Model",
-          "count": 318
+          "count": 317
         },
         {
           "id": "rec3kPN9w30ZIf0ok",
@@ -261,18 +261,18 @@
         "url": "https://arxiv.org/abs/2502.06656"
       },
       {
+        "name": "Delegate control",
+        "definition": "Delegate authority to local agents or stakeholders to select among alternatives within an overall mission",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      },
+      {
         "name": "Institutional Review Boards (IRBs)",
         "definition": "[fn578]",
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
-        "name": "Leadership commitment for RAI",
-        "definition": "The management teams need to understand the values,\ncost, and risk for adopting AI in an organization. Commitment needs to be made by the management team to build an RAI culture within an…",
-        "source_ref": "Lu 2024",
-        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
-        "url": "https://doi.org/10.1145/3626234"
       }
     ],
     "recCT2ODH0Pjvhcs3": [
@@ -564,8 +564,8 @@
         "url": "https://arxiv.org/abs/2506.22183"
       },
       {
-        "name": "Eliminate input variables",
-        "definition": "Reduce uncertainty about a plan or system but eliminating variables affecting its\noperation or reducing their variability",
+        "name": "Decoy",
+        "definition": "Minimize the damage from intelligent hazard by create false targets",
         "source_ref": "Gutfraind 2025",
         "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
         "url": "https://arxiv.org/abs/2505.17084"
