@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-03T06:56:07+00:00",
+    "last_updated": "2026-05-04T07:06:55+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
     "top_level_count": 4,
     "document_count": 61,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1090 actions catalogued.",
+    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1091 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -18,14 +18,14 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 594,
+        "count": 598,
         "children_count": 3
       },
       {
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1090,
+        "count": 1091,
         "children_count": 4
       },
       {
@@ -55,7 +55,7 @@
           "id": "rec3kPN9w30ZIf0ok",
           "code": "1.1",
           "name": "Model",
-          "count": 248
+          "count": 251
         },
         {
           "id": "rechkvbiJitGFFyed",
@@ -69,19 +69,19 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 564
+          "count": 563
         },
         {
           "id": "recvf5stbwCV4rwuI",
           "code": "2.3",
           "name": "Operations & Security",
-          "count": 287
+          "count": 288
         },
         {
           "id": "recu97TvMvkJbjQBg",
           "code": "2.4",
           "name": "Engineering & Development",
-          "count": 235
+          "count": 236
         },
         {
           "id": "recLJbd5gmiEmSJsf",
@@ -476,13 +476,6 @@
         "url": "https://arxiv.org/abs/2505.17084"
       },
       {
-        "name": "AI development",
-        "definition": "Coordinated and accountable AI development operations is key to sustainable AI development in organizations.\nThe Head of AI should ensure that the organization designs and implements\n6) appropriate…",
-        "source_ref": "Mantymaki 2022",
-        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
-        "url": "https://arxiv.org/abs/2206.00335"
-      },
-      {
         "name": "AI governance integration",
         "definition": "AI systems are tools that serve business or operational purposes. AI system governance overlaps with business and operational, data, IT system, and governance and strategic\ngovernance. AI system…",
         "source_ref": "Mantymaki 2022",
@@ -490,8 +483,15 @@
         "url": "https://arxiv.org/abs/2206.00335"
       },
       {
-        "name": "AI operations",
-        "definition": "Coordinated and accountable AI operations are key to sustainable AI use in organizations.\nThe Head of AI should ensure that the organization designs and implements\n1) appropriate workflows and…",
+        "name": "AI system approval",
+        "definition": "Decisions on approving AI systems and AI versions of AI systems for operational use should be informed and preceded by a careful review of the AI system documentation. \nBefore deciding to deploy an…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "AI system operating environment",
+        "definition": "AI systems are embedded in the business and organizational environment. This environment typically consists of technological and social elements. The operating environment is a key driver of AI…",
         "source_ref": "Mantymaki 2022",
         "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
         "url": "https://arxiv.org/abs/2206.00335"
@@ -929,6 +929,20 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       },
       {
+        "name": "AI system pre-design",
+        "definition": "Once an organization initiates an AI system development project, it should perform a preliminary pre-design of the system. The Head of AI (T54) should ensure that the organization\n1) enters the AI…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Algorithm pre-design",
+        "definition": "Once an organization initiates an algorithm development project, it should perform a preliminary pre-design of the algorithm. The Head of AI should ensure that the organization\n4) enters the…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
         "name": "Committing to robust internal accountability and governance mechanisms, alongside external verification",
         "definition": null,
         "source_ref": "UK_DSIT 2023",
@@ -941,23 +955,16 @@
         "source_ref": "China_NTC260 2024",
         "source_title": "AI Safety Governance Framework",
         "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
-      },
-      {
-        "name": "Corporate social responsibility",
-        "definition": "Another best practice is “corporate\nsocial responsibility” and the necessity to adopt better oversight\nmechanisms for corporate responsibility as “it is problematic to\ntranslate them into a legal…",
-        "source_ref": "Lucaj 2023",
-        "source_title": "AI Regulation Is (not) All You Need",
-        "url": "https://doi.org/10.1145/3593013.3594079"
-      },
-      {
-        "name": "Emergency Control Mechanism",
-        "definition": null,
-        "source_ref": "Tse 2025",
-        "source_title": "Frontier AI Risk Management Framework (v1.0)",
-        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
       }
     ],
     "recvf5stbwCV4rwuI": [
+      {
+        "name": "AI operations",
+        "definition": "Coordinated and accountable AI operations are key to sustainable AI use in organizations.\nThe Head of AI should ensure that the organization designs and implements\n1) appropriate workflows and…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
       {
         "name": "Building in redundancy",
         "definition": "As with deployment safeguards, developers can aim to\nimplement a “defense-in-depth” strategy.",
@@ -985,13 +992,6 @@
         "source_ref": "Gandi 2025",
         "source_title": "Approaches to Responsible Governance of GenAI in Organizations",
         "url": "https://arxiv.org/abs/2504.17044"
-      },
-      {
-        "name": "Defence in Depth",
-        "definition": "The idea that multiple\nindependent and overlapping\nlayers of defence can be\nimplemented such that if one\nfails, others will still be effective",
-        "source_ref": "Bengio 2025",
-        "source_title": "International AI Safety Report",
-        "url": "https://assets.publishing.service.gov.uk/media/679a0c48a77d250007d313ee/International_AI_Safety_Report_2025_accessible_f.pdf"
       }
     ],
     "recL9Yy9qwWUxzPlc": [
@@ -1276,18 +1276,18 @@
         "url": "https://arxiv.org/abs/2408.12935"
       },
       {
+        "name": "Algorithms",
+        "definition": "Ensuring that the algorithms used by an AI system are developed, operated, and monitored in alignment with the organization’s strategic goals and values.",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
         "name": "Alignment Techniques",
         "definition": "AGI labs should implement state-of-the-art safety and alignment techniques.",
         "source_ref": "Schuett 2023",
         "source_title": "Towards best practices in AGI safety and governance: A survey of expert opinion",
         "url": "https://arxiv.org/abs/2305.07153"
-      },
-      {
-        "name": "Backdoor & Poisoning Defenses",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
       }
     ],
     "recN8nHl2CJ2l1bQR": [
@@ -1329,6 +1329,13 @@
     ],
     "recu97TvMvkJbjQBg": [
       {
+        "name": "AI development",
+        "definition": "Coordinated and accountable AI development operations is key to sustainable AI development in organizations.\nThe Head of AI should ensure that the organization designs and implements\n6) appropriate…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
         "name": "Design",
         "definition": null,
         "source_ref": "Lu 2024",
@@ -1343,25 +1350,18 @@
         "url": "https://arxiv.org/abs/2506.20702"
       },
       {
+        "name": "Expert elicitation and judgement",
+        "definition": "Convene experts in the phenomenon and ask for their recommendation",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      },
+      {
         "name": "Mitigation in Toolchain Modules",
         "definition": "Existing studies have designed methods to alleviate the security issues of tools in the lifecycle of LLMs. In this section,\nwe summarize the mitigations of those issues according to the\ncategories…",
         "source_ref": "Cui 2024",
         "source_title": "Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems",
         "url": "https://arxiv.org/abs/2401.05778"
-      },
-      {
-        "name": "Model development",
-        "definition": null,
-        "source_ref": "Gipiskis 2024",
-        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
-        "url": "https://arxiv.org/abs/2410.23472"
-      },
-      {
-        "name": "Requirement Engineering",
-        "definition": null,
-        "source_ref": "Lu 2024",
-        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
-        "url": "https://doi.org/10.1145/3626234"
       }
     ],
     "recAirWkyJU1jB1Ib": [
@@ -1371,13 +1371,6 @@
         "source_ref": "McGrath 2025",
         "source_title": "Designing an Enhanced Enterprise Risk Management System to Mitigate Ethical Risks of Artificial Intelligence Applications",
         "url": "https://doi.org/10.1109/TEM.2025.3565221"
-      },
-      {
-        "name": "Algorithm use case design",
-        "definition": "Understanding the intended uses of an algorithm together with its possible misuses is key to sustainable AI development and use.\nFor each algorithm in its Algorithm Repository, the organization…",
-        "source_ref": "Mantymaki 2022",
-        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
-        "url": "https://arxiv.org/abs/2206.00335"
       },
       {
         "name": "Apply good infrastructure principles to every part of this process",
@@ -1399,6 +1392,13 @@
         "source_ref": "ITechLaw 2019",
         "source_title": "Responsible AI: A Global Policy Framework",
         "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      },
+      {
+        "name": "Consider disclosing use of GAI to end users in relevant contexts, while considering the objective of disclosure, the context of use, the…",
+        "definition": null,
+        "source_ref": "US_NIST 2024",
+        "source_title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)",
+        "url": "https://doi.org/10.6028/nist.ai.600-1"
       }
     ],
     "rec2Ok2jfAdV1hQUw": [
@@ -1521,6 +1521,13 @@
         "url": "https://arxiv.org/abs/2504.16937"
       },
       {
+        "name": "Amass resources",
+        "definition": "Make the arsenal of resources as large as possible",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      },
+      {
         "name": "Avoid complete reliance on AI",
         "definition": "Users should avoid complete reliance on AI for decision making, monitor\nand record instances where users turn down AI decisions, and analyze inconsistencies in decision-making. They should have the…",
         "source_ref": "China_NTC260 2024",
@@ -1540,13 +1547,6 @@
         "source_ref": "Schuett 2023",
         "source_title": "Towards best practices in AGI safety and governance: A survey of expert opinion",
         "url": "https://arxiv.org/abs/2305.07153"
-      },
-      {
-        "name": "Conduct after-action assessments for GAI system incidents to verify incident response and recovery processes are followed and effective…",
-        "definition": null,
-        "source_ref": "US_NIST 2024",
-        "source_title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1)",
-        "url": "https://doi.org/10.6028/nist.ai.600-1"
       }
     ],
     "reczBXs37Ijqq7EWX": [
@@ -1653,11 +1653,11 @@
         "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
       },
       {
-        "name": "Amass resources",
-        "definition": "Make the arsenal of resources as large as possible",
-        "source_ref": "Gutfraind 2025",
-        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
-        "url": "https://arxiv.org/abs/2505.17084"
+        "name": "Application Access Management",
+        "definition": "Ensure that only authorized users and endpoints can access specific resources for authorized actions.",
+        "source_ref": "Google 2024",
+        "source_title": "Google Secure AI Framework",
+        "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
       }
     ],
     "recQbNhpjHC86GOIF": [
@@ -1743,11 +1743,11 @@
         "url": "https://arxiv.org/abs/2408.12935"
       },
       {
-        "name": "Attacks and Defenses for SAM",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
+        "name": "AI System",
+        "definition": "Ensuring that the AI system is developed, operated, and monitored in alignment with the organization’s strategic goals and values.",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
       }
     ],
     "rec9l0Ip5YLL4EXP6": [
@@ -1898,6 +1898,29 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       }
     ],
+    "recukEmWcpGGpiNw2": [
+      {
+        "name": "AI system architecture",
+        "definition": "AI systems are part of IT systems. IT systems contain various data, computing infrastructures and resources, system architecture, and interfaces. The IT system architecture affects the AI system…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Data security",
+        "definition": "Developers should strengthening data security and personal information\nprotection, respect intellectual property and copyright, and ensure that data sources are clear and acquisition methods are…",
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Insurance &\nfinancial\ninstruments",
+        "definition": "Use contracts or financial instruments to indemnify against possible losses",
+        "source_ref": "Gutfraind 2025",
+        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
+        "url": "https://arxiv.org/abs/2505.17084"
+      }
+    ],
     "recaKRRZjLuXRlwsI": [
       {
         "name": "Lab-level (external) levers",
@@ -1912,6 +1935,36 @@
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recTE9xxlGBVbYRqD": [
+      {
+        "name": "AI system repository and AI ID",
+        "definition": "Coordinated AI development, operation, and use are essential to organizations' sustainable AI operations.\nAll organizations using AI systems should operate an AI system repository.\nThe repository…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Ethics committee",
+        "definition": "Organizations need to build capability incorporating multiple areas of\nexpertise to address RAI issues. An AI ethics committee is an AI governance body that is established to develop standard…",
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      },
+      {
+        "name": "Lab-level (internal) levers",
+        "definition": "Shareholder activism, voting out CEOs; unions and intra-organizational advocacy, strikes, and walkouts;[fn635] capacity-building of employee activism via recruitment, political education, training…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Right to object",
+        "definition": "Allow individuals to challenge decisions made by AI systems that significantly affect them, potentially requiring human review.",
+        "source_ref": "Jones 2024",
+        "source_title": "The AI regulator’s toolbox: A list of concrete AI governance practices",
+        "url": "https://adamjones.me/blog/ai-regulator-toolbox/"
       }
     ],
     "recB7UZgikAebnlwO": [
@@ -2064,45 +2117,6 @@
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      }
-    ],
-    "recTE9xxlGBVbYRqD": [
-      {
-        "name": "Ethics committee",
-        "definition": "Organizations need to build capability incorporating multiple areas of\nexpertise to address RAI issues. An AI ethics committee is an AI governance body that is established to develop standard…",
-        "source_ref": "Lu 2024",
-        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
-        "url": "https://doi.org/10.1145/3626234"
-      },
-      {
-        "name": "Lab-level (internal) levers",
-        "definition": "Shareholder activism, voting out CEOs; unions and intra-organizational advocacy, strikes, and walkouts;[fn635] capacity-building of employee activism via recruitment, political education, training…",
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
-        "name": "Right to object",
-        "definition": "Allow individuals to challenge decisions made by AI systems that significantly affect them, potentially requiring human review.",
-        "source_ref": "Jones 2024",
-        "source_title": "The AI regulator’s toolbox: A list of concrete AI governance practices",
-        "url": "https://adamjones.me/blog/ai-regulator-toolbox/"
-      }
-    ],
-    "recukEmWcpGGpiNw2": [
-      {
-        "name": "Data security",
-        "definition": "Developers should strengthening data security and personal information\nprotection, respect intellectual property and copyright, and ensure that data sources are clear and acquisition methods are…",
-        "source_ref": "China_NTC260 2024",
-        "source_title": "AI Safety Governance Framework",
-        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
-      },
-      {
-        "name": "Insurance &\nfinancial\ninstruments",
-        "definition": "Use contracts or financial instruments to indemnify against possible losses",
-        "source_ref": "Gutfraind 2025",
-        "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
-        "url": "https://arxiv.org/abs/2505.17084"
       }
     ],
     "recxGSZUOgdOJXgz1": [
