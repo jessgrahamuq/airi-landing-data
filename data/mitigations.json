@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-10T06:59:17+00:00",
+    "last_updated": "2026-05-11T07:17:04+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
     "top_level_count": 4,
     "document_count": 61,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1076 actions catalogued.",
+    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1075 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -25,21 +25,21 @@
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1076,
+        "count": 1075,
         "children_count": 4
       },
       {
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 474,
+        "count": 480,
         "children_count": 4
       },
       {
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 109,
+        "count": 105,
         "children_count": 1
       }
     ],
@@ -69,7 +69,7 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 561
+          "count": 560
         },
         {
           "id": "recvf5stbwCV4rwuI",
@@ -95,7 +95,7 @@
           "id": "recWteocmG0jmdjV0",
           "code": "3.1",
           "name": "Legal & Regulatory",
-          "count": 194
+          "count": 193
         },
         {
           "id": "recB7UZgikAebnlwO",
@@ -107,7 +107,7 @@
           "id": "recm718iigOdrTFs8",
           "code": "3.3",
           "name": "Voluntary & Cooperative",
-          "count": 121
+          "count": 122
         },
         {
           "id": "recaKRRZjLuXRlwsI",
@@ -121,7 +121,7 @@
           "id": "recG4vs1Ryh828Li5",
           "code": "99.9",
           "name": "Other",
-          "count": 45
+          "count": 43
         }
       ]
     }
@@ -922,13 +922,6 @@
     ],
     "rec7WCy7JEIpyidOT": [
       {
-        "name": "AI ethics advisory committees",
-        "definition": "[fn566]",
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
         "name": "AI system pre-design",
         "definition": "Once an organization initiates an AI system development project, it should perform a preliminary pre-design of the system. The Head of AI (T54) should ensure that the organization\n1) enters the AI…",
         "source_ref": "Mantymaki 2022",
@@ -955,6 +948,13 @@
         "source_ref": "China_NTC260 2024",
         "source_title": "AI Safety Governance Framework",
         "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Corporate social responsibility",
+        "definition": "Another best practice is “corporate\nsocial responsibility” and the necessity to adopt better oversight\nmechanisms for corporate responsibility as “it is problematic to\ntranslate them into a legal…",
+        "source_ref": "Lucaj 2023",
+        "source_title": "AI Regulation Is (not) All You Need",
+        "url": "https://doi.org/10.1145/3593013.3594079"
       }
     ],
     "recvf5stbwCV4rwuI": [
@@ -1863,6 +1863,27 @@
     ],
     "recm718iigOdrTFs8": [
       {
+        "name": "AI ethics advisory committees",
+        "definition": "[fn566]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Bug bounties",
+        "definition": "[fn569]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Codes of conduct",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
         "name": "Establish and improve the mechanisms for AI safety\neducation, industry self-regulation, and social supervision",
         "definition": "We\nshould strengthen education and training on the safe and proper use of AI\namong government, enterprises, and public service units. We should step\nup the promotion of knowledge related to AI risks…",
         "source_ref": "China_NTC260 2024",
@@ -1875,27 +1896,6 @@
         "source_ref": "ITechLaw 2019",
         "source_title": "Responsible AI: A Global Policy Framework",
         "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
-      },
-      {
-        "name": "International Cooperation Proposals",
-        "definition": "Given these challenges, a flexible, multi-tiered framework for international AI regulation is\nthe global desideratum. This framework should operate through a combination of binding\ninternational…",
-        "source_ref": "She 2024",
-        "source_title": "Large Language Model Safety: A Holistic Survey",
-        "url": "https://arxiv.org/abs/2412.17686"
-      },
-      {
-        "name": "Open-Source Governance",
-        "definition": "The debate over the open-sourcing of contemporary AI models is contentious in AI governance, particularly as\nthese models gain increased potency (Seger et al., 2023). The potential security hazards…",
-        "source_ref": "Ji 2023",
-        "source_title": "AI Alignment: A Comprehensive Survey",
-        "url": "https://arxiv.org/abs/2310.19852"
-      },
-      {
-        "name": "Pathways to influence (on each key actor)",
-        "definition": "A tool or intervention by which other actors (that may not themselves be key actors) can affect, persuade, induce, incentivize, or require key actors to make certain key decisions around the…",
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       }
     ],
     "recukEmWcpGGpiNw2": [
@@ -1988,6 +1988,43 @@
         "url": "https://adamjones.me/blog/ai-regulator-toolbox/"
       }
     ],
+    "recJQgUd7WcZ4EUPw": [
+      {
+        "name": "Adaptation Interventions",
+        "definition": "Adaptation interventions, the primary focus of this paper, intervene at later stages in the causal chain. Such interventions immediately precede the “use”, “initial harm” or “impact” stages of that…",
+        "source_ref": "Bernardi 2025",
+        "source_title": "Societal Adaptation to Advanced AI",
+        "url": "https://arxiv.org/abs/2405.10295"
+      },
+      {
+        "name": "Avoidance interventions",
+        "definition": "Society can reduce the expected extent of the potentially harmful use of AI, making the problematic actions in question more difficult to engage in, or more costly compared to relevant…",
+        "source_ref": "Bernardi 2025",
+        "source_title": "Societal Adaptation to Advanced AI",
+        "url": "https://arxiv.org/abs/2405.10295"
+      },
+      {
+        "name": "Economic AI Guidelines",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      },
+      {
+        "name": "Future, new types of institutions and levers",
+        "definition": "Novel governance institutions and innovations",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Governance",
+        "definition": "As the integration of AI into various aspects of human endeavor accelerates, the necessity for\ncomprehensive and robust governance frameworks becomes increasingly critical. Effective\ngovernance in…",
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
+      }
+    ],
     "recB7UZgikAebnlwO": [
       {
         "name": "6.2 Supporting Defensive Systems and Research",
@@ -2053,43 +2090,6 @@
         "source_ref": "Wirtz 2022",
         "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
         "url": "https://doi.org/10.1016/j.giq.2022.101685"
-      }
-    ],
-    "recJQgUd7WcZ4EUPw": [
-      {
-        "name": "Adaptation Interventions",
-        "definition": "Adaptation interventions, the primary focus of this paper, intervene at later stages in the causal chain. Such interventions immediately precede the “use”, “initial harm” or “impact” stages of that…",
-        "source_ref": "Bernardi 2025",
-        "source_title": "Societal Adaptation to Advanced AI",
-        "url": "https://arxiv.org/abs/2405.10295"
-      },
-      {
-        "name": "Avoidance interventions",
-        "definition": "Society can reduce the expected extent of the potentially harmful use of AI, making the problematic actions in question more difficult to engage in, or more costly compared to relevant…",
-        "source_ref": "Bernardi 2025",
-        "source_title": "Societal Adaptation to Advanced AI",
-        "url": "https://arxiv.org/abs/2405.10295"
-      },
-      {
-        "name": "Economic AI Guidelines",
-        "definition": null,
-        "source_ref": "Wirtz 2022",
-        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
-        "url": "https://doi.org/10.1016/j.giq.2022.101685"
-      },
-      {
-        "name": "Governance",
-        "definition": "As the integration of AI into various aspects of human endeavor accelerates, the necessity for\ncomprehensive and robust governance frameworks becomes increasingly critical. Effective\ngovernance in…",
-        "source_ref": "She 2024",
-        "source_title": "Large Language Model Safety: A Holistic Survey",
-        "url": "https://arxiv.org/abs/2412.17686"
-      },
-      {
-        "name": "International regime levers",
-        "definition": null,
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       }
     ],
     "rec5Jml8RLERlfbtT": [
