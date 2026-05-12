@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-11T07:17:04+00:00",
+    "last_updated": "2026-05-12T07:03:00+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
     "top_level_count": 4,
     "document_count": 61,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1075 actions catalogued.",
+    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1072 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -25,21 +25,21 @@
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1075,
+        "count": 1072,
         "children_count": 4
       },
       {
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 480,
+        "count": 491,
         "children_count": 4
       },
       {
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 105,
+        "count": 97,
         "children_count": 1
       }
     ],
@@ -69,7 +69,7 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 560
+          "count": 558
         },
         {
           "id": "recvf5stbwCV4rwuI",
@@ -81,7 +81,7 @@
           "id": "recu97TvMvkJbjQBg",
           "code": "2.4",
           "name": "Engineering & Development",
-          "count": 225
+          "count": 224
         },
         {
           "id": "recLJbd5gmiEmSJsf",
@@ -95,25 +95,25 @@
           "id": "recWteocmG0jmdjV0",
           "code": "3.1",
           "name": "Legal & Regulatory",
-          "count": 193
+          "count": 196
         },
         {
           "id": "recB7UZgikAebnlwO",
           "code": "3.2",
           "name": "Shared Infrastructure",
-          "count": 143
+          "count": 145
         },
         {
           "id": "recm718iigOdrTFs8",
           "code": "3.3",
           "name": "Voluntary & Cooperative",
-          "count": 122
+          "count": 121
         },
         {
           "id": "recaKRRZjLuXRlwsI",
           "code": "3.9",
           "name": "Other",
-          "count": 7
+          "count": 11
         }
       ],
       "recKDrtqO6anv7Mcj": [
@@ -121,7 +121,7 @@
           "id": "recG4vs1Ryh828Li5",
           "code": "99.9",
           "name": "Other",
-          "count": 43
+          "count": 41
         }
       ]
     }
@@ -312,41 +312,41 @@
         "url": "https://doi.org/10.6028/nist.ai.600-1"
       }
     ],
-    "recKDrtqO6anv7Mcj": [
+    "recWteocmG0jmdjV0": [
       {
-        "name": "(Societal Resilience) To Catastrophe",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
-      },
-      {
-        "name": "(Societal Resilience) To Disruption",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
-      },
-      {
-        "name": "Achieve AI efficiency improvements to reduce investment costs",
+        "name": "Allow social norms to evolve steadily without hard regulation",
         "definition": null,
         "source_ref": "Wirtz 2022",
         "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
         "url": "https://doi.org/10.1016/j.giq.2022.101685"
       },
       {
-        "name": "Addressing AI’s inherent safety risks",
-        "definition": null,
-        "source_ref": "China_NTC260 2024",
-        "source_title": "AI Safety Governance Framework",
-        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+        "name": "Comply with sector-specific regulations",
+        "definition": "e.g. require informed consent for AI advice, audit\nautomated decisions for fairness",
+        "source_ref": "Tong 2025",
+        "source_title": "A First-Principles Based Risk Assessment Framework and the IEEE P3396 Standard",
+        "url": "https://doi.org/10.1109/CAI64502.2025.00237"
       },
       {
-        "name": "Addressing safety risks in AI applications",
+        "name": "Comprehensive frameworks on governance",
+        "definition": "Governance frameworks should:\n• Support increasing collective understanding of the AI phenomenon and collective reflection and informed policy decisions on the need for and means of governing AI\n•…",
+        "source_ref": "Sigfrids 2022",
+        "source_title": "How Should Public Administrations Foster the Ethical Development and Use of Artificial Intelligence? A Review of Proposals for Developing Governance of AI",
+        "url": "https://doi.org/10.3389/fhumd.2022.858108"
+      },
+      {
+        "name": "Compute Controls",
         "definition": null,
-        "source_ref": "China_NTC260 2024",
-        "source_title": "AI Safety Governance Framework",
-        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Compute Controls",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
       }
     ],
     "reciHfSta95bngYoI": [
@@ -421,43 +421,6 @@
         "source_ref": "Gipiskis 2024",
         "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
         "url": "https://arxiv.org/abs/2410.23472"
-      }
-    ],
-    "recWteocmG0jmdjV0": [
-      {
-        "name": "Allow social norms to evolve steadily without hard regulation",
-        "definition": null,
-        "source_ref": "Wirtz 2022",
-        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
-        "url": "https://doi.org/10.1016/j.giq.2022.101685"
-      },
-      {
-        "name": "Comply with sector-specific regulations",
-        "definition": "e.g. require informed consent for AI advice, audit\nautomated decisions for fairness",
-        "source_ref": "Tong 2025",
-        "source_title": "A First-Principles Based Risk Assessment Framework and the IEEE P3396 Standard",
-        "url": "https://doi.org/10.1109/CAI64502.2025.00237"
-      },
-      {
-        "name": "Comprehensive frameworks on governance",
-        "definition": "Governance frameworks should:\n• Support increasing collective understanding of the AI phenomenon and collective reflection and informed policy decisions on the need for and means of governing AI\n•…",
-        "source_ref": "Sigfrids 2022",
-        "source_title": "How Should Public Administrations Foster the Ethical Development and Use of Artificial Intelligence? A Review of Proposals for Developing Governance of AI",
-        "url": "https://doi.org/10.3389/fhumd.2022.858108"
-      },
-      {
-        "name": "Compute Controls",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
-      },
-      {
-        "name": "Compute Controls",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
       }
     ],
     "recProq0wjSpFGSc3": [
@@ -624,13 +587,6 @@
         "url": "https://arxiv.org/abs/2412.17686"
       },
       {
-        "name": "Differential technological development (innovation prizes)",
-        "definition": "[fn583]",
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
         "name": "Ensure global competitiveness and fairness and particularly support SMEs to cope with high AI costs in order to stay competitive",
         "definition": null,
         "source_ref": "Wirtz 2022",
@@ -640,6 +596,13 @@
       {
         "name": "Establishing material constraints",
         "definition": "Supply-side material proliferation controls (e.g., stock-and-flow accounting and trade barriers); fair and equitable treatment standards in international investment law.",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Foreign investment restrictions",
+        "definition": null,
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
@@ -823,11 +786,11 @@
         "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
       },
       {
-        "name": "Compute governance",
-        "definition": "Establish on-chip firmware mechanisms, inspection regimes, and supply chain monitoring and custody mechanisms to ensure no actor can use large quantities of specialized chips to execute ML training…",
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+        "name": "Control-flow integrity",
+        "definition": null,
+        "source_ref": "Jin 2024",
+        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
       }
     ],
     "reckYlFCROi19kf7q": [
@@ -1024,11 +987,11 @@
         "url": "https://doi.org/10.3389/fhumd.2022.858108"
       },
       {
-        "name": "Develop new oversight agency to protect public welfare",
-        "definition": "Develop a new EU oversight agency responsible for the protection of public welfare through the scientific evaluation and supervision of AI products, software,\nsystems, or services.",
-        "source_ref": "Foridi 2018",
-        "source_title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
-        "url": "https://doi.org/10.1007/s11023-018-9482-5"
+        "name": "Create or propose soft law",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       }
     ],
     "recus4S9wRDjUK7co": [
@@ -1077,13 +1040,6 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       },
       {
-        "name": "(Temporary) moratoria",
-        "definition": "[fn584]",
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
         "name": "[Shaping the governmental decisions of] Legislatures",
         "definition": null,
         "source_ref": "Maas 2023",
@@ -1103,6 +1059,13 @@
         "source_ref": "ITechLaw 2019",
         "source_title": "Responsible AI: A Global Policy Framework",
         "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
+      },
+      {
+        "name": "AI cryptography and National Security Risks",
+        "definition": "AI governance must therefore balance the benefits of\ncryptographic security with the risks of unchecked anonymity. One\npotential solution is the implementation of multi-tiered encryption\npolicies…",
+        "source_ref": "Radanliev 2025",
+        "source_title": "Frontier AI regulation: what form should it take?",
+        "url": "https://doi.org/10.3389/fpos.2025.1561776"
       }
     ],
     "recagP6PiShsUgQQQ": [
@@ -1362,6 +1325,43 @@
         "source_ref": "Mantymaki 2022",
         "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
         "url": "https://arxiv.org/abs/2206.00335"
+      }
+    ],
+    "recKDrtqO6anv7Mcj": [
+      {
+        "name": "(Societal Resilience) To Catastrophe",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "(Societal Resilience) To Disruption",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Achieve AI efficiency improvements to reduce investment costs",
+        "definition": null,
+        "source_ref": "Wirtz 2022",
+        "source_title": "Governance of artificial intelligence: A risk and guideline-based integrative framework",
+        "url": "https://doi.org/10.1016/j.giq.2022.101685"
+      },
+      {
+        "name": "Addressing AI’s inherent safety risks",
+        "definition": null,
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
+      },
+      {
+        "name": "Addressing safety risks in AI applications",
+        "definition": null,
+        "source_ref": "China_NTC260 2024",
+        "source_title": "AI Safety Governance Framework",
+        "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
       }
     ],
     "recAirWkyJU1jB1Ib": [
@@ -1840,13 +1840,6 @@
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       },
       {
-        "name": "Create or propose soft law",
-        "definition": null,
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
         "name": "Creating common knowledge or shared perceptions of problems; establish 'fire alarms'",
         "definition": "Intergovernmental scientific bodies (e.g., IPCC and IPBES); international warning systems (e.g., WHO's 'public health emergency of international concern' mechanism).",
         "source_ref": "Maas 2023",
@@ -1859,9 +1852,60 @@
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Establish international AI research consortia",
+        "definition": "A diverse range of proposals for international institutions, including: a \"CERN for AI,\" \"European Artificial Intelligence megaproject,\" \"Multilateral AI Research Institute (MAIRI),\" \"international…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      }
+    ],
+    "recaKRRZjLuXRlwsI": [
+      {
+        "name": "Crisis Management Plans",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Differential technological development (innovation prizes)",
+        "definition": "[fn583]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Government Capacity Building",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Incident Detection (e.g. DNA Screening)",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Industry-level levers",
+        "definition": "Norm advocacy and lobbying; open letters and statements; mapping and highlighting (compliance) performance of companies; establishing metrics, indexes, and prizes; and certification schemes.[fn640]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       }
     ],
     "recm718iigOdrTFs8": [
+      {
+        "name": "(Temporary) moratoria",
+        "definition": "[fn584]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
       {
         "name": "AI ethics advisory committees",
         "definition": "[fn566]",
@@ -1889,13 +1933,6 @@
         "source_ref": "China_NTC260 2024",
         "source_title": "AI Safety Governance Framework",
         "url": "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf"
-      },
-      {
-        "name": "Facilitating technological progress at reasonable risks",
-        "definition": null,
-        "source_ref": "ITechLaw 2019",
-        "source_title": "Responsible AI: A Global Policy Framework",
-        "url": "https://www.itechlaw.org/publication/responsible-ai-a-global-policy-framework-2019-first-edition/"
       }
     ],
     "recukEmWcpGGpiNw2": [
@@ -1919,43 +1956,6 @@
         "source_ref": "Gutfraind 2025",
         "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
         "url": "https://arxiv.org/abs/2505.17084"
-      }
-    ],
-    "recaKRRZjLuXRlwsI": [
-      {
-        "name": "Crisis Management Plans",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
-      },
-      {
-        "name": "Government Capacity Building",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
-      },
-      {
-        "name": "Incident Detection (e.g. DNA Screening)",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
-      },
-      {
-        "name": "Lab-level (external) levers",
-        "definition": "Stigmatization of irresponsible practices;[fn636] investigative journalism, awareness-raising of scandals and incidents, hacking and leaks, and whistleblowing; impact litigation[fn637] and…",
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
-        "name": "Other Emergency Preparedness Measures",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
       }
     ],
     "recTE9xxlGBVbYRqD": [
@@ -2069,6 +2069,13 @@
         "source_ref": "Robbins 2024",
         "source_title": "AI ASSURANCE: A Repeatable Process for Assuring AI-enabled Systems",
         "url": "https://www.mitre.org/sites/default/files/2024-06/PR-24-1768-AI-Assurance-A-Repeatable-Process-Assuring-AI-Enabled-Systems.pdf?utm_source=chatgpt.com"
+      },
+      {
+        "name": "Auditing schemas",
+        "definition": "[fn577]",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       },
       {
         "name": "Compute and hardware tracking",
