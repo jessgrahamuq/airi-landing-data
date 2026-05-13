@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-12T07:03:00+00:00",
+    "last_updated": "2026-05-13T07:07:23+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2463,
     "record_count_total": 2891,
@@ -32,14 +32,14 @@
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 491,
+        "count": 493,
         "children_count": 4
       },
       {
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 97,
+        "count": 95,
         "children_count": 1
       }
     ],
@@ -95,7 +95,7 @@
           "id": "recWteocmG0jmdjV0",
           "code": "3.1",
           "name": "Legal & Regulatory",
-          "count": 196
+          "count": 198
         },
         {
           "id": "recB7UZgikAebnlwO",
@@ -107,7 +107,7 @@
           "id": "recm718iigOdrTFs8",
           "code": "3.3",
           "name": "Voluntary & Cooperative",
-          "count": 121
+          "count": 120
         },
         {
           "id": "recaKRRZjLuXRlwsI",
@@ -121,7 +121,7 @@
           "id": "recG4vs1Ryh828Li5",
           "code": "99.9",
           "name": "Other",
-          "count": 41
+          "count": 40
         }
       ]
     }
@@ -321,6 +321,13 @@
         "url": "https://doi.org/10.1016/j.giq.2022.101685"
       },
       {
+        "name": "Ancillary institutions",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
         "name": "Comply with sector-specific regulations",
         "definition": "e.g. require informed consent for AI advice, audit\nautomated decisions for fairness",
         "source_ref": "Tong 2025",
@@ -333,13 +340,6 @@
         "source_ref": "Sigfrids 2022",
         "source_title": "How Should Public Administrations Foster the Ethical Development and Use of Artificial Intelligence? A Review of Proposals for Developing Governance of AI",
         "url": "https://doi.org/10.3389/fhumd.2022.858108"
-      },
-      {
-        "name": "Compute Controls",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
       },
       {
         "name": "Compute Controls",
@@ -1558,6 +1558,13 @@
         "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
       },
       {
+        "name": "Bypass or challenge existing institutions by engaging in \"competitive regime creation,\" \"forum shopping,\" or the strategic creation of…",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
         "name": "Clarify global administrative law obligations",
         "definition": null,
         "source_ref": "Maas 2023",
@@ -1574,13 +1581,6 @@
       {
         "name": "Establish multilateral international agreements",
         "definition": "Treaty proposals including: \"Treaty on Artificial Intelligence Safety and Cooperation (TAISC),\" global compute cap treaty, \"AI development convention,\" \"Emerging Technologies Treaty,\" \"Benevolent…",
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
-        "name": "Extend or apply existing principles and regimes in international law",
-        "definition": "Extend or apply existing principles and regimes in international law, including amongst others: norms of international peace and security law; principles of international humanitarian law; norms of…",
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
@@ -1826,13 +1826,6 @@
     ],
     "rec9bafBVrJmNhCJc": [
       {
-        "name": "Bypass or challenge existing institutions by engaging in \"competitive regime creation,\" \"forum shopping,\" or the strategic creation of…",
-        "definition": null,
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
         "name": "Coordinating behavior; reducing uncertainty, improving trust",
         "definition": "Confidence-building measures;[fn653] review conferences (e.g., BWC); conferences of parties (e.g., UNFCCC); establishing information and benefit-sharing mechanisms.",
         "source_ref": "Maas 2023",
@@ -1856,6 +1849,13 @@
       {
         "name": "Establish international AI research consortia",
         "definition": "A diverse range of proposals for international institutions, including: a \"CERN for AI,\" \"European Artificial Intelligence megaproject,\" \"Multilateral AI Research Institute (MAIRI),\" \"international…",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Foreign policy decisions, such as initiating multilateral treaty negotiations",
+        "definition": null,
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
@@ -2011,18 +2011,18 @@
         "url": "https://doi.org/10.1016/j.giq.2022.101685"
       },
       {
-        "name": "Future, new types of institutions and levers",
-        "definition": "Novel governance institutions and innovations",
+        "name": "Foreign Ministries/State Department levers",
+        "definition": null,
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
         "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       },
       {
-        "name": "Governance",
-        "definition": "As the integration of AI into various aspects of human endeavor accelerates, the necessity for\ncomprehensive and robust governance frameworks becomes increasingly critical. Effective\ngovernance in…",
-        "source_ref": "She 2024",
-        "source_title": "Large Language Model Safety: A Holistic Survey",
-        "url": "https://arxiv.org/abs/2412.17686"
+        "name": "Future, new types of institutions and levers",
+        "definition": "Novel governance institutions and innovations",
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
       }
     ],
     "recB7UZgikAebnlwO": [
