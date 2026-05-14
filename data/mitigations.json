@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-13T07:07:23+00:00",
+    "last_updated": "2026-05-14T07:05:15+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
-    "record_count": 2463,
-    "record_count_total": 2891,
+    "record_count": 2460,
+    "record_count_total": 2888,
     "top_level_count": 4,
     "document_count": 61,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,463 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1072 actions catalogued.",
+    "interpretation": "The database has catalogued 2,460 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1071 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -18,14 +18,14 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 605,
+        "count": 602,
         "children_count": 3
       },
       {
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1072,
+        "count": 1071,
         "children_count": 4
       },
       {
@@ -39,7 +39,7 @@
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 95,
+        "count": 96,
         "children_count": 1
       }
     ],
@@ -55,7 +55,7 @@
           "id": "rec3kPN9w30ZIf0ok",
           "code": "1.1",
           "name": "Model",
-          "count": 251
+          "count": 248
         },
         {
           "id": "rechkvbiJitGFFyed",
@@ -87,7 +87,7 @@
           "id": "recLJbd5gmiEmSJsf",
           "code": "2.9",
           "name": "Other",
-          "count": 1
+          "count": 0
         }
       ],
       "recJQgUd7WcZ4EUPw": [
@@ -796,7 +796,7 @@
     "reckYlFCROi19kf7q": [
       {
         "name": "2.2 Exploratory Methods",
-        "definition": "Beyond data filtering, researchers are investigating additional capability limitation approaches. However,\nthese methods face technical challenges, and their effectiveness remains uncertain.\n● Model…",
+        "definition": "Beyond data filtering, researchers are investigating additional capability limitation approaches.",
         "source_ref": "FMF 2025",
         "source_title": "Frontier Mitigations",
         "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
@@ -823,11 +823,11 @@
         "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
       },
       {
-        "name": "Capability Limitation Mitigations",
-        "definition": "Capability limitation mitigations aim to prevent models from possessing knowledge or abilities that could enable harm. These methods alter the model’s weights or training process, so that it cannot…",
-        "source_ref": "FMF 2025",
-        "source_title": "Frontier Mitigations",
-        "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
+        "name": "Capability suppression",
+        "definition": "It would be ideal to remove the dangerous capability entirely (aka “unlearning”), though this has so far remained elusive technically, and may impair beneficial\nuse cases too much to be used in…",
+        "source_ref": "Shah 2025",
+        "source_title": "An Approach to Technical AGI Safety and Security",
+        "url": "https://arxiv.org/abs/2504.01849"
       }
     ],
     "rec0Ms4duG11I6REJ": [
@@ -2120,15 +2120,6 @@
         "source_ref": "Robbins 2024",
         "source_title": "AI ASSURANCE: A Repeatable Process for Assuring AI-enabled Systems",
         "url": "https://www.mitre.org/sites/default/files/2024-06/PR-24-1768-AI-Assurance-A-Repeatable-Process-Assuring-AI-Enabled-Systems.pdf?utm_source=chatgpt.com"
-      }
-    ],
-    "recLJbd5gmiEmSJsf": [
-      {
-        "name": "Strategies to LLM Safety in Practice",
-        "definition": null,
-        "source_ref": "She 2024",
-        "source_title": "Large Language Model Safety: A Holistic Survey",
-        "url": "https://arxiv.org/abs/2412.17686"
       }
     ],
     "recXtL9YQc1TeR6cJ": [
