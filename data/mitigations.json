@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-14T07:05:15+00:00",
+    "last_updated": "2026-05-15T07:11:43+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2460,
     "record_count_total": 2888,
@@ -18,7 +18,7 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 602,
+        "count": 599,
         "children_count": 3
       },
       {
@@ -39,7 +39,7 @@
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 96,
+        "count": 99,
         "children_count": 1
       }
     ],
@@ -107,13 +107,13 @@
           "id": "recm718iigOdrTFs8",
           "code": "3.3",
           "name": "Voluntary & Cooperative",
-          "count": 120
+          "count": 119
         },
         {
           "id": "recaKRRZjLuXRlwsI",
           "code": "3.9",
           "name": "Other",
-          "count": 11
+          "count": 12
         }
       ],
       "recKDrtqO6anv7Mcj": [
