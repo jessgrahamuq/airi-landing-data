@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-05-16T06:51:59+00:00",
+    "last_updated": "2026-05-17T07:02:32+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2459,
     "record_count_total": 2888,
@@ -18,7 +18,7 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 599,
+        "count": 598,
         "children_count": 3
       },
       {
@@ -39,7 +39,7 @@
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 95,
+        "count": 96,
         "children_count": 1
       }
     ],
