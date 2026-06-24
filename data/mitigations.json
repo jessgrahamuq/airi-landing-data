@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-06-23T07:19:35+00:00",
+    "last_updated": "2026-06-24T07:17:14+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2459,
     "record_count_total": 2888,
@@ -405,7 +405,7 @@
         "name": "Adversarial training",
         "definition": null,
         "source_ref": "Jin 2024",
-        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "source_title": "A Framework for Artificial Intelligence Risk Management",
         "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
       },
       {
@@ -752,7 +752,7 @@
         "name": "Control-flow integrity",
         "definition": null,
         "source_ref": "Jin 2024",
-        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "source_title": "A Framework for Artificial Intelligence Risk Management",
         "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
       }
     ],
@@ -1057,7 +1057,7 @@
         "name": "Adjusting the order of predefined prompt",
         "definition": null,
         "source_ref": "Jin 2024",
-        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "source_title": "A Framework for Artificial Intelligence Risk Management",
         "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
       },
       {
@@ -2111,7 +2111,7 @@
         "name": "Intervention",
         "definition": null,
         "source_ref": "Jin 2024",
-        "source_title": "A FRAMEWORK FOR ARTIFICIAL INTELLIGENCE RISK MANAGEMENT",
+        "source_title": "A Framework for Artificial Intelligence Risk Management",
         "url": "https://www.jatit.org/volumes/Vol102No16/10Vol102No16.pdf"
       },
       {
