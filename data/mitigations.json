@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-06-24T07:17:14+00:00",
+    "last_updated": "2026-06-25T07:16:08+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
-    "record_count": 2459,
-    "record_count_total": 2888,
+    "record_count": 2429,
+    "record_count_total": 2858,
     "top_level_count": 4,
-    "document_count": 61,
+    "document_count": 67,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,459 classified mitigation actions across 4 top-level categories drawn from 61 source documents. Organisation is the most heavily researched area with 1069 actions catalogued.",
+    "interpretation": "The database has catalogued 2,429 classified mitigation actions across 4 top-level categories drawn from 67 source documents. Organisation is the most heavily researched area with 1057 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -18,28 +18,28 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 597,
+        "count": 587,
         "children_count": 3
       },
       {
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1069,
+        "count": 1057,
         "children_count": 4
       },
       {
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 497,
+        "count": 496,
         "children_count": 4
       },
       {
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 98,
+        "count": 94,
         "children_count": 1
       }
     ],
@@ -49,13 +49,13 @@
           "id": "recN8nHl2CJ2l1bQR",
           "code": "1.2",
           "name": "Non-Model",
-          "count": 322
+          "count": 318
         },
         {
           "id": "rec3kPN9w30ZIf0ok",
           "code": "1.1",
           "name": "Model",
-          "count": 247
+          "count": 242
         },
         {
           "id": "rechkvbiJitGFFyed",
@@ -69,19 +69,19 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 558
+          "count": 551
         },
         {
           "id": "recvf5stbwCV4rwuI",
           "code": "2.3",
           "name": "Operations & Security",
-          "count": 285
+          "count": 283
         },
         {
           "id": "recu97TvMvkJbjQBg",
           "code": "2.4",
           "name": "Engineering & Development",
-          "count": 223
+          "count": 220
         },
         {
           "id": "recLJbd5gmiEmSJsf",
@@ -95,7 +95,7 @@
           "id": "recWteocmG0jmdjV0",
           "code": "3.1",
           "name": "Legal & Regulatory",
-          "count": 199
+          "count": 198
         },
         {
           "id": "recB7UZgikAebnlwO",
@@ -154,7 +154,7 @@
         "definition": "Ensure an agent's actions, tool use, and reasoning are transparent and auditable through logging, allowing for debugging, security oversight, and user insights into agent activity.",
         "source_ref": "Google 2024",
         "source_title": "Google Secure AI Framework",
-        "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
+        "url": "https://saif.google/secure-ai-framework/controls"
       },
       {
         "name": "AI risks and beneﬁts from third-party resources are regularly monitored, and risk controls are applied and documented.",
@@ -205,7 +205,7 @@
       {
         "name": "Aegis AI Content Safety Dataset 1.0",
         "definition": "11k manually\nannotated interactions\nbetween humans and LLMs\ncovering content safety\ntopics",
-        "source_ref": "Francois 2025",
+        "source_ref": "François 2025",
         "source_title": "A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety",
         "url": "https://arxiv.org/abs/2506.22183"
       },
@@ -522,7 +522,7 @@
       {
         "name": "Cybertip API:",
         "definition": "Tool to report\nchild exploitation to NCMEC",
-        "source_ref": "Francois 2025",
+        "source_ref": "François 2025",
         "source_title": "A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety",
         "url": "https://arxiv.org/abs/2506.22183"
       },
@@ -557,18 +557,18 @@
         "url": "https://arxiv.org/abs/2206.00335"
       },
       {
-        "name": "Accountability Structures",
-        "definition": "“Establishing accountability requires the creation of clear, pre-defined structures that assign responsibility for the system's behavior to specific human actors or organizational entities.”",
-        "source_ref": "Tariq 2025",
-        "source_title": "Ethical Imperatives in AI Design: A Comprehensive Framework for Risk Mitigation and Responsible Innovation",
-        "url": "https://crosslinkstudies.com/ubicc/index.php/utj/article/view/23/12"
-      },
-      {
         "name": "Advisory and Challenge",
         "definition": "Risk experts who advise and challenge senior management on their decisions",
         "source_ref": "Campos 2025",
         "source_title": "A Frontier AI Risk Management Framework: Bridging the Gap Between Current AI Practices and Established Risk Management",
         "url": "https://arxiv.org/abs/2502.06656"
+      },
+      {
+        "name": "AI safety team and research unit",
+        "definition": "Form an internal team led by a designated safety\nofficer to conduct AI risk management practices. This team is tasked to perform proactive\nsafety research on high-risk AI applications, and to…",
+        "source_ref": "Tse 2025",
+        "source_title": "Frontier AI Risk Management Framework (v1.0)",
+        "url": "https://concordia-ai.com/wp-content/uploads/2025/07/Frontier-AI-Risk-Management-Framework-v1.0-en.pdf"
       }
     ],
     "recFhxvWLNYvthEon": [
@@ -746,7 +746,7 @@
         "definition": "Use least-privilege principle as the upper bound on agentic system permissions to minimize the number of tools that an agent is permitted to interact with and the actions it is allowed to take. An…",
         "source_ref": "Google 2024",
         "source_title": "Google Secure AI Framework",
-        "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
+        "url": "https://saif.google/secure-ai-framework/controls"
       },
       {
         "name": "Control-flow integrity",
@@ -807,43 +807,6 @@
         "source_ref": "Bengio 2025",
         "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
         "url": "https://arxiv.org/abs/2506.20702"
-      }
-    ],
-    "recHDWLTPUMGJfN0P": [
-      {
-        "name": "At the point of deployment, share details of the model, any risks the model might pose and what steps have been taken to mitigate those…",
-        "definition": "Information can be provided in full to the relevant government authority, ensuring that robust security measures are in place to protect sensitive information. Some of this information can be made…",
-        "source_ref": "UK_DSIT 2023",
-        "source_title": "Emerging processes for frontier AI safety",
-        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
-      },
-      {
-        "name": "Before training, share high-level model details with the relevant government authorities and justify why the training run does not impose…",
-        "definition": "This could include:\n\na high-level description of the model (including high-level information on intended use cases, intended users, training data, and model architecture)\ncompute details (including…",
-        "source_ref": "UK_DSIT 2023",
-        "source_title": "Emerging processes for frontier AI safety",
-        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
-      },
-      {
-        "name": "Building Code",
-        "definition": "AI systems may have various degrees of risk depending on the design and\napplication domains. To ensure that AI systems are trustworthy and meet certain minimum standards, building code can be…",
-        "source_ref": "Lu 2024",
-        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
-        "url": "https://doi.org/10.1145/3626234"
-      },
-      {
-        "name": "Certification schemes",
-        "definition": null,
-        "source_ref": "Maas 2023",
-        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
-        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
-      },
-      {
-        "name": "Certifications",
-        "definition": "Certification emerged throughout\nfour interviews as fundamental in improving the ecosystem (Candidates 1, 3, 4, 5). Certifications “enable companies to cooperate with\nexperts, that can guide them to…",
-        "source_ref": "Lucaj 2023",
-        "source_title": "AI Regulation Is (not) All You Need",
-        "url": "https://doi.org/10.1145/3593013.3594079"
       }
     ],
     "rec7WCy7JEIpyidOT": [
@@ -987,11 +950,11 @@
         "url": "https://arxiv.org/abs/2506.20702"
       },
       {
-        "name": "Auditing Mechanisms and Feedback Loops",
-        "definition": "This requires establishing robust auditing mechanisms and feedback loops that allow for iterative refinement and continuous improvement of the system's ethical performance",
-        "source_ref": "Tariq 2025",
-        "source_title": "Ethical Imperatives in AI Design: A Comprehensive Framework for Risk Mitigation and Responsible Innovation",
-        "url": "https://crosslinkstudies.com/ubicc/index.php/utj/article/view/23/12"
+        "name": "Conduct assessment",
+        "definition": "Perform the planned assessment, documenting observations.",
+        "source_ref": "Kapusta 2025",
+        "source_title": "A Framework for the Assurance of AI-Enabled Systems",
+        "url": "https://arxiv.org/abs/2504.16937"
       }
     ],
     "recHNGAxxZkFD3y7e": [
@@ -1162,7 +1125,7 @@
         "definition": "Ensure user approval for any actions performed by agents/plugins that alter user data or act on the user’s behalf.",
         "source_ref": "Google 2024",
         "source_title": "Google Secure AI Framework",
-        "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
+        "url": "https://saif.google/secure-ai-framework/controls"
       },
       {
         "name": "AI mode switcher",
@@ -1512,6 +1475,43 @@
         "url": "https://arxiv.org/abs/2305.07153"
       }
     ],
+    "recHDWLTPUMGJfN0P": [
+      {
+        "name": "At the point of deployment, share details of the model, any risks the model might pose and what steps have been taken to mitigate those…",
+        "definition": "Information can be provided in full to the relevant government authority, ensuring that robust security measures are in place to protect sensitive information. Some of this information can be made…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Before training, share high-level model details with the relevant government authorities and justify why the training run does not impose…",
+        "definition": "This could include:\n\na high-level description of the model (including high-level information on intended use cases, intended users, training data, and model architecture)\ncompute details (including…",
+        "source_ref": "UK_DSIT 2023",
+        "source_title": "Emerging processes for frontier AI safety",
+        "url": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety/emerging-processes-for-frontier-ai-safety"
+      },
+      {
+        "name": "Building Code",
+        "definition": "AI systems may have various degrees of risk depending on the design and\napplication domains. To ensure that AI systems are trustworthy and meet certain minimum standards, building code can be…",
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      },
+      {
+        "name": "Certification schemes",
+        "definition": null,
+        "source_ref": "Maas 2023",
+        "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4629460"
+      },
+      {
+        "name": "Certifications",
+        "definition": "Certification emerged throughout\nfour interviews as fundamental in improving the ecosystem (Candidates 1, 3, 4, 5). Certifications “enable companies to cooperate with\nexperts, that can guide them to…",
+        "source_ref": "Lucaj 2023",
+        "source_title": "AI Regulation Is (not) All You Need",
+        "url": "https://doi.org/10.1145/3593013.3594079"
+      }
+    ],
     "reczBXs37Ijqq7EWX": [
       {
         "name": "AI Arms Controls",
@@ -1572,18 +1572,18 @@
         "url": "https://arxiv.org/abs/2506.20702"
       },
       {
-        "name": "Explainability",
-        "definition": "Explainability, a related but distinct concept, pertains to the ability to furnish a clear, human-understandable rationale for a specific decision or prediction made by the system.",
-        "source_ref": "Tariq 2025",
-        "source_title": "Ethical Imperatives in AI Design: A Comprehensive Framework for Risk Mitigation and Responsible Innovation",
-        "url": "https://crosslinkstudies.com/ubicc/index.php/utj/article/view/23/12"
+        "name": "Exploring safe architectures",
+        "definition": "Beyond the development of safety mechanisms and modules, rethinking the foundational\narchitecture of LLMs is crucial for long-term safety improvements.",
+        "source_ref": "She 2024",
+        "source_title": "Large Language Model Safety: A Holistic Survey",
+        "url": "https://arxiv.org/abs/2412.17686"
       },
       {
-        "name": "Explainable AI (XAI) Tools",
-        "definition": "XAI methods, such as SHAP (SHapley Additive exPlanations) and LIME (Local Interpretable Model-agnostic Explanations), offer powerful techniques for demystifying complex models by providing insights…",
-        "source_ref": "Tariq 2025",
-        "source_title": "Ethical Imperatives in AI Design: A Comprehensive Framework for Risk Mitigation and Responsible Innovation",
-        "url": "https://crosslinkstudies.com/ubicc/index.php/utj/article/view/23/12"
+        "name": "Federated learner",
+        "definition": "The federated learner trains an AI model across multiple edge devices or servers with local data samples. The federated learner [15, 18, 68–70, 112, 113, 117] preserves the\ndata privacy by training…",
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
       }
     ],
     "recG4vs1Ryh828Li5": [
@@ -1604,7 +1604,7 @@
       {
         "name": "Bias / Discrimination (alternatively, Legal and Rights Related)",
         "definition": "Generation of content and/or predictive decisions that are biased,\ndiscriminatory and/or inconsistent; related to sensitive characteristics such as\nrace, ethnicity, gender, nationality, income…",
-        "source_ref": "Francois 2025",
+        "source_ref": "François 2025",
         "source_title": "A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety",
         "url": "https://arxiv.org/abs/2506.22183"
       },
@@ -1657,7 +1657,7 @@
         "definition": "Ensure that only authorized users and endpoints can access specific resources for authorized actions.",
         "source_ref": "Google 2024",
         "source_title": "Google Secure AI Framework",
-        "url": "https://saif.google/secure-ai-framework/controls?_gl=1*1xo2va7*_up*MQ..*_ga*MjA3OTEyMTEyMi4xNzU3MTkyNzk5*_ga_9P6QK6TG89*czE3NTcxOTI3OTkkbzEkZzEkdDE3NTcxOTI4MDckajUyJGwwJGgw"
+        "url": "https://saif.google/secure-ai-framework/controls"
       }
     ],
     "recQbNhpjHC86GOIF": [
@@ -2156,7 +2156,7 @@
       {
         "name": "GLiNER",
         "definition": "Model artifacts:",
-        "source_ref": "Francois 2025",
+        "source_ref": "François 2025",
         "source_title": "A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety",
         "url": "https://arxiv.org/abs/2506.22183"
       }
