@@ -1,10 +1,10 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-07-13T09:21:40+00:00",
+    "last_updated": "2026-07-14T07:59:18+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2429,
-    "record_count_total": 2938,
+    "record_count_total": 3014,
     "top_level_count": 4,
     "document_count": 71,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
