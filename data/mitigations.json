@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-08-04T08:32:41+00:00",
+    "last_updated": "2026-08-05T08:32:02+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
-    "record_count": 2688,
-    "record_count_total": 3305,
+    "record_count": 2658,
+    "record_count_total": 3275,
     "top_level_count": 4,
     "document_count": 68,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,688 classified mitigation actions across 4 top-level categories drawn from 68 source documents. Organisation is the most heavily researched area with 1058 actions catalogued.",
+    "interpretation": "The database has catalogued 2,658 classified mitigation actions across 4 top-level categories drawn from 68 source documents. Organisation is the most heavily researched area with 1049 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -18,28 +18,28 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 845,
+        "count": 842,
         "children_count": 3
       },
       {
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1058,
+        "count": 1049,
         "children_count": 4
       },
       {
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 496,
+        "count": 494,
         "children_count": 4
       },
       {
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 94,
+        "count": 78,
         "children_count": 1
       }
     ],
@@ -55,7 +55,7 @@
           "id": "rec3kPN9w30ZIf0ok",
           "code": "1.1",
           "name": "Model",
-          "count": 242
+          "count": 239
         },
         {
           "id": "rechkvbiJitGFFyed",
@@ -69,19 +69,19 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 552
+          "count": 547
         },
         {
           "id": "recvf5stbwCV4rwuI",
           "code": "2.3",
           "name": "Operations & Security",
-          "count": 283
+          "count": 280
         },
         {
           "id": "recu97TvMvkJbjQBg",
           "code": "2.4",
           "name": "Engineering & Development",
-          "count": 220
+          "count": 219
         },
         {
           "id": "recLJbd5gmiEmSJsf",
@@ -101,7 +101,7 @@
           "id": "recB7UZgikAebnlwO",
           "code": "3.2",
           "name": "Shared Infrastructure",
-          "count": 146
+          "count": 144
         },
         {
           "id": "recm718iigOdrTFs8",
@@ -121,7 +121,7 @@
           "id": "recG4vs1Ryh828Li5",
           "code": "99.9",
           "name": "Other",
-          "count": 37
+          "count": 36
         }
       ]
     }
@@ -231,11 +231,11 @@
         "url": "https://arxiv.org/abs/2410.23472"
       },
       {
-        "name": "Benchmarking",
-        "definition": null,
-        "source_ref": "Gipiskis 2024",
-        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
-        "url": "https://arxiv.org/abs/2410.23472"
+        "name": "Benchmarks",
+        "definition": "A standardised, often\nquantitative test or metric used\nto evaluate and compare the\nperformance of AI systems on a\nfixed set of tasks designed to\nrepresent real-world usage",
+        "source_ref": "Bengio 2025",
+        "source_title": "International AI Safety Report",
+        "url": "https://assets.publishing.service.gov.uk/media/679a0c48a77d250007d313ee/International_AI_Safety_Report_2025_accessible_f.pdf"
       }
     ],
     "reclKDrfpPOS6cdVV": [
@@ -906,18 +906,18 @@
         "url": "https://arxiv.org/abs/2504.17044"
       },
       {
-        "name": "Cybersecurity",
-        "definition": null,
-        "source_ref": "Gipiskis 2024",
-        "source_title": "Risk Sources and Risk Management Measures in Support of Standards for General-Purpose AI Systems",
-        "url": "https://arxiv.org/abs/2410.23472"
-      },
-      {
         "name": "Decommission responsibly",
         "definition": "Decommission\nresponsibly\nthrough formal\noff-boarding,\nsecure data\nhandling, and\naudit-ready\ndocumentation.",
         "source_ref": "Gandi 2025",
         "source_title": "Approaches to Responsible Governance of GenAI in Organizations",
         "url": "https://arxiv.org/abs/2504.17044"
+      },
+      {
+        "name": "Defence in Depth",
+        "definition": "The idea that multiple\nindependent and overlapping\nlayers of defence can be\nimplemented such that if one\nfails, others will still be effective",
+        "source_ref": "Bengio 2025",
+        "source_title": "International AI Safety Report",
+        "url": "https://assets.publishing.service.gov.uk/media/679a0c48a77d250007d313ee/International_AI_Safety_Report_2025_accessible_f.pdf"
       }
     ],
     "recL9Yy9qwWUxzPlc": [
@@ -1251,43 +1251,6 @@
         "source_ref": "Bengio 2025",
         "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
         "url": "https://arxiv.org/abs/2506.20702"
-      }
-    ],
-    "recu97TvMvkJbjQBg": [
-      {
-        "name": "AI development",
-        "definition": "Coordinated and accountable AI development operations is key to sustainable AI development in organizations.\nThe Head of AI should ensure that the organization designs and implements\n6) appropriate…",
-        "source_ref": "Mantymaki 2022",
-        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
-        "url": "https://arxiv.org/abs/2206.00335"
-      },
-      {
-        "name": "Alignment",
-        "definition": null,
-        "source_ref": "Glasser 2025",
-        "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
-      },
-      {
-        "name": "Design",
-        "definition": null,
-        "source_ref": "Lu 2024",
-        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
-        "url": "https://doi.org/10.1145/3626234"
-      },
-      {
-        "name": "Design and implementation: Building the system",
-        "definition": "This section focuses on techniques to make systems that meet their specifications. The\ndesign and implementation process involves sourcing data, pretraining models, post-training models, and…",
-        "source_ref": "Bengio 2025",
-        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
-        "url": "https://arxiv.org/abs/2506.20702"
-      },
-      {
-        "name": "Development and operations",
-        "definition": "Designing and implementing appropriate workflows and organizational structures for developing AI systems",
-        "source_ref": "Mantymaki 2022",
-        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
-        "url": "https://arxiv.org/abs/2206.00335"
       }
     ],
     "recKDrtqO6anv7Mcj": [
@@ -1748,6 +1711,43 @@
         "source_ref": "Gutfraind 2025",
         "source_title": "From nuclear safety to LLM security: Applying non-probabilistic risk management strategies to build safe and secure LLM-powered systems",
         "url": "https://arxiv.org/abs/2505.17084"
+      }
+    ],
+    "recu97TvMvkJbjQBg": [
+      {
+        "name": "AI development",
+        "definition": "Coordinated and accountable AI development operations is key to sustainable AI development in organizations.\nThe Head of AI should ensure that the organization designs and implements\n6) appropriate…",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
+      },
+      {
+        "name": "Alignment",
+        "definition": null,
+        "source_ref": "Glasser 2025",
+        "source_title": "Creating a Standard for TAI Governance",
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+      },
+      {
+        "name": "Design",
+        "definition": null,
+        "source_ref": "Lu 2024",
+        "source_title": "Responsible AI Pattern Catalogue: A Collection of Best Practices for AI Governance and Engineering",
+        "url": "https://doi.org/10.1145/3626234"
+      },
+      {
+        "name": "Design and implementation: Building the system",
+        "definition": "This section focuses on techniques to make systems that meet their specifications. The\ndesign and implementation process involves sourcing data, pretraining models, post-training models, and…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
+      },
+      {
+        "name": "Development and operations",
+        "definition": "Designing and implementing appropriate workflows and organizational structures for developing AI systems",
+        "source_ref": "Mantymaki 2022",
+        "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
+        "url": "https://arxiv.org/abs/2206.00335"
       }
     ],
     "rec9l0Ip5YLL4EXP6": [
