@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-08-11T07:02:19+00:00",
+    "last_updated": "2026-08-12T07:20:55+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
-    "record_count": 2657,
-    "record_count_total": 3274,
+    "record_count": 2609,
+    "record_count_total": 3340,
     "top_level_count": 4,
     "document_count": 68,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,657 classified mitigation actions across 4 top-level categories drawn from 68 source documents. Organisation is the most heavily researched area with 1048 actions catalogued.",
+    "interpretation": "The database has catalogued 2,609 classified mitigation actions across 4 top-level categories drawn from 68 source documents. Organisation is the most heavily researched area with 1044 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -18,28 +18,28 @@
         "id": "recI4nymJwsk9OYBA",
         "code": "1",
         "name": "AI System",
-        "count": 842,
+        "count": 814,
         "children_count": 3
       },
       {
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1048,
+        "count": 1044,
         "children_count": 4
       },
       {
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 494,
+        "count": 493,
         "children_count": 4
       },
       {
         "id": "recKDrtqO6anv7Mcj",
         "code": "99",
         "name": "Other",
-        "count": 78,
+        "count": 63,
         "children_count": 1
       }
     ],
@@ -49,13 +49,13 @@
           "id": "recN8nHl2CJ2l1bQR",
           "code": "1.2",
           "name": "Non-Model",
-          "count": 318
+          "count": 310
         },
         {
           "id": "rec3kPN9w30ZIf0ok",
           "code": "1.1",
           "name": "Model",
-          "count": 239
+          "count": 225
         },
         {
           "id": "rechkvbiJitGFFyed",
@@ -69,7 +69,7 @@
           "id": "recus4S9wRDjUK7co",
           "code": "2.2",
           "name": "Risk & Assurance",
-          "count": 546
+          "count": 542
         },
         {
           "id": "recvf5stbwCV4rwuI",
@@ -101,7 +101,7 @@
           "id": "recB7UZgikAebnlwO",
           "code": "3.2",
           "name": "Shared Infrastructure",
-          "count": 144
+          "count": 143
         },
         {
           "id": "recm718iigOdrTFs8",
@@ -121,7 +121,7 @@
           "id": "recG4vs1Ryh828Li5",
           "code": "99.9",
           "name": "Other",
-          "count": 36
+          "count": 23
         }
       ]
     }
@@ -513,25 +513,25 @@
         "url": "https://www.frontiermodelforum.org/technical-reports/frontier-mitigations/"
       },
       {
-        "name": "Adversarial Attack",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
+        "name": "Adversarial robustness testing (security)",
+        "definition": "Adversarial testing depends on techniques\nto evaluate system safety under deliberate attempts to make them behave harmfully. There\nare numerous approaches to adversarial testing involving attacks on…",
+        "source_ref": "Bengio 2025",
+        "source_title": "The Singapore Consensus on Global AI Safety Research Priorities",
+        "url": "https://arxiv.org/abs/2506.20702"
       },
       {
-        "name": "Adversarial Attacks",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
+        "name": "Adversarial Testing Module",
+        "definition": "This module employs real-time adversarial simulation that introduces adversarial inputs at various points during the training process to test the model’s robustness. The simulation leverages…",
+        "source_ref": "Srivastava 2024",
+        "source_title": "A Formal Framework for Assessing and Mitigating Emergent Security Risks in Generative AI Models: Bridging Theory and Dynamic Risk Mitigation",
+        "url": "https://arxiv.org/abs/2410.13897"
       },
       {
-        "name": "Adversarial Attacks",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
+        "name": "Adversarial Training and Testing",
+        "definition": "Use techniques to make AI models robust to adversarial inputs (i.e. prompts) in the context of their use in applications.",
+        "source_ref": "Google 2024",
+        "source_title": "Google Secure AI Framework",
+        "url": "https://saif.google/secure-ai-framework/controls"
       }
     ],
     "recAXj16oYZACyzHO": [
@@ -1181,13 +1181,6 @@
     ],
     "rec3kPN9w30ZIf0ok": [
       {
-        "name": "Adversarial Defenses",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
-      },
-      {
         "name": "Adversarial robustness in vision and perception systems",
         "definition": "Studying how malicious inputs can deceive image recognition or sensor-based models, and creating defenses—such as adversarial training, certifiable robustness methods, and detection schemes—to…",
         "source_ref": "O'Brien 2025",
@@ -1214,6 +1207,13 @@
         "source_ref": "Schuett 2023",
         "source_title": "Towards best practices in AGI safety and governance: A survey of expert opinion",
         "url": "https://arxiv.org/abs/2305.07153"
+      },
+      {
+        "name": "Bias Detection and Mitigation",
+        "definition": "Fleisig et al. proposed an adversarial learning approach,\nwhile Dong et al. employed a probing framework with conditional generation to identify and address gender bias [7], [12].\nOther techniques…",
+        "source_ref": "Sakib 2024",
+        "source_title": "Risks, Causes, and Mitigations of Widespread Deployments of Large Language Models (LLMs): A Survey",
+        "url": "https://doi.org/10.1109/AIBThings63359.2024.10863356"
       }
     ],
     "recN8nHl2CJ2l1bQR": [
@@ -1595,13 +1595,6 @@
         "url": "https://aisafetypreparedness.com/explore"
       },
       {
-        "name": "Agent",
-        "definition": null,
-        "source_ref": "Ma 2025",
-        "source_title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
-        "url": "https://arxiv.org/abs/2502.05206"
-      },
-      {
         "name": "Bias / Discrimination (alternatively, Legal and Rights Related)",
         "definition": "Generation of content and/or predictive decisions that are biased,\ndiscriminatory and/or inconsistent; related to sensitive characteristics such as\nrace, ethnicity, gender, nationality, income…",
         "source_ref": "François 2025",
@@ -1621,6 +1614,13 @@
         "source_ref": "Tong 2025",
         "source_title": "A First-Principles Based Risk Assessment Framework and the IEEE P3396 Standard",
         "url": "https://doi.org/10.1109/CAI64502.2025.00237"
+      },
+      {
+        "name": "Data Poisoning",
+        "definition": "Data poisoning is a cyberattack that compromises AI systems by deliberately corrupting their training datasets through introducing misleading information, modifications, or deletions, with even 1-3%…",
+        "source_ref": "Hodes 2025",
+        "source_title": "Global Risk and AI Safety Preparedness (GRASP)",
+        "url": "https://aisafetypreparedness.com/explore"
       }
     ],
     "recF4jWnsIEorB4Tx": [
