@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-08-18T06:39:20+00:00",
+    "last_updated": "2026-08-19T06:40:24+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
-    "record_count": 2609,
-    "record_count_total": 3340,
+    "record_count": 2608,
+    "record_count_total": 3339,
     "top_level_count": 4,
     "document_count": 68,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,609 classified mitigation actions across 4 top-level categories drawn from 68 source documents. Organisation is the most heavily researched area with 1044 actions catalogued.",
+    "interpretation": "The database has catalogued 2,608 classified mitigation actions across 4 top-level categories drawn from 68 source documents. Organisation is the most heavily researched area with 1044 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -32,7 +32,7 @@
         "id": "recJQgUd7WcZ4EUPw",
         "code": "3",
         "name": "Ecosystem",
-        "count": 493,
+        "count": 492,
         "children_count": 4
       },
       {
@@ -95,7 +95,7 @@
           "id": "recWteocmG0jmdjV0",
           "code": "3.1",
           "name": "Legal & Regulatory",
-          "count": 198
+          "count": 197
         },
         {
           "id": "recB7UZgikAebnlwO",
@@ -619,7 +619,7 @@
       {
         "name": "Content Moderation and Platform Accountability",
         "definition": "Online platforms bear significant\nresponsibility for curbing the spread of harmful AI-generated content. To effectively counter\nthe proliferation of deepfakes and other deceptive media, platforms…",
-        "source_ref": "She 2024",
+        "source_ref": "Shi 2024",
         "source_title": "Large Language Model Safety: A Holistic Survey",
         "url": "https://arxiv.org/abs/2412.17686"
       },
@@ -649,7 +649,7 @@
       {
         "name": "Agent identifiers",
         "definition": "One crucial method for enhancing visibility is through the use of agent\nidentifiers. These identifiers include deployment information and the metadata of underlying\nsystems, which help in tracking…",
-        "source_ref": "She 2024",
+        "source_ref": "Shi 2024",
         "source_title": "Large Language Model Safety: A Holistic Survey",
         "url": "https://arxiv.org/abs/2412.17686"
       },
@@ -901,14 +901,14 @@
       {
         "name": "continuous model oversight",
         "definition": "Establish\ncontinuous\nmodel oversight\nwith real-time\nperformance\ntracking, drift\ndetection, and\nincident\nresponse\nprotocols to\nadapt to\nregulatory and\nenvironmental\nshifts.",
-        "source_ref": "Gandi 2025",
+        "source_ref": "Joshi 2025",
         "source_title": "Approaches to Responsible Governance of GenAI in Organizations",
         "url": "https://arxiv.org/abs/2504.17044"
       },
       {
         "name": "Decommission responsibly",
         "definition": "Decommission\nresponsibly\nthrough formal\noff-boarding,\nsecure data\nhandling, and\naudit-ready\ndocumentation.",
-        "source_ref": "Gandi 2025",
+        "source_ref": "Joshi 2025",
         "source_title": "Approaches to Responsible Governance of GenAI in Organizations",
         "url": "https://arxiv.org/abs/2504.17044"
       },
@@ -1259,14 +1259,14 @@
         "definition": null,
         "source_ref": "Glasser 2025",
         "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance https://docs.google.com/document/d/1J3Wnpstr7UjJAMGC46MzdWKGk7ZUoA8buE_Kzjd17sw/edit?tab=t.0"
       },
       {
         "name": "(Societal Resilience) To Disruption",
         "definition": null,
         "source_ref": "Glasser 2025",
         "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance https://docs.google.com/document/d/1J3Wnpstr7UjJAMGC46MzdWKGk7ZUoA8buE_Kzjd17sw/edit?tab=t.0"
       },
       {
         "name": "Achieve AI efficiency improvements to reduce investment costs",
@@ -1412,7 +1412,7 @@
       {
         "name": "Activity logging",
         "definition": "Activity logs play a critical role in understanding and auditing agent\nbehavior. By recording detailed input and output data, these logs can help identify improper\ncommunications or actions taken by…",
-        "source_ref": "She 2024",
+        "source_ref": "Shi 2024",
         "source_title": "Large Language Model Safety: A Holistic Survey",
         "url": "https://arxiv.org/abs/2412.17686"
       },
@@ -1518,7 +1518,7 @@
         "definition": null,
         "source_ref": "Glasser 2025",
         "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance https://docs.google.com/document/d/1J3Wnpstr7UjJAMGC46MzdWKGk7ZUoA8buE_Kzjd17sw/edit?tab=t.0"
       },
       {
         "name": "Bypass or challenge existing institutions by engaging in \"competitive regime creation,\" \"forum shopping,\" or the strategic creation of…",
@@ -1574,7 +1574,7 @@
       {
         "name": "Exploring safe architectures",
         "definition": "Beyond the development of safety mechanisms and modules, rethinking the foundational\narchitecture of LLMs is crucial for long-term safety improvements.",
-        "source_ref": "She 2024",
+        "source_ref": "Shi 2024",
         "source_title": "Large Language Model Safety: A Holistic Survey",
         "url": "https://arxiv.org/abs/2412.17686"
       },
@@ -1726,7 +1726,7 @@
         "definition": null,
         "source_ref": "Glasser 2025",
         "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance https://docs.google.com/document/d/1J3Wnpstr7UjJAMGC46MzdWKGk7ZUoA8buE_Kzjd17sw/edit?tab=t.0"
       },
       {
         "name": "Design",
@@ -1874,7 +1874,7 @@
         "definition": null,
         "source_ref": "Glasser 2025",
         "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance https://docs.google.com/document/d/1J3Wnpstr7UjJAMGC46MzdWKGk7ZUoA8buE_Kzjd17sw/edit?tab=t.0"
       },
       {
         "name": "Differential technological development (innovation prizes)",
@@ -2059,7 +2059,7 @@
         "definition": null,
         "source_ref": "Glasser 2025",
         "source_title": "Creating a Standard for TAI Governance",
-        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance"
+        "url": "https://www.lesswrong.com/posts/ntLxPrHvCShDnAPrH/creating-a-standard-for-tai-governance https://docs.google.com/document/d/1J3Wnpstr7UjJAMGC46MzdWKGk7ZUoA8buE_Kzjd17sw/edit?tab=t.0"
       }
     ],
     "rec7NSuahWQpqxjTl": [
