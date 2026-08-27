@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-08-26T06:43:00+00:00",
+    "last_updated": "2026-08-27T17:19:39+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2608,
     "record_count_total": 3339,
@@ -834,7 +834,7 @@
       {
         "name": "Assess capacity of existing institutions",
         "definition": "Assess the capacity of existing institutions, such as national civil courts, to redress\nthe mistakes made or harms inflicted by AI systems. This assessment should\nevaluate the presence of…",
-        "source_ref": "Foridi 2018",
+        "source_ref": "Floridi 2018",
         "source_title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
         "url": "https://doi.org/10.1007/s11023-018-9482-5"
       },
@@ -1359,7 +1359,7 @@
       {
         "name": "Assess tasks and decision-making functionalities",
         "definition": "Assess which tasks and decision-making functionalities should not be delegated to\nAI systems, through the use of participatory mechanisms to ensure alignment with societal values and understanding…",
-        "source_ref": "Foridi 2018",
+        "source_ref": "Floridi 2018",
         "source_title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
         "url": "https://doi.org/10.1007/s11023-018-9482-5"
       }
