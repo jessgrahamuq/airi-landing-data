@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-09-07T11:30:16+00:00",
+    "last_updated": "2026-09-08T10:32:43+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
     "record_count": 2608,
     "record_count_total": 3339,
     "top_level_count": 4,
-    "document_count": 68,
+    "document_count": 69,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,608 classified mitigation actions across 4 top-level categories drawn from 68 source documents. Organisation is the most heavily researched area with 1044 actions catalogued.",
+    "interpretation": "The database has catalogued 2,608 classified mitigation actions across 4 top-level categories drawn from 69 source documents. Organisation is the most heavily researched area with 1044 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
