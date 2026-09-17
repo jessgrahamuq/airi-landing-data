@@ -1,14 +1,14 @@
 {
   "meta": {
     "dataset": "mitigations",
-    "last_updated": "2026-09-16T10:50:44+00:00",
+    "last_updated": "2026-09-17T10:57:14+00:00",
     "source": "Airtable appUJl8KRAUMeIVXs / SysRev_MitigationDatabase",
-    "record_count": 2608,
-    "record_count_total": 3339,
+    "record_count": 2607,
+    "record_count_total": 3338,
     "top_level_count": 4,
     "document_count": 69,
     "interpretation_title": "A catalogued landscape of AI risk mitigations",
-    "interpretation": "The database has catalogued 2,608 classified mitigation actions across 4 top-level categories drawn from 69 source documents. Organisation is the most heavily researched area with 1044 actions catalogued.",
+    "interpretation": "The database has catalogued 2,607 classified mitigation actions across 4 top-level categories drawn from 69 source documents. Organisation is the most heavily researched area with 1043 actions catalogued.",
     "cta_url": "https://airisk.mit.edu/ai-risk-mitigations",
     "cta_label": "Explore the database →"
   },
@@ -25,7 +25,7 @@
         "id": "rec5Jml8RLERlfbtT",
         "code": "2",
         "name": "Organisation",
-        "count": 1044,
+        "count": 1043,
         "children_count": 4
       },
       {
@@ -81,7 +81,7 @@
           "id": "recu97TvMvkJbjQBg",
           "code": "2.4",
           "name": "Engineering & Development",
-          "count": 219
+          "count": 218
         },
         {
           "id": "recLJbd5gmiEmSJsf",
@@ -580,7 +580,7 @@
         "url": "https://doi.org/10.1145/3593013.3594079"
       },
       {
-        "name": "Accountability",
+        "name": "Accountability (clauses 1.1 to 1.3)",
         "definition": null,
         "source_ref": "ITechLaw 2019",
         "source_title": "Responsible AI: A Global Policy Framework",
@@ -892,7 +892,7 @@
         "url": "https://arxiv.org/abs/2206.00335"
       },
       {
-        "name": "Building in redundancy",
+        "name": "Building in redundancy (for security mitigations)",
         "definition": "As with deployment safeguards, developers can aim to\nimplement a “defense-in-depth” strategy.",
         "source_ref": "Buhl 2025",
         "source_title": "Emerging Practices in Frontier AI Safety Frameworks",
@@ -1366,15 +1366,15 @@
     ],
     "rec8guXSxvdk7M1yY": [
       {
-        "name": "AI system version control",
-        "definition": "The AI System Owner should ensure that the organization implements the planned AI system version control processes.\nIf the system version control processes disclose a breach of version control…",
+        "name": "AI system version control (during building and interpretation)",
+        "definition": "AI systems will likely undergo several redesigns and update cycles during their lifetime.\nDesigning and implementing an effective version control system integrated with the AI\ngovernance framework…",
         "source_ref": "Mantymaki 2022",
         "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
         "url": "https://arxiv.org/abs/2206.00335"
       },
       {
-        "name": "AI system version control",
-        "definition": "AI systems will likely undergo several redesigns and update cycles during their lifetime.\nDesigning and implementing an effective version control system integrated with the AI\ngovernance framework…",
+        "name": "AI system version control (during operation and monitoring)",
+        "definition": "The AI System Owner should ensure that the organization implements the planned AI system version control processes.\nIf the system version control processes disclose a breach of version control…",
         "source_ref": "Mantymaki 2022",
         "source_title": "Putting AI Ethics into Practice: The Hourglass Model of Organizational AI Governance",
         "url": "https://arxiv.org/abs/2206.00335"
@@ -1498,7 +1498,7 @@
         "url": "https://doi.org/10.1145/3626234"
       },
       {
-        "name": "Certification schemes",
+        "name": "Certification schemes (for executive lever)",
         "definition": null,
         "source_ref": "Maas 2023",
         "source_title": "Advanced AI Governance: A Literature Review of Problems, Options, and Proposals",
