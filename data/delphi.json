@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "delphi",
-    "last_updated": "2026-10-25T10:41:24+00:00",
+    "last_updated": "2026-10-26T12:12:52+00:00",
     "source": "data/vuln_resp_summary.csv (round 3)",
     "round": 3,
     "risk_count": 24,
